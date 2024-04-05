@@ -3,14 +3,13 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Bg from "@/public/misc/bg.jpg";
 import Logo from "@/public/l2.jpg";
-import { ChevronDown, Search } from "lucide-react";
+import { ChevronDown, Search, PhoneOutgoing, Mail } from "lucide-react";
 
 import Link from "next/link";
 
 import R1 from '@/public/images/rafting/m00.jpg'
 import K1 from '@/public/images/kayak/k06.jpg'
 import M1 from '@/public/images/expedition/mu00.jpg'
-
 
 const menu = [
     {
@@ -116,56 +115,29 @@ const Navbar = () => {
 
     return (
         <>
-            <nav>
+            <nav className="">
                 <div className=" mx-auto max-w-[85%] py-3">
                     <div className="mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-black flex items-center justify-between text-sm my-auto mt-1 gap-6">
+                        <div className="text-black flex flex-col md:flex-row items-center justify-between text-sm my-auto mt-1 gap-6">
                             <div className="flex lg:flex-none">
                                 <a href="/" className="-m-1.5 p-1.5 text-2xl font-medium flex gap-4 items-center">
                                     <Image
                                         src={Logo}
                                         priority="true"
                                         alt="site-logo"
-                                        className="w-[13rem]"
+                                        className="w-[8rem] md:w-[13rem]"
                                     />
-                                    <span className="paris mt-auto text-4xl">It&apos;s time to paddle</span>
+                                    <span className="paris mt-auto text-2xl md:text-4xl">It&apos;s time to paddle</span>
                                 </a>
                             </div>
-                            <div className="flex flex-col gap-y-3 text-base ">
+                            <div className="flex flex-col gap-3 text-base font-mono">
                                 <div className="flex items-center gap-2">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="text-gray-800"
-                                    >
-                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                    </svg>
-                                    <a href="tel:+91 97566 20538" className="text-blue-600 font-medium">+91 97566 20538</a>
+                                    <PhoneOutgoing className="w-5 h-5 text-gray-800" />
+                                    <a href="tel:+91 97566 20538" className="font-medium">+91 97566 20538</a>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="22"
-                                        height="22"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        className="text-gray-800"
-                                    >
-                                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                                    </svg>
-                                    <a href="mailto:office@seahawkadventures.com" className="text-blue-600 font-medium">
+                                   <Mail className="w-5 h-5 text-gray-800"/>
+                                    <a href="mailto:office@seahawkadventures.com" className="font-medium">
                                         office@seahawkadventures.com
                                     </a>
                                 </div>
@@ -175,11 +147,9 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            <header className="w-full sticky top-0"
-             data-aos="fade-up"
-             data-aos-duration="500">
+            <header className="w-full sticky top-0 z-20">
                 <div
-                    className="flex items-center justify-between border-b border-gray-100 bg-white px-6 lg:px-8 "
+                    className="flex items-center justify-between px-6 lg:px-8 "
                     style={{
                         backgroundImage: "url('/misc/bg.jpg')",
                         backgroundPosition: "center",
@@ -190,13 +160,14 @@ const Navbar = () => {
                         <div className="hidden lg:flex items-center lg:gap-x-5">
                             <Link
                                 href="/"
-                                className="text-gray-100 font-semibold font-mono uppercase text-base tracking-wide hover:bg-blue-700 h-20 px-4 flex items-center"
+                                className="text-gray-100 font-semibold font-mono uppercase text-base tracking-wide hover:bg-blue-700 h-20 px-6 flex items-center"
                             >
                                 home
                             </Link>
                             <div className='hidden lg:flex lg:gap-x-5'>
                                 {menu.map((item, i) => (
                                     <div key={i} className="relative hidden lg:flex lg:gap-x-2">
+                                        <div className="border h-[30%] border-gray-300 my-auto"></div>
                                         <button
                                             onMouseEnter={() => toggleOpen(i)}
                                             onMouseLeave={() => toggleOpen(i)}

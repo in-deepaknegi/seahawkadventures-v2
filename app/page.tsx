@@ -1,7 +1,7 @@
 "use client"
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/routes/home/Hero'
-
+import Logo from '@/components/routes/home/Logo'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
@@ -17,8 +17,9 @@ export default function Home() {
     return (
         <>
             <Navbar />
-            <main className='h-[200vh]'>
+            <main>
                 <Hero />
+                <Logo />
             </main>
         </>
     );
