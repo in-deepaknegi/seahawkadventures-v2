@@ -1,10 +1,16 @@
 "use client"
 import Navbar from '@/components/Navbar'
+import Icons from '@/components/Icons'
 import Hero from '@/components/routes/home/Hero'
 import Logo from '@/components/routes/home/Logo'
+import Rafting from '@/components/routes/home/Rafting'
+import Kayak from '@/components/routes/home/Kayak'
+
+
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
+import Footer from '@/components/Footer'
 
 
 export default function Home() {
@@ -18,9 +24,13 @@ export default function Home() {
         <>
             <Navbar />
             <main>
+                <Icons />
                 <Hero />
                 <Logo />
+                <Rafting />
+                <Kayak />
             </main>
+            <Footer />
         </>
     );
 }

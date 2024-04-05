@@ -63,7 +63,7 @@ const Hero = () => {
                         {features.map((feature, i) => (
                             <div
                                 key={i}
-                                className="flex flex-col-reverse overflow-hidden rounded-xl shadow-2xl shadow-gray-500 justify-between"
+                                className="flex flex-col overflow-hidden rounded-xl shadow-2xl shadow-gray-500 justify-between"
                                 style={{
                                     backgroundImage: "url('/misc/bg.jpg')",
                                     backgroundPosition: "center",
@@ -75,7 +75,7 @@ const Hero = () => {
                                 data-aos-easing="ease"
                                 data-aos-delay={feature.delay}
                             >
-                                <dd className='py-10 flex gap-y-5 px-6 text-center rounded-t-xl overflow-hidden flex-auto flex-col text-base leading-7 text-white group before:content-[""] before:absolute before:block before:left-0 before:right-0 before:bottom-[100%] before:z-[-10] before:top-0 before:bg-sky-500 hover:before:bottom-0 before:transition-all before:duration-700'>
+                                <dd className='py-10 flex gap-y-5 px-6 text-center rounded-t-xl overflow-hidden flex-auto flex-col text-base leading-7 text-white group before:content-[""] before:absolute before:block before:left-0 before:right-0 before:top-[100%] before:z-[-10] before:bottom-0 before:bg-sky-500 hover:before:top-0 before:transition-all before:duration-700'>
                                     <h3 className=" text-4xl font-medium leading-7 text-orange-500 font-mono group-hover:text-black">
                                         {feature.title}
                                     </h3>
@@ -97,7 +97,7 @@ const Hero = () => {
                                         <Image
                                             src={feature.image}
                                             alt="post-img"
-                                            className="aspect-video z-40 w-full object-cover sm:aspect-[2/1] lg:aspect-[3/2.05] hover:scale-[1.07] transform ease-in-out duration-300 rounded-t-xl"
+                                            className="aspect-video z-40 w-full object-cover sm:aspect-[2/1] lg:aspect-[3/2.05] hover:scale-[1.07] transform ease-in-out duration-300"
                                         />
                                     </a>
                                 </dt>
