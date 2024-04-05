@@ -2,32 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: pari;
+  src: url("/fonts/Parisienne-Regular.woff2") format("woff2");
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+    height: 12px; /* height of the scrollbar */
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* color of the scrollbar handle */
+    border-radius: 6px; /* roundness of the scrollbar handle */
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the scrollbar track */
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: #f1f1f1; /* color of the scrollbar corner */
+  }
+  .paris {
+    font-family: pari;
   }
 }
