@@ -148,13 +148,11 @@ const Feature = () => {
 
                     {packages.map((item, i) => (
                         <div key={i}
-                            className={`mt-10 bg-white border p-2 md:p-6 rounded-2xl shadow-2xl transition-all ease-in-out duration-300 sticky top-36  flex flex-col lg:gap-y-0 gap-x-0 gap-y-10 lg:gap-x-8 lg:flex-row h-full ${item.class} `}
+                            className={`mt-28 bg-white border p-2 md:p-6 rounded-2xl shadow-2xl transition-all ease-in-out duration-300 sticky top-36  flex flex-col lg:gap-y-0 gap-x-0 gap-y-10 lg:gap-x-8 lg:flex-row h-full ${item.class} `}
                             data-aos="fade-up"
-                            data-aos-duration="700">
+                            data-aos-duration="500">
                             <div
                                 className="relative w-full h-auto"
-                                data-aos="zoom-out"
-                                data-aos-duration="700"
                             >
                                 <Image
                                     src={item.image}
@@ -165,9 +163,7 @@ const Feature = () => {
                                     className="md:h-[25rem] object-cover rounded-2xl"
                                 />
                             </div>
-                            <div className="w-full px-2 mt-4"
-                                data-aos="fade-left"
-                                data-aos-duration="700">
+                            <div className="w-full px-2 mt-4">
                                 <ul className=" grid md:grid-cols-2 gap-4 text-sm leading-6">
                                     {item.description.map((feature, i) => (
                                         <li key={i} className="flex gap-3 my-auto font-semibold">

@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
-import Logo from '@/public/images/logo.jpg';
+import Logo from '@/public/images/logo-b.png';
 
 const links = [
     {
@@ -71,20 +71,25 @@ const links = [
 
 const Footer = () => {
     return (
-        <footer className='relative pt-10 overflow-x-hidden pb-4 border-t border-gray-200'>
-            <div className='mx-auto px-6 lg:px-8'>
+        <footer className='relative pt-10 overflow-x-hidden rounded-t-2xl pb-4 border-t border-gray-200'
+            style={{
+                backgroundImage: "url('/misc/bg.jpg')",
+                backgroundPosition: "center",
+                backgroundSize: "fill",
+            }}>
+            <div className='mx-auto max-w-[85%] px-6'>
                 <div className='mb-6 sm:flex sm:justify-between'>
                     <div>
-                        <a href='/' className='flex space-x-3 rtl:space-x-reverse'>
-                            <Image
-                                src={Logo}
-                                alt='site-logo'
-                                quality={100}
-                                loading='eager'
-                                className='w-32'
-                            />
-                        </a>
-                        <div className='mt-5 text-sm text-gray-600 space-y-2'>
+                    <a href="/" className="-m-1.5 p-1.5 text-2xl font-medium flex gap-4 items-center">
+                                    <Image
+                                        src={Logo}
+                                        priority="true"
+                                        alt="site-logo"
+                                        className="w-[8rem] md:w-[13rem]"
+                                    />
+                                    <span className="paris text-gray-300 mt-auto text-2xl md:text-4xl">It&apos;s time to paddle</span>
+                                </a>
+                        <div className='mt-10 text-sm text-gray-300 space-y-2'>
                             <div className='flex gap-6'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className='text-gray-400 my-auto'><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"></path><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"></path><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"></path><path d="M10 6h4"></path><path d="M10 10h4"></path><path d="M10 14h4"></path><path d="M10 18h4"></path></svg>
                                 <div>Badrinath Road, Rishikesh 249137, Uttarakhand, India</div>
@@ -121,13 +126,14 @@ const Footer = () => {
                             </a>
                         </div>
                     </div>
-                    <div className='flex gap-x-20 max-w-md mt-10 md:justify-between md:mt-5 md:mr-32 md:max-w-none'>
+
+                    <div className='flex gap-x-20 max-w-md mt-10 md:justify-between md:mt-5 md:max-w-none'>
                         {links.map((link) => (
                             <div key={link.id}>
-                                <h3 className='mb-3 text-sm font-bold text-gray-900'>
+                                <h3 className='mb-3 text-lg font-semibold text-gray-100'>
                                     {link.title}
                                 </h3>
-                                <ul className='flex flex-col space-y-2 flex-wrap text-sm font-medium text-gray-500'>
+                                <ul className='flex flex-col space-y-2 flex-wrap text-sm font-medium text-gray-300'>
                                     {link.sub.map((l, j) => (
                                         <li key={j}>
                                             <a href={l.href} className='hover:underline '>
@@ -141,19 +147,22 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='flex justify-between flex-col pt-8 space-y-4 border-t border-gray-200 md:flex-row md:space-y-0'>
+
+            </div>
+            <div className='max-w-full  pt-8  border-t border-gray-500'>
+                <div className=' mx-auto max-w-[80%] flex space-y-4 flex-col justify-between md:flex-row md:space-y-0'>
                     <div className='flex gap-x-4'>
-                        <span className='block text-xs text-gray-700 sm:text-left md:text-sm'>
+                        <span className='block text-xs text-gray-100 sm:text-left md:text-sm'>
                             <a href='#' className='underline'>
                                 Privacy Policy
                             </a>
                         </span>
-                        <span className='block text-xs text-gray-700 sm:text-left md:text-sm'>
+                        <span className='block text-xs text-gray-100 sm:text-left md:text-sm'>
                             <a href='#' className='underline'>
                                 Terms of Service
                             </a>
                         </span>
-                        <span className='block text-xs text-gray-700 sm:text-left md:text-sm'>
+                        <span className='block text-xs text-gray-100 sm:text-left md:text-sm'>
                             <a href='#' className='underline'>
                                 Cookies Policy
                             </a>
@@ -161,11 +170,11 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <span className='block text-sm text-gray-700 sm:text-right'>© 2024
+                        <span className='block text-sm text-gray-100 sm:text-right'>© 2024
                             <a href='/' className='hover:underline'> Sea Hawk Adventures™</a>.
                             All Rights Reserved.
                         </span>
-                        <span className='mt-2 block text-xs text-gray-800 sm:text-right'>
+                        <span className='mt-2 block text-xs text-gray-100 sm:text-right'>
                             Designed by:
                             <a target='_blank' href='https://www.cnippet.com/'>Cnippet Inc</a>
                         </span>

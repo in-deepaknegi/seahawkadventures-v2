@@ -1,9 +1,20 @@
 import React from 'react'
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Icons from '@/components/Icons';
 
-const page = () => {
+const page = async () => {
+
+
     return (
-        <div>page</div>
+        <>
+            <Navbar />
+            <main>
+                <Icons />
+            </main>
+            <Footer />
+        </>
     )
 }
 
-export default page
+export default page;
