@@ -11,7 +11,8 @@ const packages = [
         title: 'k-1',
         rate: '15000',
         image: Kayak1,
-        class: "mx-4",
+        class: "mx-4 top-36 ",
+        href: "/kayak/beginners-course",
         description: [
             {
                 svg: <MapPin className="w-5 h-5 text-blue-700" />,
@@ -67,7 +68,8 @@ const packages = [
         title: 'k-2',
         image: Kayak2,
         rate: '30000',
-        class: "mx-1",
+        class: "mx-1 top-44 ",
+        href: "/kayak/intermediate-course",
         description: [
             {
                 svg: <MapPin className="w-5 h-5 text-blue-700" />,
@@ -148,11 +150,11 @@ const Feature = () => {
 
                     {packages.map((item, i) => (
                         <div key={i}
-                            className={`mt-28 bg-white border p-2 md:p-6 rounded-2xl shadow-2xl transition-all ease-in-out duration-300 sticky top-36  flex flex-col lg:gap-y-0 gap-x-0 gap-y-10 lg:gap-x-8 lg:flex-row h-full ${item.class} `}
+                            className={`mt-16 bg-white border p-5 rounded-2xl shadow-2xl transition-all ease-in-out duration-300 md:sticky flex flex-col lg:gap-y-0 gap-x-0 gap-y-10 lg:gap-x-8 lg:flex-row h-full ${item.class} `}
                             data-aos="fade-up"
                             data-aos-duration="500">
                             <div
-                                className="relative w-full h-auto"
+                                className="relative w-full h-auto my-auto "
                             >
                                 <Image
                                     src={item.image}
@@ -160,10 +162,10 @@ const Feature = () => {
                                     quality={100}
                                     priority={true}
                                     loading="eager"
-                                    className="md:h-[25rem] object-cover rounded-2xl"
+                                    className="md:h-fitobject-cover rounded-2xl"
                                 />
                             </div>
-                            <div className="w-full px-2 mt-4">
+                            <div className="w-full mt-4">
                                 <ul className=" grid md:grid-cols-2 gap-4 text-sm leading-6">
                                     {item.description.map((feature, i) => (
                                         <li key={i} className="flex gap-3 my-auto font-semibold">
@@ -181,7 +183,7 @@ const Feature = () => {
                                     <span className="text-base text-gray-700">/adult</span>
                                 </p>
 
-                                <div className="mt-10 space-y-6">
+                                <div className="mt-6 space-y-6">
                                     {item.data.map((item, i) => (
                                         <div key={i}>
                                             <button
@@ -254,7 +256,7 @@ const Feature = () => {
                                     ))}
                                 </div>
 
-                                <div className="mt-10 flex gap-x-6">
+                                <div className="mt-6 flex gap-x-6">
                                     <a
                                         href={`https://wa.me/919756620538/?text=Hello! I'm interested in your kayaking lessons and would love to learn more. Can you please provide details on the types of trips available and their durations? Thank you `}
                                         target="_blank"
@@ -281,7 +283,7 @@ const Feature = () => {
                                     </a>
 
                                     <a
-                                        href="/explore/kayaking"
+                                        href={item.href}
                                         className="text-sm font-semibold leading-6 text-gray-900 my-auto"
                                     >
                                         Explore kayaking <span aria-hidden="true">→</span>

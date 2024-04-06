@@ -33,7 +33,7 @@ const features = [
 const Hero = () => {
     return (
         <section className=" overflow-hidden">
-            <div className="relative isolate"
+            <div className="relative isolate mb-[20rem]"
                 style={{
                     backgroundImage: "url('/images/rafting/g00.webp')",
                     backgroundPosition: "center",
@@ -75,8 +75,8 @@ const Hero = () => {
                                 data-aos-easing="ease"
                                 data-aos-delay={feature.delay}
                             >
-                                <dd className='py-10 flex gap-y-5 px-6 text-center rounded-t-xl overflow-hidden flex-auto flex-col text-base leading-7 text-white group before:content-[""] before:absolute before:block before:left-0 before:right-0 before:top-[100%] before:z-[-10] before:bottom-0 before:bg-blue-700 hover:before:top-0 before:transition-all before:duration-700'>
-                                    <h3 className=" text-4xl font-medium leading-7 text-orange-500 font-mono group-hover:text-black">
+                                <dd className='py-10 flex gap-y-5 px-6 text-center rounded-t-xl overflow-hidden flex-auto flex-col text-base leading-7 text-white group before:content-[""] before:absolute before:block before:left-0 before:right-0 before:top-[100%] before:z-[-10] before:bottom-0 before:bg-teal-500 hover:before:top-0 before:transition-all before:duration-700'>
+                                    <h3 className=" text-4xl font-medium leading-7 text-teal-500 font-mono group-hover:text-black">
                                         {feature.title}
                                     </h3>
                                     <p className="flex-auto text-gray-400 group-hover:text-black">

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Bg from "@/public/misc/bg.jpg";
 import Logo from "@/public/l2.jpg";
-import { ChevronDown, Search, PhoneOutgoing, Mail } from "lucide-react";
+import { ChevronDown, Search, PhoneOutgoing, Mail, MoveRight } from "lucide-react";
 
 import Link from "next/link";
 
@@ -15,6 +15,7 @@ const menu = [
     {
         title: "Rafting",
         image: R1,
+        href: "/rafting",
         solutions: [
             {
                 name: "12 Km Rafting",
@@ -37,6 +38,7 @@ const menu = [
     {
         title: "Kayak School",
         image: K1,
+        href: "/kayak",
         solutions: [
             {
                 name: "Beginner",
@@ -54,6 +56,7 @@ const menu = [
     {
         title: "Multi-day trip",
         image: M1,
+        href: "#",
         solutions: [
             {
                 name: "Rafting Expedition",
@@ -71,6 +74,7 @@ const menu = [
     {
         title: "Camping Package",
         image: K1,
+        href: "#",
         solutions: [
             {
                 name: "Only Camping",
@@ -136,7 +140,7 @@ const Navbar = () => {
                                     <a href="tel:+91 97566 20538" className="font-medium">+91 97566 20538</a>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                   <Mail className="w-5 h-5 text-gray-800"/>
+                                    <Mail className="w-5 h-5 text-gray-800" />
                                     <a href="mailto:office@seahawkadventures.com" className="font-medium">
                                         office@seahawkadventures.com
                                     </a>
@@ -180,11 +184,11 @@ const Navbar = () => {
                                                 <div className="absolute -left-5 z-50 mt-5 top-10 pt-6 flex w-screen max-w-max px-4"
                                                 >
                                                     <div className={`w-screen ${item.width} flex-auto overflow-hidden rounded-3xl bg-white bg-clip-padding backdrop-filter bg-opacity-80 backdrop-blur-md text-[0.9005rem] leading-6 shadow-lg ring-1 ring-gray-900/5`}
-                                                    style={{
-                                                        backgroundImage: "url('/misc/bg.jpg')",
-                                                        backgroundPosition: "center",
-                                                        backgroundSize: "fill",
-                                                    }}>
+                                                        style={{
+                                                            backgroundImage: "url('/misc/bg.jpg')",
+                                                            backgroundPosition: "center",
+                                                            backgroundSize: "fill",
+                                                        }}>
                                                         <div className="p-2.5 flex flex-row space-x-3">
                                                             {item.image && (
                                                                 <Image
@@ -212,8 +216,13 @@ const Navbar = () => {
                                                                         </div>
                                                                     </a>
                                                                 ))}
+                                                                <a href={item.href} className="text-gray-300 text-left pl-4 mt-2 flex gap-2 hover:text-white">
+                                                                    View more
+                                                                    <MoveRight />
+                                                                </a>
                                                             </div>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             )}

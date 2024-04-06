@@ -14,7 +14,7 @@ import G10 from "@/public/images/expedition/mu01.jpg";
 const Gallery = () => {
     return (
         <section id="gallery" className="relative isolate py-8 lg:py-16">
-            <div className="max-w-[85%] min-h-[50vh] mx-auto px-8">
+            <div className="max-w-full md:max-w-[85%] min-h-[50vh] mx-auto px-8">
                 <div className="flex mb-10 flex-col justify-between gap-y-5 py-4 md:gap-x-10 lg:flex-row">
                     <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                         Image Gallery
@@ -45,7 +45,7 @@ const Gallery = () => {
                                     className="block w-full h-full object-cover origin-center hover:scale-[1.04] transition-all ease-in duration-200"
                                 />
                             </div>
-                            <div className="rounded-2xl overflow-hidden">
+                            <div className="md:block hidden rounded-2xl overflow-hidden">
                                 <Image
                                     src={G2}
                                     alt="aa"
@@ -54,14 +54,14 @@ const Gallery = () => {
                             </div>
                         </div>
                         <div className="mt-4 flex flex-row gap-4">
-                            <div className="rounded-2xl overflow-hidden w-[40%]">
+                            <div className="rounded-2xl overflow-hidden md:w-[40%]">
                                 <Image
                                     src={G4}
                                     alt="aa"
                                     className="block h-40 object-cover origin-center hover:scale-[1.04] transition-all ease-in duration-200"
                                 />
                             </div>
-                            <div className="rounded-2xl overflow-hidden w-[60%] ">
+                            <div className="md:block hidden rounded-2xl overflow-hidden w-[60%] ">
                                 <Image
                                     src={G10}
                                     alt="aa"
@@ -83,7 +83,7 @@ const Gallery = () => {
                     </div>
                 </div>
 
-                <div className="mt-4 relative p-0 overflow-visible flex justify-start gap-4 flex-nowrap flex-1">
+                <div className=" hidden mt-4 relative p-0 overflow-visible md:flex justify-start gap-4 flex-nowrap flex-1">
                     <div className="w-full relative p-0 flex-col">
                         <div className="flex flex-row gap-4">
                             <div className="w-[20%] rounded-2xl overflow-hidden">
