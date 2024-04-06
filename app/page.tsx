@@ -5,7 +5,8 @@ import Hero from '@/components/routes/home/Hero'
 import Logo from '@/components/routes/home/Logo'
 import Rafting from '@/components/routes/home/Rafting'
 import Kayak from '@/components/routes/home/Kayak'
-
+import Gallery from '@/components/routes/home/Gallery'
+import Newsletter from '@/components/Newsletter'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'
@@ -29,6 +30,8 @@ export default function Home() {
                 <Logo />
                 <Rafting />
                 <Kayak />
+                <Gallery />
+                <Newsletter />
             </main>
             <Footer />
         </>
