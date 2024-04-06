@@ -178,7 +178,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <h3 className="text-[8rem] text-gray-600 text-center hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-blue-600 via-rose-500 to-yellow-400 hover:transition-all hover:ease-in hover:duration-300">
+            <h3 className="text-[8rem] text-gray-600 text-center hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-blue-600 via-rose-500 to-yellow-400 hover:transition-all hover:ease-in hover:duration-300 cursor-pointer">
                 Rafting since 2002
             </h3>
             <div className="max-w-full  pt-8  border-t border-gray-500">
@@ -197,6 +197,11 @@ const Footer = () => {
                         <span className="block text-xs text-gray-900 sm:text-left md:text-sm">
                             <a href="#" className="underline">
                                 Cookies Policy
+                            </a>
+                        </span>
+                        <span className="block text-xs text-gray-900 sm:text-left md:text-sm">
+                            <a href="/sitemap" className="underline">
+                                Sitemap
                             </a>
                         </span>
                     </div>

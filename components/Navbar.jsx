@@ -94,18 +94,18 @@ const menu = [
         solutions: [
             {
                 name: "About us",
-                href: "/about",
+                href: "/about-us",
             },
             {
                 name: "Contact us",
-                href: "/contacts",
+                href: "/contact-us",
             },
             {
                 name: "Gallery",
                 href: "/gallery",
             },
         ],
-        width: "max-w-[10rem]"
+        width: "max-w-[11rem]"
     },
 ];
 
@@ -194,28 +194,28 @@ const Navbar = () => {
                                                                 <Image
                                                                     src={item.image}
                                                                     alt="image"
-                                                                    className="w-[15rem] rounded-2xl object-cover brightness-110"
+                                                                    className="w-[15rem] h-[12rem] rounded-2xl object-cover brightness-110"
                                                                 />
                                                             )}
 
-                                                            <div className="p-2 flex flex-col">
-                                                                {item.solutions.map((c, j) => (
-                                                                    <a href={c.href}
-                                                                        key={j}
-                                                                        className="group relative flex rounded-lg py-1 px-4 hover:bg-gray-700/60"
-                                                                    >
-                                                                        <div className="text-left">
-                                                                            <h3
-                                                                                className="font-semibold text-white"
-                                                                            >
-                                                                                {c.name}
-                                                                            </h3>
-                                                                            <p className="mt-1 text-gray-500 font-medium">
-                                                                                {c.description}
-                                                                            </p>
-                                                                        </div>
-                                                                    </a>
-                                                                ))}
+                                                            <div className="p-2 w-full flex flex-col justify-between">
+                                                                <div>
+                                                                    {item.solutions.map((c, j) => (
+                                                                        <a href={c.href}
+                                                                            key={j}
+                                                                            className="flex rounded-lg py-3 px-4 hover:bg-gray-700/60"
+                                                                        >
+                                                                            <div className="text-left">
+                                                                                <h3
+                                                                                    className="font-semibold text-white"
+                                                                                >
+                                                                                    {c.name}
+                                                                                </h3>
+
+                                                                            </div>
+                                                                        </a>
+                                                                    ))}
+                                                                </div>
                                                                 <a href={item.href} className="text-gray-300 text-left pl-4 mt-2 flex gap-2 hover:text-white">
                                                                     View more
                                                                     <MoveRight />

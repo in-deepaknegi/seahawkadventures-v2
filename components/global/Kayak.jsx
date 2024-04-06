@@ -133,7 +133,7 @@ const Feature = () => {
     return (
         <>
             <section className="relative isolate bg-white py-16 sm:py-12">
-                <div className="mx-auto md:max-w-[80%] px-6 lg:px-8">
+                <div className="mx-auto md:max-w-[82%] px-6 lg:px-8">
                     <div className="flex flex-col max-w-2xl mx-auto"
                         data-aos="fade-up"
                         data-aos-duration="700">
@@ -162,7 +162,7 @@ const Feature = () => {
                                     quality={100}
                                     priority={true}
                                     loading="eager"
-                                    className="md:h-fitobject-cover rounded-2xl"
+                                    className="md:h-fit object-cover rounded-2xl"
                                 />
                             </div>
                             <div className="w-full mt-4">
@@ -286,7 +286,7 @@ const Feature = () => {
                                         href={item.href}
                                         className="text-sm font-semibold leading-6 text-gray-900 my-auto"
                                     >
-                                        Explore kayaking <span aria-hidden="true">→</span>
+                                        Explore course <span aria-hidden="true">→</span>
                                     </a>
                                 </div>
                             </div>
