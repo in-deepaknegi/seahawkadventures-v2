@@ -85,7 +85,7 @@ const packages = [
 
 const Rafting = () => {
     return (
-        <section id="packages" className="relative isolate bg-white py-8 sm:py-16">
+        <section id="packages" className="relative isolate bg-white py-8 sm:py-10">
             <div className="mx-auto max-w-[87%] px-6 lg:px-8" >
                 <div className="mx-auto max-w-4xl text-center" data-aos="fade-up"
                     data-aos-duration="700">
