@@ -71,7 +71,7 @@ const Hero = () => {
                                 }}
                                 data-aos="fade-left"
                                 data-aos-duration="700"
-                                data-aos-offset="250"
+                                data-aos-offset="150"
                                 data-aos-easing="ease"
                                 data-aos-delay={feature.delay}
                             >

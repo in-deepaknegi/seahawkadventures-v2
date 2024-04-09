@@ -51,7 +51,7 @@ const menu = [
                 href: "/kayak/intermediate-course",
             },
         ],
-        width: "max-w-[35rem]"
+        width: "max-w-[36rem]"
     },
     {
         title: "Multi-day trip",
@@ -69,7 +69,7 @@ const menu = [
                 href: "#",
             },
         ],
-        width: "max-w-[32rem]"
+        width: "max-w-[36rem]"
     },
     {
         title: "Camping Package",
@@ -87,7 +87,7 @@ const menu = [
                 href: "#",
             },
         ],
-        width: "max-w-[33rem]"
+        width: "max-w-[36rem]"
     },
     {
         title: "More Links",
@@ -194,7 +194,7 @@ const Navbar = () => {
                                                                 <Image
                                                                     src={item.image}
                                                                     alt="image"
-                                                                    className="w-[15rem] h-[12rem] rounded-2xl object-cover brightness-110"
+                                                                    className="w-[15rem] rounded-2xl object-cover brightness-110"
                                                                 />
                                                             )}
 
@@ -203,7 +203,7 @@ const Navbar = () => {
                                                                     {item.solutions.map((c, j) => (
                                                                         <a href={c.href}
                                                                             key={j}
-                                                                            className="flex rounded-lg py-3 px-4 hover:bg-gray-700/60"
+                                                                            className="flex rounded-lg py-2 px-4 hover:bg-gray-700/60"
                                                                         >
                                                                             <div className="text-left">
                                                                                 <h3
@@ -211,6 +211,9 @@ const Navbar = () => {
                                                                                 >
                                                                                     {c.name}
                                                                                 </h3>
+                                                                                <p className="text-gray-400">
+                                                                                    {c.description}
+                                                                                </p>
 
                                                                             </div>
                                                                         </a>

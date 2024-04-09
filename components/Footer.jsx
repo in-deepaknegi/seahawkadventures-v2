@@ -73,7 +73,7 @@ const Footer = () => {
     return (
         <footer className="relative pt-10 bg-gray-100 overflow-x-hidden rounded-t-3xl pb-4 border-t border-gray-200">
             <div className="mx-auto max-w-[85%] px-6">
-                <div className="mb-6 sm:flex sm:justify-between">
+                <div className="mb-6 flex flex-col lg:flex-row justify-between">
                     <div>
                         <a
                             href="/"
@@ -157,7 +157,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="flex gap-x-20 max-w-md mt-10 md:justify-between md:mt-5 md:max-w-none">
+                    <div className="flex flex-wrap gap-10 md:gap-20 max-w-md mt-10 md:justify-between md:mt-5 md:max-w-none">
                         {links.map((link) => (
                             <div key={link.id}>
                                 <h3 className="mb-3 text-lg font-semibold text-gray-900">
@@ -178,7 +178,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <h3 className="text-[8rem] text-gray-600 text-center hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r from-blue-600 via-rose-500 to-yellow-400 hover:transition-all hover:ease-in hover:duration-300 cursor-pointer">
+            <h3 className=" text-6xl pb-4 md:text-[8rem] text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-rose-500 to-yellow-400 transition-all ease-in duration-300 cursor-pointer">
                 Rafting since 2002
             </h3>
             <div className="max-w-full  pt-8  border-t border-gray-500">

@@ -27,4 +27,16 @@
   .paris {
     font-family: pari;
   }
+  .blog h2 {
+    @apply text-3xl font-semibold text-black
+  }
+  .blog h3 {
+    @apply text-2xl mt-10 font-semibold text-black
+  }
+  .blog ol {
+    @apply list-disc ml-6 text-base space-y-2
+  }
+  .blog ul {
+    @apply text-base
+  }
 }
