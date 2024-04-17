@@ -22,13 +22,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
     }));
 
-    const entries_r: MetadataRoute.Sitemap = rafting.map(({ slug }) => ({
-        url: `${BASE_URL}/rafting/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'weekly',
-        priority: 0.8,
-    }))
-
     return [
         {
             url: `${BASE_URL}`,
@@ -37,6 +30,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 1,
         },
         ...allUrls,
-        ...entries_r,
     ]
 }

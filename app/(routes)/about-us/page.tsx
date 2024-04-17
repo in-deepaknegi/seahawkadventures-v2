@@ -1,8 +1,22 @@
 import React from 'react'
 
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import Hero from '@/components/routes/about/Hero'
+import Timeline from '@/components/routes/about/Timeline'
+import Team from '@/components/routes/about/Team'
+
 const page = () => {
     return (
-        <div>page</div>
+        <>
+            <Navbar />
+            <main>
+                <Hero />
+                <Timeline />
+                <Team />
+            </main>
+            <Footer />
+        </>
     )
 }
 
