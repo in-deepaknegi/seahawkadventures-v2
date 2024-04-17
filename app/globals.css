@@ -3,9 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: pari;
-  src: url("/fonts/Parisienne-Regular.woff2") format("woff2");
+  font-family: "switzer-med";
+  font-style: normal;
+  src: url(/fonts/swi-med.woff2) format("woff2");
 }
+@font-face {
+  font-family: "switzer-reg";
+  font-style: normal;
+  src: url(/fonts/swi-reg.woff2) format("woff2");
+}
+
 @layer base {
   ::-webkit-scrollbar {
     width: 8px; /* width of the scrollbar */

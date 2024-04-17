@@ -8,8 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        md: '1.085rem',
+      },
       fontFamily: {
-        sans: ['var(--font-geist-sans)']
+          swim: ["switzer-med"],
+          swir: ["switzer-reg"],
       },
       keyframes: {
         fadeIn: {
