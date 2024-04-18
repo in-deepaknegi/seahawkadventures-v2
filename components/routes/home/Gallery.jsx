@@ -59,14 +59,14 @@ const Gallery = () => {
                                     <Image
                                         src={G3}
                                         alt="aa"
-                                        className="block h-full w-full origin-center object-cover transition-all duration-200 ease-in hover:scale-[1.04]"
+                                        className="block h-44 w-full origin-center object-cover transition-all duration-200 ease-in hover:scale-[1.04]"
                                     />
                                 </div>
                                 <div className="hidden overflow-hidden rounded-3xl md:block">
                                     <Image
                                         src={G2}
                                         alt="aa"
-                                        className="block h-full w-full origin-center object-cover transition-all duration-200 ease-in hover:scale-[1.04]"
+                                        className="block h-44 w-full origin-center object-cover transition-all duration-200 ease-in hover:scale-[1.04]"
                                     />
                                 </div>
                             </div>

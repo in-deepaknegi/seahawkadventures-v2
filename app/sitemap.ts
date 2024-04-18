@@ -10,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const urls = [
         `${BASE_URL}/rafting`,
+        `${BASE_URL}/kayak`,
         `${BASE_URL}/about-us`,
         `${BASE_URL}/contact-us`,
         `${BASE_URL}/gallery`,
