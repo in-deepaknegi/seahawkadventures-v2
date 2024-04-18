@@ -6,6 +6,7 @@ import Rafting from '@/components/routes/home/Rafting';
 import Kayak from '@/components/routes/home/Kayak';
 import Gallery from '@/components/routes/home/Gallery';
 import Feature from '@/components/routes/home/Feature';
+import Feedback from '@/components/routes/home/Feedback';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'
@@ -27,6 +28,7 @@ export default function Home() {
                 <Feature />
                 <Rafting />
                 <Kayak />
+                <Feedback />
                 <Gallery />
             </main>
             <Footer />
