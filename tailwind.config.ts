@@ -14,7 +14,12 @@ const config: Config = {
       fontFamily: {
           swim: ["switzer-med"],
           swir: ["switzer-reg"],
+          paris: ["paris-reg"],
       },
+      colors: {
+        primary:'#2563ebe6',
+      },
+
       keyframes: {
         fadeIn: {
           from: { opacity: '0' },

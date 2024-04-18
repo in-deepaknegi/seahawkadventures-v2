@@ -1,37 +1,76 @@
 import React from "react";
 import Image from "next/image";
-import Hero1 from "@/public/images/rafting/r05.jpg";
-import Hero2 from "@/public/images/rafting/r05.jpg";
-import Hero3 from "@/public/images/rafting/r05.jpg";
+
+import Button from '@/components/ui/Watsapp';
+
+import Hero1 from "@/public/images/rafting/r02.jpg";
+import Hero2 from "@/public/images/rafting/r12.jpg";
+import Hero3 from "@/public/images/rafting/r15.jpg";
+
+import S1 from '@/public/images/svg/map.svg';
+import S2 from '@/public/images/svg/stopwatch.svg';
 
 const features = [
     {
         id: 1,
-        title: "Push to deploy",
+        title: "12 Km Rafting",
         image: Hero1,
+        rate: 620,
         para: "Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.",
         href: "/products/simple-queues",
+        sub: [
+            {
+                name: "Marine Drive - Shivpuri",
+                img: S1,
+            },
+            {
+                name: "Duration: 1.5 hours",
+                img: S2,
+            },
+        ]
     },
     {
         id: 2,
-        title: "SSL certificates",
+        title: "16 Km Rafting",
         image: Hero2,
+        rate: 1020,
         para: "Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.",
         href: "/products/simple-queues",
+        sub: [
+            {
+                name: "Shivpuri to NIM Beach",
+                img: S1,
+            },
+            {
+                name: "Duration: 2 hours",
+                img: S2,
+            },
+        ]
     },
     {
         id: 3,
-        title: "Simple queues",
+        title: "24 Km Rafting",
         image: Hero3,
+        rate: 1520,
         para: "Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.",
         href: "/products/simple-queues",
+        sub: [
+            {
+                name: "Marine drive to NIM Beach",
+                img: S1,
+            },
+            {
+                name: "Duration: 3 hours",
+                img: S2,
+            },
+        ]
     },
 ];
 
 const Products = () => {
     return (
-        <section className="relative z-20 bg-[#f5f5f5] py-24 font-swir sm:py-28">
-            <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
+        <section className="relative z-20 bg-[#f4f1ec] overflow-hidden py-24 font-swir sm:py-28">
+            <div className="mx-auto max-w-full px-6 md:max-w-[90%] lg:px-8">
                 <div className=" absolute left-0 top-20 z-0">
                     <svg
                         viewBox="0 0 24 24"
@@ -60,7 +99,7 @@ const Products = () => {
 
                 <div className="relative mx-auto flex flex-col md:flex-row max-w-6xl justify-between">
                     <div className="flex flex-col justify-between gap-8">
-                        <div className="flex w-fit gap-4 rounded-3xl bg-white px-4 py-2 text-base text-gray-400">
+                        <div className="flex w-fit gap-4 rounded-3xl bg-white px-4 py-2 text-base text-gray-500">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="24"
@@ -78,23 +117,24 @@ const Products = () => {
                                 <path d="M14 4.1 12 6" />
                                 <path d="m6 12-1.9 2" />
                             </svg>
-                            Categories
+                            Rafting
                         </div>
-                        <p className="mt-2 text-3xl font-bold text-[#96d279] sm:text-5xl">
-                            Beverage universe
+                        <p className="mt-2 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600/90 to-sky-400 pb-2 sm:text-6xl">
+                            Rafting universe
                         </p>
                     </div>
 
-                    <p className="mt-6 md:mt-auto max-w-xl md:text-right font-swim text-2xl leading-8 text-gray-600">
-                        Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-                        Suspendisse.
+                    <p className="mt-6 md:mt-auto max-w-2xl md:text-right font-swim text-2xl leading-8 text-gray-600">
+                    Explore the excitement of the rapid river alongside our skilled guides, guaranteeing a secure and memorable journey.
                     </p>
                 </div>
+
+
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
-                    <dl className="mx-auto grid max-w-xl grid-cols-1 gap-x-2 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                    <dl className="mx-auto grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                         {features.map((feature) => (
-                            <div key={feature.id} className="flex flex-col md:p-3">
-                                <dt className="flex flex-col gap-y-5 font-swim text-3xl leading-7 text-black/90">
+                            <div key={feature.id} className="flex flex-col">
+                                <dt className="flex flex-col gap-y-5 ">
                                     <a
                                         href={feature.href}
                                         className="relative overflow-hidden rounded-2xl"
@@ -102,28 +142,53 @@ const Products = () => {
                                         <Image
                                             src={feature.image}
                                             alt="post-img"
-                                            className="aspect-video w-full transform object-cover duration-300 ease-in-out hover:scale-110 sm:aspect-[2/1] lg:aspect-[3/1.65]"
+                                            className="aspect-video w-full transform object-cover duration-300 ease-in-out hover:scale-110 sm:aspect-[2/1] lg:aspect-[3/1.75]"
                                         />
                                     </a>
-                                    {feature.title}
                                 </dt>
-                                <dd className="mt-8 flex flex-auto flex-col text-base leading-7 text-gray-500">
-                                    <p className="line-clamp-2 flex-auto text-lg">
+                                <dd className="mt-2 bg-white p-5 rounded-3xl flex flex-auto flex-col text-base leading-7 text-gray-500">
+                                    <h3 className="font-swim text-3xl leading-7 text-black/90">
+                                        {feature.title}
+                                    </h3>
+
+                                    <div className="mt-6 bg-[#f0f4ed] rounded-xl px-4 py-2">
+                                        <ul className="space-y-2">
+                                            {
+                                                feature.sub.map((item, j) => (
+                                                    <li key={j} className="flex gap-4 text-black/80">
+                                                        <Image
+                                                            src={item.img}
+                                                            alt=""
+                                                            className="w-7 h-7"
+                                                        />
+                                                        {item.name}
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
+                                    </div>
+                                    <p className="text-3xl text-black mt-5 font-swim">
+                                        ₹{" "}{feature.rate}{" "}
+                                        <span className="text-lg text-gray-500 font-swir">/person</span>
+                                    </p>
+                                    <p className="mt-3 line-clamp-2 flex-auto text-lg">
                                         {feature.para}
                                     </p>
-                                    <p className="mt-6">
+                                    <p className="mt-6 flex gap-4">
+                                        <Button text={`${feature.title} package`} />
+
                                         <a
                                             href={feature.href}
-                                            className="-my-2.5 inline-flex justify-center rounded-3xl bg-blue-600/90 px-6 py-1.5 text-base text-white"
+                                            className=" inline-flex justify-center rounded-3xl bg-primary px-6 py-1.5 text-base text-white"
                                         >
-                                            See details
+                                            Book now
                                         </a>
-                                        <a
+                                        {/* <a
                                             href="#"
                                             className="-my-2.5 ml-4 inline-flex justify-center rounded-3xl bg-white px-6 py-1.5 text-base text-black"
                                         >
                                             Add to cart
-                                        </a>
+                                        </a> */}
                                     </p>
                                 </dd>
                             </div>

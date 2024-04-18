@@ -30,7 +30,7 @@ const features = [
 
 const Hiw = () => {
     return (
-        <section className="relative z-20 bg-white py-24 font-swir sm:py-28">
+        <section className="relative isolate z-20 bg-white py-24 font-swir sm:py-28">
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
                 <div className="mx-auto flex md:flex-row flex-col justify-between">
                     <div className=" flex flex-col gap-8">
@@ -39,7 +39,7 @@ const Hiw = () => {
                         </p>
                         <a
                             href="#"
-                            className="inline-flex w-fit justify-center rounded-3xl bg-[#96d279] px-6 py-2 text-base text-black"
+                            className="inline-flex w-fit justify-center rounded-3xl bg-primary px-6 py-2 text-base text-white"
                         >
                             Explore equipments
                         </a>

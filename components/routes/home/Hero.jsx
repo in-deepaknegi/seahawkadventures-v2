@@ -17,7 +17,7 @@ const Hero = () => {
                     sizes="100vw"
                     className="inset-0 z-[-10] h-full w-full object-cover object-center"
                 />
-                <Image 
+                <Image
                     src={B1}
                     alt=""
                     className=" absolute bottom-0 h-20"
@@ -33,20 +33,14 @@ const Hero = () => {
                             </div>
                         </div>
                         <h1 className="max-w-2xl text-center text-5xl font-semibold text-white md:text-left md:text-7xl">
-                            Embark on{" "}
-                            <span className=" bg-gradient-to-l from-[#96d279] to-emerald-400 bg-clip-text text-transparent">
-                                journeys
+                            Explore:  <br />
+                            <span className=" bg-gradient-to-r from-blue-600/90 to-sky-400 bg-clip-text text-transparent">
+                                Seek Adventure
                             </span>{" "}
-                            not just{" "}
-                            <span className=" bg-gradient-to-l from-[#96d279] to-emerald-400 bg-clip-text text-transparent">
-                                destinations
-                            </span>{" "}
-                            with our trips.
+                             Everywhere!
                         </h1>
-                        <p className="mt-12 md:mt-6 max-w-3xl text-center text-xl text-gray-300 md:text-left md:text-2xl">
-                            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                            fugiat aliqua.
+                        <p className="mt-12 md:mt-6 max-w-3xl text-center text-xl text-gray-200 md:text-left md:text-2xl">
+                        Experience unforgettable hiking, rafting, and kayaking in Uttarakhand&apos;s stunning landscapes.
                         </p>
                         <div className="ml-auto mt-12 md:mt-6 flex font-swim">
                             <a
@@ -57,7 +51,7 @@ const Hero = () => {
                             </a>
                             <a
                                 href="#"
-                                className="-my-2.5 ml-4 inline-flex justify-center rounded-3xl bg-blue-500/90 px-6 py-1.5 text-base text-black"
+                                className="-my-2.5 ml-4 inline-flex justify-center rounded-3xl bg-primary px-6 py-1.5 text-base text-white"
                             >
                                 <span>
                                     Get treks <span aria-hidden="true">→</span>

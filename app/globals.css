@@ -12,7 +12,11 @@
   font-style: normal;
   src: url(/fonts/swi-reg.woff2) format("woff2");
 }
-
+@font-face {
+  font-family: "paris-reg";
+  font-style: normal;
+  src: url(/fonts/paris-reg.woff2) format("woff2");
+}
 @layer base {
   ::-webkit-scrollbar {
     width: 8px; /* width of the scrollbar */

@@ -1,66 +1,39 @@
+'use client'
 import React from "react";
 import Image from "next/image";
+import S1 from '@/public/images/svg/compass.svg'
+import S2 from '@/public/images/svg/boat.svg'
+import S3 from '@/public/images/svg/tent.svg'
+
+import { MoveRight } from "lucide-react";
 
 const features = [
     {
-        title: "Optimized athletic output",
-        para: "Our beverages fuel your body for peak performance, helping you reach new heights in your sport.",
+        title: "Rafting",
+        para: "Experience the thrill of the fast river with our expert guides, ensuring a safe and unforgettable adventure.",
         href: "#",
-        svg: (
-            <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                width="24"
-                height="24"
-                className="h-8 w-8 text-gray-700"
-            >
-                <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"></path>
-            </svg>
-        ),
+        svg: S1,
     },
     {
-        title: "Rapid revitalization",
-        para: "Recover swiftly after intense workouts or competitions, getting back in the game faster.",
+        title: "Kayaking",
+        para: "Join our experienced kayakers for an exciting trip down fast rivers, ensuring your safety and a great time.",
         href: "#",
-        svg: (
-            <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                width="24"
-                height="24"
-                className="h-8 w-8 text-gray-700"
-            >
-                <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"></path>
-                <path
-                    fillRule="evenodd"
-                    d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                ></path>
-            </svg>
-        ),
+        svg: S2,
     },
     {
-        title: "Superior hydration",
-        para: "Stay perfectly hydrated with our scientifically designed beverages for extended endurance.",
+        title: "Expedition",
+        para: "Join our experienced adventurers on a fun camping trip. Explore the outdoors, stay safe, and have a great time with our team.",
         href: "#",
-        svg: (
-            <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                width="24"
-                height="24"
-                className="h-8 w-8 text-gray-700"
-            >
-                <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zm4.211-10.724a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z"></path>
-            </svg>
-        ),
+        svg: S3,
     },
 ];
 
 const Feature = () => {
+
+
     return (
-        <section className="relative isolate overflow-hidden bg-[#f4f1ec] py-24 font-swim sm:py-16">
-            
+        <section className="relative isolate overflow-hidden bg-[#f5f5f5] py-24 font-swim sm:py-16">
+
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
                 <div className="relative mx-auto flex md:flex-row flex-col justify-between pb-6 mf:pb-16">
                     <div className="flex flex-col justify-between gap-8">
@@ -89,38 +62,50 @@ const Feature = () => {
                             </g>
                         </svg>
                         <p className="mt-2 text-3xl font-bold text-black sm:text-5xl">
-                            Sneak peeks inside
+                            Select your adventure
                         </p>
                     </div>
 
                     <p className="mt-6 md:mt-auto max-w-xl md:text-right font-swim text-2xl leading-8 text-gray-600">
-                        Explore the magic behind our unique elixirs: uncover the science and
-                        artistry in every sip
+                        Dive into the spirit of  adventures: discover the blend of fun and expertise in every expedition
                     </p>
                 </div>
 
                 <hr />
 
                 <div className="mx-auto max-w-2xl pt-6 md:pt-16 md:px-10 lg:max-w-none">
+
                     <dl className="grid max-w-xl grid-cols-1 gap-x-20 gap-y-16 lg:max-w-none lg:grid-cols-3">
+
                         {features.map((feature, i) => (
-                            <div key={i} className="flex flex-col">
-                                <dt className="flex  flex-col gap-3 text-xl text-gray-700">
-                                    {feature.svg}
+                            <a key={i}
+                                href="#"
+                                className="relative flex flex-col group overflow-hidden h-full" >
+                                <dt className="flex flex-row items-center gap-6 text-2xl text-black">
+                                    <Image
+                                        src={feature.svg}
+                                        alt=""
+                                        className="w-12"
+                                    />
                                     {feature.title}
                                 </dt>
                                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-500">
                                     <p className="flex-auto">{feature.para}</p>
                                 </dd>
-                            </div>
+                                <p className="mt-3 flex gap-3 group-hover:translate-x-1 -translate-x-28 transition-all duration-300 ease-linear">
+                                    <span className=" absolute inset-0 w-full"></span>
+                                    View more
+                                    <MoveRight className="w-4" />
+                                </p>
+                            </a>
                         ))}
                     </dl>
                 </div>
 
 
-                
+
             </div>
-        </section>
+        </section >
     );
 };
 

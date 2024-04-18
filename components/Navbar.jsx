@@ -1,6 +1,10 @@
 "use client"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import Bg from "@/public/misc/bg.jpg";
+import Logo from "@/public/images/logo-b.png";
+import { ChevronDown, Search, PhoneOutgoing, Mail, MoveRight } from "lucide-react";
 
 const links = [
     {
@@ -32,14 +36,42 @@ const Navbar = () => {
 
     return (
         <>
-            <header className="sticky top-0 isolate z-40 overflow-hidden bg-[#0000] py-4 md:py-3 font-swim opacity-100 backdrop-blur-sm">
-                <div className="mx-auto flex max-w-full items-center justify-between px-6 md:max-w-[94%] lg:px-8">
-                    <div className="flex">
-                        <Link href="/" className="-m-1.5 p-1.5 text-2xl text-black">
-                            Explorely
-                        </Link>
+            <nav className=" bg-[#f5f5f5] relative isolate z-30 font-swir">
+                <div className=" mx-auto max-w-[85%] py-1.5">
+                    <div className="mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-black flex flex-col md:flex-row items-center justify-between text-sm my-auto mt-1 gap-6">
+                            <div className="flex lg:flex-none">
+                                <a href="/" className="-m-1.5 p-1.5 text-2xl font-medium flex flex-wrap justify-center gap-4 items-center">
+                                    <Image
+                                        src={Logo}
+                                        priority="true"
+                                        alt="site-logo"
+                                        className="w-[10rem] md:w-[13rem]"
+                                    />
+                                    <span className="mt-auto text-lg md:text-4xl font-paris">It&apos;s time to paddle</span>
+                                </a>
+                            </div>
+                            <div className="hidden md:flex flex-col gap-3 text-base">
+                                <div className="flex items-center gap-2">
+                                    <PhoneOutgoing className="w-5 h-5 text-gray-800" />
+                                    <a href="tel:+91 97566 20538" className="font-medium">+91 97566 20538</a>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Mail className="w-5 h-5 text-gray-800" />
+                                    <a href="mailto:office@seahawkadventures.com" className="font-medium">
+                                        office@seahawkadventures.com
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <nav className="hidden rounded-3xl bg-[#ffffff3e] p-1.5 opacity-100 shadow-md backdrop-blur-sm lg:flex lg:gap-x-1">
+                </div>
+            </nav>
+
+            <header className="sticky top-0 isolate z-40 overflow-hidden bg-[#0000] py-4 md:py-3 font-swim opacity-100 backdrop-blur-sm shadow-sm">
+                <div className="mx-auto flex max-w-full items-center justify-between px-6 md:max-w-[85%] lg:px-8 transition-all duration-700 ease-in">
+                    
+                    <nav className={`hidden rounded-3xl bg-[#ffffff3e] p-1.5 opacity-100 shadow-md backdrop-blur-sm lg:flex lg:gap-x-1`}>
                         {links.map((link, i) => (
                             <Link
                                 key={i}
@@ -59,19 +91,19 @@ const Navbar = () => {
                     </Link> */}
                         <Link
                             href="#"
-                            className="inline-flex justify-center rounded-3xl bg-[#96d279] px-6 py-1.5 text-base text-black"
+                            className="inline-flex justify-center rounded-3xl bg-primary px-6 py-1.5 text-base text-white"
                         >
                             <span>
                                 Get treks <span aria-hidden="true">→</span>
                             </span>
                         </Link>
                     </div>
-                    <div className="flex lg:hidden">
+                    <div className="flex lg:hidden justify-end ml-auto">
 
                         <button
                             onClick={toggleMobileMenu}
                             type="button"
-                            className="-m-2.5 rounded-md p-4 text-gray-900"
+                            className="-m-2.5 rounded-md p-4 text-white"
                         >
                             <span className="sr-only">Open main menu</span>
                             <svg
@@ -118,7 +150,7 @@ const Navbar = () => {
                                 />
                             </svg>
                         </button>
-                        
+
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
