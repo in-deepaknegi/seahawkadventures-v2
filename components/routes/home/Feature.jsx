@@ -32,7 +32,7 @@ const Feature = () => {
 
 
     return (
-        <section className="relative isolate overflow-hidden bg-[#f5f5f5] py-24 font-swim sm:py-16">
+        <section className="relative isolate overflow-hidden bg-[#f5f5f5] -mt-1 py-24 font-swim sm:py-16">
 
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
                 <div className="relative mx-auto flex md:flex-row flex-col justify-between pb-6 mf:pb-16">
@@ -75,7 +75,7 @@ const Feature = () => {
 
                 <div className="mx-auto max-w-2xl pt-6 md:pt-16 md:px-10 lg:max-w-none">
 
-                    <dl className="grid max-w-xl grid-cols-1 gap-x-20 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                    <dl className="grid max-w-xl grid-cols-1 gap-x-20 gap-y-8 lg:max-w-none lg:grid-cols-3">
 
                         {features.map((feature, i) => (
                             <a key={i}

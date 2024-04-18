@@ -16,8 +16,8 @@ const features = [
         title: "12 Km Rafting",
         image: Hero1,
         rate: 620,
-        para: "Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.",
-        href: "/products/simple-queues",
+        para: "Come along on a thrilling 12 km rafting adventure, guiding through rapids and taking in stunning scenery.",
+        href: "#",
         sub: [
             {
                 name: "Marine Drive - Shivpuri",
@@ -34,8 +34,8 @@ const features = [
         title: "16 Km Rafting",
         image: Hero2,
         rate: 1020,
-        para: "Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.",
-        href: "/products/simple-queues",
+        para: "Join us on a thrilling 16 km rafting adventure, guiding through rapids and taking in stunning scenery.",
+        href: "#",
         sub: [
             {
                 name: "Shivpuri to NIM Beach",
@@ -52,8 +52,8 @@ const features = [
         title: "24 Km Rafting",
         image: Hero3,
         rate: 1520,
-        para: "Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.",
-        href: "/products/simple-queues",
+        para: "Embark on a thrilling 12 km rafting adventure, guiding through rapids and taking in stunning scenery.",
+        href: "#",
         sub: [
             {
                 name: "Marine drive to NIM Beach",
@@ -119,7 +119,7 @@ const Products = () => {
                             </svg>
                             Rafting
                         </div>
-                        <p className="mt-2 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600/90 to-sky-400 pb-2 sm:text-6xl">
+                        <p className="mt-2 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600/90 to-purple-500 pb-2 sm:text-6xl">
                             Rafting universe
                         </p>
                     </div>
@@ -174,7 +174,10 @@ const Products = () => {
                                     <p className="mt-3 line-clamp-2 flex-auto text-lg">
                                         {feature.para}
                                     </p>
-                                    <p className="mt-6 flex gap-4">
+                                    <a href={feature.href} className="mt-3 text-blue-600/90">
+                                        Read more ...
+                                    </a>
+                                    <div className="mt-3 flex gap-4">
                                         <Button text={`${feature.title} package`} />
 
                                         <a
@@ -183,13 +186,7 @@ const Products = () => {
                                         >
                                             Book now
                                         </a>
-                                        {/* <a
-                                            href="#"
-                                            className="-my-2.5 ml-4 inline-flex justify-center rounded-3xl bg-white px-6 py-1.5 text-base text-black"
-                                        >
-                                            Add to cart
-                                        </a> */}
-                                    </p>
+                                    </div>
                                 </dd>
                             </div>
                         ))}

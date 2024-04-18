@@ -7,7 +7,7 @@ import B1 from '@/public/b.png';
 const Hero = () => {
     return (
         <section className="relative isolate -mt-[6.5rem] overflow-hidden h-screen md:h-[95vh] bg-white font-swir">
-            <div className="relative isolate h-full w-full max-w-full">
+            <div className="relative h-full w-full max-w-full">
                 <Image
                     src={Hero2}
                     alt="hero-img"
@@ -20,7 +20,7 @@ const Hero = () => {
                 <Image
                     src={B1}
                     alt=""
-                    className=" absolute bottom-0 h-20"
+                    className=" absolute bottom-0 h-20 w-full object-cover"
                 />
 
                 <div className="absolute z-[-9] h-full w-full overflow-hidden bg-gradient-to-tr from-black  via-black/10 to-black/20"></div>
