@@ -24,7 +24,7 @@ const Timeline = () => {
         <section className="bg-white py-24 font-swir lg:py-32">
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
                 <div className="max-w-2xl text-left">
-                    <div className="flex w-fit gap-4 rounded-3xl bg-[#f4f1ec] px-4 py-2 text-base text-gray-600">
+                    <div className="flex w-fit gap-4 rounded-3xl bg-primary/10 px-4 py-2 text-base text-gray-700">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -65,14 +65,14 @@ const Timeline = () => {
                             >
                                 <svg
                                     viewBox="0 0 4 4"
-                                    className="mr-4 h-3 w-3 flex-none text-[#96d279]"
+                                    className="mr-4 h-3 w-3 flex-none text-primary"
                                     aria-hidden="true"
                                 >
                                     <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
                                 </svg>
-                                <div className="static h-[1.5px] w-full bg-[#96d279] lg:w-auto lg:flex-auto "></div>
+                                <div className="static h-[1.5px] w-full bg-primary lg:w-auto lg:flex-auto "></div>
                             </time>
-                            <div className="mt-6 flex flex-col h-full rounded-2xl bg-[#f0f4ed] p-6">
+                            <div className="mt-6 flex flex-col h-full rounded-2xl bg-primary/5 p-6">
                                 <p className="font-swim text-2xl text-gray-800">
                                     {item.title}
                                 </p>

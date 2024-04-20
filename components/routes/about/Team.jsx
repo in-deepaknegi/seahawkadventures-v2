@@ -2,26 +2,32 @@
 import React from "react";
 import Image from "next/image";
 
-import Profile1 from "@/public/profile3.jpg";
-import Profile2 from "@/public/profile5.jpg";
-import Profile3 from "@/public/profile6.jpg";
+import Profile1 from "@/public/images/team/t00.jpg";
+import Profile2 from "@/public/images/team/t01.jpg";
+import Profile3 from "@/public/images/team/t02.jpg";
 
 const teams = [
     {
         image: Profile1,
-        author: "Judith Black",
-        username: "@judithblack",
+        author: "Rishi Rana (Founder)",
+        description: "Professional Kayaker & Raft Guide",
+        username: "@rishi_aquaholic",
+        href: "https://www.instagram.com/rishi_aquaholic/",
     },
     {
         image: Profile2,
-        author: "Judith Black",
-        username: "@judithblack",
+        author: "Rakesh Rana",
+        description: "Professional Raft Guide",
+        username: "@rakesh_rana",
     },
     {
         image: Profile3,
-        author: "Judith Black",
-        username: "@judithblack",
+        author: "Nitesh Negi",
+        description: "Professional Raft Guide",
+        username: "@nitesh_negi",
     },
+
+    // add more detail on hover like phone, email etc
 ];
 
 const Team = () => {
@@ -40,25 +46,30 @@ const Team = () => {
                 </div>
             </div>
 
-            <div className="mx-auto mt-6 max-w-full px-6 md:max-w-[60%] lg:px-8">
-                <div className="relative mx-auto grid max-w-3xl grid-cols-3 gap-16 md:px-6">
-                    {teams.map((feedback, i) => (
+            <div className="mx-auto mt-6 px-6 lg:px-8">
+                <div className="relative mx-auto grid max-w-[40%] md:max-w-[59%] md:grid-cols-3 gap-16 md:px-6">
+                    {teams.map((team, i) => (
                         <div
                             key={i}
-                            className="group relative mt-8 flex cursor-pointer flex-col items-center gap-4 transition-all duration-300 ease-in hover:scale-[1.165]"
+                            className="group relative mt-8 flex cursor-pointer flex-col items-center gap-4 transition-all duration-300 ease-in hover:scale-[1.082]"
                         >
                             <div className="">
                                 <Image
-                                    src={feedback.image}
+                                    src={team.image}
                                     alt="profile 1"
                                     className="aspect-[1/1] rounded-full object-cover"
                                 />
                             </div>
-                            <div className="my-auto font-swim">
-                                <div className="text-lg">Judith Black</div>
-                                <a href="#" className="text-sm tracking-wide text-blue-600">
+                            <div className="my-auto font-swim text-center">
+                                <h3 className="text-2xl">
+                                    {team.author}
+                                </h3>
+                                <p className="text-base text-gray-500">
+                                    {team.description}
+                                </p>
+                                <a href={team.href} target="_black" className="text-base tracking-wide text-primary">
                                     <span className=" absolute inset-0"></span>
-                                    @judithblack
+                                    {team.username}
                                 </a>
                             </div>
                         </div>

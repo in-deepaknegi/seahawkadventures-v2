@@ -2,12 +2,12 @@
 import React from "react";
 
 const fea = [
-    "Premium Ingredients",
-    "Dedication to Quality",
-    "Competitive Pricing",
-    "Transparency",
-    "Variety and Innovation",
-    "Customer Satisfaction",
+    "Customizable Packages",
+    "Professional Guides",
+    "Safety Measures",
+    "Scenic Routes ",
+    "Photo & Video Services",
+    "Post-Trip Amenities",
 ];
 
 const Hero = () => {
@@ -51,7 +51,7 @@ const Hero = () => {
                                         <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm5.676,8.237-6,5.5a1,1,0,0,1-1.383-.03l-3-3a1,1,0,1,1,1.414-1.414l2.323,2.323,5.294-4.853a1,1,0,1,1,1.352,1.474Z"></path>
                                     </g>
                                 </svg>
-                                <span className=" font-swim text-gray-600">{item}</span>
+                                <span className=" font-swim text-gray-600 text-center">{item}</span>
                             </li>
                         ))}
                     </ul>
