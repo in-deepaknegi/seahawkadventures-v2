@@ -7,7 +7,7 @@ import Button from '@/components/ui/Watsapp';
 const Products = () => {
     return (
         <section className="relative z-20 bg-[#f4f1ec] overflow-hidden py-24 font-swir sm:py-28">
-            <div className="mx-auto max-w-full px-6 md:max-w-[90%] lg:px-8">
+            <div className="mx-auto max-w-full px-6 md:max-w-[87%] lg:px-8">
                 <div className=" absolute left-0 top-20 z-0">
                     <svg
                         viewBox="0 0 24 24"
