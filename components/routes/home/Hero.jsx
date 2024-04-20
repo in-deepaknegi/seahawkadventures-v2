@@ -6,7 +6,7 @@ import B1 from '@/public/b.png';
 
 const Hero = () => {
     return (
-        <section className="relative isolate -mt-[6.5rem] overflow-hidden h-screen md:h-[95vh] bg-white font-swir">
+        <section className="relative isolate -mt-[6.5rem] z-20 overflow-hidden h-screen md:h-[95vh] bg-white font-swir">
             <div className="relative h-full w-full max-w-full">
                 <Image
                     src={Hero2}

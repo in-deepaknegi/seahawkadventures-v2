@@ -12,7 +12,7 @@ const fea = [
 
 const Hero = () => {
     return (
-        <section className="relative isolate z-20 -mt-[6.5rem] bg-white py-24 font-swir sm:py-28">
+        <section className="relative isolate z-20 -mt-[6.5rem] bg-[#f5f5f5]  py-24 font-swir sm:py-28">
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
                 <div className="relative mx-auto mt-16 flex max-w-6xl flex-col items-center justify-between gap-6">
 
@@ -33,7 +33,7 @@ const Hero = () => {
                         {fea.map((item, i) => (
                             <li
                                 key={i}
-                                className="flex flex-col items-center gap-3 rounded-xl bg-[#f4f1ec] px-6 py-5"
+                                className="flex flex-col items-center gap-3 rounded-xl bg-white px-6 py-5"
                             >
                                 <svg
                                     fill="#000000"
