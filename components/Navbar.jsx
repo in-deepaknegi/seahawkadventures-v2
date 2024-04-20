@@ -12,17 +12,12 @@ const links = [
         url: "/",
     },
     {
-        title: "Products",
-        url: "/products",
-    },
-
-    {
         title: "About",
         url: "/about",
     },
     {
         title: "Contact",
-        url: "/contact",
+        url: "/contacts",
     },
     // add more data here ...
 ];
