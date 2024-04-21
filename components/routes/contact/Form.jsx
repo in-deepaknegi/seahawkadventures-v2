@@ -3,7 +3,7 @@ import React from "react";
 const Form = () => {
     return (
         <section id="contact-form" className="relative isolate overflow-hidden font-swir">
-            <div className="mx-auto grid max-w-[85%] grid-cols-1 pt-24 pb-10 lg:grid-cols-2">
+            <div className="mx-auto grid max-w-full md:max-w-[85%] grid-cols-1 pt-24 pb-10 lg:grid-cols-2">
                 <div className="relative px-6 lg:px-8">
                     <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
                         <div className="mx-auto flex flex-col justify-between gap-6">
@@ -39,7 +39,7 @@ const Form = () => {
                     </div>
                 </div>
 
-                <form className="form mx-auto my-auto max-w-xl space-y-8 px-4">
+                <form className="form mx-auto my-auto max-w-xl mt-8 lg:mt-0 space-y-8 px-6">
                     <div className="relative">
                         <svg
                             className="absolute bottom-2 h-7 w-7"

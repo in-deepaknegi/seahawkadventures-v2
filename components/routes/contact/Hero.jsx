@@ -1,38 +1,11 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import { MapPinned, PhoneOutgoing, Mail, PenLine } from "lucide-react";
+
 import S1 from '@/public/svg/watch.svg'
 import S2 from '@/public/svg/address.svg'
 import S3 from '@/public/svg/contact.svg'
-import Image from "next/image";
-
-const info = [
-    {
-        title: "Open hours",
-        image: S1,
-        sub: [
-            "Mon-Fri: 9 AM - 6 PM",
-            "Saturday: 9 AM - 4 PM",
-            "Sunday: Closed"
-        ]
-    },
-    {
-        title: "Address",
-        image: S2,
-        sub: [
-            "176 W Street, New York,",
-            "NY 10014"
-        ]
-    },
-    {
-        title: "Get in touch",
-        image: S3,
-        sub: [
-            "Telephone: +1(800)123-4566",
-            "Email: info@seahawkadventures.com"
-        ]
-    },
-]
 
 const Hero = () => {
     return (
@@ -51,9 +24,9 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="mx-auto mt-16 max-w-full">
-                <div className="relative mx-auto flex max-w-5xl">
-                    <ul className="grid w-full grid-cols-3 gap-2">
+            <div className="mx-auto mt-16 max-w-full lg:px-0 px-6">
+                <div className="relative mx-auto flex max-w-full lg:max-w-[70%]">
+                    <ul className="grid w-full md:grid-cols-3 gap-y-6 gap-x-2">
                         <li className="flex flex-col h-full items-center gap-3">
                             <div className="flex flex-col items-center">
                                 <Image
