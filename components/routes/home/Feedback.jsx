@@ -41,7 +41,7 @@ const Feedback = () => {
                     viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="absolute -left-20 md:left-8 md:top-36 h-[20rem] w-[20rem]"
+                    className="absolute -left-20 h-[20rem] w-[20rem] md:left-8 md:top-36"
                 >
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
@@ -61,7 +61,7 @@ const Feedback = () => {
                     </g>
                 </svg>
             </div>
-            <div className="relative mx-auto mt-24 flex flex-col md:flex-row max-w-full justify-between px-6 md:max-w-[85%] lg:px-8">
+            <div className="relative mx-auto mt-24 flex max-w-full flex-col justify-between px-6 md:max-w-[85%] md:flex-row lg:px-8">
                 <div className="flex flex-col justify-between gap-8">
                     <div className="flex w-fit gap-4 rounded-3xl bg-white px-4 py-2 text-base text-gray-400">
                         <svg
@@ -88,7 +88,7 @@ const Feedback = () => {
                     </p>
                 </div>
 
-                <p className="mt-6 md:mt-auto max-w-xl md:text-right font-swim text-2xl leading-8 text-gray-600">
+                <p className="mt-6 max-w-xl font-swim text-2xl leading-8 text-gray-600 md:mt-auto md:text-right">
                     Join the conversation and explore the positive experiences shared by
                     our satisfied customers
                 </p>

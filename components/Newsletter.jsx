@@ -2,11 +2,10 @@ import React from "react";
 
 const Newsletter = () => {
     return (
-        <section className="relative bg-black/95 font-swim py-20 lg:py-24">
+        <section className="relative bg-black/95 py-20 font-swim lg:py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="relative isolate overflow-hidden">
-                    <div className="text-center mx-auto max-w-3xl">
-
+                    <div className="mx-auto max-w-3xl text-center">
                         <h2 className="mt-6 text-4xl tracking-tight text-primary sm:text-5xl">
                             Join with us.
                         </h2>
@@ -14,9 +13,9 @@ const Newsletter = () => {
                             Subscirbe to our newsletter.
                         </h2>
                         <p className="mt-6 font-swim text-2xl leading-8 text-gray-300">
-                            Elevate your athletic journey - experience unparalleled performance and taste excellence!
+                            Elevate your athletic journey - experience unparalleled
+                            performance and taste excellence!
                         </p>
-
                     </div>
 
                     <form
@@ -33,7 +32,7 @@ const Newsletter = () => {
                                 type="email"
                                 autoComplete="email"
                                 required
-                                className="min-w-0 flex-auto rounded-full outline-none bg-white px-3.5 py-2 text-black sm:text-base sm:leading-6"
+                                className="min-w-0 flex-auto rounded-full bg-white px-3.5 py-2 text-black outline-none sm:text-base sm:leading-6"
                                 placeholder="Enter your email"
                             />
                             <button

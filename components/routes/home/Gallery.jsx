@@ -8,7 +8,7 @@ const Gallery = () => {
     return (
         <section id="gallery" className="relative isolate py-8 font-swir lg:py-24">
             <div className="mx-auto max-w-full px-8 md:max-w-[85%]">
-                <div className="relative flex flex-col md:flex-row flex-1 justify-start gap-4 overflow-visible p-0">
+                <div className="relative flex flex-1 flex-col justify-start gap-4 overflow-visible p-0 md:flex-row">
                     <div className="flex flex-col justify-between">
                         <svg
                             viewBox="0 0 24 24"
@@ -36,7 +36,7 @@ const Gallery = () => {
                         <h2 className="mt-6 flex-1 text-4xl font-bold tracking-tight text-black sm:text-5xl">
                             Image Gallery
                         </h2>
-                        <p className="md:mt-0 mt-6 md:w-[70%] text-lg text-gray-500 md:text-2xl">
+                        <p className="mt-6 text-lg text-gray-500 md:mt-0 md:w-[70%] md:text-2xl">
                             Journey through captivating visuals of our sports beverages and
                             enthusiastic athletes
                         </p>

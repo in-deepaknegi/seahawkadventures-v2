@@ -2,11 +2,11 @@ import React from "react";
 import Image from "next/image";
 
 import rafting from "@/data/rafting";
-import Button from '@/components/ui/Watsapp';
+import Button from "@/components/ui/Watsapp";
 
 const Products = () => {
     return (
-        <section className="relative z-20 bg-[#f4f1ec] overflow-hidden py-24 font-swir sm:py-28">
+        <section className="relative z-20 overflow-hidden bg-[#f4f1ec] py-24 font-swir sm:py-28">
             <div className="mx-auto max-w-full px-6 md:max-w-[87%] lg:px-8">
                 <div className=" absolute left-0 top-20 z-0">
                     <svg
@@ -34,7 +34,7 @@ const Products = () => {
                     </svg>
                 </div>
 
-                <div className="relative mx-auto flex flex-col md:flex-row max-w-6xl justify-between">
+                <div className="relative mx-auto flex max-w-6xl flex-col justify-between md:flex-row">
                     <div className="flex flex-col justify-between gap-8">
                         <div className="flex w-fit gap-4 rounded-3xl bg-white px-4 py-2 text-base text-gray-500">
                             <svg
@@ -56,16 +56,16 @@ const Products = () => {
                             </svg>
                             Rafting
                         </div>
-                        <p className="mt-2 text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600/90 to-purple-500 pb-2 sm:text-6xl">
+                        <p className="mt-2 bg-gradient-to-r from-blue-600/90 to-purple-500 bg-clip-text pb-2 text-3xl font-bold text-transparent sm:text-6xl">
                             Rafting universe
                         </p>
                     </div>
 
-                    <p className="mt-6 md:mt-auto max-w-2xl md:text-right font-swim text-2xl leading-8 text-gray-600">
-                        Explore the excitement of the rapid river alongside our skilled guides, guaranteeing a secure and memorable journey.
+                    <p className="mt-6 max-w-2xl font-swim text-2xl leading-8 text-gray-600 md:mt-auto md:text-right">
+                        Explore the excitement of the rapid river alongside our skilled
+                        guides, guaranteeing a secure and memorable journey.
                     </p>
                 </div>
-
 
                 <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
                     <dl className="mx-auto grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
@@ -83,30 +83,26 @@ const Products = () => {
                                         />
                                     </a>
                                 </dt>
-                                <dd className="mt-2 bg-white p-5 rounded-3xl flex flex-auto flex-col text-base leading-7 text-gray-500">
+                                <dd className="mt-2 flex flex-auto flex-col rounded-3xl bg-white p-5 text-base leading-7 text-gray-500">
                                     <h3 className="font-swim text-3xl leading-7 text-black/90">
                                         {item.title}
                                     </h3>
 
-                                    <div className="mt-6 bg-[#f0f4ed] rounded-xl px-4 py-2">
+                                    <div className="mt-6 rounded-xl bg-[#f0f4ed] px-4 py-2">
                                         <ul className="space-y-2">
-                                            {
-                                                item.sub.map((item, j) => (
-                                                    <li key={j} className="flex gap-4 text-black/80">
-                                                        <Image
-                                                            src={item.img}
-                                                            alt=""
-                                                            className="w-7 h-7"
-                                                        />
-                                                        {item.name}
-                                                    </li>
-                                                ))
-                                            }
+                                            {item.sub.map((item, j) => (
+                                                <li key={j} className="flex gap-4 text-black/80">
+                                                    <Image src={item.img} alt="" className="h-7 w-7" />
+                                                    {item.name}
+                                                </li>
+                                            ))}
                                         </ul>
                                     </div>
-                                    <p className="text-3xl text-black mt-5 font-swim">
-                                        ₹{" "}{item.rate}{" "}
-                                        <span className="text-lg text-gray-500 font-swir">/person</span>
+                                    <p className="mt-5 font-swim text-3xl text-black">
+                                        ₹ {item.rate}{" "}
+                                        <span className="font-swir text-lg text-gray-500">
+                                            /person
+                                        </span>
                                     </p>
                                     <p className="mt-3 line-clamp-2 flex-auto text-lg">
                                         {item.description}

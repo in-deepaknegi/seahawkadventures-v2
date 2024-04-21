@@ -1,9 +1,9 @@
-'use client'
+"use client";
 import React from "react";
 import Image from "next/image";
-import S1 from '@/public/images/svg/compass.svg'
-import S2 from '@/public/images/svg/boat.svg'
-import S3 from '@/public/images/svg/tent.svg'
+import S1 from "@/public/images/svg/compass.svg";
+import S2 from "@/public/images/svg/boat.svg";
+import S3 from "@/public/images/svg/tent.svg";
 
 import { MoveRight } from "lucide-react";
 
@@ -29,13 +29,10 @@ const features = [
 ];
 
 const Feature = () => {
-
-
     return (
-        <section className="relative isolate overflow-hidden bg-[#f5f5f5] -mt-1 py-24 font-swim sm:py-16">
-
+        <section className="relative isolate -mt-1 overflow-hidden bg-[#f5f5f5] py-24 font-swim sm:py-16">
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
-                <div className="relative mx-auto flex md:flex-row flex-col justify-between pb-6 mf:pb-16">
+                <div className="mf:pb-16 relative mx-auto flex flex-col justify-between pb-6 md:flex-row">
                     <div className="flex flex-col justify-between gap-8">
                         <svg
                             viewBox="0 0 24 24"
@@ -66,33 +63,30 @@ const Feature = () => {
                         </p>
                     </div>
 
-                    <p className="mt-6 md:mt-auto max-w-xl md:text-right font-swim text-2xl leading-8 text-gray-600">
-                        Dive into the spirit of  adventures: discover the blend of fun and expertise in every expedition
+                    <p className="mt-6 max-w-xl font-swim text-2xl leading-8 text-gray-600 md:mt-auto md:text-right">
+                        Dive into the spirit of adventures: discover the blend of fun and
+                        expertise in every expedition
                     </p>
                 </div>
 
                 <hr />
 
-                <div className="mx-auto max-w-2xl pt-6 md:pt-16 md:px-10 lg:max-w-none">
-
+                <div className="mx-auto max-w-2xl pt-6 md:px-10 md:pt-16 lg:max-w-none">
                     <dl className="grid max-w-xl grid-cols-1 gap-x-20 gap-y-8 lg:max-w-none lg:grid-cols-3">
-
                         {features.map((feature, i) => (
-                            <a key={i}
+                            <a
+                                key={i}
                                 href="#"
-                                className="relative flex flex-col group overflow-hidden h-full" >
+                                className="group relative flex h-full flex-col overflow-hidden"
+                            >
                                 <dt className="flex flex-row items-center gap-6 text-2xl text-black">
-                                    <Image
-                                        src={feature.svg}
-                                        alt=""
-                                        className="w-12"
-                                    />
+                                    <Image src={feature.svg} alt="" className="w-12" />
                                     {feature.title}
                                 </dt>
                                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-500">
                                     <p className="flex-auto">{feature.para}</p>
                                 </dd>
-                                <p className="mt-3 flex gap-3 group-hover:translate-x-1 -translate-x-28 transition-all duration-300 ease-linear">
+                                <p className="mt-3 flex -translate-x-28 gap-3 transition-all duration-300 ease-linear group-hover:translate-x-1">
                                     <span className=" absolute inset-0 w-full"></span>
                                     View more
                                     <MoveRight className="w-4" />
@@ -101,11 +95,8 @@ const Feature = () => {
                         ))}
                     </dl>
                 </div>
-
-
-
             </div>
-        </section >
+        </section>
     );
 };
 
