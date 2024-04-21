@@ -15,20 +15,20 @@ const Hero = () => {
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
                 <div className="relative mx-auto mt-16 flex max-w-6xl flex-col items-center justify-between gap-6">
 
-                    <p className="mt-2 text-3xl font-bold text-black sm:text-6xl">
+                    <p className="mt-2 text-4xl font-bold text-black sm:text-6xl">
                         About us
                     </p>
 
                     <p className="mt-auto max-w-xl text-center font-swim text-2xl leading-8 text-gray-600">
                         Uncover what sets us apart and makes us your ideal choice for
-                        quality sports beverages
+                        quality and thrilling adventure sports.
                     </p>
                 </div>
             </div>
 
             <div className="mx-auto mt-10 max-w-full px-6 md:max-w-[85%] lg:px-8">
                 <div className="relative mx-auto flex max-w-3xl flex-col items-center justify-between gap-10 md:px-6">
-                    <ul className="grid w-full grid-cols-3 gap-3">
+                    <ul className="grid w-full grid-cols-2 md:grid-cols-3 gap-3">
                         {fea.map((item, i) => (
                             <li
                                 key={i}

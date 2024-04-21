@@ -47,17 +47,17 @@ const Team = () => {
             </div>
 
             <div className="mx-auto mt-6 px-6 lg:px-8">
-                <div className="relative mx-auto grid max-w-[40%] md:max-w-[59%] md:grid-cols-3 gap-16 md:px-6">
+                <div className="relative mx-auto grid max-w-full md:max-w-[59%] md:grid-cols-3 gap-8 md:gap-16 md:px-6">
                     {teams.map((team, i) => (
                         <div
                             key={i}
-                            className="group relative mt-8 flex cursor-pointer flex-col items-center gap-4 transition-all duration-300 ease-in hover:scale-[1.082]"
+                            className="group relative mt-8 flex cursor-pointer md:flex-col items-center gap-4 transition-all duration-300 ease-in hover:scale-[1.082]"
                         >
                             <div className="">
                                 <Image
                                     src={team.image}
                                     alt="profile 1"
-                                    className="aspect-[1/1] rounded-full object-cover"
+                                    className="aspect-[1/1] h-40 w-40 md:h-full md:w-full rounded-full object-cover"
                                 />
                             </div>
                             <div className="my-auto font-swim text-center">

@@ -67,7 +67,7 @@ const Products = () => {
                 </div>
 
 
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
+                <div className="mx-auto mt-8 max-w-2xl sm:mt-20 lg:mt-12 lg:max-w-none">
                     <dl className="mx-auto grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
                         {rafting.map((item, i) => (
                             <div key={i} className="flex flex-col">

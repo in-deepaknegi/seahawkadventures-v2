@@ -162,7 +162,7 @@ const Form = () => {
 
                     <button
                         type="submit"
-                        className="rounded-full bg-primary px-5 py-3 text-center text-base font-medium text-black sm:w-fit"
+                        className="rounded-full bg-primary px-5 py-3 text-center text-base font-medium text-white sm:w-fit"
                     >
                         Send message
                     </button>

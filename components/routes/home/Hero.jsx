@@ -42,7 +42,7 @@ const Hero = () => {
                         <p className="mt-12 md:mt-6 max-w-3xl text-center text-xl text-gray-200 md:text-left md:text-2xl">
                         Experience unforgettable hiking, rafting, and kayaking in Uttarakhand&apos;s stunning landscapes.
                         </p>
-                        <div className="ml-auto mt-12 md:mt-6 flex font-swim">
+                        <div className="md:ml-auto mt-12 md:mt-6 flex items-center md:justify-start justify-center font-swim">
                             <a
                                 href="#"
                                 className="-my-2.5 inline-flex justify-center rounded-3xl bg-white px-6 py-1.5 text-base text-black"

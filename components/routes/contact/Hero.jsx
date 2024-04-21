@@ -13,7 +13,7 @@ const Hero = () => {
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
                 <div className="relative mx-auto mt-16 flex max-w-6xl flex-col items-center justify-between gap-6">
 
-                    <p className="mt-2 text-3xl font-bold text-black sm:text-6xl">
+                    <p className="mt-2 text-4xl font-bold text-black sm:text-6xl">
                         Contact us
                     </p>
 
