@@ -26,8 +26,6 @@ const teams = [
         description: "Professional Raft Guide",
         username: "@nitesh_negi",
     },
-
-    // add more detail on hover like phone, email etc
 ];
 
 const Team = () => {
@@ -47,27 +45,27 @@ const Team = () => {
             </div>
 
             <div className="mx-auto mt-6 px-6 lg:px-8">
-                <div className="relative mx-auto grid max-w-full md:max-w-[59%] md:grid-cols-3 gap-8 md:gap-16 md:px-6">
+                <div className="relative mx-auto grid max-w-full gap-8 md:max-w-[59%] md:grid-cols-3 md:gap-16 md:px-6">
                     {teams.map((team, i) => (
                         <div
                             key={i}
-                            className="group relative mt-8 flex cursor-pointer md:flex-col items-center gap-4 transition-all duration-300 ease-in hover:scale-[1.082]"
+                            className="group relative mt-8 flex cursor-pointer items-center gap-4 transition-all duration-300 ease-in hover:scale-[1.082] md:flex-col"
                         >
                             <div className="">
                                 <Image
                                     src={team.image}
                                     alt="profile 1"
-                                    className="aspect-[1/1] h-40 w-40 md:h-full md:w-full rounded-full object-cover"
+                                    className="aspect-[1/1] h-40 w-40 rounded-full object-cover md:h-full md:w-full"
                                 />
                             </div>
-                            <div className="my-auto font-swim text-center">
-                                <h3 className="text-2xl">
-                                    {team.author}
-                                </h3>
-                                <p className="text-base text-gray-500">
-                                    {team.description}
-                                </p>
-                                <a href={team.href} target="_black" className="text-base tracking-wide text-primary">
+                            <div className="my-auto text-center font-swim">
+                                <h3 className="text-2xl">{team.author}</h3>
+                                <p className="text-base text-gray-500">{team.description}</p>
+                                <a
+                                    href={team.href}
+                                    target="_black"
+                                    className="text-base tracking-wide text-primary"
+                                >
                                     <span className=" absolute inset-0"></span>
                                     {team.username}
                                 </a>

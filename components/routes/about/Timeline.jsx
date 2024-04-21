@@ -16,7 +16,6 @@ const timelines = [
         title: "Provident quia",
         para: "Nihil aut nam. Dignissimos a pariatur et quos omnis. Aspernatur asperiores et dolorem dolorem optio voluptate repudiandae.",
     },
-    // add more data here
 ];
 
 const Timeline = () => {
@@ -55,7 +54,7 @@ const Timeline = () => {
 
                 <div className="relative mx-auto mt-8 grid grid-cols-1 gap-8 lg:mx-0 lg:grid-cols-3">
                     {timelines.map((item, i) => (
-                        <div key={i} className="flex flex-col h-full">
+                        <div key={i} className="flex h-full flex-col">
                             <span className="w-16 text-sm text-gray-500 lg:w-auto">
                                 {item.step}
                             </span>
@@ -72,10 +71,8 @@ const Timeline = () => {
                                 </svg>
                                 <div className="static h-[1.5px] w-full bg-primary lg:w-auto lg:flex-auto "></div>
                             </time>
-                            <div className="mt-6 flex flex-col h-full rounded-2xl bg-primary/5 p-6">
-                                <p className="font-swim text-2xl text-gray-800">
-                                    {item.title}
-                                </p>
+                            <div className="mt-6 flex h-full flex-col rounded-2xl bg-primary/5 p-6">
+                                <p className="font-swim text-2xl text-gray-800">{item.title}</p>
                                 <p className="mt-2 text-lg leading-6 text-gray-600">
                                     {item.para}
                                 </p>
