@@ -38,6 +38,15 @@
   .paris {
     font-family: pari;
   }
+  .form label {
+    @apply mb-2 block text-sm font-medium text-gray-900;
+  }
+  .form input,
+  textarea {
+    @apply duration-200 w-full border-b bg-white px-2 py-2 outline-none transition-all ease-in placeholder:text-base placeholder:font-medium placeholder:text-gray-500 focus:placeholder:text-primary focus:border-primary
+  }
+
+
   .blog h2 {
     @apply text-3xl font-semibold text-black
   }
