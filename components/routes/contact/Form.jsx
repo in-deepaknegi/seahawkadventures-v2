@@ -10,7 +10,7 @@ const Form = () => {
                 <div className="relative px-6 lg:px-8">
                     <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
                         <div className="mx-auto flex flex-col justify-between gap-6">
-                            <div className="flex w-fit gap-4 rounded-3xl bg-[#f0f4ed] px-4 py-2 text-base text-gray-600">
+                            <div className="flex w-fit gap-4 rounded-3xl bg-primary/10 px-4 py-2 text-base text-gray-600">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"

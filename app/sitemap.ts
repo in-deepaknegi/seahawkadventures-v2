@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import rafting from "@/data/rafting";
+import kayak from "@/data/kayak";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
@@ -11,13 +12,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const urls = [
         `${BASE_URL}/rafting`,
         `${BASE_URL}/kayak`,
-        `${BASE_URL}/about-us`,
-        `${BASE_URL}/contact-us`,
+        `${BASE_URL}/about`,
+        `${BASE_URL}/contacts`,
         `${BASE_URL}/gallery`,
     ]
 
     const allUrls: MetadataRoute.Sitemap = urls.map((url) => ({
         url,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+    }));
+
+    const rUrls: MetadataRoute.Sitemap = rafting.map(({ slug }) => ({
+        url: `${BASE_URL}/rafting/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+    }));
+
+    const kUrls: MetadataRoute.Sitemap = kayak.map(({ slug }) => ({
+        url: `${BASE_URL}/kayak/${slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -31,5 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 1,
         },
         ...allUrls,
+        ...rUrls,
+        ...kUrls,
     ]
 }

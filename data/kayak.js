@@ -36,7 +36,7 @@ const kayak = [
         ]
     },
     {
-        slug: 'intermediate-course',
+        slug: 'intermediate-kayak-course',
         title: "Intermediate Kayak Course",
         imageUrl: "url('/images/kayak/k05.jpg')",
         image: K2,

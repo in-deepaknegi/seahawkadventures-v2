@@ -12,7 +12,7 @@ const Map = () => {
                 width="600"
                 height="450"
                 allowFullScreen=""
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
         </section>

@@ -1,31 +1,28 @@
-
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
-import Hero from '@/components/routes/home/Hero';
-import Rafting from '@/components/routes/home/Rafting';
-import Kayak from '@/components/routes/home/Kayak';
-import Gallery from '@/components/routes/home/Gallery';
-import Feature from '@/components/routes/home/Feature';
-import Feedback from '@/components/routes/home/Feedback';
-
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Hero from "@/components/routes/home/Hero";
+import Rafting from "@/components/routes/home/Rafting";
+import Kayak from "@/components/routes/home/Kayak";
+import Gallery from "@/components/routes/home/Gallery";
+import Feature from "@/components/routes/home/Feature";
+import Feedback from "@/components/routes/home/Feedback";
+import Patners from '@/components/Patners';
 const { SITE_NAME } = process.env;
 
 export default function Home() {
-
     const siteJsonLd = {
-        '@context': 'https://schema.org',
-        '@type': 'Website',
+        "@context": "https://schema.org",
+        "@type": "Website",
         name: SITE_NAME,
         url: "https://www.seahawkadventures.com/",
     };
-
 
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(siteJsonLd)
+                    __html: JSON.stringify(siteJsonLd),
                 }}
             />
 
@@ -42,6 +39,7 @@ export default function Home() {
                 <Kayak />
                 <Feedback />
                 <Gallery />
+                <Patners />
             </main>
             <Footer />
         </>

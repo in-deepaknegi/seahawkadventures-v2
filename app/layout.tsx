@@ -17,8 +17,7 @@ export const metadata: Metadata = {
     default: SITE_NAME!,
     template: `%s | ${SITE_NAME}`
   },
-  description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
-  applicationName: 'Sea Hawk Adventures',
+
 
   openGraph: {
     title: "Sea Hawk Adventuers",
