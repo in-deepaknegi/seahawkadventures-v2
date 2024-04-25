@@ -22,20 +22,26 @@ const rafting = [
         href: "/12-km-rafting",
 
         description: "Come along on a thrilling 12 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-        
-        gallery: [
-            {
-                img: R1,
-            },
-            {
-                img: R2,
-            },
-            {
-                img: R3,
-            },
+
+        para: "12km of river rafting stretches from Marine Drive to Shivpuri residing Grade 3 rapids, which will give an amazing adrenaline rush. The rapids that you will experience are as follows: ",
+        rafts: [
+            "Good morning, rapid",
+            "Black money",
+            "Three blind mice",
+            "Crossfire",
+            "Butterfly",
+            "Body surfing",
+            "Welcome to Shivpuri Rapid.",
         ],
+        misc: [
+            " Any kind of alcohol, knife, mouthfresher, sharp object, cigarettes, or lighters are not allowed.",
+            " Photography and videography from personal devices are not allowed; the guide will take your photos and videos, which are not included in the rafting package.",
+            " Your mobile phones will be in a dry bag carried by the guide.",
+            " Guests are requested to report at least half an hour before the time slot allotted to them.",
+        ],
+
         features: [
-            {   
+            {
                 svg: F1,
                 title: "Location",
                 description: "Marine Drive - Shivpuri",
@@ -65,7 +71,33 @@ const rafting = [
                 title: "Inclusions",
                 description: "Life jackets, guides, and transportation.",
             },
-        ]
+        ],
+        data: [
+            {
+                question: "The best time to do river rafting",
+                answer: "The best time to do river rafting would be from September to mid-June.",
+            },
+            {
+                question: "Longest River Rafting in Rishikesh",
+                answer: "36 km of river rafting, i.e., from Kaudiyala, is the longest river rafting in Rishikesh.",
+            },
+            {
+                question: "Is there any kind of risk in river rafting?",
+                answer: "Absoulutely No, there is no risk in river rafting. SeaHawk Adventures has the most trained guides, and adding to that, kayakers also follow the rafts.",
+            },
+            {
+                question: "Is river rafting safe for children?",
+                answer: "Yes, river rafting is safe for children over 12 years old.",
+            },
+            {
+                question: "What should I wear during river rafting?",
+                answer: "Sandles, T-shirts, and shorts are best during river rafting.",
+            },
+            {
+                question: " Do we need to know swimming before going river rafting?",
+                answer: "No, there is no need to swim for river rafting.",
+            },
+        ],
     },
     {
         slug: "16-km-rafting",
@@ -76,20 +108,13 @@ const rafting = [
         href: "/16-km-rafting",
 
         description: "Join us on a thrilling 16 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-        
-        gallery: [
-            {
-                img: R1,
-            },
-            {
-                img: R2,
-            },
-            {
-                img: R3,
-            },
-        ],
+
+        para: "",
+        rafts: [],
+        misc: [],
+       
         features: [
-            {   
+            {
                 svg: F1,
                 title: "Location",
                 description: "Shivpuri to NIM Beach",
@@ -99,7 +124,8 @@ const rafting = [
                 title: "Duration",
                 description: "2 hours",
             },
-        ]
+        ],
+        data: [],
     },
     {
         slug: "26-km-rafting",
@@ -110,20 +136,13 @@ const rafting = [
         href: "/26-km-rafting",
 
         description: "Join us on a thrilling 26 km rafting adventure, guiding through rapids and taking in stunning scenery.",
+
+        para: "",
+        rafts: [],
+        misc: [],
         
-        gallery: [
-            {
-                img: R1,
-            },
-            {
-                img: R2,
-            },
-            {
-                img: R3,
-            },
-        ],
         features: [
-            {   
+            {
                 svg: F1,
                 title: "Location",
                 description: "Marine drive to NIM Beach",
@@ -133,7 +152,8 @@ const rafting = [
                 title: "Duration",
                 description: "3 hours",
             },
-        ]
+        ],
+        data: [],
     },
 ]
 

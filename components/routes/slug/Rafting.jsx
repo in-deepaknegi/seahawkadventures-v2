@@ -1,15 +1,38 @@
-'use client'
-import React from 'react'
-import Image from 'next/image';
+"use client";
+import React from "react";
+import Image from "next/image";
 
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { FreeMode, Autoplay, Pagination, Navigation } from "swiper/modules";
 
-const Rafting = ({ rafting }) => {
+import Faq from '@/components/Faq';
+import R1 from "@/public/images/rafting/r02.jpg";
+import R2 from "@/public/images/rafting/r12.jpg";
+import R3 from "@/public/images/rafting/r15.jpg";
 
-    const g = [...rafting.gallery, ...rafting.gallery, ...rafting.gallery, ...rafting.gallery]
+const gallery = [
+    {
+        img: R1,
+    },
+    {
+        img: R2,
+    },
+    {
+        img: R3,
+    },
+]
+
+
+const Rafting = ({ rafting }) => {
+    const g = [
+        ...gallery,
+        ...gallery,
+        ...gallery,
+        ...gallery,
+    ];
+
     return (
         <section className="relative z-20 -mt-[6.5rem] bg-[#f4f1ec]  py-24 font-swir sm:py-28">
             <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
@@ -97,6 +120,7 @@ const Rafting = ({ rafting }) => {
                 <div className="relative mx-auto flex max-w-3xl flex-col items-center justify-between gap-10 md:px-6">
                     <p className="mt-4 font-swim text-5xl text-gray-900">
                         ₹{rafting?.rate}
+                        <span className="text-lg text-gray-500"> /person</span>
                     </p>
                     <a
                         href="#"
@@ -111,15 +135,11 @@ const Rafting = ({ rafting }) => {
                         {rafting.features.map((item, i) => (
                             <li
                                 key={i}
-                                className="flex flex-col items-center gap-3 font-swim rounded-xl bg-white px-6 py-5"
+                                className="flex flex-col items-center gap-3 rounded-xl bg-white px-6 py-5 font-swim"
                             >
-                                <Image 
-                                    src={item.svg}
-                                    alt=''
-                                    className="w-9 h-9"
-                                />
+                                <Image src={item.svg} alt="" className="h-9 w-9" />
 
-                                <p className=' text-gray-500 text-center'>
+                                <p className=" text-center text-gray-500">
                                     <span className=" text-black">{item.title}: </span>
                                     {item.description}
                                 </p>
@@ -153,15 +173,60 @@ const Rafting = ({ rafting }) => {
                             </svg>
                             {rafting.title}
                         </h3>
-                        <p className="mt-4 rounded-xl bg-white p-4">
-                            Experience the natural power of vitality with our Green Vitality
-                            Boost, a remarkable addition to our Victory Boosters category.
-                            This energizing elixir is designed to invigorate your body and
-                            enhance your athletic performance while maintaining a gentle and
-                            natural touch. Crafted with a blend of premium ingredients
-                            inspired by nature&apos;s greens, Green Vitality Boost is your
-                            trusted companion on your journey to victory.
-                        </p>
+                        <div className="mt-4 rounded-xl bg-white p-4">
+                            {rafting.para}
+                            <ul className="ml-8 mt-3 list-disc">
+                                {rafting.rafts.map((item, j) => (
+                                    <li key={j}>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="w-full">
+                        <h3 className=" flex items-center gap-2 font-swim text-2xl text-black">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-7"
+                            >
+                                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                                <g
+                                    id="SVGRepo_tracerCarrier"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                ></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    {" "}
+                                    <path
+                                        d="M12 17V11"
+                                        stroke="#000000"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                    ></path>{" "}
+                                    <circle
+                                        cx="1"
+                                        cy="1"
+                                        r="1"
+                                        transform="matrix(1 0 0 -1 11 9)"
+                                        fill="#000000"
+                                    ></circle>{" "}
+                                    <path
+                                        d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7"
+                                        stroke="#000000"
+                                        strokeWidth="1.5"
+                                        strokeLinecap="round"
+                                    ></path>{" "}
+                                </g>
+                            </svg>
+                            Frequently asked questions
+                        </h3>
+                        <div className="mt-4 rounded-xl bg-white p-4">
+                            <Faq data={rafting.data} />
+                        </div>
                     </div>
 
                     <div>
@@ -189,27 +254,26 @@ const Rafting = ({ rafting }) => {
                                     ></path>{" "}
                                 </g>
                             </svg>
-                            About product
+                            Additional information
                         </h3>
                         <div className="mt-4 flex flex-col gap-4 rounded-xl bg-white p-4">
                             <div className=" w-fit rounded-3xl bg-[#f5f5f5] px-3 py-0.5 text-gray-600">
-                                How to use
+                                Things to remember
                             </div>
-                            <p className="">
-                                Enjoy Green Vitality Boost before your workout as a natural and
-                                refreshing pre-workout supplement. Simply mix a recommended
-                                serving with water, and savor the revitalizing taste of
-                                nature&apos;s greens. With Green Vitality Boost, you&apos;ll
-                                feel the difference in your energy, endurance, and overall
-                                performance.
-                            </p>
+                            <ul className="ml-8 list-disc ">
+                                {rafting.misc.map((item, k) => (
+                                    <li key={k}>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
 
                             <hr className="" />
 
                             <div className=" w-fit rounded-3xl bg-[#f5f5f5] px-3 py-0.5 text-gray-600">
-                                Shipping
+                                Booking
                             </div>
-                            <p className="">
+                            <p className="ml-4">
                                 We offer standard and expedited shipping options. Shipping times
                                 and costs vary by location and chosen method. Orders are
                                 typically processed within 2 business days, and you&apos;ll
@@ -221,7 +285,7 @@ const Rafting = ({ rafting }) => {
                             <div className=" w-fit rounded-3xl bg-[#f5f5f5] px-3 py-0.5 text-gray-600">
                                 Return policy
                             </div>
-                            <p className="">
+                            <p className="ml-4">
                                 Eligible for returns within 15 days of receiving your order.
                                 Contact us for return authorization. Customers cover return
                                 shipping, except for product defects. Refunds processed within 2
@@ -234,11 +298,10 @@ const Rafting = ({ rafting }) => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
 export default Rafting;
-
 
 const Button = () => {
     const swiper = useSwiper();
