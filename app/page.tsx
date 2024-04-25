@@ -35,7 +35,7 @@ export default function Home() {
             <main>
                 <Hero />
                 <Feature />
-                <Rafting />
+                <Rafting color={"bg-[#f4f1ec]"} />
                 <Kayak />
                 <Feedback />
                 <Gallery />

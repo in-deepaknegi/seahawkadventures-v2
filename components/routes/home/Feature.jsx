@@ -11,7 +11,7 @@ const features = [
     {
         title: "Rafting",
         para: "Experience the thrill of the fast river with our expert guides, ensuring a safe and unforgettable adventure.",
-        href: "#",
+        href: "/rafting",
         svg: S1,
     },
     {
@@ -76,7 +76,7 @@ const Feature = () => {
                         {features.map((feature, i) => (
                             <a
                                 key={i}
-                                href="#"
+                                href={feature.href}
                                 className="group relative flex h-full flex-col overflow-hidden"
                             >
                                 <dt className="flex flex-row items-center gap-6 text-2xl text-black">

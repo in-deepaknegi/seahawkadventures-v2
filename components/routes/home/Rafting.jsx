@@ -4,9 +4,9 @@ import Image from "next/image";
 import rafting from "@/data/rafting";
 import Button from "@/components/ui/Watsapp";
 
-const Products = () => {
+const Products = ({color}) => {
     return (
-        <section className="relative z-20 overflow-hidden bg-[#f4f1ec] py-24 font-swir sm:py-28">
+        <section className={`relative z-20 overflow-hidden ${color} py-24 font-swir sm:py-28`}>
             <div className="mx-auto max-w-full px-6 md:max-w-[87%] lg:px-8">
                 <div className=" absolute left-0 top-20 z-0">
                     <svg
@@ -90,10 +90,12 @@ const Products = () => {
 
                                     <div className="mt-6 rounded-xl bg-[#f0f4ed] px-4 py-2">
                                         <ul className="space-y-2">
-                                            {item.sub.map((item, j) => (
+                                            {item.features.slice(0, 2).map((item, j) => (
                                                 <li key={j} className="flex gap-4 text-black/80">
-                                                    <Image src={item.img} alt="" className="h-7 w-7" />
-                                                    {item.name}
+                                                    <Image src={item.svg} alt="" className="h-7 w-7" />
+                                                    {item.title}
+                                                    {": "}
+                                                    {item.description}
                                                 </li>
                                             ))}
                                         </ul>
@@ -107,7 +109,10 @@ const Products = () => {
                                     <p className="mt-3 line-clamp-2 flex-auto text-lg">
                                         {item.description}
                                     </p>
-                                    <a href={item.href} className="mt-3 text-blue-600/90">
+                                    <a
+                                        href={`rafting/${item.href}`}
+                                        className="mt-3 text-blue-600/90"
+                                    >
                                         Read more ...
                                     </a>
                                     <div className="mt-3 flex gap-4">

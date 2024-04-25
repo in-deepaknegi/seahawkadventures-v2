@@ -116,7 +116,7 @@ const Rafting = ({ rafting }) => {
                                 <Image 
                                     src={item.svg}
                                     alt=''
-                                    className={`${item.class}`}
+                                    className="w-9 h-9"
                                 />
 
                                 <p className=' text-gray-500 text-center'>

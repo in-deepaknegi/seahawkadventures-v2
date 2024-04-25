@@ -19,19 +19,10 @@ const rafting = [
         imageUrl: "url('/images/rafting/r02.jpg')",
         image: R1,
         rate: 620,
-        href: "#",
+        href: "/12-km-rafting",
 
         description: "Come along on a thrilling 12 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-        sub: [
-            {
-                name: "Marine Drive - Shivpuri",
-                img: S1,
-            },
-            {
-                name: "Duration: 1.5 hours",
-                img: S2,
-            },
-        ],
+        
         gallery: [
             {
                 img: R1,
@@ -47,38 +38,32 @@ const rafting = [
             {   
                 svg: F1,
                 title: "Location",
-                description: "Shivpuri, Seahawk Adventures office",
-                class: "w-8"
-            },
-            {
-                svg: F2,
-                title: "Timing",
-                description: "8:00 a.m. to 3:00 p.m.",
-                class: "w-8"
+                description: "Marine Drive - Shivpuri",
             },
             {
                 svg: F3,
                 title: "Duration",
                 description: "1.5 hours",
-                class: "w-8"
+            },
+            {
+                svg: F2,
+                title: "Timing",
+                description: "8:00 a.m. to 3:00 p.m.",
             },
             {
                 svg: F4,
                 title: "Raft Capacity",
                 description: "8 individuals",
-                class: "w-9"
             },
             {
                 svg: F5,
                 title: "Minimum age",
                 description: "12 years old",
-                class: "w-8"
             },
             {
                 svg: F6,
                 title: "Inclusions",
                 description: "Life jackets, guides, and transportation.",
-                class: "w-8"
             },
         ]
     },
@@ -88,19 +73,10 @@ const rafting = [
         imageUrl: "url('/images/rafting/r12.jpg')",
         image: R2,
         rate: 1020,
-        href: "#",
+        href: "/16-km-rafting",
 
         description: "Join us on a thrilling 16 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-        sub: [
-            {
-                name: "Shivpuri to NIM Beach",
-                img: S1,
-            },
-            {
-                name: "Duration: 2 hours",
-                img: S2,
-            },
-        ],
+        
         gallery: [
             {
                 img: R1,
@@ -114,9 +90,14 @@ const rafting = [
         ],
         features: [
             {   
-                svg: S1,
-                title: "Activity Location",
-                description: "Shivpuri, Seahawk Adventures office",
+                svg: F1,
+                title: "Location",
+                description: "Shivpuri to NIM Beach",
+            },
+            {
+                svg: F3,
+                title: "Duration",
+                description: "2 hours",
             },
         ]
     },
@@ -126,19 +107,10 @@ const rafting = [
         imageUrl: "url('/images/rafting/r15.jpg')",
         image: R3,
         rate: 1520,
-        href: "#",
+        href: "/26-km-rafting",
 
         description: "Join us on a thrilling 26 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-        sub: [
-            {
-                name: "Marine drive to NIM Beach",
-                img: S1,
-            },
-            {
-                name: "Duration: 3 hours",
-                img: S2,
-            },
-        ],
+        
         gallery: [
             {
                 img: R1,
@@ -152,9 +124,14 @@ const rafting = [
         ],
         features: [
             {   
-                svg: S1,
-                title: "Activity Location",
-                description: "Shivpuri, Seahawk Adventures office",
+                svg: F1,
+                title: "Location",
+                description: "Marine drive to NIM Beach",
+            },
+            {
+                svg: F3,
+                title: "Duration",
+                description: "3 hours",
             },
         ]
     },
