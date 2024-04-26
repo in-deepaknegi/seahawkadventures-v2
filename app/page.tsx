@@ -7,6 +7,7 @@ import Gallery from "@/components/routes/home/Gallery";
 import Feature from "@/components/routes/home/Feature";
 import Feedback from "@/components/routes/home/Feedback";
 import Patners from '@/components/Patners';
+
 const { SITE_NAME } = process.env;
 
 export default function Home() {

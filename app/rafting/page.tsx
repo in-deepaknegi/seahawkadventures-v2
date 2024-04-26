@@ -1,10 +1,36 @@
+import React from 'react'
+import Image from "next/image";
+import { Metadata } from 'next';
+
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import Rafting from '@/components/routes/home/Rafting'
-import React from 'react'
-import Image from "next/image";
 import Hero2 from "@/public/images/rafting/r15.jpg";
 import B1 from "@/public/b.png";
+
+export const metadata: Metadata = {
+    title: "Rafting",
+    description:
+        "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
+    applicationName: "Sea Hawk Adventures",
+
+    openGraph: {
+        title: "Rafting",
+        description:
+            "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
+        url: "https://www.seahawkadventures.com/rafting",
+        images: ["/images/meta/seahawkadventures.png"],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Rafting",
+        description:
+            "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
+        images: ["/images/meta/seahawkadventures.png"],
+    },
+};
+
 const page = () => {
     return (
         <>

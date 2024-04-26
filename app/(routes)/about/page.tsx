@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/routes/about/Hero";

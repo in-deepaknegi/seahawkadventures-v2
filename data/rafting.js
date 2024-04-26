@@ -16,7 +16,7 @@ const rafting = [
     {
         slug: "12-km-rafting",
         title: "12 Km Rafting",
-        imageUrl: "url('/images/rafting/r02.jpg')",
+        imageUrl: "/images/rafting/r02.jpg",
         image: R1,
         rate: 620,
         href: "/12-km-rafting",
@@ -102,7 +102,7 @@ const rafting = [
     {
         slug: "16-km-rafting",
         title: "16 Km Rafting",
-        imageUrl: "url('/images/rafting/r12.jpg')",
+        imageUrl: "/images/rafting/r12.jpg",
         image: R2,
         rate: 1020,
         href: "/16-km-rafting",
@@ -130,7 +130,7 @@ const rafting = [
     {
         slug: "26-km-rafting",
         title: "26 Km Rafting",
-        imageUrl: "url('/images/rafting/r15.jpg')",
+        imageUrl: "/images/rafting/r15.jpg",
         image: R3,
         rate: 1520,
         href: "/26-km-rafting",
