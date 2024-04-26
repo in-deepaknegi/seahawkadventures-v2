@@ -1,6 +1,6 @@
 import R1 from "@/public/images/rafting/r02.jpg";
 import R2 from "@/public/images/rafting/r12.jpg";
-import R3 from "@/public/images/rafting/r15.jpg";
+import R3 from "@/public/images/rafting/r06.jpg";
 
 import S1 from '@/public/images/svg/map.svg';
 import S2 from '@/public/images/svg/stopwatch.svg';
