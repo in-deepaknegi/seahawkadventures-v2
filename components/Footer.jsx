@@ -77,7 +77,7 @@ const Footer = () => {
                     <div>
                         <a
                             href="/"
-                            className="-m-1.5 p-1.5 flex gap-4 items-center"
+                            className="-m-1.5 p-1.5 flex md:flex-row flex-col gap-4 md:items-center"
                         >
                             {/* <Image
                                 src={Logo}
@@ -85,10 +85,10 @@ const Footer = () => {
                                 alt="site-logo"
                                 className="w-[8rem] md:w-[13rem]"
                             /> */}
-                            <span className=" text-4xl font-swir text-blue-500">
-                                Sea Hawk <br /> Adventures
+                            <span className=" text-3xl md:text-4xl w-60 font-swir text-blue-500">
+                                Sea Hawk Adventures
                             </span>
-                            <span className=" font-paris text-white mt-auto text-2xl md:text-4xl">
+                            <span className=" font-paris text-white w-full mt-auto text-3xl md:text-4xl">
                                 It&apos;s time to paddle
                             </span>
                         </a>
@@ -160,7 +160,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-10 md:gap-20 max-w-md mt-10 md:justify-between md:mt-5 md:max-w-none">
+                    <div className="flex flex-wrap gap-10 md:gap-20 max-w-md mt-10 justify-between md:mt-5 md:max-w-none">
                         {links.map((link) => (
                             <div key={link.id}>
                                 <h3 className="mb-3 text-lg text-gray-100">

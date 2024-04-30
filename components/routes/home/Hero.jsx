@@ -20,12 +20,12 @@ const Hero = () => {
                 <Image
                     src={B1}
                     alt=""
-                    className=" absolute bottom-0 h-20 w-full object-cover"
+                    className=" absolute bottom-0 h-10 md:h-20 w-full object-cover"
                 />
 
                 <div className="absolute z-[-9] h-full w-full overflow-hidden bg-gradient-to-tr from-black  via-black/10 to-black/20"></div>
 
-                <div className="mx-auto flex h-full max-w-full items-center px-6 md:max-w-[85%] md:px-8">
+                <div className="mx-auto flex h-full max-w-full items-center md:pt-0 pt-10 px-6 md:max-w-[85%] md:px-8">
                     <div className="my-auto w-full">
                         <div className="hidden sm:mb-8 sm:flex">
                             <div className="relative rounded-full bg-gray-500/50 px-3 py-1 text-base leading-6 text-white ring-1 ring-gray-100/10 hover:ring-gray-100">

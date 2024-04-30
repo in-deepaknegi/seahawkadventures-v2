@@ -45,9 +45,9 @@ const Gallery = () => {
                         </p>
                     </div>
 
-                    <div className="flex max-w-4xl flex-nowrap gap-4">
-                        <div className="relative w-[40%] flex-none overflow-hidden rounded-3xl">
-                            <div className=" absolute bottom-0 left-0 right-0 top-0">
+                    <div className="flex max-w-4xl flex-col md:flex-row gap-4">
+                        <div className="relative w-full overflow-hidden flex-none rounded-3xl md:w-[40%]">
+                            <div className="bottom-0 left-0 right-0 top-0 md:absolute">
                                 <Image
                                     src={G1}
                                     alt="aa"
@@ -91,8 +91,8 @@ const Gallery = () => {
                             </div>
                         </div>
 
-                        <div className="relative w-[20%] flex-none overflow-hidden rounded-3xl">
-                            <div className="absolute bottom-0 left-0 right-0 top-0">
+                        <div className="relative w-full overflow-hidden rounded-3xl flex-none md:w-[20%]">
+                            <div className="bottom-0 left-0 right-0 top-0 md:absolute">
                                 <Image
                                     src={G6}
                                     alt="aa"

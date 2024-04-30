@@ -20,7 +20,7 @@ const menu = [
         title: "Rafting",
         image: R1,
         href: "/rafting",
-        solutions: [
+        sub: [
             {
                 name: "12 Km Rafting",
                 description: "Read more about 12 km Rafting",
@@ -43,7 +43,7 @@ const menu = [
         title: "Kayak School",
         image: K1,
         href: "/kayak",
-        solutions: [
+        sub: [
             {
                 name: "Beginner Course",
                 description: "Read more about our 4 days kayak lesson.",
@@ -61,7 +61,7 @@ const menu = [
         title: "Multi-day trip",
         image: M1,
         href: "/multi-day-trip",
-        solutions: [
+        sub: [
             {
                 name: "Rafting Expedition",
                 description: "Book your next expedition with us.",
@@ -79,7 +79,7 @@ const menu = [
         title: "Camping Package",
         image: K1,
         href: "#",
-        solutions: [
+        sub: [
             {
                 name: "Only Camping",
                 description: "Book your next expedition with us.",
@@ -219,7 +219,7 @@ const Navbar = () => {
 
                                                     <div className="flex w-full flex-col justify-between p-2">
                                                         <div>
-                                                            {item.solutions.map((c, j) => (
+                                                            {item.sub.map((c, j) => (
                                                                 <a
                                                                     href={c.href}
                                                                     key={j}
@@ -260,19 +260,19 @@ const Navbar = () => {
                         >
                             Gallery
                         </Link>
-                        <div className="hidden xl:block my-auto h-4 border border-gray-300"></div>
+                        <div className="my-auto hidden h-4 border border-gray-300 xl:block"></div>
 
                         <Link
                             href="/about"
-                            className="mx-1 hidden xl:flex items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5]"
+                            className="mx-1 hidden items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5] xl:flex"
                         >
                             About us
                         </Link>
-                        <div className="hidden xl:block my-auto h-4 border border-gray-300"></div>
+                        <div className="my-auto hidden h-4 border border-gray-300 xl:block"></div>
 
                         <Link
                             href="/contacts"
-                            className="mx-1 hidden xl:flex items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5]"
+                            className="mx-1 hidden items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5] xl:flex"
                         >
                             Contact us
                         </Link>
@@ -314,13 +314,37 @@ const Navbar = () => {
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
                                     {menu.map((link, i) => (
-                                        <a
+                                        <button
                                             key={i}
+                                            onClick={() => toggleOpen(i)}
                                             href={link.href}
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                            className="-mx-3 block rounded-lg px-3 py-1 text-left text-base font-semibold leading-7 text-gray-900"
                                         >
-                                            {link.title}
-                                        </a>
+                                            <span className="flex items-center gap-2">
+                                                {link.title}
+                                                <ChevronDown
+                                                    className={`w-5 ${open === i ? " rotate-180" : ""} transition-all duration-500 ease-in-out`}
+                                                />
+                                            </span>
+
+                                            {open === i && (
+                                                <>
+                                                    {link.sub.map((c, j) => (
+                                                        <a
+                                                            href={c.href}
+                                                            key={j}
+                                                            className="flex rounded-lg px-4 py-1.5"
+                                                        >
+                                                            <div className="text-left">
+                                                                <h3 className="text-base text-gray-800">
+                                                                    {c.name}
+                                                                </h3>
+                                                            </div>
+                                                        </a>
+                                                    ))}
+                                                </>
+                                            )}
+                                        </button>
                                     ))}
                                     <a
                                         href="/about"
