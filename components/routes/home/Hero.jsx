@@ -25,14 +25,14 @@ const Hero = () => {
 
                 <div className="absolute z-[-9] h-full w-full overflow-hidden bg-gradient-to-tr from-black  via-black/10 to-black/20"></div>
 
-                <div className="mx-auto flex h-full max-w-full items-center px-6 pt-28 md:max-w-[85%] md:px-8">
+                <div className="mx-auto flex h-full max-w-full items-center px-6 md:max-w-[85%] md:px-8">
                     <div className="my-auto w-full">
                         <div className="hidden sm:mb-8 sm:flex">
                             <div className="relative rounded-full bg-gray-500/50 px-3 py-1 text-base leading-6 text-white ring-1 ring-gray-100/10 hover:ring-gray-100">
                                 The Best Place to Start Your Adventure
                             </div>
                         </div>
-                        <h1 className="max-w-2xl text-center text-5xl font-semibold text-white md:text-left md:text-7xl">
+                        <h1 className="max-w-2xl text-center text-5xl font-semibold text-white md:text-left md:text-6xl">
                             Explore: <br />
                             <span className=" bg-gradient-to-r from-blue-600/90 to-sky-400 bg-clip-text text-transparent">
                                 Seek Adventure

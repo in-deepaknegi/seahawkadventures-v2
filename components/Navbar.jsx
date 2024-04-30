@@ -111,8 +111,8 @@ const Navbar = () => {
     return (
         <>
             <nav className=" sticky top-0 isolate z-30 border-b bg-[#f5f5f5] font-swir md:relative">
-                <div className=" mx-auto max-w-full py-1.5 md:max-w-[85%]">
-                    <div className="mx-auto px-4 sm:px-6 lg:px-8">
+                <div className=" mx-auto max-w-full py-1.5 md:max-w-[90%]">
+                    <div className="mx-auto px-4 sm:px-6 lg:px-0">
                         <div className="my-auto mt-1 flex flex-row items-center justify-between gap-6 text-sm text-black">
                             <div className="flex lg:flex-none">
                                 <a
@@ -123,7 +123,7 @@ const Navbar = () => {
                                         src={Logo}
                                         priority="true"
                                         alt="site-logo"
-                                        className="w-[10rem] md:w-[13rem]"
+                                        className="w-[10rem] md:w-[12rem]"
                                     />
                                     <span className="mt-auto hidden font-paris text-lg md:block md:text-4xl">
                                         It&apos;s time to paddle
@@ -176,7 +176,7 @@ const Navbar = () => {
             </nav>
 
             <header className="sticky top-0 isolate z-40 hidden bg-[#0000] py-4 font-swim opacity-100 shadow-sm backdrop-blur-sm md:py-3 lg:block">
-                <div className="mx-auto flex max-w-full items-center justify-between px-6 transition-all duration-700 ease-in md:max-w-[87%] lg:px-0">
+                <div className="mx-auto flex max-w-full items-center justify-between px-6 transition-all duration-700 ease-in md:max-w-[97%] lg:px-8">
                     <nav
                         className={`hidden rounded-3xl bg-[#ffffff3e] p-1.5 opacity-100 shadow-md backdrop-blur-sm lg:flex lg:gap-x-1`}
                     >
@@ -260,19 +260,19 @@ const Navbar = () => {
                         >
                             Gallery
                         </Link>
-                        <div className="my-auto h-4 border border-gray-300"></div>
+                        <div className="hidden xl:block my-auto h-4 border border-gray-300"></div>
 
                         <Link
                             href="/about"
-                            className="mx-1 flex items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5]"
+                            className="mx-1 hidden xl:flex items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5]"
                         >
                             About us
                         </Link>
-                        <div className="my-auto h-4 border border-gray-300"></div>
+                        <div className="hidden xl:block my-auto h-4 border border-gray-300"></div>
 
                         <Link
                             href="/contacts"
-                            className="mx-1 flex items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5]"
+                            className="mx-1 hidden xl:flex items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5]"
                         >
                             Contact us
                         </Link>

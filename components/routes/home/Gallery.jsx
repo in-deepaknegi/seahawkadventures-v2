@@ -3,12 +3,15 @@ import Image from "next/image";
 import G1 from "@/public/images/rafting/r09.jpg";
 import G2 from "@/public/images/rafting/r12.jpg";
 import G3 from "@/public/images/rafting/r15.jpg";
+import G4 from "@/public/images/rafting/r05.jpg";
+import G5 from "@/public/images/rafting/r07.jpg";
+import G6 from "@/public/images/rafting/r04.jpg";
 
 const Gallery = () => {
     return (
         <section id="gallery" className="relative isolate py-8 font-swir lg:py-24">
             <div className="mx-auto max-w-full px-8 md:max-w-[85%]">
-                <div className="relative flex flex-1 flex-col justify-start gap-4 overflow-visible p-0 md:flex-row">
+                <div className="relative flex flex-1 flex-col justify-start gap-2 overflow-visible p-0 md:flex-row">
                     <div className="flex flex-col justify-between">
                         <svg
                             viewBox="0 0 24 24"
@@ -42,8 +45,8 @@ const Gallery = () => {
                         </p>
                     </div>
 
-                    <div className="flex max-w-3xl flex-nowrap gap-4">
-                        <div className="relative w-[45%] flex-none overflow-hidden rounded-3xl">
+                    <div className="flex max-w-4xl flex-nowrap gap-4">
+                        <div className="relative w-[40%] flex-none overflow-hidden rounded-3xl">
                             <div className=" absolute bottom-0 left-0 right-0 top-0">
                                 <Image
                                     src={G1}
@@ -73,18 +76,28 @@ const Gallery = () => {
                             <div className="mt-4 flex flex-row gap-4">
                                 <div className="overflow-hidden rounded-3xl md:w-[40%]">
                                     <Image
-                                        src={G1}
+                                        src={G5}
                                         alt="aa"
                                         className="block h-40 origin-center object-cover transition-all duration-200 ease-in hover:scale-[1.04]"
                                     />
                                 </div>
                                 <div className="hidden w-[60%] overflow-hidden rounded-3xl md:block ">
                                     <Image
-                                        src={G2}
+                                        src={G4}
                                         alt="aa"
                                         className="block h-40 origin-center object-cover transition-all duration-200 ease-in hover:scale-[1.04]"
                                     />
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className="relative w-[20%] flex-none overflow-hidden rounded-3xl">
+                            <div className="absolute bottom-0 left-0 right-0 top-0">
+                                <Image
+                                    src={G6}
+                                    alt="aa"
+                                    className="block h-full w-full origin-center object-cover transition-all duration-200 ease-in hover:scale-[1.04]"
+                                />
                             </div>
                         </div>
                     </div>

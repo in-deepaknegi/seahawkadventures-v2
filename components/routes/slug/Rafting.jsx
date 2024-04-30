@@ -24,7 +24,6 @@ const gallery = [
     },
 ]
 
-
 const Rafting = ({ rafting }) => {
     const g = [
         ...gallery,
@@ -61,7 +60,7 @@ const Rafting = ({ rafting }) => {
                         {rafting?.title}
                     </p>
 
-                    <p className="mt-auto max-w-xl text-center font-swim text-2xl leading-8 text-gray-600">
+                    <p className="mt-auto max-w-xl text-center font-swim text-lg md:text-2xl text-gray-600">
                         {rafting?.description}
                     </p>
                 </div>
@@ -69,9 +68,9 @@ const Rafting = ({ rafting }) => {
 
             <div className="mt-10 overflow-hidden">
                 <div className="relative mx-auto ">
-                    <div className="absolute left-0 top-0 z-10 h-full w-6 bg-[#f4f1ec] bg-gradient-to-r"></div>
-                    <div className="absolute left-6 top-0 z-10 h-full w-36 bg-gradient-to-r from-[#f4f1ec] to-[#f4f1ec00] "></div>
-                    <div className="absolute right-0 top-0 z-10 h-full w-40 bg-gradient-to-l from-[#f4f1ec] to-[#f4f1ec00] "></div>
+                    <div className="absolute left-0 top-0 z-10 h-full md:w-6 bg-[#f4f1ec] bg-gradient-to-r"></div>
+                    <div className="absolute w-10 left-0 md:left-6 top-0 z-10 h-full md:w-36 bg-gradient-to-r from-[#f4f1ec] to-[#f4f1ec00] "></div>
+                    <div className="absolute w-10 right-0 top-0 z-10 h-full md:w-40 bg-gradient-to-l from-[#f4f1ec] to-[#f4f1ec00] "></div>
 
                     <Swiper
                         slidesPerView={1}
@@ -94,7 +93,7 @@ const Rafting = ({ rafting }) => {
                             },
                         }}
                         modules={[FreeMode, Autoplay]}
-                        className="mySwiper max-w-[80%] -translate-x-32"
+                        className="mySwiper max-w-[80%] md:-translate-x-32"
                         style={{
                             overflow: "visible",
                         }}
@@ -307,7 +306,7 @@ const Button = () => {
     const swiper = useSwiper();
 
     return (
-        <div className="absolute -right-20 bottom-0 z-50 flex flex-row items-start gap-4">
+        <div className="absolute right-0 md:-right-20 bottom-0 z-50 flex flex-row items-start gap-4">
             <button
                 onClick={() => swiper.slidePrev()}
                 className=" rounded-full bg-primary p-1"
@@ -322,7 +321,7 @@ const Button = () => {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-9 w-9 text-white"
+                    className="md:h-9 md:w-9 text-white"
                 >
                     <path d="m15 18-6-6 6-6" />
                 </svg>
@@ -342,7 +341,7 @@ const Button = () => {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="h-9 w-9 text-white"
+                    className="md:h-9 md:w-9 text-white"
                 >
                     <path d="m9 18 6-6-6-6" />
                 </svg>

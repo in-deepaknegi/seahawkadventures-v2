@@ -7,7 +7,7 @@ import Button from "@/components/ui/Watsapp";
 const Main = () => {
     return (
         <section className="relative isolate z-20 bg-white py-24 font-swir sm:py-28">
-            <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
+            <div className="mx-auto max-w-full px-6 xl:max-w-[97%] 2xl:max-w-[85%] lg:px-8">
                 <div className="mx-auto flex flex-col justify-between md:flex-row">
                     <div className=" flex flex-col gap-8">
                         <p className="mt-2 text-3xl font-bold text-black sm:text-5xl">
