@@ -33,12 +33,6 @@ const rafting = [
             "Body surfing",
             "Welcome to Shivpuri Rapid.",
         ],
-        misc: [
-            " Any kind of alcohol, knife, mouthfresher, sharp object, cigarettes, or lighters are not allowed.",
-            " Photography and videography from personal devices are not allowed; the guide will take your photos and videos, which are not included in the rafting package.",
-            " Your mobile phones will be in a dry bag carried by the guide.",
-            " Guests are requested to report at least half an hour before the time slot allotted to them.",
-        ],
 
         features: [
             {
@@ -111,7 +105,6 @@ const rafting = [
 
         para: "",
         rafts: [],
-        misc: [],
        
         features: [
             {
@@ -123,6 +116,26 @@ const rafting = [
                 svg: F3,
                 title: "Duration",
                 description: "2 hours",
+            },
+            {
+                svg: F2,
+                title: "Timing",
+                description: "8:00 a.m. to 3:00 p.m.",
+            },
+            {
+                svg: F4,
+                title: "Raft Capacity",
+                description: "8 individuals",
+            },
+            {
+                svg: F5,
+                title: "Minimum age",
+                description: "12 years old",
+            },
+            {
+                svg: F6,
+                title: "Inclusions",
+                description: "Life jackets, guides, and transportation.",
             },
         ],
         data: [],
@@ -139,7 +152,6 @@ const rafting = [
 
         para: "",
         rafts: [],
-        misc: [],
         
         features: [
             {
@@ -151,6 +163,26 @@ const rafting = [
                 svg: F3,
                 title: "Duration",
                 description: "3 hours",
+            },
+            {
+                svg: F2,
+                title: "Timing",
+                description: "8:00 a.m. to 3:00 p.m.",
+            },
+            {
+                svg: F4,
+                title: "Raft Capacity",
+                description: "8 individuals",
+            },
+            {
+                svg: F5,
+                title: "Minimum age",
+                description: "12 years old",
+            },
+            {
+                svg: F6,
+                title: "Inclusions",
+                description: "Life jackets, guides, and transportation.",
             },
         ],
         data: [],

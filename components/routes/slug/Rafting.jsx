@@ -5,12 +5,15 @@ import Image from "next/image";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
-import { FreeMode, Autoplay, Pagination, Navigation } from "swiper/modules";
+import { FreeMode, Autoplay } from "swiper/modules";
 
 import Faq from '@/components/Faq';
 import R1 from "@/public/images/rafting/r02.jpg";
 import R2 from "@/public/images/rafting/r12.jpg";
 import R3 from "@/public/images/rafting/r15.jpg";
+import R4 from "@/public/images/rafting/r05.jpg";
+import R5 from "@/public/images/rafting/r07.jpg";
+import R6 from "@/public/images/rafting/r10.jpg";
 
 const gallery = [
     {
@@ -22,9 +25,26 @@ const gallery = [
     {
         img: R3,
     },
+    {
+        img: R4,
+    },
+    {
+        img: R5,
+    },
+    {
+        img: R6,
+    },
+]
+
+const misc = [
+    " Any kind of alcohol, knife, mouthfresher, sharp object, cigarettes, or lighters are not allowed.",
+    " Photography and videography from personal devices are not allowed; the guide will take your photos and videos, which are not included in the rafting package.",
+    " Your mobile phones will be in a dry bag carried by the guide.",
+    " Guests are requested to report at least half an hour before the time slot allotted to them.",
 ]
 
 const Rafting = ({ rafting }) => {
+
     const g = [
         ...gallery,
         ...gallery,
@@ -260,7 +280,7 @@ const Rafting = ({ rafting }) => {
                                 Things to remember
                             </div>
                             <ul className="ml-8 list-disc ">
-                                {rafting.misc.map((item, k) => (
+                                {misc.map((item, k) => (
                                     <li key={k}>
                                         {item}
                                     </li>
