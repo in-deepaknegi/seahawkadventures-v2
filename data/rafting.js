@@ -93,6 +93,7 @@ const rafting = [
             },
         ],
     },
+
     {
         slug: "16-km-rafting",
         title: "16 Km Rafting",
@@ -140,10 +141,11 @@ const rafting = [
         ],
         data: [],
     },
+    
     {
         slug: "26-km-rafting",
         title: "26 Km Rafting",
-        imageUrl: "/images/rafting/r15.jpg",
+        imageUrl: "/images/rafting/r06.jpg",
         image: R3,
         rate: 1520,
         href: "/26-km-rafting",

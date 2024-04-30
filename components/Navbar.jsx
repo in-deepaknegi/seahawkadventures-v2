@@ -205,7 +205,7 @@ const Navbar = () => {
                                     {open === i && (
                                         <div className="absolute -left-5 top-5 z-50 mt-3 flex w-screen max-w-max px-4 pt-6 ">
                                             <div
-                                                className={`w-screen ${item.width} flex-auto overflow-hidden rounded-3xl bg-[#f5f5f5] bg-clip-padding text-[0.9005rem] leading-6 shadow-lg ring-1 ring-gray-900/5 backdrop-blur-md backdrop-filter`}
+                                                className={`w-fit flex-auto overflow-hidden rounded-3xl bg-[#f5f5f5] bg-clip-padding text-[0.9005rem] leading-6 shadow-lg ring-1 ring-gray-900/5 backdrop-blur-md backdrop-filter`}
                                             >
                                                 <div className="flex flex-row space-x-3 p-2.5">
                                                     {item.image && (
@@ -229,7 +229,7 @@ const Navbar = () => {
                                                                         <h3 className="text-base text-black">
                                                                             {c.name}
                                                                         </h3>
-                                                                        <p className="text-gray-500">
+                                                                        <p className={`text-gray-500 w-[14rem]`}>
                                                                             {c.description}
                                                                         </p>
                                                                     </div>

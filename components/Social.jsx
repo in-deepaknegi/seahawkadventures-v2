@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Social = () => {
     return (
-        <section className="fixed py-3 rounded-xl bottom-3 md:bottom-10 left-6 bg-white px-1.5 md:px-2 z-10 bg-clip-padding backdrop-filter backdrop-blur-lg shadow-2xl">
+        <section className="fixed py-3 rounded-xl bottom-3 md:bottom-10 left-6 bg-[#f5f5f5] px-1.5 md:px-2 z-50 bg-clip-padding backdrop-filter backdrop-blur-lg shadow-2xl shadow-black/50">
             <div className="">
                 <div className="flex flex-col gap-y-3">
                     <Link

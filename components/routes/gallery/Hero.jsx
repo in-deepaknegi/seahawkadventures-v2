@@ -82,7 +82,7 @@ const Hero = () => {
     return (
         <>
             <section className="relative isolate py-28 bg-[#f5f5f5] -mt-20">
-                <div className="max-w-7xl mx-auto px-6 lg:px-8 ">
+                <div className="max-w-full md:max-w-[90%] mx-auto px-6 lg:px-8 ">
                     <div className="flex mb-4 sm:mb-10 flex-col mx-auto justify-center items-center text-center gap-y-5 py-4 md:gap-x-10">
                         <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
                             Images Gallery

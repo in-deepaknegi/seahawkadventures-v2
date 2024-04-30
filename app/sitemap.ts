@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     // add NEXT_PUBLIC_URL to env-var in production 
     const BASE_URL = process.env.NEXT_PUBLIC_URL
-        ? `https://${process.env.NEXT_PUBLIC_URL}`
+        ? `${process.env.NEXT_PUBLIC_URL}`
         : 'http://localhost:3000';
 
     const urls = [
