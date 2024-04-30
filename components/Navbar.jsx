@@ -255,7 +255,7 @@ const Navbar = () => {
                         <div className="my-auto h-4 border border-gray-300"></div>
 
                         <Link
-                            href="/"
+                            href="/gallery"
                             className="mx-1 flex items-center rounded-full px-4 text-base uppercase text-black hover:bg-[#f5f5f5]"
                         >
                             Gallery
