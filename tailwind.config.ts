@@ -6,6 +6,17 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  theme: {
+    extend: {
+      fontFamily: {
+        clar: ["clash-reg"],
+        clam: ["clash-med"],
+        insr: ["ins-reg"],
+        insm: ["ins-med"],
+        paris: ["paris-reg"],
+      },
+    }
+  },
   plugins: [],
 };
 export default config;

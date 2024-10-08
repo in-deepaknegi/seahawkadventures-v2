@@ -1,6 +1,11 @@
-import Navbar from "@/components/layouts/navbar";
-import Hero from "@/components/routes/home/hero";
-import Desciption from '@/components/routes/home/desc';
+"use client"
+import { useEffect } from "react";
+
+import Lenis from 'lenis'
+
+import Intro from '@/components/routes/home/hero/intro';
+import Services from "@/components/routes/home/hero/services";
+
 const { SITE_NAME } = process.env;
 
 export default function Home() {
@@ -10,6 +15,19 @@ export default function Home() {
         name: SITE_NAME,
         url: "https://www.seahawkadventures.com/",
     };
+
+    useEffect(() => {
+        const lenis = new Lenis()
+
+        function raf(time: any) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+    }, []);
+
+
 
     return (
         <>
@@ -24,11 +42,12 @@ export default function Home() {
                 <meta itemProp="url" content="https://www.seahawkadventures.com/" />
                 <meta itemProp="name" content={SITE_NAME} />
             </div>
-                
-            <Navbar />    
+
+
+
             <main>
-                <Hero />
-                <Desciption />
+                <Intro />
+                <Services />
             </main>
         </>
     );

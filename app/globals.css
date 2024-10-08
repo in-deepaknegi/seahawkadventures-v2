@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "clash-reg";
+  src: url(/fonts/clash-reg.woff2) format("woff2");
+}
+@font-face {
+  font-family: "clash-med";
+  src: url(/fonts/clash-med.woff2) format("woff2");
+}
+@font-face {
+  font-family: "ins-reg";
+  src: url(/fonts/ins-reg.woff2) format("woff2");
+}
+@font-face {
+  font-family: "ins-med";
+  src: url(/fonts/ins-med.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "paris-reg";
+  src: url(/fonts/paris-reg.woff2) format("woff2");
+}
