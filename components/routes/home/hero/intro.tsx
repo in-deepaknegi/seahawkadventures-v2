@@ -1,12 +1,9 @@
 'use client';
 import React, { useRef } from 'react'
 import Image from 'next/image';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
 
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 
-const phrases = ["Los Flamencos National Reserve", "is a nature reserve located", "in the commune of San Pedro de Atacama", "The reserve covers a total area", "of 740 square kilometres (290 sq mi)"]
 
 
 
@@ -15,58 +12,76 @@ const Intro: React.FC<IntroProps> = (props) => {
         ...IntroDefaults,
         ...props
     };
-    const background = useRef(null);
 
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
+    const ref = React.useRef(null);
+    const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: document.documentElement,
-                scrub: true,
-                start: "top",
-                end: "+=400px",
-            },
-        })
 
-        timeline
-            .from(background.current, { clipPath: `inset(25%)` })
-    }, [])
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"],
+    });
+    const translateY = useSpring(
+        useTransform(scrollYProgress, [0, 0.4, 0.7], [-100, 0, 400]),
+        springConfig
+    );
+
+    const width = useTransform(
+        scrollYProgress,
+        [0, 0.2],
+        ["40%", "100%"]
+    );
+    const height = useTransform(
+        scrollYProgress,
+        [0, 0.2],
+        ["40%", "80%"]
+    );
+    const fontSize = useTransform(
+        scrollYProgress,
+        [0, 1],
+        ["5vw", "7vw"]
+    );
 
     return (
         <>
-            <div className="relative w-full flex justify-center bg-black">
-                <div ref={background}
-                    className="w-full h-[150vh] absolute">
+            <div ref={ref} className="relative w-full flex justify-center h-[150vh]">
+                <motion.div
+                    style={{
+                        width,
+                        height
+                    }}
+                    className="w-full h-[50vh] absolute top-40">
                     <Image
-                        src={'/images/h3.jpg'}
+                        src={'/images/g00.webp'}
                         fill={true}
                         alt="background image"
-                        className='object-cover'
+                        className='object-cover rounded-md'
                         priority={true}
                     />
                     <div className='bg-gradient-to-t from-white to-white/10 h-40 bottom-0 absolute w-full' />
-                </div>
-                <div className="flex justify-center relative mt-[59vh]">
-                    <h1
-                        data-scroll
-                        data-scroll-speed="0.7"
-                        className='text-white text-[7.5vw] x-30 tracking-wide whitespace-nowrap text-center font-clar'
+                </motion.div>
+
+                <motion.div
+                    style={{
+                        translateY
+                    }}
+                    className="flex flex-col justify-center relative mt-[59vh]">
+                    <motion.h1
+                        style={{
+                            fontSize
+                        }}
+                        className='text-[7.5vw] x-30 tracking-wide whitespace-nowrap text-center font-clar'
                     >
                         SEA HAWK ADVENTURES
-                    </h1>
-                </div>
+                    </motion.h1>
+                    <p className='text-black text-center text-xl max-w-lg mx-auto'>
+                        Experience unforgettable hiking, rafting, and kayaking in Uttarakhand&apos;s stunning landscapes.
+                    </p>
+                </motion.div>
 
 
             </div>
 
-            <div className="relative text-black text-[3vw] uppercase mt-[30vw] ml-[10vw]" >
-                {
-                    phrases.map((phrase, index) => {
-                        return <AnimatedText key={index}>{phrase}</AnimatedText>
-                    })
-                }
-            </div>
         </>
     )
 };
@@ -82,24 +97,3 @@ type IntroProps = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 const IntroDefaults: Props = {
     // Default prop values
 };
-
-function AnimatedText({ children }: { children: any }) {
-    const text = useRef(null);
-
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from(text.current, {
-            scrollTrigger: {
-                trigger: text.current,
-                scrub: true,
-                start: "0px bottom",
-                end: "bottom+=400px bottom",
-            },
-            opacity: 0,
-            left: "-200px",
-            ease: "power3.Out"
-        })
-    }, [])
-
-    return <p className='relative' ref={text}>{children}</p>
-}

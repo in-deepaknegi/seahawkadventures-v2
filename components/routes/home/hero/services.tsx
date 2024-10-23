@@ -26,7 +26,7 @@ const Services: React.FC<ServicesProps> = (props) => {
     }, [])
 
     return (
-        <div ref={container} className="relative text-black mt-10 p-[10%]">
+        <div ref={container} className="relative text-black mt-28 p-[10%]">
             <div className="flex h-[700px]">
                 <div ref={imageContainer}
                     className="relative h-full w-[40%]">

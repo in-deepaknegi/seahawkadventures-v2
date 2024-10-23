@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react";
+import Lenis from '@studio-freight/lenis'
 
-import Lenis from 'lenis'
 
 import Intro from '@/components/routes/home/hero/intro';
 import Services from "@/components/routes/home/hero/services";

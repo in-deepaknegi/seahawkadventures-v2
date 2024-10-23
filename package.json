@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "@studio-freight/lenis": "^1.0.42",
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
     "framer-motion": "^11.11.1",
