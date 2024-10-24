@@ -20,8 +20,8 @@ const Hero: React.FC<HeroProps> = (props) => {
             )}
             <div className='absolute top-0 bg-gradient-to-t from-black/50 z-0 to-black/10 w-full h-full' />
             <div className='mx-auto max-w-[90%] px-5 md:px-0 h-full relative'>
-                <div className='flex items-center align-middle h-full justify-center'>
-                    <h1 className='text-[8.5vw] leading-[8rem] flex flex-col text-white uppercase font-clarm'>
+                <div className='flex items-end pb-36 align-middle h-full justify-center'>
+                    <h1 className='text-[6vw] leading-[5rem] flex flex-col text-white font-clam'>
                         {heading}
                         <span className='flex items-center gap-5'>
                             <span>
@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                             <span className='text-[#50a1ff]'>through rafting</span>
                         </span>
                     </h1>
-                    <p className='text-[7vw] right-10 stroke-p absolute bottom-5 text-white font-clarm uppercase'>
+                    <p className='text-[6vw] right-10 stroke-p absolute bottom-5 text-white font-clam uppercase'>
                         {sub_heading}
                     </p>
                 </div>

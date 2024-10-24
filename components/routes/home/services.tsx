@@ -24,22 +24,22 @@ const Services: React.FC<ServicesProps> = (props) => {
                     alt={image.alt}
                     width={1280}
                     height={780}
-                    className='fixed -z-10 top-0 w-full h-full object-cover'
+                    className='absolute -z-10 top-0 w-full h-full object-cover'
                 />
             )}
 
-            <div className='absolute top-0 h-full w-full bg-gradient-to-t from-white/50 to-white/10' />
+            <div className='absolute top-0 h-full w-full bg-gradient-to-t backdrop-blur-[0.75px] from-sky-100 to-sky-100/40' />
 
-            <div className='bg-[#50a1ff] w-40 top-16 rounded-md h-40 absolute rotate-45' />
+            {/* <div className='bg-[#50a1ff] w-40 top-16 rounded-md h-40 absolute rotate-45' /> */}
 
             <div className='mx-auto max-w-[90%] px-5 md:px-0 h-full relative'>
                 <div className=''>
-                    <h2 className='text-[4vw] leading-[8rem] flex flex-col text-black uppercase font-clarm'>
+                    <h2 className='text-[4vw] flex flex-col text-black font-clam'>
                         {heading}
                     </h2>
 
-                    <div className='mt-10'>
-                        <div className='flex items-center gap-10 border-t border-gray-300'>
+                    <div className='mt-10 flex'>
+                        <div className='flex flex-col w-full items-center gap-10 border-t border-gray-300'>
                             {services?.map((service, i) => (
                                 <div
                                     key={i}
@@ -59,7 +59,7 @@ const Services: React.FC<ServicesProps> = (props) => {
                                 </div>
                             ))}
                         </div>
-                        <div className='mt-10'>
+                        <div className=''>
                             <div className='flex gap-10'>
                                 {services && (
                                     services[index].packages.map((pkg, i) => (
@@ -75,7 +75,7 @@ const Services: React.FC<ServicesProps> = (props) => {
                                                     />
                                                 )}
                                             </div>
-                                            <h3>
+                                            <h3 className='text-4xl mt-5 font-clarm'>
                                                 {pkg.title}
                                             </h3>
                                         </div>
@@ -99,7 +99,7 @@ type ServicesProps = React.ComponentPropsWithoutRef<"section"> & Partial<Compone
 const ServicesDefaults: ComponentProps = {
     heading: "Explore adventure with us",
     image: {
-        src: "/images/home/fsdf.jpg",
+        src: "/images/home/h1.jpg",
         alt: "main hero image sea hawk adventures"
     },
     services: [
