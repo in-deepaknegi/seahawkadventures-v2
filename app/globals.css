@@ -23,3 +23,20 @@
   font-family: "paris-reg";
   src: url(/fonts/paris-reg.woff2) format("woff2");
 }
+@font-face {
+  font-family: "clarke-med";
+  src: url(/fonts/clarke-med.woff2) format("woff2");
+}
+
+
+@layer base {
+  ::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+  }
+
+  .stroke-p {
+    -webkit-text-stroke-color: #fdba74;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+  }
+}

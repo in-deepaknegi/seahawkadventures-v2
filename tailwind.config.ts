@@ -14,6 +14,7 @@ const config: Config = {
         insr: ["ins-reg"],
         insm: ["ins-med"],
         paris: ["paris-reg"],
+        clarm: ["clarke-med"],
       },
     }
   },

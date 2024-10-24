@@ -1,10 +1,11 @@
 "use client"
 import { useEffect } from "react";
 import Lenis from '@studio-freight/lenis'
+import Hero from "@/components/routes/home/hero";
+import Services from "@/components/routes/home/services";
+import Features from "@/components/routes/home/features";
 
 
-import Intro from '@/components/routes/home/hero/intro';
-import Services from "@/components/routes/home/hero/services";
 
 const { SITE_NAME } = process.env;
 
@@ -43,11 +44,10 @@ export default function Home() {
                 <meta itemProp="name" content={SITE_NAME} />
             </div>
 
-
-
             <main>
-                <Intro />
+                <Hero />
                 <Services />
+                <Features />
             </main>
         </>
     );
