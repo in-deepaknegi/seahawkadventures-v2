@@ -8,7 +8,7 @@ const Hero: React.FC<HeroProps> = (props) => {
         ...props
     };
     return (
-        <section className='relative overflow-hidden h-[83vh] isolate'>
+        <section className='relative overflow-hidden h-[83vh] z-40'>
            {image?.src && (
                 <Image
                     src={image.src}

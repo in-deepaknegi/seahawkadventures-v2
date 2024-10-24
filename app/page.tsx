@@ -47,7 +47,7 @@ export default function Home() {
             <main>
                 <Hero />
                 <Services />
-                <Features />
+                {/* <Features /> */}
             </main>
         </>
     );

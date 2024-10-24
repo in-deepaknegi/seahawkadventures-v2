@@ -5,9 +5,16 @@ export type ComponentProps = {
     sub_heading?: string;
     image?: ImageProps;
 
-    tabs?: {
+    services?: {
         title: string;
         description: string;
         thumbnail: string;
+        packages: {
+            title: string;
+            description: string;
+            image: ImageProps;
+            price: number;
+            link: string;
+        }[],
     }[];
 }
