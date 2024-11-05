@@ -1,11 +1,13 @@
 "use client"
-import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+
+import { useEffect, useState } from "react";
 import Lenis from '@studio-freight/lenis'
 import Hero from "@/components/routes/home/hero";
 import Services from "@/components/routes/home/services";
 import Features from "@/components/routes/home/features";
 
-
+import Preloader from '@/components/globals/preloader'
 
 const { SITE_NAME } = process.env;
 
@@ -28,7 +30,19 @@ export default function Home() {
         requestAnimationFrame(raf)
     }, []);
 
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        (
+            async () => {
+                setTimeout(() => {
+                    setLoading(false);
+                    document.body.style.cursor = 'default'
+                    window.scrollTo(0, 0);
+                }, 3900)
+            }
+        )()
+    }, [])
 
     return (
         <>
@@ -43,6 +57,10 @@ export default function Home() {
                 <meta itemProp="url" content="https://www.seahawkadventures.com/" />
                 <meta itemProp="name" content={SITE_NAME} />
             </div>
+
+            {/* <AnimatePresence>
+                <Preloader loading={loading} />
+            </AnimatePresence> */}
 
             <main>
                 <Hero />

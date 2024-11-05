@@ -9,12 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        clar: ["clash-reg"],
-        clam: ["clash-med"],
+        oggm: ["ogg-med"],
+        oggr: ["ogg-reg"],
         insr: ["ins-reg"],
         insm: ["ins-med"],
-        paris: ["paris-reg"],
-        clarm: ["clarke-med"],
       },
     }
   },

@@ -3,31 +3,21 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "clash-reg";
-  src: url(/fonts/clash-reg.woff2) format("woff2");
+  font-family: "ogg-med";
+  src: url(/fonts/OggMedium.woff2) format("woff2");
 }
 @font-face {
-  font-family: "clash-med";
-  src: url(/fonts/clash-med.woff2) format("woff2");
-}
-@font-face {
-  font-family: "ins-reg";
-  src: url(/fonts/ins-reg.woff2) format("woff2");
+  font-family: "ogg-reg";
+  src: url(/fonts/OggRegular.woff2) format("woff2");
 }
 @font-face {
   font-family: "ins-med";
   src: url(/fonts/ins-med.woff2) format("woff2");
 }
-
 @font-face {
-  font-family: "paris-reg";
-  src: url(/fonts/paris-reg.woff2) format("woff2");
+  font-family: "ins-reg";
+  src: url(/fonts/ins-reg.woff2) format("woff2");
 }
-@font-face {
-  font-family: "clarke-med";
-  src: url(/fonts/clarke-med.woff2) format("woff2");
-}
-
 
 @layer base {
   ::-webkit-scrollbar {
@@ -40,17 +30,15 @@
     -webkit-text-stroke-width: 1px;
   }
 
-
   .o-layout:before {
-    content: '';
+    content: "";
     width: 100%;
-    height: 409px;
-    height: 55.015%;
+    height: 709px;
+    height: 100%;
     position: absolute;
-    bottom: calc(40.5%);
-    background: #bae6fd;
+    background: #3b82f6f2;
     transform-origin: bottom right;
     clip-path: polygon(0 150%, 0 0, 100% 100%);
     z-index: -1;
-}
+  }
 }

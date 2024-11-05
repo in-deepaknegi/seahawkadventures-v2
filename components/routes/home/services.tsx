@@ -1,172 +1,106 @@
-"use client"
+import React from 'react';
 import { ComponentProps } from '@/types/global';
-import Image, { ImageProps } from 'next/image';
-import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Services: React.FC<ServicesProps> = (props) => {
-    const { heading, image, services } = {
+    const { heading, description, services } = {
         ...ServicesDefaults,
         ...props
     };
-
-
-    const [index, setIndex] = useState(0);
-
-    const handleClick = (newIndex: number) => {
-        setIndex(newIndex);
-    };
-
     return (
-        <section className='relative overflow-hidden py-24 h-screen isolate'>
-            {image?.src && (
-                <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={1280}
-                    height={780}
-                    className='absolute -z-10 top-0 w-full h-full object-cover'
-                />
-            )}
-
-            <div className='absolute top-0 h-full w-full bg-gradient-to-t backdrop-blur-[0.75px] from-sky-100 to-sky-100/40' />
-
-            {/* <div className='bg-[#50a1ff] w-40 top-16 rounded-md h-40 absolute rotate-45' /> */}
-
-            <div className='mx-auto max-w-[90%] px-5 md:px-0 h-full relative'>
-                <div className=''>
-                    <h2 className='text-[4vw] flex flex-col text-black font-clam'>
+        <section className='relative h-full py-28 font-insr'>
+            <div className='mx-auto max-w-full px-10'>
+                <div className='flex flex-col items-center justify-center text-center'>
+                    <h2 className='font-oggr text-5xl'>
                         {heading}
                     </h2>
+                    <p className='text-xl text-gray-600 mt-5 max-w-2xl'>
+                        If you have a vision, we will build it. <br />From modular to custom projects, all perfectly sustainable.
+                    </p>
+                </div>
 
-                    <div className='mt-10 flex'>
-                        <div className='flex flex-col w-full items-center gap-10 border-t border-gray-300'>
-                            {services?.map((service, i) => (
-                                <div
-                                    key={i}
-                                    className={`${i === index ? "border-t-[3px] text-[#50a1ff] border-[#50a1ff]" : "text-black"
-                                        } font-clarm tracking-wider py-4 px-4`}
-                                >
-                                    <button
-                                        onClick={() => {
-                                            handleClick(i);
-                                            setIndex(i);
-                                        }}
-                                        className={`text-4xl uppercase w-full flex transition-all `}
-                                    >
-                                        {service.title}
+                <div className='mt-10'>
+                    <div className="flex space-x-4">
+                        {services?.map((service, i) => (
+                            <div
+                                key={i}
+                                className="group flex-1 hover:flex-[1.5] transition-all relative duration-700 bg-gray-200 overflow-hidden rounded-lg h-[22rem]">
 
-                                    </button>
+                                <Image
+                                    src={service.thumbnail.src}
+                                    alt={service.thumbnail.alt}
+                                    width={1080}
+                                    height={680}
+                                    className='absolute w-full h-full object-cover object-center'
+                                />
+                                <div className='absolute size-full bg-gradient-to-t from-black/30 to-black/30' />
+
+                                <div className='p-6 relative flex flex-col justify-between text-white h-full'>
+                                    <p className=' text-lg font-insr'>
+                                        {service.description}
+                                    </p>
+
+
+                                    <div className='flex items-center justify-between'>
+                                        <h2 className="text-left font-oggr whitespace-nowrap text-4xl">
+                                            {service.title}
+                                        </h2>
+                                       
+
+                                        <Link href={"#"} className='bg-white group-hover:block hidden text-black w-fit ml-auto whitespace-nowrap px-4 py-1 rounded-full'>
+                                            Book Now
+                                        </Link>
+                                    </div>
                                 </div>
-                            ))}
-                        </div>
-                        <div className=''>
-                            <div className='flex gap-10'>
-                                {services && (
-                                    services[index].packages.map((pkg, i) => (
-                                        <div key={i}>
-                                            <div>
-                                                {image?.src && (
-                                                    <Image
-                                                        src={pkg.image?.src}
-                                                        alt={pkg.image?.alt}
-                                                        width={1280}
-                                                        height={780}
-                                                        className=' aspect-video object-cover rounded-md'
-                                                    />
-                                                )}
-                                            </div>
-                                            <h3 className='text-4xl mt-5 font-clarm'>
-                                                {pkg.title}
-                                            </h3>
-                                        </div>
-                                    ))
-                                )}
                             </div>
-                        </div>
+                        ))}
+
                     </div>
                 </div>
             </div>
-
         </section>
+
+
     );
 };
 
 export default Services;
 
-
 type ServicesProps = React.ComponentPropsWithoutRef<"section"> & Partial<ComponentProps>;
 
 const ServicesDefaults: ComponentProps = {
-    heading: "Explore adventure with us",
-    image: {
-        src: "/images/home/h1.jpg",
-        alt: "main hero image sea hawk adventures"
-    },
+    heading: "River Rafting in Rishikesh",
+    description: "If you have a vision, we will build it.From modular to custom projects, all perfectly sustainable.",
+
     services: [
         {
-            title: "Rafting",
-            description: "Experience the thrill of the fast river with our expert guides, ensuring a safe and unforgettable adventure.",
-            thumbnail: "",
-            packages: [
-                {
-                    title: "12 Km Rafting",
-                    description: "Come along on a thrilling 12 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-                    image: {
-                        src: "/images/h1.jpg",
-                        alt: "ss"
-                    },
-                    price: 620,
-                    link: "",
-                },
-                {
-                    title: "16 Km Rafting",
-                    description: "Come along on a thrilling 16 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-                    image: {
-                        src: "/images/h2.jpg",
-                        alt: "ss"
-                    },
-                    price: 620,
-                    link: "",
-                },
-                {
-                    title: "16 Km Rafting",
-                    description: "Come along on a thrilling 16 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-                    image: {
-                        src: "/images/h3.jpg",
-                        alt: "ss"
-                    },
-                    price: 620,
-                    link: "",
-                }
-            ]
+            title: "12 Km River Rafting",
+            description: "Tailored houses to answer your architectural vision.",
+            thumbnail: {
+                src: "/images/h1.jpg",
+                alt: "sdf"
+            },
+            link: "#"
         },
         {
-            title: "Kayaking",
-            description: "Experience the thrill of the fast river with our expert guides, ensuring a safe and unforgettable adventure.",
-            thumbnail: "",
-            packages: [
-                {
-                    title: "12 ",
-                    description: "Come along on a thrilling 12 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-                    image: {
-                        src: "/images/h1.jpg",
-                        alt: "ss"
-                    },
-                    price: 620,
-                    link: "",
-                },
-                {
-                    title: "16 ",
-                    description: "Come along on a thrilling 16 km rafting adventure, guiding through rapids and taking in stunning scenery.",
-                    image: {
-                        src: "/images/h1.jpg",
-                        alt: "ss"
-                    },
-                    price: 620,
-                    link: "",
-                }
-            ]
+            title: "12 Km River Rafting",
+            description: "Tailored houses to answer your architectural vision.",
+            thumbnail: {
+                src: "/images/h2.jpg",
+                alt: "sdf"
+            },
+            link: "#"
         },
+        {
+            title: "12 Km River Rafting",
+            description: "Tailored houses to answer your architectural vision.",
+            thumbnail: {
+                src: "/images/h3.jpg",
+                alt: "sdf"
+            },
+            link: "#"
+        }
     ]
 };
 

@@ -1,15 +1,17 @@
 import { ImageProps } from "next/image";
 
 export type ComponentProps = {
-    heading: string;
+    heading?: string;
+    description?: string;
     sub_heading?: string;
     image?: ImageProps;
 
     services?: {
         title: string;
         description: string;
-        thumbnail: string;
-        packages: {
+        thumbnail: ImageProps;
+        link: string;
+        packages?: {
             title: string;
             description: string;
             image: ImageProps;
