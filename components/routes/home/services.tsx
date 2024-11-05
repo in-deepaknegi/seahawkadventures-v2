@@ -9,8 +9,9 @@ const Services: React.FC<ServicesProps> = (props) => {
         ...props
     };
     return (
-        <section className='relative h-full py-28 font-insr'>
-            <div className='mx-auto max-w-full px-10'>
+        <section className='relative h-full py-28 font-insr bg-white'>
+            
+            <div className='mx-auto max-w-full md:max-w-[90%] px-10'>
                 <div className='flex flex-col items-center justify-center text-center'>
                     <h2 className='font-oggr text-5xl'>
                         {heading}
@@ -20,38 +21,37 @@ const Services: React.FC<ServicesProps> = (props) => {
                     </p>
                 </div>
 
-                <div className='mt-10'>
-                    <div className="flex space-x-4">
+
+                
+
+                <div className='mt-20'>
+                    <div className="flex space-x-10">
                         {services?.map((service, i) => (
                             <div
                                 key={i}
-                                className="group flex-1 hover:flex-[1.5] transition-all relative duration-700 bg-gray-200 overflow-hidden rounded-lg h-[22rem]">
+                                className="group flex bg-dusk-100/50 backdrop-blur-sm  flex-col transition-all relative duration-700 overflow-hidden border p-4 h-full">
 
                                 <Image
                                     src={service.thumbnail.src}
                                     alt={service.thumbnail.alt}
                                     width={1080}
                                     height={680}
-                                    className='absolute w-full h-full object-cover object-center'
+                                    className='object-cover aspect-square brightness-[0.7] group-hover:brightness-100 transition-all duration-300 ease-in'
                                 />
-                                <div className='absolute size-full bg-gradient-to-t from-black/30 to-black/30' />
 
-                                <div className='p-6 relative flex flex-col justify-between text-white h-full'>
-                                    <p className=' text-lg font-insr'>
+                                <div className=' pt-4 flex flex-col justify-between text-black h-full'>
+
+                                    <h2 className="text-left font-oggr whitespace-nowrap text-4xl">
+                                        {service.title}
+                                    </h2>
+                                    <p className='text-sm mt-2'>
                                         {service.description}
                                     </p>
 
-
-                                    <div className='flex items-center justify-between'>
-                                        <h2 className="text-left font-oggr whitespace-nowrap text-4xl">
-                                            {service.title}
-                                        </h2>
-                                       
-
-                                        <Link href={"#"} className='bg-white group-hover:block hidden text-black w-fit ml-auto whitespace-nowrap px-4 py-1 rounded-full'>
-                                            Book Now
-                                        </Link>
-                                    </div>
+                                    <Link href={"#"} className='bg-white text-lg mt-5 text-black w-fit whitespace-nowrap px-4 py-1'>
+                                        Book Now
+                                        <span className='absolute inset-0'></span>
+                                    </Link>
                                 </div>
                             </div>
                         ))}
@@ -59,7 +59,7 @@ const Services: React.FC<ServicesProps> = (props) => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
 
 
     );
@@ -84,7 +84,7 @@ const ServicesDefaults: ComponentProps = {
             link: "#"
         },
         {
-            title: "12 Km River Rafting",
+            title: "16 Km River Rafting",
             description: "Tailored houses to answer your architectural vision.",
             thumbnail: {
                 src: "/images/h2.jpg",
@@ -93,7 +93,7 @@ const ServicesDefaults: ComponentProps = {
             link: "#"
         },
         {
-            title: "12 Km River Rafting",
+            title: "21 Km River Rafting",
             description: "Tailored houses to answer your architectural vision.",
             thumbnail: {
                 src: "/images/h3.jpg",
