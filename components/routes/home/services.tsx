@@ -36,9 +36,6 @@ const Services: React.FC<ServicesProps> = (props) => {
                     </p>
                 </div>
 
-
-
-
                 <div className='mt-12'>
                     <div className="flex space-x-7">
                         {services?.map((service, i) => (
