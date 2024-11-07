@@ -8,6 +8,7 @@ import Services from "@/components/routes/home/services";
 import Features from "@/components/routes/home/features";
 
 import Preloader from '@/components/globals/preloader'
+import About from "@/components/routes/home/about";
 
 const { SITE_NAME } = process.env;
 
@@ -65,7 +66,7 @@ export default function Home() {
             <main>
                 <Hero />
                 <Services />
-                <Features />
+                <About />
             </main>
         </>
     );

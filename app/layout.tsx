@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SocialIcons from "@/components/globals/social";
 const inter = Inter({ subsets: ["latin"] });
 
 const { SITE_NAME } = process.env;
@@ -47,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <SocialIcons />
           {children}
       </body>
     </html>
