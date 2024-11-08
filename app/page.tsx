@@ -8,6 +8,7 @@ import Services from "@/components/routes/home/services";
 import About from "@/components/routes/home/about";
 import Rafting from "@/components/routes/home/rafting";
 import Navbar from "@/components/globals/navbar";
+import Footer from "@/components/globals/footer";
 
 
 export default function Home() {
@@ -25,13 +26,14 @@ export default function Home() {
 
     return (
         <>
-        <Navbar/>
+            <Navbar />
             <main>
                 <Hero />
                 <Services />
                 <Rafting />
                 <About />
             </main>
+            <Footer />
         </>
     );
 }

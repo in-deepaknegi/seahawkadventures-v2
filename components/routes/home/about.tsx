@@ -55,7 +55,7 @@ const About: React.FC<CtaProps> = (props) => {
                     </p>
                     <Link
                         href={"#"}
-                        className="flex text-lg items-center gap-1 w-fit rounded-sm bg-blue-600 px-3 py-2 font-medium text-white"
+                        className="flex text-lg items-center gap-1 w-fit bg-blue-500 hover:bg-blue-600 rounded-full px-3 py-2 font-medium text-white"
                     >
                         Get in touch
                     </Link>

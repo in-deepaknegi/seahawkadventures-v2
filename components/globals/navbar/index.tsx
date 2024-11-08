@@ -14,7 +14,7 @@ const Navbar: React.FC<NavProps> = (props) => {
     };
     const pathname = usePathname();
     const [scroll, setScroll] = useState(true);
-    const [openIndex, setOpenIndex] = useState<number | null>(null); // Index for tracking which dropdown is open
+    const [openIndex, setOpenIndex] = useState<number | null>(null); 
 
     const profileVariants = {
         hidden: { opacity: 0, y: -10 },
@@ -33,6 +33,7 @@ const Navbar: React.FC<NavProps> = (props) => {
         const setScrollY = () => {
             if (scrollY > 1) {
                 setScroll(false);
+                setOpenIndex(null);
             } else {
                 setScroll(true);
             }
@@ -53,7 +54,7 @@ const Navbar: React.FC<NavProps> = (props) => {
     });
     return (
         <>
-            <nav className="top-0 z-50 border-b font-insr backdrop-blur-sm font-swir sticky w-full bg-white/50">
+            <nav className={`top-0 z-50 border-b font-insr backdrop-blur-sm font-swir sticky w-full ${scroll? 'bg-white/10':'bg-white/50'} transition-all ease-in duration-300`}>
                 <div className=" mx-auto max-w-full py-1.5 md:max-w-[95%]">
                     <div className="mx-auto px-4 sm:px-6 lg:px-0">
                         <div className="my-auto mt-1 flex flex-row items-center justify-between gap-6 text-sm text-black">
@@ -67,7 +68,7 @@ const Navbar: React.FC<NavProps> = (props) => {
                                         alt="site-logo"
                                         width={1280}
                                         height={780}
-                                        className="w-48"
+                                        className="w-40 md:w-48"
                                     />
                                     <span className="mt-auto hidden font-paris text-lg md:block md:text-3xl">
                                         It&apos;s time to paddle

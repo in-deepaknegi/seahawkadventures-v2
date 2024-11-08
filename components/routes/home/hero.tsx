@@ -11,7 +11,7 @@ const Hero: React.FC<HeroProps> = (props) => {
     };
     return (
         <section className="relative h-[104vh] overflow-hidden -mt-[4.7rem] font-insr">
-            <div className="absolute z-40 hidden size-full md:block">
+            <div className="absolute z-30 hidden size-full md:block">
                 <div className="flex h-full w-full items-center justify-center">
                     <div className="flex flex-col border p-4 text-center backdrop-blur-lg">
                         <video
@@ -31,7 +31,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="m-auto h-full max-w-full">
+            <div className="m-auto h-full max-w-full relative">
                 <div className="flex h-full flex-col px-8 md:px-0 md:flex-row">
                     <div className="relative mb-20 flex w-full flex-col items-center pl-0 pt-44 text-center text-black md:items-start md:pl-10 md:text-left">
                         <h1 className="py-4 font-oggr text-6xl md:text-[6.5vw] md:leading-[6rem] ">
@@ -44,7 +44,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                             Rishikesh&apos;s stunning landscapes.
                         </p>
 
-                        <div className="flex flex-col gap-3 text-sm justify-center items-center md:items-start font-mono mt-10 md:mt-auto">
+                        <div className="flex relative z-40 flex-col gap-3 text-sm justify-center items-center md:items-start font-mono mt-10 md:mt-auto">
                             <Link
                                 className="mt-auto flex items-center gap-2 font-mono text-sm"
                                href="tel:+91 97566 20538"
@@ -87,7 +87,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                             autoPlay={true}
                             loop={true}
                             muted
-                            className="aspect-square h-full w-full object-cover object-center"
+                            className="aspect-video h-full w-full object-cover object-center"
                         />
                     </div>
                 </div>

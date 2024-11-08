@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { ComponentProps } from '@/types/global';
 import Image from "next/image";
 import Link from "next/link";
-import { Hourglass } from "@/components/icons";
+import { Call, Hourglass, Whatsapp } from "@/components/icons";
 const Rafting: React.FC<RaftingProps> = (props) => {
-    const { heading, packages } = {
+    const { heading, description, packages } = {
         ...RaftingDefaults,
         ...props
     };
@@ -28,8 +28,7 @@ const Rafting: React.FC<RaftingProps> = (props) => {
                 <div className="flex flex-col items-center justify-center text-center">
                     <h2 className="font-oggr text-5xl md:text-6xl">{heading}</h2>
                     <p className="mt-5 max-w-2xl text-xl text-gray-600">
-                        If you have a vision, we will build it. <br />
-                        From modular to custom projects, all perfectly sustainable.
+                        {description}
                     </p>
                 </div>
 
@@ -109,10 +108,29 @@ const Rafting: React.FC<RaftingProps> = (props) => {
 
                                     <Link
                                         href={"#"}
-                                        className=" mx-auto mt-5 w-full max-w-[90%] whitespace-nowrap rounded-full bg-blue-500 px-4 py-2 text-center text-white"
+                                        className=" mx-auto mt-5 w-full md:max-w-[90%] whitespace-nowrap rounded-full bg-blue-500 hover:bg-blue-600 px-4 py-2 text-center text-white"
                                     >
                                         View Details
                                     </Link>
+                                    <div className="mt-5 flex gap-3 mx-auto">
+                                        <Link
+                                            href="tel:+91 97566 20538"
+                                            className="group px-3 rounded-full w-auto py-2 text-center bg-gray-300 hover:bg-gray-200 text-black flex items-center gap-3 justify-center overflow-hidden"
+                                        >
+                                            <Call className="size-4" />
+                                            Book on call
+                                        </Link>
+                                        
+                                        <Link
+                                            href={`https://wa.me/919756620538/?text=Hello! I'm interested in your ${service.title} and would love to learn more. Can you please provide details on the types of trips available and their durations? Thank you.`}
+                                            target="_blank"
+                                            className="w-fit rounded-full px-4 py-2 text-center bg-green-500/85 hover:bg-green-400/95 text-black flex items-center gap-2 justify-center"
+                                        >
+                                            <Whatsapp className="size-6" />
+                                            Chat with us
+                                        </Link>
+
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -128,9 +146,8 @@ export default Rafting;
 type RaftingProps = React.ComponentPropsWithoutRef<"section"> & Partial<ComponentProps>;
 
 const RaftingDefaults: ComponentProps = {
-    heading: "Popular Adventure in Rishikesh",
-    description:
-        "If you have a vision, we will build it.From modular to custom projects, all perfectly sustainable.",
+    heading: "Popular Adventures in Rishikesh",
+    description: "Experience the thrill of white-water rafting in Rishikesh. Choose from a range of exciting packages to suit your adventure level.",
 
     packages: [
         {

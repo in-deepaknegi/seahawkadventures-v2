@@ -18,20 +18,34 @@ export const metadata: Metadata = {
         default: SITE_NAME!,
         template: `%s | ${SITE_NAME}`
     },
-    description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
+    description: "Explore the exhilarating experience of river rafting in Rishikesh with Sea hawk Adventures. Compare rates, services, and inclusions to find the perfect deal for your adventure-filled getaway. Book your rafting trip now!",
+
+    keywords: [
+        "river rafting in Rishikesh",
+        "white water rafting Rishikesh",
+        "Ganges river rafting Rishikesh",
+        "Rishikesh rafting packages",
+        "camping and rafting in Rishikesh",
+        "book rafting in Rishikesh",
+        "rafting in Rishikesh booking",
+        "Rishikesh river rapids",
+        "Rishikesh travel guide",
+        "Rafting camps Rishikesh",
+    ],
 
     openGraph: {
         title: "Sea Hawk Adventuers",
-        description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
+        description: "Explore the exhilarating experience of river rafting in Rishikesh with Sea hawk Adventures. Compare rates, services, and inclusions to find the perfect deal for your adventure-filled getaway. Book your rafting trip now!",
         url: "https://www.seahawkadventures.com/",
-        images: ["/images/meta/seahawkadventures.png"],
+        images: ["/images/og/featured-img.png"],
+        siteName: "Sea Hawk Adventuers",
     },
 
     twitter: {
         card: 'summary_large_image',
         title: "SeaHawkAdventuers",
-        description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
-        images: ["/images/meta/seahawkadventures.png"],
+        description: "Explore the exhilarating experience of river rafting in Rishikesh with Sea hawk Adventures. Compare rates, services, and inclusions to find the perfect deal for your adventure-filled getaway. Book your rafting trip now!",
+        images: ["/images/og/featured-img.png"],
     },
 };
 
