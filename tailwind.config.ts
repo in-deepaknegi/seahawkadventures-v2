@@ -13,6 +13,7 @@ const config: Config = {
                 oggr: ["ogg-reg"],
                 insr: ["ins-reg"],
                 insm: ["ins-med"],
+                paris: ["paris"],
             },
             colors: {
                 'dusk': {

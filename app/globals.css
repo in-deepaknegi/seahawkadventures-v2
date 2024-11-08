@@ -18,6 +18,10 @@
   font-family: "ins-reg";
   src: url(/fonts/ins-reg.woff2) format("woff2");
 }
+@font-face {
+  font-family: "paris";
+  src: url(/fonts/paris-reg.woff2) format("woff2");
+}
 
 @layer base {
   ::-webkit-scrollbar {

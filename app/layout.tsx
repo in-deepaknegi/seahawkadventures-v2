@@ -3,54 +3,54 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SocialIcons from "@/components/globals/social";
 const inter = Inter({ subsets: ["latin"] });
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const { SITE_NAME } = process.env;
 
 const baseUrl = process.env.NEXT_PUBLIC_URL
-  ? process.env.NEXT_PUBLIC_URL
-  : 'http://localhost:3000';
+    ? process.env.NEXT_PUBLIC_URL
+    : 'http://localhost:3000';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
+    metadataBase: new URL(baseUrl),
 
-  title: {
-    default: SITE_NAME!,
-    template: `%s | ${SITE_NAME}`
-  },
-  description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
-
-  openGraph: {
-    title: "Sea Hawk Adventuers",
+    title: {
+        default: SITE_NAME!,
+        template: `%s | ${SITE_NAME}`
+    },
     description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
-    url: "https://www.seahawkadventures.com/",
-    images: ["/images/meta/seahawkadventures.png"],
-  },
 
-  twitter: {
-    card: 'summary_large_image',
-    title: "SeaHawkAdventuers",
-    description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
-    images: ["/images/meta/seahawkadventures.png"],
-  },
+    openGraph: {
+        title: "Sea Hawk Adventuers",
+        description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
+        url: "https://www.seahawkadventures.com/",
+        images: ["/images/meta/seahawkadventures.png"],
+    },
 
-  robots: {
-    follow: true,
-    index: true
-  },
+    twitter: {
+        card: 'summary_large_image',
+        title: "SeaHawkAdventuers",
+        description: "Experience the thrill of rafting, kayaking, expeditions, and camping with Sea Hawk Adventures. Our experienced team will guide you through stunning nature and breathtaking scenery, creating unforgettable outdoor excursions for all.",
+        images: ["/images/meta/seahawkadventures.png"],
+    },
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
 
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        <SocialIcons />
-          {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <GoogleTagManager gtmId="GTM-WWQ9J7ZF" />
+
+            <body className={inter.className}>
+                <SocialIcons />
+                {children}
+            </body>
+            <GoogleAnalytics gaId="G-1ZYE4TYDD6" />
+
+        </html>
+    );
 }

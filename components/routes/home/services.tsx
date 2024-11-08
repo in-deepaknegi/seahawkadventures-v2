@@ -1,198 +1,102 @@
-import React, { useState } from 'react';
-import { ComponentProps } from '@/types/global';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Hourglass } from '@/components/icons';
+import React from "react";
+
+import { ComponentProps } from "@/types/global";
+import Image from "next/image";
 
 const Services: React.FC<ServicesProps> = (props) => {
     const { heading, description, services } = {
         ...ServicesDefaults,
-        ...props
+        ...props,
     };
-
-    // Initialize state to track which service's description is expanded (default all are collapsed)
-    const [lines, setLines] = useState<boolean[]>(new Array(services?.length).fill(false));
-
-    const toggleLine = (index: number) => {
-        setLines((prevLines) => {
-            // Collapse all descriptions first, then toggle the selected one
-            const newLines = new Array(services?.length).fill(false);
-            newLines[index] = !prevLines[index];  // Toggle the clicked index's value
-            return newLines;
-        });
-    };
-
 
     return (
-        <>
+        <section className="relative isolate -mt-1 overflow-hidden bg-white py-10 font-insr sm:py-16">
+            <div className="mx-auto max-w-full px-6 md:max-w-[90%] lg:px-10">
+                <div className="mf:pb-16 relative mx-auto flex flex-col justify-between pb-6 text-center md:text-left">
+                    <h2 className="mt-2 font-oggr text-5xl text-black sm:text-6xl">
+                        {heading}
+                    </h2>
+                    <p className="mt-5 max-w-2xl text-xl text-gray-600">{description}</p>
+                </div>
 
-            <div className='h-[30vh]'>
-                00
+                <hr />
+
+                <div className="mx-auto max-w-2xl pt-6 md:px-10 md:pt-16 lg:max-w-none">
+                    <dl className="grid max-w-xl grid-cols-1 gap-10 md:gap-16 lg:max-w-none lg:grid-cols-3">
+                        {services?.map((service, i) => (
+                            <a
+                                key={i}
+                                href={service.link}
+                                className="group relative flex h-full flex-col overflow-hidden"
+                            >
+                                <dt className="flex flex-row items-center gap-6 font-insm text-2xl text-black">
+                                    <Image
+                                        src={service?.thumbnail.src}
+                                        alt=""
+                                        width={1080}
+                                        height={680}
+                                        className="w-9 md:w-12"
+                                    />
+                                    {service.title}
+                                </dt>
+                                <dd className="mt-4 flex flex-auto flex-col text-gray-600">
+                                    <p className="flex-auto">{service.description}</p>
+                                </dd>
+                                <p className="mt-1 flex items-center gap-2 text-blue-500 md:mt-3">
+                                    Read more
+                                    <span className="-translate-x-32 opacity-0 transition-all duration-500 ease-in group-hover:translate-x-0 group-hover:opacity-100">
+                                        →
+                                    </span>
+                                </p>
+                            </a>
+                        ))}
+                    </dl>
+                </div>
             </div>
-
-            <section className='relative h-full font-insr bg-[#0c0e17] text-white'>
-
-                <div className='absolute size-full flex justify-center z-0'>
-                    <div className='flex max-w-[90%] px-10 items-center justify-between size-full'>
-                        <div className='bg-gray-400/30 w-[1px] h-full' />
-                        <div className='bg-gray-400/30 w-[0.5px] h-full' />
-                        <div className='bg-gray-400/30 w-[0.5px] h-full' />
-                        <div className='bg-gray-400/30 w-[0.5px] h-full' />
-                        <div className='bg-gray-400/30 w-[0.5px] h-full' />
-                        <div className='bg-gray-400/30 w-[1px] h-full' />
-                    </div>
-
-                </div>
-
-                <div className='mx-auto max-w-full relative md:max-w-[90%] px-10 py-28 '>
-                    <div className='flex flex-col items-center justify-center text-center'>
-                        <h2 className='font-oggr text-6xl'>
-                            {heading}
-                        </h2>
-                        <p className='text-xl text-gray-300 mt-5 max-w-2xl'>
-                            If you have a vision, we will build it. <br />From modular to custom projects, all perfectly sustainable.
-                        </p>
-                    </div>
-
-                    <div className='mt-12'>
-                        <div className="flex gap-8">
-                            {services?.map((service, i) => (
-                                <div
-                                    key={i}
-                                    className="group flex w-full bg-white backdrop-blur-sm  flex-col transition-all relative duration-700 overflow-hidden border border-dawn-600 p-4 h-full">
-
-                                    <div className=' overflow-hidden'>
-                                        <Image
-                                            src={service.thumbnail.src}
-                                            alt={service.thumbnail.alt}
-                                            width={1080}
-                                            height={680}
-                                            className='object-cover aspect-[16/12] group-hover:scale-105 transition-all duration-300 ease-in'
-                                        />
-                                    </div>
-
-                                    <div className='pt-5 flex flex-col justify-between text-black h-full'>
-
-                                        <h2 className="text-left font-oggr tracking-wide whitespace-nowrap text-3xl">
-                                            {service.title}
-                                        </h2>
-
-                                        <div className='flex flex-col gap-1 text-sm mt-5 border border-dawn-600 p-2'>
-                                            <div className='flex items-center gap-4 text-black'>
-                                                <div>
-                                                    <Image
-                                                        src={"/images/home/google-calendar.png"}
-                                                        alt=''
-                                                        width={1080}
-                                                        height={680}
-                                                        className='w-4'
-                                                    />
-                                                </div>
-                                                <div>
-                                                    Timing: Every Day at 9:00 AM and 2:00 PM
-                                                </div>
-                                            </div>
-                                            <div className='flex items-center gap-4 text-black'>
-                                                <div>
-                                                    <Image
-                                                        src={"/images/home/google-maps.png"}
-                                                        alt=''
-                                                        width={1080}
-                                                        height={680}
-                                                        className='w-4'
-                                                    />
-                                                </div>
-                                                <div>
-                                                    Location: Marine Drive - Shivpuri
-                                                </div>
-                                            </div>
-                                            <div className='flex items-center gap-4 text-black'>
-                                                <div>
-                                                    <Hourglass className='size-4' />
-                                                </div>
-                                                <div>
-                                                    Duration: 1.5 hours
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-
-                                        <p className="mt-5 text-3xl text-black">₹ 620
-                                            <span className="text-lg text-gray-500">/person</span>
-                                        </p>
-
-                                        <div className='mt-2'>
-                                            <p className={`text-[0.95rem] mt-2 w-fit ${lines[i] ? '' : 'line-clamp-2'} text-dawn-800`}>
-                                                {service.description}
-                                            </p>
-                                            <button
-                                                onClick={() => toggleLine(i)}
-                                                className='text-blue-700'
-                                            >
-                                                {lines[i] ? "read less..." : "read more..."}
-
-                                            </button>
-                                        </div>
-
-
-                                        <div>
-
-                                        </div>
-
-                                        <Link href={"#"} className=' max-w-[90%] mx-auto mt-5 bg-[#0c0e17] text-center w-full text-white whitespace-nowrap px-4 py-2'>
-                                            View Details
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))}
-
-                        </div>
-                    </div>
-                </div>
-            </section >
-
-        </>
-
+        </section>
     );
 };
 
 export default Services;
 
-type ServicesProps = React.ComponentPropsWithoutRef<"section"> & Partial<ComponentProps>;
+type ServicesProps = React.ComponentPropsWithoutRef<"section"> &
+    Partial<ComponentProps>;
 
 const ServicesDefaults: ComponentProps = {
-    heading: "Popular Adventure in Rishikesh",
-    description: "If you have a vision, we will build it.From modular to custom projects, all perfectly sustainable.",
+    heading: " Select your adventure",
+    description:
+        " Dive into the spirit of adventures: discover the blend of fun and expertise in every expedition",
 
     services: [
         {
-            title: "12 Km River Rafting",
-            description: "Rafting from Shivpuri to NIM beach- Rishikesh is called 16km by every operator in Rishikesh but in actual it is not 16km. It is around 11-12km by River and takes around 1 and half to 2 hours to complete. It features roughly seven rapids, both minor and large. Roller Coaster (III+), Golf Course (III+), and Club House are some of the good rapids we run on this stretch (III). Although there are some large waves and hydraulics, these rapids are safe to...",
+            title: "Rafting",
+            description:
+                "Experience the thrill of the fast river with our expert guides, ensuring a safe and unforgettable adventure.",
+            link: "/rafting",
             thumbnail: {
-                src: "/images/rafting/r02.jpg",
-                alt: "sdf"
+                src: "/images/svg/compass.svg",
+                alt: "",
             },
-            link: "#"
         },
         {
-            title: "16 Km River Rafting",
-            description: "Rafting from Shivpuri to NIM beach- Rishikesh is called 16km by every operator in Rishikesh but in actual it is not 16km. It is around 11-12km by River and takes around 1 and half to 2 hours to complete. It features roughly seven rapids, both minor and large. Roller Coaster (III+), Golf Course (III+), and Club House are some of the good rapids we run on this stretch (III). Although there are some large waves and hydraulics, these rapids are safe to...",
+            title: "Kayaking",
+            description:
+                "Join our experienced kayakers for an exciting trip down fast rivers, ensuring your safety and a great time.",
+            link: "#",
             thumbnail: {
-                src: "/images/rafting/r12.jpg",
-                alt: "sdf"
+                src: "/images/svg/boat.svg",
+                alt: "",
             },
-            link: "#"
         },
         {
-            title: "21 Km River Rafting",
-            description: "Rafting from Shivpuri to NIM beach- Rishikesh is called 16km by every operator in Rishikesh but in actual it is not 16km. It is around 11-12km by River and takes around 1 and half to 2 hours to complete. It features roughly seven rapids, both minor and large. Roller Coaster (III+), Golf Course (III+), and Club House are some of the good rapids we run on this stretch (III). Although there are some large waves and hydraulics, these rapids are safe to...",
+            title: "Expedition",
+            description:
+                "Join our experienced adventurers on a fun camping trip. Explore the outdoors, stay safe, and have a great time with our team.",
+            link: "#",
             thumbnail: {
-                src: "/images/rafting/r06.jpg",
-                alt: "sdf"
+                src: "/images/svg/tent.svg",
+                alt: "",
             },
-            link: "#"
-        }
-    ]
+        },
+    ],
 };
-
