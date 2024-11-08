@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                 </div>
             </div>
             <div className="m-auto h-full max-w-full">
-                <div className="flex h-full flex-col px-8 md:flex-row">
+                <div className="flex h-full flex-col px-8 md:px-0 md:flex-row">
                     <div className="relative mb-20 flex w-full flex-col items-center pl-0 pt-44 text-center text-black md:items-start md:pl-10 md:text-left">
                         <h1 className="py-4 font-oggr text-6xl md:text-[6.5vw] md:leading-[6rem] ">
                             Sea hawk <br />
