@@ -2,6 +2,7 @@ import React from "react";
 
 import { ComponentProps } from "@/types/global";
 import Image from "next/image";
+import Link from "next/link";
 
 const Services: React.FC<ServicesProps> = (props) => {
     const { heading, description, services } = {
@@ -22,14 +23,14 @@ const Services: React.FC<ServicesProps> = (props) => {
                 <hr />
 
                 <div className="mx-auto max-w-2xl pt-6 md:px-10 md:pt-16 lg:max-w-none">
-                    <dl className="grid max-w-xl grid-cols-1 gap-10 md:gap-16 lg:max-w-none lg:grid-cols-3">
+                    <div className="grid max-w-xl grid-cols-1 gap-10 md:gap-16 lg:max-w-none lg:grid-cols-3">
                         {services?.map((service, i) => (
-                            <a
+                            <Link
                                 key={i}
                                 href={service.link}
                                 className="group relative flex h-full flex-col overflow-hidden"
                             >
-                                <dt className="flex flex-row items-center gap-6 font-insm text-2xl text-black">
+                                <div className="flex flex-row items-center gap-6 font-insm text-2xl text-black">
                                     <Image
                                         src={service?.thumbnail.src}
                                         alt=""
@@ -38,19 +39,19 @@ const Services: React.FC<ServicesProps> = (props) => {
                                         className="w-9 md:w-12"
                                     />
                                     {service.title}
-                                </dt>
-                                <dd className="mt-4 flex flex-auto flex-col text-gray-600">
+                                </div>
+                                <div className="mt-4 flex flex-auto flex-col text-gray-600">
                                     <p className="flex-auto">{service.description}</p>
-                                </dd>
+                                </div>
                                 <p className="mt-1 flex items-center gap-2 text-blue-500 md:mt-3">
                                     Read more
                                     <span className="-translate-x-32 opacity-0 transition-all duration-500 ease-in group-hover:translate-x-0 group-hover:opacity-100">
                                         →
                                     </span>
                                 </p>
-                            </a>
+                            </Link>
                         ))}
-                    </dl>
+                    </div>
                 </div>
             </div>
         </section>

@@ -107,7 +107,7 @@ const Rafting: React.FC<RaftingProps> = (props) => {
                                     </div>
 
                                     <Link
-                                        href={"#"}
+                                        href={service.link}
                                         className=" mx-auto mt-5 w-full md:max-w-[90%] whitespace-nowrap rounded-full bg-blue-500 hover:bg-blue-600 px-4 py-2 text-center text-white"
                                     >
                                         View Details
@@ -161,7 +161,7 @@ const RaftingDefaults: ComponentProps = {
                 src: "/images/rafting/r02.jpg",
                 alt: "sdf",
             },
-            link: "#",
+            link: "/rafting/12-km-rafting",
         },
         {
             title: "16 Km River Rafting",
@@ -174,7 +174,7 @@ const RaftingDefaults: ComponentProps = {
                 src: "/images/rafting/r12.jpg",
                 alt: "sdf",
             },
-            link: "#",
+            link: "/rafting/16-km-rafting",
         },
         {
             title: "21 Km River Rafting",
@@ -187,7 +187,7 @@ const RaftingDefaults: ComponentProps = {
                 src: "/images/rafting/r06.jpg",
                 alt: "sdf",
             },
-            link: "#",
+            link: "/rafting/21-km-rafting",
         },
     ],
 };

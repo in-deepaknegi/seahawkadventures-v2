@@ -14,7 +14,7 @@ const Navbar: React.FC<NavProps> = (props) => {
     };
     const pathname = usePathname();
     const [scroll, setScroll] = useState(true);
-    const [openIndex, setOpenIndex] = useState<number | null>(null); 
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const profileVariants = {
         hidden: { opacity: 0, y: -10 },
@@ -54,12 +54,12 @@ const Navbar: React.FC<NavProps> = (props) => {
     });
     return (
         <>
-            <nav className={`top-0 z-50 border-b font-insr backdrop-blur-sm font-swir sticky w-full ${scroll? 'bg-white/10':'bg-white/50'} transition-all ease-in duration-300`}>
+            <nav className={`top-0 z-50 border-b font-insr backdrop-blur-sm font-swir sticky w-full ${scroll ? 'bg-white/10' : 'bg-white/50'} transition-all ease-in duration-300`}>
                 <div className=" mx-auto max-w-full py-1.5 md:max-w-[95%]">
                     <div className="mx-auto px-4 sm:px-6 lg:px-0">
                         <div className="my-auto mt-1 flex flex-row items-center justify-between gap-6 text-sm text-black">
                             <div className="flex lg:flex-none">
-                                <a
+                                <Link
                                     href="/"
                                     className="-m-1.5 flex flex-wrap items-center justify-center gap-4 p-1.5 text-2xl"
                                 >
@@ -73,7 +73,7 @@ const Navbar: React.FC<NavProps> = (props) => {
                                     <span className="mt-auto hidden font-paris text-lg md:block md:text-3xl">
                                         It&apos;s time to paddle
                                     </span>
-                                </a>
+                                </Link>
                             </div>
 
 
@@ -112,15 +112,15 @@ const Navbar: React.FC<NavProps> = (props) => {
                                                                 src={item.thumbnail.src}
                                                                 alt=""
                                                                 width={1080}
-                                                            height={680}
-                                                            className="w-5"
-/>
+                                                                height={680}
+                                                                className="w-5"
+                                                            />
                                                             {sup.title}
                                                         </Link>
                                                     ))}
-                                                    
+
                                                     <Link href={item.url} className="text-[0.785rem] mt-2 text-center">
-                                                    Explore more about {item.title}
+                                                        Explore more about {item.title}
                                                     </Link>
                                                 </div>
                                             </motion.div>
@@ -206,15 +206,15 @@ const NavbarDefaults: NavbarProps = {
             sub: [
                 {
                     title: "12 Km Rafting",
-                    url: "#",
+                    url: "/rafting/12-km-rafting",
                 },
                 {
-                    title: "12 Km Rafting",
-                    url: "#",
+                    title: "16 Km Rafting",
+                    url: "/rafting/16-km-rafting",
                 },
                 {
-                    title: "12 Km Rafting",
-                    url: "#",
+                    title: "21 Km Rafting",
+                    url: "/rafting/21-km-rafting",
                 },
 
             ],

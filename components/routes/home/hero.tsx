@@ -87,7 +87,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                             autoPlay={true}
                             loop={true}
                             muted
-                            className="aspect-video h-full w-full object-cover object-center"
+                            className="aspect-square h-full w-full object-cover object-center"
                         />
                     </div>
                 </div>
