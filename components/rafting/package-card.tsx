@@ -24,12 +24,12 @@ export function PackageCard({
         <>
 
             <div className={`w-full bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-md ${isSelected ? 'border-rose-400' : ''}`}>
-                <div className="p-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <div className="p-5">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {distance}
                     </h3>
-                    <p className="text-gray-600 mb-4">{route} | Rapid Grade: {grade}</p>
-                    <div className="flex items-center gap-2 text-gray-500 mb-6">
+                    <p className="text-gray-800 text-sm mb-4">{route} | Rapid Grade: {grade}</p>
+                    <div className="flex items-center text-sm gap-2 text-gray-500 mb-6">
                         <Clock className="w-4 h-4" />
                         <span>{duration}</span>
                     </div>

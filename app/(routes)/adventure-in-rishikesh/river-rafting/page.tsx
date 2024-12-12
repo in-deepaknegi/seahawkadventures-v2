@@ -146,39 +146,12 @@ const RaftingPage = () => {
                                     Choose from available options
                                 </h1>
 
-                                <div className="bg-white rounded-xl p-6 shadow-sm mb-8">
-                                    <DateSelector
-                                        selectedDate={selectedDate}
-                                        onDateSelect={setSelectedDate}
-                                    />
-                                </div>
+                                <RaftingForm />
 
-                                <div>
-                                    <div className="w-full bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200 hover:shadow-md">
-                                        <div className="p-6">
-                                            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                                            12 KM
-                                            </h3>
-                                            <p className="text-gray-600 mb-4">Club House to NIM Beach | Rapid Grade: I-II</p>
-                                            <div className="flex items-center gap-2 text-gray-500 mb-6">
-                                                <Clock className="w-4 h-4" />
-                                                <span>1 - 2 Hours</span>
-                                            </div>
-                                            <div className="flex items-center justify-between">
-                                                <div className="text-xl font-bold text-gray-900">₹ 349</div>
-                                                <button
-                                                    // onClick={onSelect}
-                                                    className="px-6 py-2 bg-rose-500 text-white rounded-lg font-medium transition-colors duration-200 hover:bg-rose-600"
-                                                >
-                                                    Book Now
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+
                             </div>
 
-                            <RaftingForm />
 
 
 

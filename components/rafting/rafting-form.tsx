@@ -4,6 +4,7 @@ import { PackageCard } from './package-card';
 import { NumberOfUsersModal } from './number-of-user-modal';
 import { UserDetailsModal } from './user-details-modal';
 import { Package, BookingDetails, UserDetails } from '@/types/booking';
+import Script from 'next/script';
 
 interface FormData {
     selectedDate: Date;
@@ -22,6 +23,10 @@ export function RaftingForm() {
 
     const [showUsersModal, setShowUsersModal] = useState(false);
     const [showDetailsModal, setShowDetailsModal] = useState(false);
+
+    const [amount, setAmount] = useState("")
+    const [currency, setCurrency] = useState("INR")
+
 
     const packages: Package[] = [
         {
@@ -65,11 +70,16 @@ export function RaftingForm() {
         }));
         setShowUsersModal(false);
         setShowDetailsModal(true);
+        setAmount((formData.numberOfUsers * (formData.selectedPackage?.price || 0)).toString());
+
     };
 
     const handleUserDetailsConfirm = (users: UserDetails[]) => {
         setFormData(prev => ({ ...prev, users }));
         setShowDetailsModal(false);
+
+        setAmount((formData.numberOfUsers * (formData.selectedPackage?.price || 0)).toString());
+
 
         // Here you would typically submit the booking to your backend
         const bookingData = {
@@ -81,59 +91,136 @@ export function RaftingForm() {
         };
 
         console.log('Booking completed:', bookingData);
+
+        processPayment();
+
+
     };
 
+
+
+
+    const createOrderId = async () => {
+
+        try {
+            const response = await fetch("/api/order", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    amount: parseFloat(amount) * 100,
+                }),
+            })
+
+            if (!response.ok) {
+                throw new Error("Network response was not ok")
+            }
+
+
+            const data = await response.json()
+            return data.orderId
+        } catch (error) {
+            console.error(
+                "There was a problem with your fetch operation:",
+                error,
+            )
+        }
+    }
+
+    const processPayment = async () => {
+
+        try {
+            const orderId: string = await createOrderId()
+            const options = {
+                key: process.env.key_id,
+                amount: parseFloat(amount) * 100,
+                currency: currency,
+                name: "Cnippet",
+                description: "description",
+                order_id: orderId,
+                handler: async function (response: any) {
+                    const data = {
+                        orderCreationId: orderId,
+                        razorpayPaymentId: response.razorpay_payment_id,
+                        razorpayOrderId: response.razorpay_order_id,
+                        razorpaySignature: response.razorpay_signature,
+                    }
+
+                    const result = await fetch("/api/verify", {
+                        method: "POST",
+                        body: JSON.stringify(data),
+                        headers: { "Content-Type": "application/json" },
+                    })
+                    const res = await result.json()
+
+                    if (res.isOk) {
+                        console.log("payment succeeded")
+                    } else {
+                        console.log(res.message)
+                    }
+                },
+            }
+            const paymentObject = new window.Razorpay(options)
+            paymentObject.on("payment.failed", function (response: any) {
+                console.log(response.error.description)
+            })
+            paymentObject.open()
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
     return (
-        <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h2 className="text-xl font-semibold mb-4">Select Date</h2>
-                <DateSelector
-                    selectedDate={formData.selectedDate}
-                    onDateSelect={(date) => setFormData(prev => ({ ...prev, selectedDate: date }))}
-                />
-            </div>
+        <>
 
-            <div className="space-y-4">
-                {packages.map((pkg) => (
-                    <PackageCard
-                        key={pkg.id}
-                        {...pkg}
-                        isSelected={formData.selectedPackage?.id === pkg.id}
-                        onSelect={() => setFormData(prev => ({ ...prev, selectedPackage: pkg }))}
-                    />
-                ))}
-            </div>
+            <Script
+                id="razorpay-checkout-js"
+                src="https://checkout.razorpay.com/v1/checkout.js"
+            />
 
-            <div className="flex justify-end">
-                <button
-                    type="submit"
-                    disabled={!formData.selectedPackage}
-                    className={`px-8 py-3 rounded-lg font-medium text-lg transition-all duration-200 ${formData.selectedPackage
-                            ? 'bg-blue-500 text-white hover:bg-blue-600'
-                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                        }`}
-                >
-                    Book Now
-                </button>
-            </div>
 
-            {formData.selectedPackage && (
-                <>
-                    <NumberOfUsersModal
-                        isOpen={showUsersModal}
-                        onClose={() => setShowUsersModal(false)}
-                        onConfirm={handleNumberOfUsersConfirm}
-                        selectedPackage={formData.selectedPackage}
+
+            <form onSubmit={handleSubmit} className="space-y-0">
+                <div className="bg-white p-6">
+                    <h2 className="text-2xl mb-4">Select Date</h2>
+                    <DateSelector
                         selectedDate={formData.selectedDate}
+                        onDateSelect={(date) => setFormData(prev => ({ ...prev, selectedDate: date }))}
                     />
-                    <UserDetailsModal
-                        isOpen={showDetailsModal}
-                        onClose={() => setShowDetailsModal(false)}
-                        onConfirm={handleUserDetailsConfirm}
-                        numberOfUsers={formData.numberOfUsers}
-                    />
-                </>
-            )}
-        </form>
+                </div>
+
+                <div className="space-y-4">
+                    {packages.map((pkg) => (
+                        <PackageCard
+                            key={pkg.id}
+                            {...pkg}
+                            isSelected={formData.selectedPackage?.id === pkg.id}
+                            onSelect={() => setFormData(prev => ({ ...prev, selectedPackage: pkg }))}
+                        />
+                    ))}
+                </div>
+
+                {formData.selectedPackage && (
+                    <>
+                        <NumberOfUsersModal
+                            isOpen={showUsersModal}
+                            onClose={() => setShowUsersModal(false)}
+                            onConfirm={handleNumberOfUsersConfirm}
+                            selectedPackage={formData.selectedPackage}
+                            selectedDate={formData.selectedDate}
+                        />
+                        <UserDetailsModal
+                            isOpen={showDetailsModal}
+                            onClose={() => setShowDetailsModal(false)}
+                            onConfirm={handleUserDetailsConfirm}
+                            numberOfUsers={formData.numberOfUsers}
+                        />
+                    </>
+                )}
+            </form>
+        </>
+
     );
 }
