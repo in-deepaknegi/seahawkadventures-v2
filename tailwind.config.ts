@@ -13,6 +13,9 @@ const config: Config = {
                 oggr: ["ogg-reg"],
                 insr: ["ins-reg"],
                 insm: ["ins-med"],
+                monr: ["mon-reg"],
+                monm: ["mon-med"],
+
                 paris: ["paris"],
             },
             colors: {

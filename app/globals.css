@@ -19,6 +19,15 @@
   src: url(/fonts/ins-reg.woff2) format("woff2");
 }
 @font-face {
+  font-family: "mon-med";
+  src: url(/fonts/mon-med.woff2) format("woff2");
+}
+@font-face {
+  font-family: "mon-reg";
+  src: url(/fonts/mon-reg.woff2) format("woff2");
+}
+
+@font-face {
   font-family: "paris";
   src: url(/fonts/paris-reg.woff2) format("woff2");
 }
