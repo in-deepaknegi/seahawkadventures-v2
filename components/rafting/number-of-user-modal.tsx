@@ -20,6 +20,8 @@ export function NumberOfUsersModal({
 }: NumberOfUsersModalProps) {
     const [numberOfUsers, setNumberOfUsers] = useState(1);
     const totalAmount = numberOfUsers * selectedPackage.price;
+    console.log(totalAmount);
+    
 
     return (
         <Modal isOpen={isOpen} onClose={onClose} title="Booking Details">

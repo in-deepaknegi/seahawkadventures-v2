@@ -3,8 +3,9 @@ import { DateSelector } from '../date-selector';
 import { PackageCard } from './package-card';
 import { NumberOfUsersModal } from './number-of-user-modal';
 import { UserDetailsModal } from './user-details-modal';
-import { Package, BookingDetails, UserDetails } from '@/types/booking';
+import { Package, UserDetails } from '@/types/booking';
 import Script from 'next/script';
+
 
 interface FormData {
     selectedDate: Date;
@@ -24,36 +25,8 @@ export function RaftingForm() {
     const [showUsersModal, setShowUsersModal] = useState(false);
     const [showDetailsModal, setShowDetailsModal] = useState(false);
 
-    const [amount, setAmount] = useState("")
+    const [amount, setAmount] = useState("0")
     const [currency, setCurrency] = useState("INR")
-
-
-    const packages: Package[] = [
-        {
-            id: 1,
-            distance: '12 KM',
-            route: 'Club House to NIM Beach',
-            grade: 'I-II',
-            duration: '1 - 2 Hours',
-            price: 349,
-        },
-        {
-            id: 2,
-            distance: '16 KM',
-            route: 'Shivpuri to NIM Beach',
-            grade: 'II - III',
-            duration: '2 - 3 Hours',
-            price: 499,
-        },
-        {
-            id: 3,
-            distance: '26 KM',
-            route: 'Marine Drive to NIM Beach',
-            grade: 'II - III',
-            duration: '2 - 3 Hours',
-            price: 499,
-        },
-    ];
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -63,23 +36,26 @@ export function RaftingForm() {
     };
 
     const handleNumberOfUsersConfirm = (numberOfUsers: number) => {
-        setFormData(prev => ({
-            ...prev,
+        const updatedFormData = {
+            ...formData,
             numberOfUsers,
             users: Array(numberOfUsers).fill({ name: '', mobile: '' }),
-        }));
+        };
+        setFormData(updatedFormData);
+
+        // Calculate the amount after updating the form data
+        const calculatedAmount = numberOfUsers * (updatedFormData.selectedPackage?.price || 0);
+        setAmount(calculatedAmount.toString());
+
         setShowUsersModal(false);
         setShowDetailsModal(true);
-        setAmount((formData.numberOfUsers * (formData.selectedPackage?.price || 0)).toString());
+
 
     };
 
     const handleUserDetailsConfirm = (users: UserDetails[]) => {
         setFormData(prev => ({ ...prev, users }));
         setShowDetailsModal(false);
-
-        setAmount((formData.numberOfUsers * (formData.selectedPackage?.price || 0)).toString());
-
 
         // Here you would typically submit the booking to your backend
         const bookingData = {
@@ -89,16 +65,17 @@ export function RaftingForm() {
             totalAmount: formData.numberOfUsers * (formData.selectedPackage?.price || 0),
             users,
         };
+        // Calculate the amount based on selected number of users and package price
+        const calculatedAmount = formData.numberOfUsers * (formData.selectedPackage?.price || 0);
+        setAmount(calculatedAmount.toString());
+
 
         console.log('Booking completed:', bookingData);
 
-        processPayment();
+        processPayment(bookingData);
 
 
     };
-
-
-
 
     const createOrderId = async () => {
 
@@ -128,7 +105,7 @@ export function RaftingForm() {
         }
     }
 
-    const processPayment = async () => {
+    const processPayment = async (bookingData: any) => {
 
         try {
             const orderId: string = await createOrderId()
@@ -155,7 +132,27 @@ export function RaftingForm() {
                     const res = await result.json()
 
                     if (res.isOk) {
-                        console.log("payment succeeded")
+                        console.log("payment succeeded");
+
+
+                        try {
+                            const res = await fetch("/api/resend", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify({ bookingData }),
+                            });
+
+                            const json = await res.json();
+                            console.log(json);
+
+                        } catch (error) {
+                            console.error("Error:", error);
+                        }
+
+
+
                     } else {
                         console.log(res.message)
                     }
@@ -224,3 +221,30 @@ export function RaftingForm() {
 
     );
 }
+
+const packages: Package[] = [
+    {
+        id: 1,
+        distance: '12 KM',
+        route: 'Club House to NIM Beach',
+        grade: 'I-II',
+        duration: '1 - 2 Hours',
+        price: 1,
+    },
+    {
+        id: 2,
+        distance: '16 KM',
+        route: 'Shivpuri to NIM Beach',
+        grade: 'II - III',
+        duration: '2 - 3 Hours',
+        price: 1,
+    },
+    {
+        id: 3,
+        distance: '26 KM',
+        route: 'Marine Drive to NIM Beach',
+        grade: 'II - III',
+        duration: '2 - 3 Hours',
+        price: 1,
+    },
+];

@@ -11,6 +11,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "@next/third-parties": "^15.0.3",
+    "@react-email/components": "^0.0.31",
     "@studio-freight/lenis": "^1.0.42",
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
@@ -25,6 +26,7 @@
     "react": "19.0.0-rc-5c56b873-20241107",
     "react-dom": "19.0.0-rc-5c56b873-20241107",
     "react-locomotive-scroll": "^0.2.2",
+    "resend": "^4.0.1",
     "sharp": "^0.33.3",
     "swiper": "^11.1.0"
   },
