@@ -180,7 +180,7 @@ export function RaftingForm() {
 
 
             <form onSubmit={handleSubmit} className="space-y-0">
-                <div className="bg-white p-6">
+                <div className="bg-white pb-6">
                     <h2 className="text-2xl mb-4">Select Date</h2>
                     <DateSelector
                         selectedDate={formData.selectedDate}

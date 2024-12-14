@@ -13,6 +13,12 @@ import * as React from 'react';
 
 const MessageUsEmail = ({ bookingData }: any) => {
     const data = bookingData?.bookingData; 
+    const formattedDate = new Date(data.date).toLocaleDateString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+    });
+
 
     if (!data) {
         return (
@@ -43,7 +49,7 @@ const MessageUsEmail = ({ bookingData }: any) => {
                     <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] max-w-[465px]">
 
                         <Heading className="text-black text-[18px] font-normal text-center p-0 my-[30px] mx-0">
-                            Booking of <strong>{data.users.map((user: any) => user.name).join(', ')}</strong> on <strong>{data.date}</strong>
+                            Booking of <strong>{data.users.map((user: any) => user.name).join(', ')}</strong> on <strong>{formattedDate}</strong>
                         </Heading>
 
                         <Heading className="text-black text-[16px] font-normal text-left p-0 mt-[10px] mx-0">
@@ -51,7 +57,7 @@ const MessageUsEmail = ({ bookingData }: any) => {
                         </Heading>
                         <ul className='list-disc ml-2 text-[16px]'>
                             <li>
-                                <strong>Date</strong>:
+                                <strong>Date</strong>: {formattedDate}
                             </li>
                             <li>
                                 <strong>Route</strong>: {data.package?.route}
