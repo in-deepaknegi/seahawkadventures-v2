@@ -12,37 +12,70 @@ import {
 import * as React from 'react';
 
 const MessageUsEmail = ({ bookingData }: any) => {
-    const previewText = `Welcome abroad ${bookingData.users}`;
+    const data = bookingData?.bookingData; 
+
+    if (!data) {
+        return (
+            <Html>
+                <Head />
+                <Preview>No booking data available</Preview>
+                <Tailwind>
+                    <Body className='bg-white my-auto mx-auto font-sans'>
+                        <Container className='my-[20px] mx-auto p-[20px] max-w-4xl'>
+                            <Heading className='text-black text-[18px] font-normal text-left'>
+                                No booking details available.
+                            </Heading>
+                        </Container>
+                    </Body>
+                </Tailwind>
+            </Html>
+        );
+    }
+
+    const previewText = `Welcome abroad ${data.users.map((user: any) => user.name).join(', ')}`;
 
     return (
         <Html>
             <Head />
             <Preview>{previewText}</Preview>
             <Tailwind>
-                <Body className='bg-white my-auto mx-auto font-sans'>
-                    <Container className='my-[20px] mx-auto p-[20px] max-w-4xl'>
-                        <Heading className='text-black text-[18px] font-normal text-left'>
-                            Hello {bookingData.package.id} {bookingData.package.route}
+                <Body className="bg-white my-auto mx-auto font-sans px-2">
+                    <Container className="border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] max-w-[465px]">
+
+                        <Heading className="text-black text-[18px] font-normal text-center p-0 my-[30px] mx-0">
+                            Booking of <strong>{data.users.map((user: any) => user.name).join(', ')}</strong> on <strong>{data.date}</strong>
                         </Heading>
 
-                        <Hr className='my-[16px] mx-0 w-full' />
-                        <Text className='text-[#000000] text-[16px]'>
-                            A warm and heartfelt welcome to deepaknegi.in! We&apos;re thrilled to have you join our community, and we want to express our sincere gratitude for choosing to embark on this journey with us.
-                        </Text>
-                        <Text className='text-[#000000] text-[16px]'>
-                            At deepaknegi.in, we are dedicated to providing a space where curiosity meets knowledge, and where your aspirations find the wings to soar. Our platform is more than just a website; it&apos;s a dynamic community fueled by a passion for learning, growth, and connection.
-                        </Text>
-                        <Text className='text-[#000000] text-[16px]'>
-                            Thank you once again for joining us. Together, let&apos;s make this journey one of discovery, growth, and shared experiences.
-                        </Text>
-                        <Text className='text-[#000000] text-[16px]'>
-                            Here&apos;s to your success and fulfillment!
-                        </Text>
+                        <Heading className="text-black text-[16px] font-normal text-left p-0 mt-[10px] mx-0">
+                            <strong>Booking details</strong>
+                        </Heading>
+                        <ul className='list-disc ml-2 text-[16px]'>
+                            <li>
+                                <strong>Date</strong>:
+                            </li>
+                            <li>
+                                <strong>Route</strong>: {data.package?.route}
+                            </li>
+                            <li>
+                                <strong>Distance</strong>: {data.package?.distance}
+                            </li>
+                            <li>
+                                <strong>Duration</strong>: {data.package?.duration}
+                            </li>
+                            <li>
+                                <strong>Number of Users</strong>: {data.numberOfUsers}
+                            </li>
+                            <li>
+                                <strong>Total Amount Paid</strong>: {data.totalAmount}
+                            </li>
+                        </ul>
+
                     </Container>
                 </Body>
             </Tailwind>
         </Html>
     );
 };
+
 
 export default MessageUsEmail;

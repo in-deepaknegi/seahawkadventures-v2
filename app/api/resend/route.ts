@@ -6,7 +6,8 @@ const resend: Resend = new Resend(process.env.RESEND_API_KEY as string);
 
 export async function POST(req: Request): Promise<Response> {
     const bookingData = await req.json();
-
+    console.log("Received bookingData:", bookingData);
+    
     try {
         const data: any = await resend.emails.send({
             from: 'main@cnippet.site',
