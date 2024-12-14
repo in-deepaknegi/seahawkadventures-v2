@@ -3,15 +3,15 @@ import { format } from 'date-fns';
 
 interface DateOption {
     date: Date;
-    price: number;
 }
 
 interface DateSelectorProps {
     selectedDate: Date;
+    price: any;
     onDateSelect: (date: Date) => void;
 }
 
-export function DateSelector({ selectedDate, onDateSelect }: DateSelectorProps) {
+export function DateSelector({ selectedDate, price, onDateSelect }: DateSelectorProps) {
     const today = new Date();
 
     const dateOptions: DateOption[] = Array.from({ length: 7 }, (_, i) => {
@@ -19,7 +19,6 @@ export function DateSelector({ selectedDate, onDateSelect }: DateSelectorProps) 
         date.setDate(today.getDate() + i);
         return {
             date,
-            price: 349
         };
     });
 
@@ -30,9 +29,9 @@ export function DateSelector({ selectedDate, onDateSelect }: DateSelectorProps) 
                     <button
                         key={option.date.toISOString()}
                         onClick={() => onDateSelect(option.date)}
-                        className={`flex flex-col items-center min-w-[100px] p-4 rounded-lg border-2 transition-all duration-200 ${format(selectedDate, 'yyyy-MM-dd') === format(option.date, 'yyyy-MM-dd')
-                                ? 'border-rose-500 bg-rose-50'
-                                : 'border-gray-200 hover:border-rose-300'
+                        className={`flex flex-col items-center gap-2 min-w-[100px] p-4 rounded-lg border-2 transition-all duration-200 ${format(selectedDate, 'yyyy-MM-dd') === format(option.date, 'yyyy-MM-dd')
+                            ? 'border-indigo-500 bg-indigo-50'
+                            : 'border-gray-200 hover:border-indigo-300'
                             }`}
                     >
                         <span className="text-sm font-medium text-gray-600">
@@ -41,8 +40,8 @@ export function DateSelector({ selectedDate, onDateSelect }: DateSelectorProps) 
                         <span className="text-lg font-bold text-gray-800">
                             {format(option.date, 'MMM d')}
                         </span>
-                        <span className="text-sm font-medium text-rose-600">
-                            ₹ {option.price}
+                        <span className="text-sm font-medium font-monm text-indigo-600">
+                            {price ? `₹${price}` : `-`}
                         </span>
                     </button>
                 ))}

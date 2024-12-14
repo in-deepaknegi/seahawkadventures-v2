@@ -84,7 +84,7 @@ export default async function MainPage({ params }: { params: Params }) {
         <section className="relative isolate py-10 font-monr">
             <div className="mx-auto max-w-full px-5 md:max-w-[85%] md:px-0 xl:max-w-[78%]">
                 <div>
-                    <div className="flex items-center gap-1 text-sm">
+                    <div className="flex flex-wrap items-center gap-1 text-sm">
                         <div>Rishikesh</div>
                         <ChevronRight className="size-4" />
                         <div>Experience</div>
@@ -181,7 +181,7 @@ export default async function MainPage({ params }: { params: Params }) {
 
                             {doc?.body && <Mdx code={doc?.body.code} />}
 
-                            <RaftingForm packages={content} />
+                            <RaftingForm packages={content} price={content[0]?.price} />
 
                             {content_2 != undefined && (
                                 <div>
@@ -190,10 +190,10 @@ export default async function MainPage({ params }: { params: Params }) {
                                     </h3>
                                     <div className="flex gap-10">
                                         <div className="hidden h-full flex-col items-center justify-normal gap-1 md:flex">
-                                            <div className="h-4 w-4 rounded-full bg-gray-400" />
-                                            <div className="h-60 w-[1px] border" />
-                                            <div className="h-4 w-4 rounded-full bg-gray-400" />
-                                            <div className="h-40 w-[1px] border" />
+                                            <div className="h-4 w-4 rounded-full bg-indigo-400" />
+                                            <div className="h-60 w-[1px] border border-indigo-100" />
+                                            <div className="h-4 w-4 rounded-full bg-indigo-400" />
+                                            <div className="h-40 w-[1px] border border-indigo-100" />
                                         </div>
                                         <div className="grid grid-rows-2 gap-10">
                                             {content_2?.map((item, j) => (
@@ -246,8 +246,8 @@ export default async function MainPage({ params }: { params: Params }) {
                                     </li>
                                 </ul>
 
-                                <p className="ml-5 mt-10">
-                                    Please Note: The total GoPro video price for
+                                <p className="mt-10">
+                                    <strong>Please Note</strong>: The total GoPro video price for
                                     one raft is ₹2000. This amount is equally
                                     divided among the members who want the
                                     video, so it will be approximately ₹300 per
@@ -264,14 +264,14 @@ export default async function MainPage({ params }: { params: Params }) {
                                 </p>
                                 <Link
                                     href="#"
-                                    className="ml-auto flex w-fit items-center gap-1 rounded-full bg-emerald-600 px-3 py-1 text-white"
+                                    className="ml-auto flex w-fit items-center gap-1 rounded-full bg-green-500/85 hover:bg-green-500 px-3 py-1 text-black"
                                 >
                                     Need help?
                                     <Whatsapp className="size-6" />
                                 </Link>
                                 <Link
                                     href="#"
-                                    className="w-fit rounded-full bg-red-500 p-1.5 text-white"
+                                    className="w-fit rounded-full bg-indigo-500 hover:bg-indigo-600 p-1.5 text-white"
                                 >
                                     <Call className="size-5" />
                                 </Link>

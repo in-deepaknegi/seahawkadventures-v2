@@ -15,7 +15,7 @@ interface FormData {
     users: UserDetails[];
 }
 
-export function RaftingForm({ packages }: { packages: Package[] }) {
+export function RaftingForm({ packages, price }: { packages: Package[], price: any }) {
     const [formData, setFormData] = useState<FormData>({
         selectedDate: new Date(),
         selectedPackage: null,
@@ -184,6 +184,7 @@ export function RaftingForm({ packages }: { packages: Package[] }) {
                 <div className="bg-white pb-6">
                     <h2 className="text-2xl mb-4">Select Date</h2>
                     <DateSelector
+                        price={price}
                         selectedDate={formData.selectedDate}
                         onDateSelect={(date) => setFormData(prev => ({ ...prev, selectedDate: date }))}
                     />
