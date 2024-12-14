@@ -37,7 +37,7 @@ export function PackageCard({
                         <div className="text-xl font-bold text-gray-900">₹ {price}</div>
                         <button
                             onClick={onSelect}
-                            className="px-6 py-2 bg-rose-500 text-white rounded-lg font-medium transition-colors duration-200 hover:bg-rose-600"
+                            className="px-6 py-2 bg-indigo-500 text-white rounded-lg font-medium transition-colors duration-200 hover:bg-indigo-600"
                         >
                             Book Now
                         </button>

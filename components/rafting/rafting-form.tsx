@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import { DateSelector } from '../date-selector';
 import { PackageCard } from './package-card';
@@ -14,14 +15,14 @@ interface FormData {
     users: UserDetails[];
 }
 
-export function RaftingForm() {
+export function RaftingForm({ packages }: { packages: Package[] }) {
     const [formData, setFormData] = useState<FormData>({
         selectedDate: new Date(),
         selectedPackage: null,
         numberOfUsers: 1,
         users: [],
     });
-
+    const validPackages = Array.isArray(packages) ? packages : [];
     const [showUsersModal, setShowUsersModal] = useState(false);
     const [showDetailsModal, setShowDetailsModal] = useState(false);
 
@@ -179,7 +180,7 @@ export function RaftingForm() {
 
 
 
-            <form onSubmit={handleSubmit} className="space-y-0">
+            <form onSubmit={handleSubmit} className="space-y-0 mt-10">
                 <div className="bg-white pb-6">
                     <h2 className="text-2xl mb-4">Select Date</h2>
                     <DateSelector
@@ -189,7 +190,7 @@ export function RaftingForm() {
                 </div>
 
                 <div className="space-y-4">
-                    {packages.map((pkg) => (
+                    {validPackages.map((pkg) => (
                         <PackageCard
                             key={pkg.id}
                             {...pkg}
@@ -221,30 +222,3 @@ export function RaftingForm() {
 
     );
 }
-
-const packages: Package[] = [
-    {
-        id: 1,
-        distance: '12 KM',
-        route: 'Club House to NIM Beach',
-        grade: 'I-II',
-        duration: '1 - 2 Hours',
-        price: 1,
-    },
-    {
-        id: 2,
-        distance: '16 KM',
-        route: 'Shivpuri to NIM Beach',
-        grade: 'II - III',
-        duration: '2 - 3 Hours',
-        price: 1,
-    },
-    {
-        id: 3,
-        distance: '26 KM',
-        route: 'Marine Drive to NIM Beach',
-        grade: 'II - III',
-        duration: '2 - 3 Hours',
-        price: 1,
-    },
-];
