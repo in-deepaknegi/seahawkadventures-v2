@@ -54,7 +54,7 @@ const Navbar: React.FC<NavProps> = (props) => {
     });
     return (
         <>
-            <nav className={`top-0 z-50 border-b font-insr backdrop-blur-sm font-swir sticky w-full ${scroll ? 'bg-white/10' : 'bg-white/50'} transition-all ease-in duration-300`}>
+            <nav className={`top-0 z-50 font-insr backdrop-blur-sm font-swir sticky w-full ${scroll ? 'bg-white/10 ' : 'bg-white/50 border-b'} transition-all ease-in duration-300`}>
                 <div className=" mx-auto max-w-full py-1.5 md:max-w-[95%]">
                     <div className="mx-auto px-4 sm:px-6 lg:px-0">
                         <div className="my-auto mt-1 flex flex-row items-center justify-between gap-6 text-sm text-black">
@@ -66,11 +66,11 @@ const Navbar: React.FC<NavProps> = (props) => {
                                     <Image
                                         src={site.logo.src}
                                         alt="site-logo"
-                                        width={1280}
-                                        height={780}
-                                        className="w-40 md:w-48"
+                                        width={1980}
+                                        height={1020}
+                                        className="w-40 md:w-34"
                                     />
-                                    <span className="mt-auto hidden font-paris text-lg md:block md:text-3xl">
+                                    <span className="mt-auto hidden font-paris text-lg md:block md:text-2xl">
                                         It&apos;s time to paddle
                                     </span>
                                 </Link>
@@ -105,9 +105,9 @@ const Navbar: React.FC<NavProps> = (props) => {
                                                 variants={profileVariants}
                                                 className="absolute z-50 w-[14.7rem]"
                                             >
-                                                <div className="mt-8 flex flex-col w-auto justify-center items-center gap-1 rounded-lg bg-white border px-3 py-3 backdrop-blur-md">
+                                                <div className="mt-8 flex flex-col w-auto justify-center items-center gap-1 rounded-lg bg-white/95 backdrop-blur-md border px-3 py-3 ">
                                                     {item.sub.map((sup, k) => (
-                                                        <Link key={k} href={sup.url} className="text-black hover:bg-blue-100/70 rounded-lg p-1 flex items-center gap-3">
+                                                        <Link key={k} href={sup.url} className="text-black hover:bg-gray-200 px-5 rounded-lg p-1 flex items-center gap-3">
                                                             <Image
                                                                 src={item.thumbnail.src}
                                                                 alt=""

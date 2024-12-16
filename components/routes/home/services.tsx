@@ -73,7 +73,7 @@ const ServicesDefaults: ComponentProps = {
             title: "Rafting",
             description:
                 "Experience the thrill of the fast river with our expert guides, ensuring a safe and unforgettable adventure.",
-            link: "/rafting",
+            link: "/adventure-in-rishikesh/river-rafting",
             thumbnail: {
                 src: "/images/svg/compass.svg",
                 alt: "",
@@ -93,7 +93,7 @@ const ServicesDefaults: ComponentProps = {
             title: "Expedition",
             description:
                 "Join our experienced adventurers on a fun camping trip. Explore the outdoors, stay safe, and have a great time with our team.",
-            link: "#",
+            link: "/adventure-in-rishikesh/ganga-kayak-expedition",
             thumbnail: {
                 src: "/images/svg/tent.svg",
                 alt: "",
