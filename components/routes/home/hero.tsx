@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                         <h2 className="mt-5 font-oggr  text-4xl text-black">
                             Sea hawk adventures
                         </h2>
-                        <p className="max-w-sm text-sm text-black">
+                        <p className="max-w-sm text-xs md:text-sm text-black">
                             Sea Hawk Adventures crafts unparalleled adventure
                             experiences for rafting, kayaking and camping.
                         </p>
@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                 </div>
             </div>
             <div className="relative m-auto h-full max-w-full">
-                <div className="px-8 md:px-0">
+                <div className="md:px-0">
                     <div className="absolute bottom-10 z-30 w-full">
                         <h1 className="py-4 font-oggr text-6xl text-center w-full text-black md:text-[9.5vw] md:leading-[6rem] ">
                             Sea hawk
@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = (props) => {
                             kayaking in Rishikesh&apos;s stunning landscapes.
                         </p>
 
-                        <div className="relative z-40 flex items-center justify-center gap-10 font-mono text-base md:items-start">
+                        <div className="relative z-40 flex items-center flex-wrap justify-center gap-3 md:gap-10 font-mono text-base md:items-start">
                             <Link
                                 className="mt-auto flex items-center gap-2 font-mono "
                                 href="tel:+91 97566 20538"

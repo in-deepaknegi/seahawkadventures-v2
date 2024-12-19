@@ -244,14 +244,14 @@ export default async function MainPage({ params }: { params: Params }) {
                                             : "-"}
                                     </p>
                                     <Link
-                                        href="#"
+                                       href={`https://wa.me/919756620538/?text=Hi there!`}
                                         className="ml-auto flex w-fit items-center gap-1 rounded-full bg-green-500/85 px-3 py-1 text-black hover:bg-green-500"
                                     >
                                         Need help?
                                         <Whatsapp className="size-6" />
                                     </Link>
                                     <Link
-                                        href="#"
+                                          href={`tel:+91 97566 20538`}
                                         className="w-fit rounded-full bg-indigo-500 p-1.5 text-white hover:bg-indigo-600"
                                     >
                                         <Call className="size-5" />

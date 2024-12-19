@@ -79,7 +79,7 @@ const Navbar: React.FC<NavProps> = (props) => {
 
                             <div
                                 ref={menuRef}
-                                className="hidden items-center gap-5 ml-auto text-base md:flex"
+                                className="hidden items-center gap-5 ml-auto text-base lg:flex"
                             >
 
                                 {dropdown.map((item, j) => (
@@ -132,13 +132,13 @@ const Navbar: React.FC<NavProps> = (props) => {
                                     <Link
                                         key={i}
                                         href={item.url}
-                                        className={`rounded-lg font-insm uppercase text-sm px-2 py-3.5 ${pathname === item.url ? "bg-white text-black" : "text-black"}`}
+                                        className={`rounded-lg hidden xl:block font-insm uppercase text-sm px-2 py-3.5 ${pathname === item.url ? "bg-white text-black" : "text-black"}`}
                                     >
                                         {item.title}
                                     </Link>
                                 ))}
                             </div>
-                            <div className="ml-auto flex md:hidden">
+                            <div className="ml-auto flex lg:hidden">
                                 <button
                                     // onClick={toggleMobileMenu}
                                     type="button"
@@ -182,7 +182,7 @@ const NavbarDefaults: NavbarProps = {
         name: "Cnippet",
         logo: {
             src: "/images/og/logo-1.png",
-            alt: "cnippet site logo",
+            alt: "sea hawk site logo",
         },
     },
     links: [
