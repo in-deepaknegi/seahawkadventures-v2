@@ -49,7 +49,7 @@ const Rafting: React.FC<RaftingProps> = (props) => {
                                     />
                                 </div>
 
-                                <div className="flex h-full mt-4 flex-col justify-between rounded-2xl border p-4 pt-5 text-black">
+                                <div className="flex h-full mt-4 flex-col justify-between rounded-2xl shadow-lg border p-4 pt-5 text-black">
                                     <h2 className="whitespace-nowrap text-left text-3xl tracking-wide">
                                         {service.title}
                                     </h2>
