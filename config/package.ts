@@ -1,32 +1,66 @@
-interface DocsConfig {}
+interface PackageConfig {
+    package?: {
+        id?: number;
+        title?: string;
+        price?: number;
+        timing?: string;
+        route?: string;
+        grade?: string;
+        duration?: string;
+        description?: string
+        level?: string;
+        link?: string;
+    }[];
+    gallery?: {
+        src?: string;
+        alt?: string;
+    }[];
+    features?: {
+        label?: string;
+        description?: string;
+    }[];
+    itinerary?: {
+        label?: string;
+        description?: string;
+        image?: {
+            src?: string;
+            alt?: string;
+        };
+    }[];
+}
 
-export const packageConfig: DocsConfig = {};
 
 export const raftingConfig = {
     package: [
         {
             id: 1,
-            distance: "12 KM",
+            title: "12 KM",
+            price: 1,
             route: "Club House to NIM Beach",
             grade: "I-II",
             duration: "1 - 2 Hours",
-            price: 1,
+            description: "Experience riverside camping with bonfire and adventure activities.",
+            level: "Beginner",
+
+            link: "#"
         },
         {
             id: 2,
-            distance: "16 KM",
+            title: "16 KM",
             route: "Shivpuri to NIM Beach",
             grade: "II - III",
             duration: "2 - 3 Hours",
             price: 1020,
+            link: "#"
         },
         {
             id: 3,
-            distance: "26 KM",
+            title: "26 KM",
             route: "Marine Drive to NIM Beach",
             grade: "II - III",
             duration: "2 - 3 Hours",
             price: 1520,
+            link: "#"
         },
     ],
     gallery: [
@@ -89,8 +123,31 @@ export const raftingConfig = {
     ],
 };
 
-
-export const expeditionConfig = {
+export const expeditionConfig: PackageConfig = {
+    package: [
+        {
+            id: 1,
+            title: "Rafting Expedition",
+            timing: "Every Friday 3:00 PM",
+            route: "",
+            duration: "3 Days",
+            price: 800,
+            description: "Experience riverside camping with bonfire and adventure activities.",
+            level: "Beginner",
+            link: "#"
+        },
+        {
+            id: 2,
+            title: "Kayak Expedition",
+            timing: "Every Friday 3:00 PM",
+            route: "",
+            duration: "4 Hours",
+            price: 1500,
+            description: "Perfect for beginners to learn basic kayaking skills in calm waters.",
+            level: "Moderate",
+            link: "#"
+        },
+    ],
     gallery: [
         {
             src: "/images/expedition/m01.jpg",
@@ -111,6 +168,29 @@ export const expeditionConfig = {
         {
             src: "/images/kayak/k08.jpg",
             alt: "",
+        },
+    ],
+}
+
+export const kayakConfig = {
+    package: [
+        {
+            id: 1,
+            title: "Beginners",
+            route: "Brahmpuri",
+            duration: "2 Hours",
+            price: 800,
+            description: "Perfect for beginners to learn basic kayaking skills in calm waters.",
+            link: "#"
+        },
+        {
+            id: 2,
+            title: "Advanced",
+            route: "Shivpuri",
+            duration: "4 Hours",
+            price: 1500,
+            description: "Perfect for beginners to learn basic kayaking skills in calm waters.",
+            link: "#"
         },
     ],
 }

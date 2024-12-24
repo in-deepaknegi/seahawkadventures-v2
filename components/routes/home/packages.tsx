@@ -143,7 +143,7 @@ function Packages() {
 
               
                 <div className="mx-auto flex items-center justify-center pt-6 md:px-10 md:pt-10">
-                    <div className="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-200 p-1">
+                    <div className="inline-flex items-center justify-center gap-2 p-1">
                         {services?.map((service, i) => (
                             <button
                                 key={i}
@@ -156,8 +156,8 @@ function Packages() {
                              flex items-center space-x-3 rounded-lg px-10 py-1.5 transition-all duration-200
                              ${
                                  activeTab === service.title.toLowerCase()
-                                     ? "bg-white text-blue-700 shadow-sm"
-                                     : "text-gray-700 hover:bg-white/95 hover:text-blue-600"
+                                     ? "bg-dawn-900 text-white"
+                                     : " bg-slate-200"
                              }
                            `}
                             >
@@ -168,7 +168,7 @@ function Packages() {
                                     height={680}
                                     className="w-8"
                                 />
-                                <span className="text-2xl">
+                                <span className="text-lg">
                                     {" "}
                                     {service.title}
                                 </span>
@@ -181,22 +181,27 @@ function Packages() {
                     {packages[activeTab].map((pkg, i) => (
                         <div
                             key={i}
-                            className="group relative transform overflow-hidden rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                            className="group relative transform overflow-hidden rounded-2xl bg-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                         >
-                            <div className="relative h-64">
+                            <div className="relative h-80">
                                 <Image
                                     src={pkg.image}
                                     alt={pkg.title}
                                     width={1920}
                                     height={1080}
-                                    className="h-full w-full object-cover"
+                                    className="h-80 w-full object-cover"
                                 />
-                                <div className="absolute bottom-0 h-40 w-full bg-gradient-to-t from-black/90 to-transparent" />
+                                <div className="absolute  w-fit top-2 right-2 text-sm overflow-hidden rounded-full font-insm">
+                                    {i === 0 && <span className="bg-green-400 px-4 py-1">Easy</span> }
+                                    {i === 1 && <span className="bg-yellow-400 px-4 py-1">Moderate</span>}
+                                    {i === 2 && <span className="bg-red-400 px-4 py-1">Difficult</span>}
+                                </div>
+                                <div className="absolute bottom-0 h-40 w-full bg-gradient-to-t from-slate-200 to-transparent" />
                                 <div className="absolute bottom-0 left-0 right-0 py-2 px-4">
-                                    <h3 className="mb-1 font-insr text-2xl text-white">
+                                    <h3 className="mb-1 font-insr text-2xl text-black">
                                         {pkg.title}
                                     </h3>
-                                    <p className="font-insm text-3xl text-white">
+                                    <p className="font-insm text-3xl text-black">
                                         ₹{pkg.price}
                                         <span className="text-sm font-normal">
                                             /person
@@ -205,28 +210,28 @@ function Packages() {
                                 </div>
                             </div>
 
-                            <div className="p-6">
+                            <div className="px-6 pt-10 pb-6">
                                 <div className="mb-4 space-y-3">
-                                    <div className="flex items-center text-gray-600">
+                                    <div className="flex items-center text-gray-700">
                                         <Clock className="mr-2 h-5 w-5" />
                                         <span>{pkg.timing}</span>
                                     </div>
-                                    <div className="flex items-center text-gray-600">
+                                    <div className="flex items-center text-gray-700">
                                         <MapPin className="mr-2 h-5 w-5" />
                                         <span>{pkg.location}</span>
                                     </div>
-                                    <div className="flex items-center text-gray-600">
+                                    <div className="flex items-center text-gray-700">
                                         <Timer className="mr-2 h-5 w-5" />
                                         <span>{pkg.duration}</span>
                                     </div>
                                 </div>
 
-                                <p className="mb-6 text-sm text-gray-600">
+                                <p className="mb-6 text-sm text-gray-700">
                                     {pkg.description}
                                 </p>
 
                                 <div className="flex space-x-3">
-                                    <button className="flex-1 rounded-xl bg-blue-600 py-3 font-medium text-white transition-colors hover:bg-blue-700">
+                                    <button className="flex-1 rounded-xl bg-blue-700 py-3 font-medium text-white transition-colors hover:bg-blue-700">
                                         Book now
                                     </button>
                                     <button className="aspect-square rounded-xl bg-blue-50 px-4 text-blue-600 transition-colors hover:bg-blue-100">

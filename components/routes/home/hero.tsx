@@ -10,7 +10,7 @@ const Hero: React.FC<HeroProps> = (props) => {
         ...props,
     };
     return (
-        <section className="relative h-[95vh] p-2 overflow-hidden font-insr">
+        <section className="relative h-screen -mt-[5rem] overflow-hidden font-insr">
             <div className="absolute z-30 hidden size-full">
                 <div className="flex h-full w-full items-center justify-center">
                     <div className="flex flex-col border p-4 text-center backdrop-blur-lg">
