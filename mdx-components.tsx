@@ -1,6 +1,5 @@
 import { useMDXComponent } from "@content-collections/mdx/react";
 import { HTMLAttributes } from "react";
-import { Package } from "./types/booking";
 
 interface MDXProps {
     code: string;
