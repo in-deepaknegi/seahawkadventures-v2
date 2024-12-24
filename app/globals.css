@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "ogg-med";
+    src: url(/fonts/OggMedium.woff2) format("woff2");
+}
+@font-face {
+    font-family: "ogg-reg";
+    src: url(/fonts/OggRegular.woff2) format("woff2");
+}
+@font-face {
+    font-family: "ins-reg";
+    src: url(/fonts/ins-reg.woff2) format("woff2");
+}
+@font-face {
+    font-family: "ins-med";
+    src: url(/fonts/ins-med.woff2) format("woff2");
+}
+
+@layer base {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
