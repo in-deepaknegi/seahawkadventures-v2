@@ -1,3 +1,96 @@
+export const packagesConfig = [
+    {
+        title: "rafting",
+        description: "",
+        collection: [
+            {
+                title: "12 Km",
+                description:
+                    "Perfect for beginners, experience Grade I and II rapids",
+                price: 1999,
+                image: {
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    alt: "",
+                },
+            },
+            {
+                title: "16 Km",
+                description: "Advanced course with Grade III and IV rapids",
+                price: 1999,
+                image: {
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    alt: "",
+                },
+            },
+            {
+                title: "21 Km",
+                description: "Short and exciting trip with Grade II rapids",
+                price: 1999,
+                image: {
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    alt: "",
+                },
+            },
+        ],
+    },
+    {
+        title: "kayaking",
+        description: "",
+        collection: [
+            {
+                title: "Beginner's Course",
+                description:
+                    "Perfect for beginners, experience Grade I and II rapids",
+                price: 1999,
+                image: {
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    alt: "",
+                },
+            },
+            {
+                title: "Advanced Training",
+                description: "Advanced course with Grade III and IV rapids",
+                price: 1999,
+                image: {
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    alt: "",
+                },
+            },
+        ],
+    },
+    {
+        title: "expedition",
+        description: "",
+        collection: [
+            {
+                title: "Weekend Warrior",
+                description:
+                    "Perfect for beginners, experience Grade I and II rapids",
+                price: 1999,
+                image: {
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    alt: "",
+                },
+            },
+            {
+                title: "Himalayan Explorer",
+                description: "Advanced course with Grade III and IV rapids",
+                price: 1999,
+                image: {
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    alt: "",
+                },
+            },
+        ],
+    },
+]
+
+
+
+
+
+
+
 interface PackageConfig {
     package?: {
         id?: number;

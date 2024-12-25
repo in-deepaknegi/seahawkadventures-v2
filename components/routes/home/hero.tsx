@@ -57,7 +57,7 @@ export default function Index() {
             type: "image",
             src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
             scale: scale9,
-            customClass: "top-[28vh] left-[26vw] w-[13vw] h-[16vh]",
+            customClass: "top-[24.5vh] left-[27vw] w-[15vw] h-[17vh]",
         },
     ];
 
@@ -65,7 +65,7 @@ export default function Index() {
         <>
             <div className="flex flex-col items-center justify-center text-center">
                 <h1 className="font-oggr text-[5rem]">Sea Hawk Adventures</h1>
-                <p className="text-neutral-700 font-insr text-lg max-w-xl">
+                <p className="max-w-xl font-insr text-lg text-neutral-700">
                     Sea Hawk Adventures crafts unparalleled adventure
                     experiences for rafting, kayaking and camping.
                 </p>
@@ -91,7 +91,7 @@ export default function Index() {
                                                 autoPlay
                                                 loop
                                                 muted
-                                                className="absolute h-full w-full -mt-0.5 rounded-2xl object-cover"
+                                                className="absolute -mt-0.5 h-full w-full rounded-2xl object-cover"
                                             >
                                                 <source
                                                     src={src}
