@@ -1,5 +1,6 @@
 "use client";
 
+import Gallery from "@/components/routes/home/gallery";
 import Hero from "@/components/routes/home/hero";
 import AdventuresSection from "@/components/routes/home/packages";
 import Lenis from "lenis";
@@ -31,6 +32,7 @@ export default function Home() {
         <main className="mt-[10vh]">
             <Hero />
             <AdventuresSection />
+            <Gallery/>
         </main>
     );
 }

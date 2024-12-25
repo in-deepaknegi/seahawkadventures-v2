@@ -10,7 +10,7 @@ export default function Index() {
         offset: ["start start", "end end"],
     });
 
-    const scale4 = useTransform(scrollYProgress, [0, 1], [1, 4]);
+    const scale4 = useTransform(scrollYProgress, [0, 1], [1, 3]);
     const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
     const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
     const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
@@ -113,14 +113,8 @@ export default function Index() {
                                                     src={src}
                                                     sizes="100vw"
                                                     alt="Description of my image"
-                                                    // className={customClass}
                                                     className="absolute h-full w-full rounded-2xl object-cover"
                                                 />
-                                                // <Image
-                                                //     src={src}
-                                                //     fill
-                                                //     alt="image"
-                                                // />
                                             )}
                                         </div>
                                     </motion.div>

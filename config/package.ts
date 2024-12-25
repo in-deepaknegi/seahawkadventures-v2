@@ -85,21 +85,31 @@ export const packagesConfig = [
         description: "",
         collection: [
             {
-                title: "Weekend Warrior",
+                title: "Ganga Kayak Expedition",
                 description:
-                    "Perfect for beginners, experience Grade I and II rapids",
+                `<p>The Ganga Kayak Expedition offers a thrilling three-day, two-night journey down the Alaknanda and Ganga rivers, covering 70km.</p>
+                
+                <p>Suitable for individuals with kayaking experience ranging from beginner (I) to intermediate (IV), this October-March expedition begins with transport from Tapovan to Devprayag. Days are punctuated by exhilarating kayaking stretches (18km, 20-25km, and 30-35km respectively), interspersed with opportunities for exploration.</p>
+                
+                <p>Highlights include a visit to Gartang Gali and a waterfall, complemented by relaxing riverside campsites at Vyas Ghat and Kodiyala/Bhaysi, featuring bonfires and barbecues. Packed lunches are provided, with daily stops at scenic white sand beaches. The expedition culminates at Neem Beach, promising an unforgettable blend of adventure and natural beauty.</p>
+                `,
                 price: 1999,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3507.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3501.jpg",
                     alt: "",
                 },
-                timing: 'Every Friday 3:00 PM',
+                timing: 'Weekly departures',
                 location: 'Beach Camps',
-                duration: '2 Days',
+                duration: '3 Days and 2 Nights',
             },
             {
                 title: "Himalayan Explorer",
-                description: "Advanced course with Grade III and IV rapids",
+                description: 
+                `<p>This four-day, three-night rafting expedition (October-March) covers 100km of exhilarating rapids, graded I-IV.</p>
+                
+                <p>Beginning in Tapovan (5:00 AM departure), Day 1 features a 30-35km raft to Vyas Ghat, concluding with a bonfire and barbecue. Day 2 continues with 25-30km of rafting, incorporating a hike to a waterfall and exploration of Gartang Gali near Kaudiyala, followed by another riverside campfire. Day 3 culminates in a 35-40km journey to Neem Beach, concluding at 5:00 PM.</p> 
+                
+                <p>Daily packed lunches and picturesque lunch stops on white sand beaches are included. Each night's camping offers a unique riverside or beach setting enhanced by bonfires and barbecues. The journey offers a blend of thrilling rapids and opportunities for scenic exploration.</p>`,
                 price: 1999,
                 image: {
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
