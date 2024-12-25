@@ -1,6 +1,7 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import { CldImage } from "next-cloudinary";
+import Image from "next/image";
 
 export default function Index() {
     const container = useRef(null);
@@ -57,72 +58,78 @@ export default function Index() {
             type: "image",
             src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
             scale: scale9,
-            customClass: "top-[24.5vh] left-[27vw] w-[15vw] h-[17vh]",
+            customClass: "top-[28vh] left-[27vw] w-[15vw] h-[15vh]",
         },
     ];
 
     return (
         <>
-            <div className="flex flex-col items-center justify-center text-center">
-                <h1 className="font-oggr text-[5rem]">Sea Hawk Adventures</h1>
-                <p className="max-w-xl font-insr text-lg text-neutral-700">
-                    Sea Hawk Adventures crafts unparalleled adventure
-                    experiences for rafting, kayaking and camping.
-                </p>
-            </div>
-            <div ref={container} className="relative h-[300vh]">
-                <div className="sticky top-0 h-[100vh] overflow-hidden">
-                    {pictures.map(
-                        ({ type, src, scale, customClass }, index) => {
-                            return (
-                                <motion.div
-                                    key={index}
-                                    style={{ scale }}
-                                    className="absolute top-0 flex h-full w-full items-center justify-center"
-                                >
-                                    <div
-                                        className={`relative h-[25vh] w-[25vw] ${customClass}`}
-                                    >
-                                        {type === "video" ? (
-                                            <motion.video
-                                                style={{
-                                                    borderRadius: rounded,
-                                                }}
-                                                autoPlay
-                                                loop
-                                                muted
-                                                className="absolute -mt-0.5 h-full w-full rounded-2xl object-cover"
-                                            >
-                                                <source
-                                                    src={src}
-                                                    type="video/mp4"
-                                                />
-                                                Your browser does not support
-                                                the video tag.
-                                            </motion.video>
-                                        ) : (
-                                            <CldImage
-                                                width="1980"
-                                                height="1020"
-                                                src={src}
-                                                sizes="100vw"
-                                                alt="Description of my image"
-                                                // className={customClass}
-                                                className="absolute h-full w-full rounded-2xl object-cover"
-                                            />
-                                            // <Image
-                                            //     src={src}
-                                            //     fill
-                                            //     alt="image"
-                                            // />
-                                        )}
-                                    </div>
-                                </motion.div>
-                            );
-                        },
-                    )}
+            <section className="relative">
+                <div className="flex flex-col items-center justify-center text-center">
+                    <h1 className="font-oggr text-[5rem]">
+                        Sea Hawk Adventures
+                    </h1>
+                    <p className="max-w-xl font-insr text-lg text-neutral-700">
+                        Sea Hawk Adventures crafts unparalleled adventure
+                        experiences for rafting, kayaking and camping.
+                    </p>
                 </div>
-            </div>
+
+
+                <div ref={container} className="relative h-[300vh]">
+                    <div className="sticky top-0 h-[100vh] overflow-hidden">
+                        {pictures.map(
+                            ({ type, src, scale, customClass }, index) => {
+                                return (
+                                    <motion.div
+                                        key={index}
+                                        style={{ scale }}
+                                        className="absolute top-0 flex h-full w-full items-center justify-center"
+                                    >
+                                        <div
+                                            className={`relative h-[25vh] w-[25vw] ${customClass}`}
+                                        >
+                                            {type === "video" ? (
+                                                <motion.video
+                                                    style={{
+                                                        borderRadius: rounded,
+                                                    }}
+                                                    autoPlay
+                                                    loop
+                                                    muted
+                                                    className="absolute -mt-0.5 h-full w-full rounded-2xl object-cover"
+                                                >
+                                                    <source
+                                                        src={src}
+                                                        type="video/mp4"
+                                                    />
+                                                    Your browser does not
+                                                    support the video tag.
+                                                </motion.video>
+                                            ) : (
+                                                <CldImage
+                                                    width="1980"
+                                                    height="1020"
+                                                    src={src}
+                                                    sizes="100vw"
+                                                    alt="Description of my image"
+                                                    // className={customClass}
+                                                    className="absolute h-full w-full rounded-2xl object-cover"
+                                                />
+                                                // <Image
+                                                //     src={src}
+                                                //     fill
+                                                //     alt="image"
+                                                // />
+                                            )}
+                                        </div>
+                                    </motion.div>
+                                );
+                            },
+                        )}
+                    </div>
+                </div>
+            </section>
         </>
     );
 }

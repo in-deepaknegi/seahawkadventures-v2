@@ -4,32 +4,48 @@ export const packagesConfig = [
         description: "",
         collection: [
             {
-                title: "12 Km",
-                description:
-                    "Perfect for beginners, experience Grade I and II rapids",
-                price: 1999,
+                title: "12 Km River Rafting",
+                description: `<p>The 12 km rafting from  Rishikesh's Club House to Neem Beach, while advertised as a 12km rafting experience from, the actual river distance is approximately 7-8km, completing in 1.5-2 hours.</p>
+                
+                <p>The route encompasses roughly five rapids of varying intensity, including notable features like Golf Course (III+), Return to Sender, and Club House (III). While presenting larger waves and hydraulics, these rapids are considered safe under experienced guidance.</p>
+                `,
+                price: 620,
                 image: {
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
                     alt: "",
                 },
+                timing: 'Every day at 9:00 AM and 2:00 PM',
+                location: 'Marine Drive - Shivpuri',
+                duration: '1.5 hours',
             },
             {
-                title: "16 Km",
-                description: "Advanced course with Grade III and IV rapids",
-                price: 1999,
+                title: "16 Km River Rafting",
+                description: `<p>The 16km rafting from Shivpuri to Neem Beach, while advertised as a 16km road distance from Rishikesh, covers approximately 10-11km by river, requiring 2 to 2.5 hours.</p> 
+                
+                <p>This section features around nine rapids of varying intensity, including notable rapids such as Roller Coaster (III+), Golf Course (III+), Return to Sender, and Club House (III). Despite significant waves and hydraulics, the rapids are considered safe for rafting.</p>`,
+                price: 1020,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
                     alt: "",
                 },
+                timing: 'Every day at 9:00 AM and 2:00 PM',
+                location: 'Shivpuri to NIM Beach',
+                duration: '2 hours',
             },
             {
-                title: "21 Km",
-                description: "Short and exciting trip with Grade II rapids",
-                price: 1999,
+                title: "21 Km River Rafting",
+                description: `
+                <p>The 21km rafting from Marine Drive to NIM Beach, while advertised as a 21km road distance from Rishikesh, covers approximately 17-18km by river, requiring 3 to 4 hours.</p> 
+                
+                <p>This seemingly tranquil journey belies the presence of roughly ten grade III and III+ rapids, each demanding skill and attention. Notable rapids include "Three Blind Mice," a deceptively calm sequence of three closely spaced rapids, and others such as "Huge and Kiss," "Cross Fire," "Return to Sender Roller Coaster," "Golf Course," and "Club House."</p>`,
+                price: 1520,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
                     alt: "",
                 },
+                timing: 'Every day at 9:00 AM and 2:00 PM',
+                location: 'Marine drive to NIM Beach',
+                duration: '3 hours',
             },
         ],
     },
@@ -46,6 +62,9 @@ export const packagesConfig = [
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
                     alt: "",
                 },
+                timing: 'Every day at 8:00 AM',
+                location: 'Brahmpuri',
+                duration: '2 hours',
             },
             {
                 title: "Advanced Training",
@@ -55,6 +74,9 @@ export const packagesConfig = [
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
                     alt: "",
                 },
+                timing: 'Every day at 9:00 AM',
+                location: 'Shivpuri Rapids',
+                duration: '4 hours',
             },
         ],
     },
@@ -68,18 +90,24 @@ export const packagesConfig = [
                     "Perfect for beginners, experience Grade I and II rapids",
                 price: 1999,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3507.jpg",
                     alt: "",
                 },
+                timing: 'Every Friday 3:00 PM',
+                location: 'Beach Camps',
+                duration: '2 Days',
             },
             {
                 title: "Himalayan Explorer",
                 description: "Advanced course with Grade III and IV rapids",
                 price: 1999,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
                     alt: "",
                 },
+                timing: 'Weekly departures',
+                location: 'Various routes',
+                duration: '5 Days',
             },
         ],
     },

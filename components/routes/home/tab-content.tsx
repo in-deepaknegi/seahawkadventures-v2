@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { useState } from "react";
+import { Clock, MapPin, Timer, ArrowRight } from "lucide-react";
+import PackageModal from "./package/package-modal";
+
 export interface Package {
     title: string;
     description: string;
@@ -9,6 +12,9 @@ export interface Package {
         src: string;
         alt: string;
     };
+    timing: string;
+    location: string;
+    duration: string;
 }
 
 interface TabContentProps {
@@ -25,7 +31,9 @@ export default function TabContent({
     data,
     layout = "grid",
 }: TabContentProps) {
-    const [selectedPackage, setSelectedPackage] = useState<Package | null>(null);
+    const [selectedPackage, setSelectedPackage] = useState<Package | null>(
+        null,
+    );
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const layouts = {
@@ -45,73 +53,60 @@ export default function TabContent({
     };
 
     const PackageCard = ({ pkg, index }: { pkg: Package; index: number }) => {
-        if (layout === "list") {
-            return (
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group flex overflow-hidden rounded-xl bg-white shadow-lg"
-                >
-                    <div className="relative w-1/3">
-                        <img
-                            src={pkg.image.src}
-                            alt={pkg.image.alt}
-                            className="h-full w-full object-cover"
-                        />
-                        <button
-                            onClick={() => openModal(pkg)}
-                            className="absolute right-4 top-4 rounded-full bg-white/90 p-2 opacity-0 transition-opacity group-hover:opacity-100"
-                        >
-                            <Plus className="h-5 w-5" />
-                        </button>
-                    </div>
-                    <div className="flex-1 p-6">
-                        <h3 className="mb-2 text-xl font-semibold">{pkg.title}</h3>
-                        <p className="mb-4 text-gray-600">{pkg.description}</p>
-                        <div className="flex items-center justify-between">
-                            <span className="text-2xl font-bold text-blue-600">
-                                ₹{pkg.price}
-                            </span>
-                            <button className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
-                                Book Now
-                            </button>
-                        </div>
-                    </div>
-                </motion.div>
-            );
-        }
-
-        const cardClass = layout === "masonry" ? "mb-8 break-inside-avoid" : "";
-
         return (
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group overflow-hidden rounded-xl bg-white shadow-lg ${cardClass}`}
+                className={`group overflow-hidden rounded-3xl bg-white shadow-lg`}
             >
                 <div className="relative">
                     <img
                         src={pkg.image.src}
                         alt={pkg.image.alt}
-                        className="h-48 w-full object-cover"
+                        className="h-60 w-full object-cover"
                     />
                     <button
                         onClick={() => openModal(pkg)}
-                        className="absolute right-4 top-4 rounded-full bg-white/90 p-2 opacity-0 transition-opacity group-hover:opacity-100"
+                        className="absolute right-2 top-2 rounded-full bg-white p-2"
                     >
                         <Plus className="h-5 w-5" />
                     </button>
                 </div>
                 <div className="p-6">
-                    <h3 className="mb-2 text-xl font-semibold">{pkg.title}</h3>
-                    <p className="mb-4 text-gray-600">{pkg.description}</p>
+                    <h3 className="mb-3 font-insr text-2xl">{pkg.title}</h3>
+                    <div className="mb-6 space-y-2 text-[0.925rem]">
+                        {[
+                            { icon: Clock, text: pkg.timing },
+                            { icon: MapPin, text: pkg.location },
+                            { icon: Timer, text: pkg.duration },
+                        ].map(({ icon: Icon, text }) => (
+                            <div
+                                key={text}
+                                className="flex items-center text-gray-600"
+                            >
+                                <Icon className="mr-3 h-4 w-4" />
+                                <span>{text}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div
+                        className="mb-4 line-clamp-3 text-[0.935rem] text-gray-700"
+                        dangerouslySetInnerHTML={{ __html: pkg.description }}
+                    />
+
+                    {/* <p className="mb-4 text-gray-600 line-clamp-2 text-[0.935rem]">{pkg.description}</p> */}
+
                     <div className="flex items-center justify-between">
-                        <span className="text-2xl font-bold text-blue-600">
-                            ₹{pkg.price}
-                        </span>
-                        <button className="rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                        <div className="text-2xl flex flex-col text-blue-600">
+                            <span className="text-xs text-gray-700">Starting from</span>
+                            <span>
+                            ₹ {pkg.price}
+                            <span className="text-sm text-gray-400">/person</span>
+                            </span>
+                        </div>
+                        <button className="mt-auto rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
                             Book Now
                         </button>
                     </div>
@@ -130,13 +125,18 @@ export default function TabContent({
                 transition={{ duration: 0.5 }}
                 className="mx-auto max-w-full"
             >
-
                 <div className={layouts[layout]}>
                     {data.collection.map((pkg, index) => (
                         <PackageCard key={pkg.title} pkg={pkg} index={index} />
                     ))}
                 </div>
             </motion.div>
+
+            <PackageModal
+                isOpen={isModalOpen}
+                onClose={closeModal}
+                package={selectedPackage}
+            />
         </>
     );
 }

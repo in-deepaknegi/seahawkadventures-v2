@@ -23,4 +23,13 @@
     ::-webkit-scrollbar {
         display: none;
     }
+
+    .br,
+    .br-1 {
+        box-shadow: 6px -6px #fff;
+    }
+
+    .br-2 {
+        box-shadow: 6px -6px #fff;
+    }
 }
