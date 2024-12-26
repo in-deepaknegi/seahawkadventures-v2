@@ -58,7 +58,7 @@ export default function Index() {
             type: "image",
             src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
             scale: scale9,
-            customClass: "top-[28vh] left-[27vw] w-[15vw] h-[15vh]",
+            customClass: "top-[28vh] left-[27vw] w-[10vw] h-[15vh]",
         },
     ];
 
@@ -74,7 +74,6 @@ export default function Index() {
                         experiences for rafting, kayaking and camping.
                     </p>
                 </div>
-
 
                 <div ref={container} className="relative h-[300vh]">
                     <div className="sticky top-0 h-[100vh] overflow-hidden">

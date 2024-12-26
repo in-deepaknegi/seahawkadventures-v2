@@ -5,47 +5,79 @@ export const packagesConfig = [
         collection: [
             {
                 title: "12 Km River Rafting",
-                description: `<p>The 12 km rafting from  Rishikesh's Club House to Neem Beach, while advertised as a 12km rafting experience from, the actual river distance is approximately 7-8km, completing in 1.5-2 hours.</p>
-                
-                <p>The route encompasses roughly five rapids of varying intensity, including notable features like Golf Course (III+), Return to Sender, and Club House (III). While presenting larger waves and hydraulics, these rapids are considered safe under experienced guidance.</p>
-                `,
-                price: 620,
+                price: 600,
                 image: {
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
                     alt: "",
                 },
-                timing: 'Every day at 9:00 AM and 2:00 PM',
-                location: 'Marine Drive - Shivpuri',
-                duration: '1.5 hours',
+                description:
+                    `<p>
+                River rafting from Marine Drive to Shivpuri is an excellent choice for those looking to experience their first rafting trip in a safe yet exciting manner. Rafting in Rishikesh is truly a thrilling adventure that offers a mix of fun and natural beauty. This rafting journey takes you from the Marine Drive Rafting Point to Shivpuri.
+                </p>
+
+                <p>
+                Many experienced rafters prefer this route over the Barahmpuri rafting stretch, as it is generally considered more enjoyable. Although it is a shorter rafting trip, this lovely stretch allows adventurers to connect closely with nature. Overall, the Marine Drive to Shivpuri rafting experience provides both safety and enjoyment, making it ideal for beginners.
+                </p>`,
+                features: {
+                    distance: "12km",
+                    duration: "1.5 hours to 2 hours",
+                    startingPoint: "Marine Drive",
+                    endingPoint: "Shivpuri",
+                    rapids: {
+                        total: "4",
+                        grades: "I, II and III"
+                    },
+                    difficulty: "Easy"
+                }
             },
             {
                 title: "16 Km River Rafting",
-                description: `<p>The 16km rafting from Shivpuri to Neem Beach, while advertised as a 16km road distance from Rishikesh, covers approximately 10-11km by river, requiring 2 to 2.5 hours.</p> 
-                
-                <p>This section features around nine rapids of varying intensity, including notable rapids such as Roller Coaster (III+), Golf Course (III+), Return to Sender, and Club House (III). Despite significant waves and hydraulics, the rapids are considered safe for rafting.</p>`,
-                price: 1020,
+                description:
+                    `<p>
+                    Rafting from Shivpuri to Rishikesh is an exciting adventure suitable for both beginners and those with previous experience. The journey begins at the Shivpuri River Rafting Starting Point and ends 16 kilometers later at Nim Beach in Rishikesh.
+                    </p>
+                    <p>
+                    This river rafting trip lasts about two hours and can be quite challenging due to the strong currents of the Ganges River and some steep rapids along the way. This particular stretch of river is the most popular for rafting in Rishikesh, attracting many thrill-seekers looking for an unforgettable experience on the water.
+                </p>`,
+                price: 1000,
                 image: {
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
                     alt: "",
                 },
-                timing: 'Every day at 9:00 AM and 2:00 PM',
-                location: 'Shivpuri to NIM Beach',
-                duration: '2 hours',
+                features: {
+                    distance: "16km",
+                    duration: "2 hours to 2.5 hours",
+                    startingPoint: "Shivpuri",
+                    endingPoint: "Nim Beach",
+                    rapids: {
+                        total: "8",
+                        grades: "I, II, III & III+"
+                    },
+                    difficulty: "Moderate"
+                }
             },
             {
-                title: "21 Km River Rafting",
+                title: "26 Km River Rafting",
                 description: `
                 <p>The 21km rafting from Marine Drive to NIM Beach, while advertised as a 21km road distance from Rishikesh, covers approximately 17-18km by river, requiring 3 to 4 hours.</p> 
                 
                 <p>This seemingly tranquil journey belies the presence of roughly ten grade III and III+ rapids, each demanding skill and attention. Notable rapids include "Three Blind Mice," a deceptively calm sequence of three closely spaced rapids, and others such as "Huge and Kiss," "Cross Fire," "Return to Sender Roller Coaster," "Golf Course," and "Club House."</p>`,
-                price: 1520,
+                price: 1500,
                 image: {
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
                     alt: "",
                 },
-                timing: 'Every day at 9:00 AM and 2:00 PM',
-                location: 'Marine drive to NIM Beach',
-                duration: '3 hours',
+                features: {
+                    distance: "26km",
+                    duration: "4 hours",
+                    startingPoint: "Marine Drive",
+                    endingPoint: "Nim Beach",
+                    rapids: {
+                        total: "12",
+                        grades: "I, II and III & III+"
+                    },
+                    difficulty: "Moderate"
+                }
             },
         ],
     },
@@ -62,9 +94,17 @@ export const packagesConfig = [
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
                     alt: "",
                 },
-                timing: 'Every day at 8:00 AM',
-                location: 'Brahmpuri',
-                duration: '2 hours',
+                features: {
+                    distance: "12km",
+                    duration: "1.5 hours to 2 hours",
+                    startingPoint: "Marine Drive",
+                    endingPoint: "Shivpuri",
+                    rapids: {
+                        total: "4",
+                        grades: "I, II and III"
+                    },
+                    difficulty: "Easy"
+                }
             },
             {
                 title: "Advanced Training",
@@ -74,9 +114,17 @@ export const packagesConfig = [
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
                     alt: "",
                 },
-                timing: 'Every day at 9:00 AM',
-                location: 'Shivpuri Rapids',
-                duration: '4 hours',
+                features: {
+                    distance: "12km",
+                    duration: "1.5 hours to 2 hours",
+                    startingPoint: "Marine Drive",
+                    endingPoint: "Shivpuri",
+                    rapids: {
+                        total: "4",
+                        grades: "I, II and III"
+                    },
+                    difficulty: "Easy"
+                }
             },
         ],
     },
@@ -87,7 +135,7 @@ export const packagesConfig = [
             {
                 title: "Ganga Kayak Expedition",
                 description:
-                `<p>The Ganga Kayak Expedition offers a thrilling three-day, two-night journey down the Alaknanda and Ganga rivers, covering 70km.</p>
+                    `<p>The Ganga Kayak Expedition offers a thrilling three-day, two-night journey down the Alaknanda and Ganga rivers, covering 70km.</p>
                 
                 <p>Suitable for individuals with kayaking experience ranging from beginner (I) to intermediate (IV), this October-March expedition begins with transport from Tapovan to Devprayag. Days are punctuated by exhilarating kayaking stretches (18km, 20-25km, and 30-35km respectively), interspersed with opportunities for exploration.</p>
                 
@@ -98,14 +146,22 @@ export const packagesConfig = [
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3501.jpg",
                     alt: "",
                 },
-                timing: 'Weekly departures',
-                location: 'Beach Camps',
-                duration: '3 Days and 2 Nights',
+                features: {
+                    distance: "12km",
+                    duration: "1.5 hours to 2 hours",
+                    startingPoint: "Marine Drive",
+                    endingPoint: "Shivpuri",
+                    rapids: {
+                        total: "4",
+                        grades: "I, II and III"
+                    },
+                    difficulty: "Easy"
+                }
             },
             {
                 title: "Himalayan Explorer",
-                description: 
-                `<p>This four-day, three-night rafting expedition (October-March) covers 100km of exhilarating rapids, graded I-IV.</p>
+                description:
+                    `<p>This four-day, three-night rafting expedition (October-March) covers 100km of exhilarating rapids, graded I-IV.</p>
                 
                 <p>Beginning in Tapovan (5:00 AM departure), Day 1 features a 30-35km raft to Vyas Ghat, concluding with a bonfire and barbecue. Day 2 continues with 25-30km of rafting, incorporating a hike to a waterfall and exploration of Gartang Gali near Kaudiyala, followed by another riverside campfire. Day 3 culminates in a 35-40km journey to Neem Beach, concluding at 5:00 PM.</p> 
                 
@@ -115,9 +171,17 @@ export const packagesConfig = [
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
                     alt: "",
                 },
-                timing: 'Weekly departures',
-                location: 'Various routes',
-                duration: '5 Days',
+                features: {
+                    distance: "12km",
+                    duration: "1.5 hours to 2 hours",
+                    startingPoint: "Marine Drive",
+                    endingPoint: "Shivpuri",
+                    rapids: {
+                        total: "4",
+                        grades: "I, II and III"
+                    },
+                    difficulty: "Easy"
+                }
             },
         ],
     },

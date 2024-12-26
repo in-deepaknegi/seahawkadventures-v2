@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image, { ImageProps } from "next/image";
-
 import Link from "next/link";
 import React, { useRef } from "react";
 
@@ -22,7 +21,7 @@ const Gallery: React.FC<CtaProps> = (props) => {
     return (
         <section ref={container} className="relative w-full py-24 font-insr">
             <div>
-                <h2 className="text-center font-oggr text-5xl md:text-6xl md:leading-[5rem]">
+                <h2 className="text-center font-oggr text-3xl sm:text-4xl md:text-5xl lg:text-6xl md:leading-[5rem]">
                     Sturdily beautiful. <br />
                     Warm, bright. <br />
                     By the Ganges. <br />
@@ -30,7 +29,7 @@ const Gallery: React.FC<CtaProps> = (props) => {
                 </h2>
             </div>
 
-            <div className="mt-28 overflow-hidden">
+            <div className="mt-16 sm:mt-20 md:mt-28 overflow-hidden">
                 <div ref={container} className="">
                     <Slide
                         direction={"left"}
@@ -42,31 +41,6 @@ const Gallery: React.FC<CtaProps> = (props) => {
                         progress={scrollYProgress}
                         images={i2}
                     />
-                </div>
-            </div>
-
-            <div className="relative mx-auto mt-28 h-full px-8 text-black md:max-w-[80%] md:px-0">
-                <div className="flex w-full flex-col gap-4 text-left">
-                    <h2 className="mt-6 font-oggr text-5xl md:text-6xl">
-                        Why Sea Hawk Adventures?
-                    </h2>
-                    <p className="mt-auto max-w-4xl text-lg text-gray-800">
-                        Being the flag bearer of river rafting and kayaking in
-                        the Indian adventure circuit is a source of pride and
-                        excitement for us. Our rafting crew has completed IRF
-                        and Rescue 3 training. Our hiking squad is made up of
-                        graduates from India&apos;s most prestigious
-                        mountaineering schools. As a responsible adventure trip
-                        company, we are proud of our safety standards and our
-                        desire to remain India&apos;s number one adventure tour
-                        operator.
-                    </p>
-                    <Link
-                        href={"#"}
-                        className="flex w-fit items-center gap-1 rounded-full bg-blue-500 px-3 py-2 text-lg font-medium text-white hover:bg-blue-600"
-                    >
-                        Get in touch
-                    </Link>
                 </div>
             </div>
         </section>

@@ -12,9 +12,17 @@ export interface Package {
         src: string;
         alt: string;
     };
-    timing: string;
-    location: string;
-    duration: string;
+    features: {
+        distance: string;
+        duration: string;
+        startingPoint: string;
+        endingPoint: string;
+        rapids: {
+            total: string;
+            grades: string;
+        };
+        difficulty: string;
+    };
 }
 
 interface TabContentProps {
@@ -77,12 +85,16 @@ export default function TabContent({
                     <h3 className="mb-3 font-insr text-2xl">{pkg.title}</h3>
                     <div className="mb-6 space-y-2 text-[0.925rem]">
                         {[
-                            { icon: Clock, text: pkg.timing },
-                            { icon: MapPin, text: pkg.location },
-                            { icon: Timer, text: pkg.duration },
-                        ].map(({ icon: Icon, text }) => (
+                            { icon: Clock, text: pkg.features.duration, i: 1 },
+                            {
+                                icon: MapPin,
+                                text: `${pkg.features.startingPoint} - ${pkg.features.endingPoint}` ,
+                                i: 2,
+                            },
+                            { icon: Timer, text: pkg.features.duration, i: 3 },
+                        ].map(({ icon: Icon, text, i }) => (
                             <div
-                                key={text}
+                                key={`${text}-${i}`}
                                 className="flex items-center text-gray-600"
                             >
                                 <Icon className="mr-3 h-4 w-4" />
@@ -99,11 +111,15 @@ export default function TabContent({
                     {/* <p className="mb-4 text-gray-600 line-clamp-2 text-[0.935rem]">{pkg.description}</p> */}
 
                     <div className="flex items-center justify-between">
-                        <div className="text-2xl flex flex-col text-blue-600">
-                            <span className="text-xs text-gray-700">Starting from</span>
+                        <div className="flex flex-col text-2xl text-blue-600">
+                            <span className="text-xs text-gray-700">
+                                Starting from
+                            </span>
                             <span>
-                            ₹ {pkg.price}
-                            <span className="text-sm text-gray-400">/person</span>
+                                ₹ {pkg.price}
+                                <span className="text-sm text-gray-400">
+                                    /person
+                                </span>
                             </span>
                         </div>
                         <button className="mt-auto rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
@@ -127,7 +143,11 @@ export default function TabContent({
             >
                 <div className={layouts[layout]}>
                     {data.collection.map((pkg, index) => (
-                        <PackageCard key={pkg.title} pkg={pkg} index={index} />
+                        <PackageCard
+                            key={`${pkg.title}+${index}`}
+                            pkg={pkg}
+                            index={index}
+                        />
                     ))}
                 </div>
             </motion.div>

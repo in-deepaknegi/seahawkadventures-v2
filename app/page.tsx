@@ -10,7 +10,7 @@ export default function Home() {
     useEffect(() => {
         const lenis = new Lenis({
             smoothWheel: true,
-            lerp: 0.05,
+            lerp: 0.01,
             duration: 2.2,
             infinite: false,
         });
