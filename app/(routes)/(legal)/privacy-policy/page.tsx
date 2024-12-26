@@ -9,8 +9,8 @@ const PrivacyPage = () => {
     return (
         <>
             <Navbar />
-            <main className="bg-gray-50 py-5 font-insr">
-                <article className="company mx-auto max-w-[50%] space-y-6 bg-white p-10">
+            <main className="bg-gray-50 px-5 md:px-0 py-5 font-insr">
+                <article className="company mx-auto md:max-w-[50%] space-y-6 bg-white p-5 md:p-10">
                     <h1 className="text-center font-mono text-2xl">
                         Privay Policy
                     </h1>
@@ -44,7 +44,7 @@ const PrivacyPage = () => {
                         </li>
                         <li>
                             <strong>Cookies:</strong> Our website uses cookies
-                            to enhance user experience and track visitors'
+                            to enhance user experience and track visitors&apos;
                             preferences. You can modify your browser settings to
                             disable cookies, but this may affect your experience
                             on the site.
@@ -140,7 +140,7 @@ const PrivacyPage = () => {
                     </p>
 
                     <p>
-                        <strong>7. Children's Privacy</strong>
+                        <strong>7. Children&apos;s Privacy</strong>
                     </p>
                     <p>
                         Our services are not intended for children under 18
@@ -184,7 +184,7 @@ const PrivacyPage = () => {
                         </li>
                         <li>
                             Address:{" "}
-                            <span className="font-mono">
+                            <span className="font-mono text-sm">
                                 Badrinath Rd, near Shivpuri Police Station,
                                 Parking Area, Shivpuri, Rishikesh, Uttarakhand
                                 249192

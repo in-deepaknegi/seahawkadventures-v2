@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import { Clock, MapPin, Timer, ArrowRight } from "lucide-react";
-import PackageModal from "./package/package-modal";
+import PackageModal from "./package-modal";
+import Image from "next/image";
 
 export interface Package {
     title: string;
@@ -66,29 +67,31 @@ export default function TabContent({
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group overflow-hidden rounded-3xl bg-white shadow-lg`}
+                className={`group overflow-hidden rounded-xl bg-white shadow-lg`}
             >
                 <div className="relative">
-                    <img
+                    <Image
                         src={pkg.image.src}
                         alt={pkg.image.alt}
+                        width={1980}
+                        height={1020}
                         className="h-60 w-full object-cover"
                     />
                     <button
                         onClick={() => openModal(pkg)}
-                        className="absolute right-2 top-2 rounded-full bg-white p-2"
+                        className="absolute right-2 top-2 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity ease-in duration-300 p-2"
                     >
                         <Plus className="h-5 w-5" />
                     </button>
                 </div>
                 <div className="p-6">
-                    <h3 className="mb-3 font-insr text-2xl">{pkg.title}</h3>
+                    <h3 className="mb-3 font-satm text-2xl">{pkg.title}</h3>
                     <div className="mb-6 space-y-2 text-[0.925rem]">
                         {[
                             { icon: Clock, text: pkg.features.duration, i: 1 },
                             {
                                 icon: MapPin,
-                                text: `${pkg.features.startingPoint} - ${pkg.features.endingPoint}` ,
+                                text: `${pkg.features.startingPoint} - ${pkg.features.endingPoint}`,
                                 i: 2,
                             },
                             { icon: Timer, text: pkg.features.duration, i: 3 },
@@ -104,9 +107,15 @@ export default function TabContent({
                     </div>
 
                     <div
-                        className="mb-4 line-clamp-3 text-[0.935rem] text-gray-700"
+                        className="line-clamp-3 text-[0.935rem] text-gray-700"
                         dangerouslySetInnerHTML={{ __html: pkg.description }}
                     />
+                    <button
+                        onClick={() => openModal(pkg)}
+                        className="mb-4 text-sm text-blue-700"
+                    >
+                        read more...
+                    </button>
 
                     {/* <p className="mb-4 text-gray-600 line-clamp-2 text-[0.935rem]">{pkg.description}</p> */}
 
@@ -115,9 +124,9 @@ export default function TabContent({
                             <span className="text-xs text-gray-700">
                                 Starting from
                             </span>
-                            <span>
+                            <span className="font-satm">
                                 ₹ {pkg.price}
-                                <span className="text-sm text-gray-400">
+                                <span className="text-sm font-satr text-gray-400">
                                     /person
                                 </span>
                             </span>

@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 export interface Package {
     title: string;
@@ -39,12 +40,14 @@ export default function PackageModal({
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed inset-x-4 top-20 z-50 mx-auto overflow-hidden rounded-xl bg-white shadow-xl md:max-w-[60%]"
+                        className="fixed inset-x-4 z-50 top-5 mx-auto mt-5 overflow-hidden rounded-xl bg-white shadow-xl md:top-16 md:max-w-[60%]"
                     >
                         <div className="relative">
-                            <img
+                            <Image
                                 src={pkg.image.src}
                                 alt={pkg.title}
+                                width={1920}
+                                height={1020}
                                 className="h-64 w-full object-cover"
                             />
                             <button
@@ -66,10 +69,10 @@ export default function PackageModal({
                                 }}
                             />
 
-                            <div className="flex gap-10 text-sm">
+                            <div className="md:flex gap-10 hidden text-sm">
                                 <div className="w-full rounded-lg bg-gray-50 p-4">
                                     <h4 className="mb-2 font-insm text-base">
-                                        What's Included
+                                        What&apos;s Included
                                     </h4>
                                     <ul className="list-inside list-disc space-y-1 text-gray-600">
                                         <li>Professional guide</li>

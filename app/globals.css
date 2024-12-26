@@ -18,6 +18,15 @@
     font-family: "ins-med";
     src: url(/fonts/ins-med.woff2) format("woff2");
 }
+@font-face {
+    font-family: "sat-med";
+    src: url(/fonts/Satoshi-Medium.woff2) format("woff2");
+}
+@font-face {
+    font-family: "sat-reg";
+    src: url(/fonts/Satoshi-Regular.woff2) format("woff2");
+}
+
 
 @layer base {
     ::-webkit-scrollbar {
@@ -36,13 +45,13 @@
         @apply text-base
     }
     .company > p > strong {
-        @apply font-insm font-medium border-dotted border-neutral-700 border-b
+        @apply font-insm text-sm md:text-base font-medium border-dotted border-neutral-700 border-b
     }
     .company > ul> li> strong {
-        @apply font-insm font-medium  
+        @apply font-insm text-sm md:text-base border-dotted border-neutral-700 border-b font-medium  
     }
     .company a {
-        @apply font-mono font-medium border-dotted border-neutral-700 border-b
+        @apply font-mono text-sm md:text-base font-medium border-dotted border-neutral-700 border-b
     }
     .company ul {
         @apply list-decimal ml-5 space-y-4

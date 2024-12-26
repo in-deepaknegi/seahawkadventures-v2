@@ -1,26 +1,30 @@
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-
-    // add NEXT_PUBLIC_URL to env-var in production 
     const BASE_URL = process.env.NEXT_PUBLIC_URL
         ? `${process.env.NEXT_PUBLIC_URL}`
-        : 'http://localhost:3000';
+        : "http://localhost:3000";
 
-    const urls = [
-        `${BASE_URL}/rafting`,
-        `${BASE_URL}/kayak`,
-        `${BASE_URL}/about`,
-        `${BASE_URL}/contacts`,
-        `${BASE_URL}/gallery`,
-    ]
+    const allRoutes = [
+        `/privacy-policy`,
+        `/terms-and-conditions`,
+        `/cancellation-terms`,
+    ];
+
+    const routes: MetadataRoute.Sitemap = allRoutes.map((route) => ({
+        url: `${BASE_URL}${route}`,
+        lastModified: new Date(),
+        changeFrequency: "daily",
+        priority: 0.8,
+    }));
 
     return [
         {
             url: `${BASE_URL}`,
             lastModified: new Date(),
-            changeFrequency: 'weekly',
+            changeFrequency: "daily",
             priority: 1,
         },
-    ]
+        ...routes,
+    ];
 }

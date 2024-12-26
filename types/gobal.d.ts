@@ -5,7 +5,7 @@ export type PackageProps = {
     description: string;
     collection: {
         title: string;
-        price:number;
+        price: number;
         image: ImageProps;
         description: string;
         features: {
@@ -16,8 +16,14 @@ export type PackageProps = {
             rapids: {
                 total: string;
                 grades: string;
-            }
+            };
             difficulty: string;
-        }
-    }[]
+        };
+    }[];
 };
+
+export interface FeedbackProps {
+    name: string;
+    review_date: string;
+    review: string;
+}

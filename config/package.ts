@@ -10,8 +10,7 @@ export const packagesConfig = [
                     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
                     alt: "",
                 },
-                description:
-                    `<p>
+                description: `<p>
                 River rafting from Marine Drive to Shivpuri is an excellent choice for those looking to experience their first rafting trip in a safe yet exciting manner. Rafting in Rishikesh is truly a thrilling adventure that offers a mix of fun and natural beauty. This rafting journey takes you from the Marine Drive Rafting Point to Shivpuri.
                 </p>
 
@@ -25,15 +24,14 @@ export const packagesConfig = [
                     endingPoint: "Shivpuri",
                     rapids: {
                         total: "4",
-                        grades: "I, II and III"
+                        grades: "I, II and III",
                     },
-                    difficulty: "Easy"
-                }
+                    difficulty: "Easy",
+                },
             },
             {
                 title: "16 Km River Rafting",
-                description:
-                    `<p>
+                description: `<p>
                     Rafting from Shivpuri to Rishikesh is an exciting adventure suitable for both beginners and those with previous experience. The journey begins at the Shivpuri River Rafting Starting Point and ends 16 kilometers later at Nim Beach in Rishikesh.
                     </p>
                     <p>
@@ -51,10 +49,10 @@ export const packagesConfig = [
                     endingPoint: "Nim Beach",
                     rapids: {
                         total: "8",
-                        grades: "I, II, III & III+"
+                        grades: "I, II, III & III+",
                     },
-                    difficulty: "Moderate"
-                }
+                    difficulty: "Moderate",
+                },
             },
             {
                 title: "26 Km River Rafting",
@@ -74,10 +72,10 @@ export const packagesConfig = [
                     endingPoint: "Nim Beach",
                     rapids: {
                         total: "12",
-                        grades: "I, II and III & III+"
+                        grades: "I, II and III & III+",
                     },
-                    difficulty: "Moderate"
-                }
+                    difficulty: "Moderate",
+                },
             },
         ],
     },
@@ -101,10 +99,10 @@ export const packagesConfig = [
                     endingPoint: "Shivpuri",
                     rapids: {
                         total: "4",
-                        grades: "I, II and III"
+                        grades: "I, II and III",
                     },
-                    difficulty: "Easy"
-                }
+                    difficulty: "Easy",
+                },
             },
             {
                 title: "Advanced Training",
@@ -121,10 +119,10 @@ export const packagesConfig = [
                     endingPoint: "Shivpuri",
                     rapids: {
                         total: "4",
-                        grades: "I, II and III"
+                        grades: "I, II and III",
                     },
-                    difficulty: "Easy"
-                }
+                    difficulty: "Easy",
+                },
             },
         ],
     },
@@ -134,8 +132,7 @@ export const packagesConfig = [
         collection: [
             {
                 title: "Ganga Kayak Expedition",
-                description:
-                    `<p>The Ganga Kayak Expedition offers a thrilling three-day, two-night journey down the Alaknanda and Ganga rivers, covering 70km.</p>
+                description: `<p>The Ganga Kayak Expedition offers a thrilling three-day, two-night journey down the Alaknanda and Ganga rivers, covering 70km.</p>
                 
                 <p>Suitable for individuals with kayaking experience ranging from beginner (I) to intermediate (IV), this October-March expedition begins with transport from Tapovan to Devprayag. Days are punctuated by exhilarating kayaking stretches (18km, 20-25km, and 30-35km respectively), interspersed with opportunities for exploration.</p>
                 
@@ -147,21 +144,20 @@ export const packagesConfig = [
                     alt: "",
                 },
                 features: {
-                    distance: "12km",
-                    duration: "1.5 hours to 2 hours",
-                    startingPoint: "Marine Drive",
-                    endingPoint: "Shivpuri",
+                    distance: "70km",
+                    duration: "2 nights 3 days",
+                    startingPoint: "Devprayag",
+                    endingPoint: "Neem Beach",
                     rapids: {
                         total: "4",
-                        grades: "I, II and III"
+                        grades: "I-IV",
                     },
-                    difficulty: "Easy"
-                }
+                    difficulty: "Challenging",
+                },
             },
             {
-                title: "Himalayan Explorer",
-                description:
-                    `<p>This four-day, three-night rafting expedition (October-March) covers 100km of exhilarating rapids, graded I-IV.</p>
+                title: "Rafting Expedition",
+                description: `<p>This four-day, three-night rafting expedition (October-March) covers 100km of exhilarating rapids, graded I-IV.</p>
                 
                 <p>Beginning in Tapovan (5:00 AM departure), Day 1 features a 30-35km raft to Vyas Ghat, concluding with a bonfire and barbecue. Day 2 continues with 25-30km of rafting, incorporating a hike to a waterfall and exploration of Gartang Gali near Kaudiyala, followed by another riverside campfire. Day 3 culminates in a 35-40km journey to Neem Beach, concluding at 5:00 PM.</p> 
                 
@@ -172,26 +168,20 @@ export const packagesConfig = [
                     alt: "",
                 },
                 features: {
-                    distance: "12km",
-                    duration: "1.5 hours to 2 hours",
-                    startingPoint: "Marine Drive",
-                    endingPoint: "Shivpuri",
+                    distance: "100Km",
+                    duration: "3 nights 4 days",
+                    startingPoint: "Bhagwan",
+                    endingPoint: "Neem Beach",
                     rapids: {
                         total: "4",
-                        grades: "I, II and III"
+                        grades: "I- IV",
                     },
-                    difficulty: "Easy"
-                }
+                    difficulty: "Challenging",
+                },
             },
         ],
     },
-]
-
-
-
-
-
-
+];
 
 interface PackageConfig {
     package?: {
@@ -202,7 +192,7 @@ interface PackageConfig {
         route?: string;
         grade?: string;
         duration?: string;
-        description?: string
+        description?: string;
         level?: string;
         link?: string;
     }[];
@@ -224,7 +214,6 @@ interface PackageConfig {
     }[];
 }
 
-
 export const raftingConfig = {
     package: [
         {
@@ -234,10 +223,11 @@ export const raftingConfig = {
             route: "Club House to NIM Beach",
             grade: "I-II",
             duration: "1 - 2 Hours",
-            description: "Experience riverside camping with bonfire and adventure activities.",
+            description:
+                "Experience riverside camping with bonfire and adventure activities.",
             level: "Beginner",
 
-            link: "#"
+            link: "#",
         },
         {
             id: 2,
@@ -246,7 +236,7 @@ export const raftingConfig = {
             grade: "II - III",
             duration: "2 - 3 Hours",
             price: 1020,
-            link: "#"
+            link: "#",
         },
         {
             id: 3,
@@ -255,7 +245,7 @@ export const raftingConfig = {
             grade: "II - III",
             duration: "2 - 3 Hours",
             price: 1520,
-            link: "#"
+            link: "#",
         },
     ],
     gallery: [
@@ -327,9 +317,10 @@ export const expeditionConfig: PackageConfig = {
             route: "",
             duration: "3 Days",
             price: 800,
-            description: "Experience riverside camping with bonfire and adventure activities.",
+            description:
+                "Experience riverside camping with bonfire and adventure activities.",
             level: "Beginner",
-            link: "#"
+            link: "#",
         },
         {
             id: 2,
@@ -338,9 +329,10 @@ export const expeditionConfig: PackageConfig = {
             route: "",
             duration: "4 Hours",
             price: 1500,
-            description: "Perfect for beginners to learn basic kayaking skills in calm waters.",
+            description:
+                "Perfect for beginners to learn basic kayaking skills in calm waters.",
             level: "Moderate",
-            link: "#"
+            link: "#",
         },
     ],
     gallery: [
@@ -365,7 +357,7 @@ export const expeditionConfig: PackageConfig = {
             alt: "",
         },
     ],
-}
+};
 
 export const kayakConfig = {
     package: [
@@ -375,8 +367,9 @@ export const kayakConfig = {
             route: "Brahmpuri",
             duration: "2 Hours",
             price: 800,
-            description: "Perfect for beginners to learn basic kayaking skills in calm waters.",
-            link: "#"
+            description:
+                "Perfect for beginners to learn basic kayaking skills in calm waters.",
+            link: "#",
         },
         {
             id: 2,
@@ -384,8 +377,9 @@ export const kayakConfig = {
             route: "Shivpuri",
             duration: "4 Hours",
             price: 1500,
-            description: "Perfect for beginners to learn basic kayaking skills in calm waters.",
-            link: "#"
+            description:
+                "Perfect for beginners to learn basic kayaking skills in calm waters.",
+            link: "#",
         },
     ],
-}
+};

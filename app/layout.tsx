@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import SocialIcons from "@/components/globals/social";
 
 const { SITE_NAME } = process.env;
 
 const baseUrl = process.env.NEXT_PUBLIC_URL
     ? process.env.NEXT_PUBLIC_URL
-    : 'http://localhost:3000';
+    : "http://localhost:3000";
 
 export const metadata: Metadata = {
     metadataBase: new URL(baseUrl),
 
     title: {
         default: SITE_NAME!,
-        template: `%s - ${SITE_NAME}`
+        template: `%s - ${SITE_NAME}`,
     },
-    description: "Explore the exhilarating experience of river rafting in Rishikesh with Sea hawk Adventures. Compare rates, services, and inclusions to find the perfect deal for your adventure-filled getaway. Book your rafting trip now!",
+    description:
+        "Experience the thrill of river rafting, kayaking and camping in Rishikesh with Sea Hawk Adventures. Discover the best rafting, kayaking and expedition packages, compare prices, and explore included services to find the ideal adventure for your getaway. Book your river rafting trip today. Rafting in Rishikesh. Kayaking.",
 
     keywords: [
         "river rafting in Rishikesh",
@@ -31,18 +33,20 @@ export const metadata: Metadata = {
     ],
 
     openGraph: {
-        title: "Sea Hawk Adventuers",
-        description: "Explore the exhilarating experience of river rafting in Rishikesh with Sea hawk Adventures. Compare rates, services, and inclusions to find the perfect deal for your adventure-filled getaway. Book your rafting trip now!",
+        title: SITE_NAME!,
+        description:
+            "Experience the thrill of river rafting, kayaking and camping in Rishikesh with Sea Hawk Adventures. Discover the best rafting, kayaking and expedition packages, compare prices, and explore included services to find the ideal adventure for your getaway. Book your river rafting trip today. Rafting in Rishikesh. Kayaking.",
         url: "https://www.seahawkadventures.com/",
-        images: ["/images/og/featured-img.png"],
-        siteName: "Sea Hawk Adventuers",
+        images: ["/images/meta/featured-img.png"],
+        siteName: SITE_NAME!,
     },
 
     twitter: {
-        card: 'summary_large_image',
-        title: "SeaHawkAdventuers",
-        description: "Explore the exhilarating experience of river rafting in Rishikesh with Sea hawk Adventures. Compare rates, services, and inclusions to find the perfect deal for your adventure-filled getaway. Book your rafting trip now!",
-        images: ["/images/og/featured-img.png"],
+        card: "summary_large_image",
+        title: SITE_NAME!,
+        description:
+            "Experience the thrill of river rafting, kayaking and camping in Rishikesh with Sea Hawk Adventures. Discover the best rafting, kayaking and expedition packages, compare prices, and explore included services to find the ideal adventure for your getaway. Book your river rafting trip today. Rafting in Rishikesh. Kayaking.",
+        images: ["/images/meta/featured-img.png"],
     },
 };
 
@@ -51,16 +55,15 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-
     return (
         <html lang="en">
             <GoogleTagManager gtmId="GTM-WWQ9J7ZF" />
 
             <body>
+                <SocialIcons />
                 {children}
             </body>
             <GoogleAnalytics gaId="G-1ZYE4TYDD6" />
-
         </html>
     );
 }

@@ -2,7 +2,13 @@ import React from "react";
 import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 
-import { Facebook, Instagram, Linkedin, Twitter, Whatsapp } from "@/components/icons";
+import {
+    Facebook,
+    Instagram,
+    Linkedin,
+    Twitter,
+    Whatsapp,
+} from "@/components/icons";
 
 const Footer: React.FC<ComponentProps> = (props) => {
     const { site, socials, links, payment } = {
@@ -12,14 +18,14 @@ const Footer: React.FC<ComponentProps> = (props) => {
 
     return (
         <div
-            className="relative h-[800px]"
+            className="relative h-[1000px] bg-neutral-950 md:h-[800px]"
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
             <div className="relative -top-[100vh] h-[calc(100vh+800px)]">
-                <div className="sticky top-[calc(100vh-800px)] bg-neutral-950 h-[800px]">
-                    <footer className="relative pt-40 text-white ">
+                <div className="sticky top-[calc(100vh-800px)] h-[800px]">
+                    <footer className="relative pt-10 text-white md:pt-40">
                         <div className="mx-auto max-w-full px-5 text-sm md:max-w-[85%] md:px-0">
-                            <div className="grid grid-cols-4 gap-x-10 gap-y-10 md:grid-cols-[1fr_1fr,1fr,1fr,2fr]">
+                            <div className="grid grid-cols-4 gap-x-1 gap-y-10 md:grid-cols-[1fr_1fr,1fr,1fr,2fr]">
                                 <div className="col-span-2 flex flex-col gap-5 md:col-span-1">
                                     <h2 className="uppercase">
                                         {links[0].label}
@@ -107,7 +113,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                                     <Link
                                                         key={i}
                                                         href={sublink.url}
-                                                        className="hover:text-white"
+                                                        className="hover:text-white "
                                                     >
                                                         {sublink.label}
                                                     </Link>
@@ -145,6 +151,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                                 <Link
                                                     key={i}
                                                     href={social.url}
+                                                    target="_blank"
                                                     className="rounded-full text-neutral-400 transition-all duration-500 ease-in hover:text-white"
                                                 >
                                                     {social.thumbnail}
@@ -154,7 +161,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                     </div>
                                 </div>
 
-                                <div className="col-span-4 md:col-span-1">
+                                <div className="col-span-4 hidden md:col-span-1 md:block">
                                     <div className="flex flex-col gap-5 rounded-xl bg-neutral-900 p-5">
                                         <h2 className="text-base">
                                             Get your 10% off today
@@ -194,7 +201,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                             <div className="mt-10 md:mt-16">
                                 <Link
                                     href={site.url}
-                                    className="flex w-fit items-center gap-2 p-2 rounded-lg bg-white"
+                                    className="flex w-fit items-center gap-2 rounded-lg bg-white p-2"
                                 >
                                     <Image
                                         src={site.image.src}
@@ -205,13 +212,22 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                     />
                                 </Link>
                                 <div className="mt-5 flex gap-5 text-neutral-400">
-                                    <Link href="/privacy-policy" className="hover:text-white">
+                                    <Link
+                                        href="/privacy-policy"
+                                        className="hover:text-white"
+                                    >
                                         Privacy Policy
                                     </Link>{" "}
-                                    <Link href="/cancellation-terms" className="hover:text-white">
+                                    <Link
+                                        href="/cancellation-terms"
+                                        className="hover:text-white"
+                                    >
                                         Cancellation
                                     </Link>
-                                    <Link href="/terms-and-conditions" className="hover:text-white">
+                                    <Link
+                                        href="/terms-and-conditions"
+                                        className="hover:text-white"
+                                    >
                                         Terms of Service
                                     </Link>
                                 </div>
@@ -275,18 +291,18 @@ const FooterDefaults: FooterProps = {
     socials: [
         {
             label: "Instagram",
-            thumbnail: <Instagram className="size-5 hover:text-rose-500" />,
-            url: "#",
+            thumbnail: <Instagram className="size-5 hover:text-white" />,
+            url: "https://www.instagram.com/seahawkadventures/",
         },
         {
             label: "Facebook",
-            thumbnail: <Facebook className="w-6 grayscale hover:grayscale-0" />,
-            url: "#",
+            thumbnail: <Facebook className="w-6 hover:text-white" />,
+            url: "https://www.facebook.com/seahawkadventure/",
         },
         {
             label: "Whatsapp",
-            thumbnail: <Whatsapp className="w-7 hover:text-green-500" />,
-            url: "#",
+            thumbnail: <Whatsapp className="w-7 hover:text-white" />,
+            url: "https://wa.me/919756620538/?text=Hi there!",
         },
     ],
 
@@ -342,15 +358,15 @@ const FooterDefaults: FooterProps = {
             ],
         },
         {
-            label: "Company",
+            label: "Get in touch",
             sublinks: [
                 {
-                    label: "Patner",
-                    url: "#",
+                    label: "info@seahawkadventures.com",
+                    url: "mailto:info@seahawkadventures.com",
                 },
                 {
-                    label: "Call: 12-3456-789",
-                    url: "#",
+                    label: "+91 97566 20538 ",
+                    url: "tel:+91 97566 20538",
                 },
             ],
         },
