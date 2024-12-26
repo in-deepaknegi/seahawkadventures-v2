@@ -1,13 +1,8 @@
 import React from "react";
-import { ComponentProps } from "@/types/global";
 import { Call, Facebook, Instagram, Whatsapp } from "../icons";
 import Link from "next/link";
 
-const SocialIcons: React.FC<SocialIconsProps> = (props) => {
-    const { } = {
-        ...SocialIconsDefaults,
-        ...props,
-    };
+const SocialIcons = () => {
     return (
         <section className="fixed bottom-3 left-0 z-50 rounded-xl md:bottom-10 md:top-[60%]">
             <div className="grid grid-rows-4">
@@ -49,10 +44,3 @@ const SocialIcons: React.FC<SocialIconsProps> = (props) => {
 };
 
 export default SocialIcons;
-
-type SocialIconsProps = React.ComponentPropsWithoutRef<"section"> &
-    Partial<ComponentProps>;
-
-const SocialIconsDefaults: ComponentProps = {
-    // Default prop values
-};

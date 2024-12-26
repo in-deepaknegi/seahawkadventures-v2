@@ -9,7 +9,7 @@ const config = {
     tabWidth: 4,
     trailingComma: "es5",
     importOrder: [
-        "^@/components/cnippetui/(.*)$",
+        "^@/components/(.*)$",
     ],
     importOrderSeparation: false,
     importOrderSortSpecifiers: true,

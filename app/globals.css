@@ -32,4 +32,20 @@
     .br-2 {
         box-shadow: 6px -6px #fff;
     }
+    .company > p {
+        @apply text-base
+    }
+    .company > p > strong {
+        @apply font-insm font-medium border-dotted border-neutral-700 border-b
+    }
+    .company > ul> li> strong {
+        @apply font-insm font-medium  
+    }
+    .company a {
+        @apply font-mono font-medium border-dotted border-neutral-700 border-b
+    }
+    .company ul {
+        @apply list-decimal ml-5 space-y-4
+    }
 }
+

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
     title: {
         default: SITE_NAME!,
-        template: `%s | ${SITE_NAME}`
+        template: `%s - ${SITE_NAME}`
     },
     description: "Explore the exhilarating experience of river rafting in Rishikesh with Sea hawk Adventures. Compare rates, services, and inclusions to find the perfect deal for your adventure-filled getaway. Book your rafting trip now!",
 

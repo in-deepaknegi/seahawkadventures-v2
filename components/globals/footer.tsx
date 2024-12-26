@@ -205,10 +205,13 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                     />
                                 </Link>
                                 <div className="mt-5 flex gap-5 text-neutral-400">
-                                    <Link href="/" className="hover:text-white">
+                                    <Link href="/privacy-policy" className="hover:text-white">
                                         Privacy Policy
                                     </Link>{" "}
-                                    <Link href="/" className="hover:text-white">
+                                    <Link href="/cancellation-terms" className="hover:text-white">
+                                        Cancellation
+                                    </Link>
+                                    <Link href="/terms-and-conditions" className="hover:text-white">
                                         Terms of Service
                                     </Link>
                                 </div>
@@ -260,11 +263,11 @@ type ComponentProps = React.ComponentPropsWithoutRef<"section"> &
 
 const FooterDefaults: FooterProps = {
     site: {
-        name: "Cnippet",
+        name: "Sea Hawk Adventures",
         url: "/",
         image: {
             src: "/images/logo.png",
-            alt: "cnippet site logo",
+            alt: "sea hawk adventures site logo",
         },
         description:
             " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et lacinia mi.",
