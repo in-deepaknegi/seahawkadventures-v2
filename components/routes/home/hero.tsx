@@ -46,19 +46,19 @@ export default function Index() {
             type: "image",
             src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3502.jpg",
             scale: scale6,
-            customClass: "top-[28vh] left-[5vw] w-[20vw] h-[25vh]",
+            customClass: "top-[28vh] left-[-3vw] w-[20vw] h-[25vh]",
         },
         {
             type: "image",
             src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
             scale: scale8,
-            customClass: "top-[28vh] left-[-22vw] w-[20vw] h-[25vh]",
+            customClass: "top-[28vh] left-[-30vw] w-[20vw] h-[25vh]",
         },
         {
             type: "image",
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3110.jpg",
             scale: scale9,
-            customClass: "top-[28vh] left-[27vw] w-[10vw] h-[15vh]",
+            customClass: "top-[28vh] left-[24vw] w-[20vw] h-[25vh]",
         },
     ];
 
