@@ -28,6 +28,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Easy",
                 },
+                url: "/adventure-in-rishikesh/river-rafting"
             },
             {
                 title: "16 Km River Rafting",
@@ -53,6 +54,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Moderate",
                 },
+                url: "/adventure-in-rishikesh/river-rafting"
             },
             {
                 title: "26 Km River Rafting",
@@ -76,6 +78,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Moderate",
                 },
+                url: "/adventure-in-rishikesh/river-rafting"
             },
         ],
     },
@@ -103,6 +106,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Easy",
                 },
+                url: "#"
             },
             {
                 title: "Advanced Training",
@@ -123,6 +127,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Easy",
                 },
+                url: "#",
             },
         ],
     },
@@ -131,7 +136,7 @@ export const packagesConfig = [
         description: "",
         collection: [
             {
-                title: "Ganga Kayak Expedition",
+                title: "Kayak Expedition",
                 description: `<p>The Ganga Kayak Expedition offers a thrilling three-day, two-night journey down the Alaknanda and Ganga rivers, covering 70km.</p>
                 
                 <p>Suitable for individuals with kayaking experience ranging from beginner (I) to intermediate (IV), this October-March expedition begins with transport from Tapovan to Devprayag. Days are punctuated by exhilarating kayaking stretches (18km, 20-25km, and 30-35km respectively), interspersed with opportunities for exploration.</p>
@@ -154,6 +159,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Challenging",
                 },
+                url: "/adventure-in-rishikesh/kayak-expedition"
             },
             {
                 title: "Rafting Expedition",
@@ -178,6 +184,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Challenging",
                 },
+                url: "/adventure-in-rishikesh/rafting-expedition"
             },
         ],
     },
@@ -189,6 +196,7 @@ interface PackageConfig {
         title?: string;
         price?: number;
         timing?: string;
+        distance?: string;
         route?: string;
         grade?: string;
         duration?: string;
@@ -220,53 +228,49 @@ export const raftingConfig = {
             id: 1,
             title: "12 KM",
             price: 1,
-            route: "Club House to NIM Beach",
+            route: "Marine Drive - Shivpuri",
             grade: "I-II",
-            duration: "1 - 2 Hours",
-            description:
-                "Experience riverside camping with bonfire and adventure activities.",
-            level: "Beginner",
-
+            duration: "1.5 hours to 2 hours",
             link: "#",
         },
         {
             id: 2,
             title: "16 KM",
-            route: "Shivpuri to NIM Beach",
+            route: "Shivpuri - Nim Beach",
             grade: "II - III",
-            duration: "2 - 3 Hours",
+            duration: "2 hours to 2.5 hours",
             price: 1020,
             link: "#",
         },
         {
             id: 3,
             title: "26 KM",
-            route: "Marine Drive to NIM Beach",
+            route: "Marine Drive - Nim Beach",
             grade: "II - III",
-            duration: "2 - 3 Hours",
+            duration: "3.5 hours to 4 hours",
             price: 1520,
             link: "#",
         },
     ],
     gallery: [
         {
-            src: "/images/rafting/r05.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
             alt: "",
         },
         {
-            src: "/images/rafting/r03.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
             alt: "",
         },
         {
-            src: "/images/rafting/r08.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
             alt: "",
         },
         {
-            src: "/images/rafting/r12.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
             alt: "",
         },
         {
-            src: "/images/rafting/r13.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
             alt: "",
         },
     ],
@@ -292,7 +296,8 @@ export const raftingConfig = {
             description:
                 "Engage in enthralling white water rafting expedition on the mighty Ganges in Rishikesh. Navigate through the thrilling rapids amidst the mountains",
             image: {
-                src: "/images/rafting/r05.jpg",
+                src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3108.jpg",
+
                 alt: "",
             },
         },
@@ -301,7 +306,8 @@ export const raftingConfig = {
             description:
                 "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
             image: {
-                src: "/images/rafting/r08.jpg",
+                src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3107.jpg",
+
                 alt: "",
             },
         },
@@ -337,23 +343,28 @@ export const expeditionConfig: PackageConfig = {
     ],
     gallery: [
         {
-            src: "/images/expedition/m01.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3501.jpg",
+
             alt: "",
         },
         {
-            src: "/images/expedition/m00.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",
+
             alt: "",
         },
         {
-            src: "/images/expedition/m02.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3505.jpg",
+
             alt: "",
         },
         {
-            src: "/images/kayak/k05.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
+
             alt: "",
         },
         {
-            src: "/images/kayak/k08.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3507.jpg",
+
             alt: "",
         },
     ],

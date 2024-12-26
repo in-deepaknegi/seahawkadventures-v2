@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Clock, MapPin, Timer, ArrowRight } from "lucide-react";
 import PackageModal from "./package-modal";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface Package {
     title: string;
@@ -24,6 +25,7 @@ export interface Package {
         };
         difficulty: string;
     };
+    url: string;
 }
 
 interface TabContentProps {
@@ -79,8 +81,9 @@ export default function TabContent({
                     />
                     <button
                         onClick={() => openModal(pkg)}
-                        className="absolute right-2 top-2 rounded-full bg-white opacity-0 group-hover:opacity-100 transition-opacity ease-in duration-300 p-2"
+                        className="absolute right-2 top-2 rounded-full bg-white p-2 opacity-0 transition-opacity duration-300 ease-in group-hover:opacity-100"
                     >
+                        <span className="sr-only">{pkg.title}</span>
                         <Plus className="h-5 w-5" />
                     </button>
                 </div>
@@ -126,13 +129,14 @@ export default function TabContent({
                             </span>
                             <span className="font-satm">
                                 ₹ {pkg.price}
-                                <span className="text-sm font-satr text-gray-400">
+                                <span className="font-satr text-sm text-gray-400">
                                     /person
                                 </span>
                             </span>
                         </div>
+
                         <button className="mt-auto rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
-                            Book Now
+                            <Link href={pkg?.url}>Book Now</Link>
                         </button>
                     </div>
                 </div>

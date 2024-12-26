@@ -9,8 +9,8 @@ const TermsPage = () => {
     return (
         <>
             <Navbar />
-            <main className="bg-gray-50 px-5 md:px-0 py-5 font-insr">
-                <article className="company mx-auto md:max-w-[50%] space-y-6 bg-white p-5 md:p-10">
+            <main className="bg-gray-50 px-5 py-5 font-insr md:px-0">
+                <article className="company mx-auto space-y-6 bg-white p-5 md:max-w-[50%] md:p-10">
                     <h1 className="text-center font-mono text-2xl">
                         Terms and Conditions
                     </h1>
@@ -19,8 +19,8 @@ const TermsPage = () => {
                         you thoroughly review all the packages before booking.
                         We provide extensive details on our Adventure and
                         Camping packages, and due to the variety of options,
-                        it&apos;s not possible to explain everything over the phone.
-                        We recommend visiting our website and reading all
+                        it&apos;s not possible to explain everything over the
+                        phone. We recommend visiting our website and reading all
                         relevant information for the camp and activities you are
                         considering. If you have any questions, please feel free
                         to contact us at{" "}
@@ -153,8 +153,8 @@ const TermsPage = () => {
                         <li>
                             <strong>Non-Refundable Deposits:</strong> If the
                             balance amount is not received by check-in time, the
-                            booking will be considered canceled from the guest&apos;s
-                            end.
+                            booking will be considered canceled from the
+                            guest&apos;s end.
                         </li>
 
                         <li>

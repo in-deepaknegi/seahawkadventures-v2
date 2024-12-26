@@ -30,7 +30,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                     <h2 className="uppercase">
                                         {links[0].label}
                                     </h2>
-                                    <div className="flex flex-col gap-5 text-neutral-400">
+                                    <div className="flex flex-col gap-5 text-neutral-300">
                                         {links[0].sublinks.map((sublink, i) => (
                                             <Link
                                                 key={i}
@@ -48,7 +48,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                             {links[1].label}
                                         </h2>
 
-                                        <div className="flex flex-col gap-5 text-neutral-400">
+                                        <div className="flex flex-col gap-5 text-neutral-300">
                                             {links[1].sublinks.map(
                                                 (sublink, i) => (
                                                     <Link
@@ -67,7 +67,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                             {links[2].label}
                                         </h2>
 
-                                        <div className="flex flex-col gap-5 text-neutral-400">
+                                        <div className="flex flex-col gap-5 text-neutral-300">
                                             {links[2].sublinks.map(
                                                 (sublink, i) => (
                                                     <Link
@@ -88,7 +88,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                             {links[3].label}
                                         </h2>
 
-                                        <div className="flex flex-col gap-5 text-neutral-400">
+                                        <div className="flex flex-col gap-5 text-neutral-300">
                                             {links[3].sublinks.map(
                                                 (sublink, i) => (
                                                     <Link
@@ -107,7 +107,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                             {links[4].label}
                                         </h2>
 
-                                        <div className="flex flex-col gap-5 text-neutral-400">
+                                        <div className="flex flex-col gap-5 text-neutral-300">
                                             {links[4].sublinks.map(
                                                 (sublink, i) => (
                                                     <Link
@@ -152,8 +152,9 @@ const Footer: React.FC<ComponentProps> = (props) => {
                                                     key={i}
                                                     href={social.url}
                                                     target="_blank"
-                                                    className="rounded-full text-neutral-400 transition-all duration-500 ease-in hover:text-white"
+                                                    className="rounded-full text-neutral-300 transition-all duration-500 ease-in hover:text-white"
                                                 >
+                                                    <span className="sr-only">{social.label}</span>
                                                     {social.thumbnail}
                                                 </Link>
                                             ))}

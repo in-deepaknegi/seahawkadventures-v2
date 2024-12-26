@@ -9,8 +9,8 @@ const PrivacyPage = () => {
     return (
         <>
             <Navbar />
-            <main className="bg-gray-50 px-5 md:px-0 py-5 font-insr">
-                <article className="company mx-auto md:max-w-[50%] space-y-6 bg-white p-5 md:p-10">
+            <main className="bg-gray-50 px-5 py-5 font-insr md:px-0">
+                <article className="company mx-auto space-y-6 bg-white p-5 md:max-w-[50%] md:p-10">
                     <h1 className="text-center font-mono text-2xl">
                         Privay Policy
                     </h1>

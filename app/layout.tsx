@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import SocialIcons from "@/components/globals/social";
 
 const { SITE_NAME } = process.env;
@@ -62,6 +64,7 @@ export default function RootLayout({
             <body>
                 <SocialIcons />
                 {children}
+                <SpeedInsights />
             </body>
             <GoogleAnalytics gaId="G-1ZYE4TYDD6" />
         </html>

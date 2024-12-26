@@ -14,8 +14,6 @@ const content = defineCollection({
         keywords: z.string(),
         date: z.string(),
         image: z.string(),
-        logo: z.string(),
-        
     }),
     transform: async (document, context) => {
         const body = await compileMDX(context, document, {

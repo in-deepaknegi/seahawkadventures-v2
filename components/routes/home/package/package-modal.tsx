@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface Package {
     title: string;
@@ -10,6 +11,7 @@ export interface Package {
         src: string;
         alt: string;
     };
+    url: string;
 }
 
 interface PackageModalProps {
@@ -103,9 +105,9 @@ export default function PackageModal({
                                         ₹{pkg.price}
                                     </p>
                                 </div>
-                                <button className="rounded-lg bg-blue-600 px-6 py-3 text-white transition-colors hover:bg-blue-700">
-                                    Book Now
-                                </button>
+                                <button className="mt-auto rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700">
+                            <Link href={pkg?.url}>Book Now</Link>
+                        </button>
                             </div>
                         </div>
                     </motion.div>

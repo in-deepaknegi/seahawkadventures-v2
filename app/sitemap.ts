@@ -1,3 +1,4 @@
+import allContents from "@/.content-collections/generated/allContents";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -18,6 +19,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
     }));
 
+    const contents: MetadataRoute.Sitemap = allContents.map(
+        ({ slugAsParams }) => ({
+            url: `${BASE_URL}/adventure-in-rishikesh/${slugAsParams}`,
+            lastModified: new Date(),
+            changeFrequency: "daily",
+            priority: 0.9,
+        }),
+    );
+
     return [
         {
             url: `${BASE_URL}`,
@@ -26,5 +36,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 1,
         },
         ...routes,
+        ...contents,
     ];
 }

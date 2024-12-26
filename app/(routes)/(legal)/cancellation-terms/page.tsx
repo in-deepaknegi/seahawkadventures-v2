@@ -9,8 +9,8 @@ const CancellationPage = () => {
     return (
         <>
             <Navbar />
-            <main className="bg-gray-50 px-5 md:px-0 py-5 font-insr">
-                <article className="company mx-auto md:max-w-[50%] space-y-6 bg-white p-5 md:p-10">
+            <main className="bg-gray-50 px-5 py-5 font-insr md:px-0">
+                <article className="company mx-auto space-y-6 bg-white p-5 md:max-w-[50%] md:p-10">
                     <h1 className="text-center font-mono text-2xl">
                         Booking Policy & Cancellation Terms
                     </h1>
@@ -51,8 +51,8 @@ const CancellationPage = () => {
                             Once the payment is done and the amount is reflected
                             in our account, a confirmation mail/WhatsApp message
                             will be sent to you with details such as the camp
-                            address, camp manager&apos;s contact numbers, payment
-                            status, check-in/check-out dates, etc.
+                            address, camp manager&apos;s contact numbers,
+                            payment status, check-in/check-out dates, etc.
                             Simultaneously, your booking details will be shared
                             with the camp manager of the booked camp.
                         </li>
@@ -141,8 +141,8 @@ const CancellationPage = () => {
                         <li>
                             If the balance amount is not received by the camp
                             during the specified time (11:00 AM to 12:00 PM),
-                            the booking will be canceled (from the guest&apos;s end),
-                            and there will be no refund.
+                            the booking will be canceled (from the guest&apos;s
+                            end), and there will be no refund.
                         </li>
                         <li>
                             If the guest refuses to pay the complete balance
