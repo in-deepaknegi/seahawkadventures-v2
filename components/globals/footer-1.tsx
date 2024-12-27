@@ -18,7 +18,7 @@ const Footer: React.FC<ComponentProps> = (props) => {
     return (
         <footer className="relative bg-gray-50 py-10">
             <div className="relative mx-auto max-w-[95%] overflow-hidden rounded-3xl bg-white md:max-w-[90%]">
-                <div className="absolute h-full w-full bg-[url(/images/components/all-exps/bg-dots.webp)]" />
+                <div className="absolute h-full w-full" />
 
                 <div className="relative flex flex-col gap-5 p-10 md:flex-row md:gap-0">
                     <div className="flex w-full flex-col gap-3">

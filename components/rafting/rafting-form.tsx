@@ -66,14 +66,17 @@ export function RaftingForm({ packages, price }: { packages: Package[], price: a
             totalAmount: formData.numberOfUsers * (formData.selectedPackage?.price || 0),
             users,
         };
+
+
         // Calculate the amount based on selected number of users and package price
         const calculatedAmount = formData.numberOfUsers * (formData.selectedPackage?.price || 0);
         setAmount(calculatedAmount.toString());
 
-
-        console.log('Booking completed:', bookingData);
-
         processPayment(bookingData);
+
+
+        // console.log('Booking completed:', bookingData);
+
 
 
     };
