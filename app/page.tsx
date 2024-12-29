@@ -28,14 +28,14 @@ export default function Home() {
             <Navbar />
             <main>
                 <Hero />
-
                 <Package/>
+                <BlogSection />
+                <CTASection />
             </main>
-            <BlogSection />
-            <CTASection />
+           
             <Footer />
 
-            <div className=" fixed bottom-10 right-10 z-50">
+            <div className="fixed md:bottom-10 bottom-3 right-3 md:right-10 z-50">
                 <button
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-white"
                     onClick={() =>

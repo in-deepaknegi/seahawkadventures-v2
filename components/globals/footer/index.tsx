@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const links = [
     { label: "Facebook", href: "#" },
@@ -12,10 +13,10 @@ const links = [
 
 export default function Footer() {
     return (
-        <footer className="bg-neutral-950 font-insr text-white">
+        <footer className="overflow-hidden bg-neutral-950 font-insr text-white">
             <div className="mx-auto max-w-7xl px-4 py-32 pb-10">
                 <motion.h2
-                    className="mb-16 max-w-2xl text-4xl font-insr md:text-5xl"
+                    className="mb-16 max-w-2xl font-insr text-4xl md:text-5xl"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -25,35 +26,38 @@ export default function Footer() {
 
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
                     <div className="space-y-4">
-                        <h3 className="text-xl font-insm">Address</h3>
+                        <h3 className="font-insm text-xl">Address</h3>
                         <address className="not-italic text-gray-400">
                             India —<br />
-                            Near Laxman Jhula
+                            Badrinath Rd
+                            <br />
+                            near Shivpuri Police Station
                             <br />
                             Rishikesh, Uttarakhand
                         </address>
                     </div>
 
                     <div className="space-y-4">
-                        <h3 className="text-xl font-insm">Say Hello</h3>
+                        <h3 className="font-insm text-xl">Say Hello</h3>
                         <div className="space-y-2">
-                            <a
+                            <Link
                                 href="mailto:info@seahawkadventures.com"
                                 className="block text-gray-400 hover:text-white"
                             >
                                 info@seahawkadventures.com
-                            </a>
-                            <a
-                                href="tel:+911234567890"
+                            </Link>
+                            <Link
+                                href="tel:+919756620538"
                                 className="block text-gray-400 hover:text-white"
                             >
-                                +91 123 456 7890
-                            </a>
+                               +91 97566 20538
+                            </Link>
                         </div>
                     </div>
 
+
                     <div className="space-y-4">
-                        <h3 className="text-xl font-insm text-white">Social</h3>
+                        <h3 className="font-insm text-xl text-white">Social</h3>
                         <ul className="space-y-2">
                             {links.map((link) => (
                                 <li key={link.label}>
@@ -73,11 +77,11 @@ export default function Footer() {
                             Newsletter
                         </h3>
                         <form className="space-y-4">
-                            <div className="relative">
+                            <div className="relative w-full max-w-full">
                                 <input
                                     type="email"
                                     placeholder="Enter Your Email Address"
-                                    className="w-full border-b border-gray-600 bg-transparent py-2 text-white placeholder-gray-400 focus:border-white focus:outline-none"
+                                    className="w-full max-w-sm border-b border-gray-600 bg-transparent py-2 text-white placeholder-gray-400 focus:border-white focus:outline-none"
                                 />
                                 <button
                                     type="submit"
@@ -106,11 +110,40 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-16 flex flex-col items-center justify-between space-y-4 border-t border-gray-800 pt-8 md:flex-row md:space-y-0">
-                    <p className="text-gray-400">
-                        Sea Hawk Adventures © 2024. All Rights Reserved.
+                <div className="mt-16 flex flex-col items-center justify-between border-t border-gray-800 pt-8 md:flex-row">
+                    <p className="text-sm text-gray-400">
+                        Sea Hawk Adventures © 2025. All Rights Reserved.
                     </p>
-                    
+
+                    <div className="flex flex-wrap justify-start gap-3 text-xs text-gray-400 md:gap-5">
+                        <Link
+                            href="/privacy-policy"
+                            className="hover:text-white hover:underline"
+                        >
+                            Privacy Policy
+                        </Link>
+                        <Link
+                            href="/terms-and-conditions"
+                            className="hover:text-white hover:underline"
+                        >
+                            Terms of Service
+                        </Link>
+                        <Link
+                            href="/cancellation-terms"
+                            className="hover:text-white hover:underline"
+                        >
+                            Cancellation Terms
+                        </Link>
+                    </div>
+                    <div className="text-xs text-gray-400">
+                        <Link
+                            href="https://ui.cnippet.site/"
+                            target="_blank"
+                            className="hover:text-black dark:hover:text-white"
+                        >
+                            Website by Cnippet
+                        </Link>{" "}
+                    </div>
                 </div>
             </div>
         </footer>

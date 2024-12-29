@@ -4,6 +4,7 @@ import { packagesConfig } from "@/config/package"; // Import packagesConfig
 
 import { fadeUp } from "@/lib/motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AdventuresSection() {
     const [activeTab, setActiveTab] = useState<string>("rafting"); // State to track active tab
@@ -13,11 +14,11 @@ export default function AdventuresSection() {
     const activeTabData = packagesConfig.find((tab) => tab.title === activeTab);
 
     return (
-        <motion.section ref={ref} className="bg-white pt-32 font-insr">
-            <div className="mx-auto max-w-[85%] px-4 sm:px-6 lg:px-8">
+        <motion.section className="overflow-hidden bg-white pt-20 font-insr md:pt-32">
+            <div className="mx-auto max-w-full px-4 sm:px-6 md:max-w-[85%] lg:px-8">
                 <div className="mb-16 text-center">
                     <motion.span
-                        className="font-insm text-sm uppercase tracking-wider text-gray-600"
+                        className="font-insm text-sm uppercase tracking-wider text-gray-700"
                         variants={fadeUp}
                         initial="hidden"
                         whileInView="visible"
@@ -36,7 +37,7 @@ export default function AdventuresSection() {
                     </motion.h2>
 
                     <div
-                        className="mx-auto mt-8 flex w-fit justify-center space-x-4 bg-[url(https://res.cloudinary.com/dkuixrz40/image/upload/v1735489454/deco-water.jpg)] bg-cover p-1"
+                        className="mx-auto mt-8 grid grid-cols-3 bg-[url(https://res.cloudinary.com/dkuixrz40/image/upload/v1735489454/deco-water.jpg)] bg-cover p-1 md:w-fit"
                         style={{
                             objectFit: "cover",
                         }}
@@ -46,7 +47,7 @@ export default function AdventuresSection() {
                             <button
                                 key={i}
                                 onClick={() => setActiveTab(item.title)}
-                                className={`px-6 py-2 font-insr text-xl ${
+                                className={`px-6 py-2 font-insr text-base md:text-xl ${
                                     activeTab === item.title
                                         ? "bg-white text-black"
                                         : "text-neutral-100"
@@ -93,7 +94,7 @@ export default function AdventuresSection() {
                                         height={680}
                                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
-                                    <div className="absolute bottom-0 z-20 h-52 w-full bg-gradient-to-t from-black/80 to-transparent" />
+                                    <div className="absolute bottom-0 z-20 h-52 w-full bg-gradient-to-t from-black to-transparent md:from-black/80" />
                                 </div>
                                 <div className="absolute bottom-0 z-30 p-6 text-white">
                                     <h3 className="text-3xl">
@@ -106,6 +107,12 @@ export default function AdventuresSection() {
                                         }}
                                     />
                                 </div>
+                                <Link href={service.url}>
+                                    <span className="sr-only">
+                                        {service.title}
+                                    </span>
+                                    <span className="absolute inset-0"></span>
+                                </Link>
                             </div>
                         ))}
                     </div>

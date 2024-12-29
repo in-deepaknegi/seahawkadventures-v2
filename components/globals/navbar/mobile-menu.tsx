@@ -33,7 +33,7 @@ export default function MobileMenu() {
                                 delay: 0.5,
                             },
                         }}
-                        className="absolute left-0 right-0 top-0 bg-black p-4 shadow-lg"
+                        className="absolute left-0 right-0 top-0 bg-black p-8 shadow-lg"
                     >
                         <div className="flex justify-between">
                             <motion.div

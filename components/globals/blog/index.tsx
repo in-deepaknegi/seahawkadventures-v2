@@ -29,8 +29,8 @@ const blogPosts = [
 
 export default function BlogSection() {
     return (
-        <section className="bg-white py-40">
-            <div className="mx-auto max-w-[90%] px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden bg-white py-20 md:py-40">
+            <div className="mx-auto max-w-full px-4 sm:px-6 md:max-w-[90%] lg:px-8">
                 <div className="mb-16 text-center">
                     <motion.span
                         className="font-insm text-sm uppercase tracking-wider text-gray-600"
@@ -89,7 +89,7 @@ export default function BlogSection() {
                                     alt={post.title}
                                     width={1080}
                                     height={680}
-                                    className="h-72 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                    className="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-105 md:h-72"
                                 />
                             </div>
 
@@ -99,7 +99,7 @@ export default function BlogSection() {
                                     <span>•</span>
                                     <span>{post.comments} Comments</span>
                                 </div>
-                                <h3 className="font-insr text-2xl font-semibold text-gray-900 transition-colors group-hover:text-blue-600">
+                                <h3 className="font-insr text-xl font-semibold text-gray-900 transition-colors group-hover:text-blue-600 md:text-2xl">
                                     {post.title}
                                 </h3>
                                 <div className="absolute -top-8 right-4 z-40 bg-black/90 p-3 text-center text-white">

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function CTASection() {
     return (
-        <section className="relative h-[50vh] bg-black text-white">
+        <section className="relative h-[40vh] overflow-hidden bg-black text-white md:h-[50vh]">
             <div className="absolute inset-0">
                 <Image
                     src="https://res.cloudinary.com/dkuixrz40/image/upload/v1735479492/water-rafting-T0100.jpg"

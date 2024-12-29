@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ShoppingBag, X } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import { Clock, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 import MobileMenu from "./mobile-menu";
@@ -32,14 +32,22 @@ const Navbar = () => {
                                 Mon - Fri 8:00 - 18:00 / Sunday 8:00 - 14:00
                             </span>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <Link
+                            href={`tel:+919756620538`}
+                            target="_blank"
+                            className="flex items-center space-x-2"
+                        >
                             <Phone className="h-4 w-4" />
-                            <span>+91 123-456-7890</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
+                            <span> +91 97566 20538</span>
+                        </Link>
+                        <Link
+                            href="https://maps.app.goo.gl/ga3Bg1z1zrMJoDen9"
+                            target="_blank"
+                            className="flex items-center space-x-2"
+                        >
                             <MapPin className="h-4 w-4" />
                             <span>Rishikesh, Uttarakhand, India</span>
-                        </div>
+                        </Link>
                     </div>
 
                     <div className="flex items-center space-x-4">
@@ -71,7 +79,7 @@ const Navbar = () => {
                 </div>
             </motion.div>
 
-            <div className="sticky top-0 z-50 mb-8 w-full bg-white font-insr">
+            <div className="sticky top-0 z-50 mb-0 w-full bg-white font-insr md:mb-8">
                 <div className="mx-auto flex h-20 max-w-[90%] items-center justify-between">
                     <motion.div
                         className=""
