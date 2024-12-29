@@ -2,6 +2,8 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import { CldImage } from "next-cloudinary";
 import Image from "next/image";
+import Logo from "@/components/logo";
+import { ArrowRight } from "lucide-react";
 
 export default function Index() {
     const container = useRef(null);
@@ -69,7 +71,7 @@ export default function Index() {
 
     return (
         <>
-            <section className="relative">
+            {/* <section className="relative">
                 <div className="flex flex-col items-center justify-center gap-3 px-5 text-center md:gap-0 md:px-0">
                     <h1 className="font-oggr text-[4rem] leading-[4rem] md:leading-[5rem] md:text-[5rem]">
                         Sea Hawk Adventures
@@ -142,6 +144,56 @@ export default function Index() {
                         Your browser does not support the video tag.
                     </motion.video>
                 </div>
+            </section> */}
+            <section className="relative font-insr">
+                <div className="mx-auto max-w-[90%]">
+                    <div className="relative h-[62vh] w-full">
+                        <motion.video
+                            style={{
+                                borderRadius: rounded,
+                            }}
+                            autoPlay
+                            loop
+                            muted
+                            className="h-full w-full object-cover"
+                        >
+                            <source
+                                src="https://res.cloudinary.com/dkuixrz40/video/upload/v1735366866/16232801-uhd_3840_2160_30fps_u0e9ru.mp4"
+                                type="video/mp4"
+                            />
+                            Your browser does not support the video tag.
+                        </motion.video>
+
+                        <div className="absolute bottom-10 left-0 px-10 z-30 w-full">
+                            <div className="flex justify-between w-full items-center">
+                                <motion.h1
+                                    className="font-oggm text-5xl leading-tight text-white lg:text-7xl"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4 }}
+                                >
+                                    Experience the <br />
+                                    <span className="text-blue-500">
+                                        {" "}
+                                        Thrill{" "}
+                                    </span>
+                                    of Adventure
+                                </motion.h1>
+
+                                <motion.button
+                                    className="flex items-center gap-2 mt-auto rounded-lg bg-blue-600/95 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+                                    whileHover={{ scale: 1.025 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    Book Adventure{" "}
+                                    <ArrowRight className="h-5 w-5" />
+                                </motion.button>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-0 h-[20vh] w-full bg-gradient-to-t from-black/90" />
+                    </div>
+                </div>
+                <Logo />
             </section>
         </>
     );
