@@ -149,9 +149,6 @@ export default function Index() {
                 <div className="mx-auto max-w-[90%]">
                     <div className="relative h-[62vh] w-full">
                         <motion.video
-                            style={{
-                                borderRadius: rounded,
-                            }}
                             autoPlay
                             loop
                             muted
@@ -173,7 +170,7 @@ export default function Index() {
                                     transition={{ delay: 0.4 }}
                                 >
                                     Experience the <br />
-                                    <span className="text-blue-500">
+                                    <span className="text-[#2f47db]">
                                         {" "}
                                         Thrill{" "}
                                     </span>
@@ -181,7 +178,7 @@ export default function Index() {
                                 </motion.h1>
 
                                 <motion.button
-                                    className="flex items-center gap-2 mt-auto rounded-lg bg-blue-600/95 px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-700"
+                                    className="flex items-center gap-2 mt-auto rounded-lg bg-[#2f47db] px-8 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-800"
                                     whileHover={{ scale: 1.025 }}
                                     whileTap={{ scale: 0.95 }}
                                 >

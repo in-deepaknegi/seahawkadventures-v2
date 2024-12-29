@@ -61,7 +61,7 @@ export default function RootLayout({
         <html lang="en">
             <GoogleTagManager gtmId="GTM-WWQ9J7ZF" />
 
-            <body>
+            <body className="relative">
                 <SocialIcons />
                 {children}
                 <SpeedInsights />

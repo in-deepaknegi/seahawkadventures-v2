@@ -40,7 +40,7 @@ export const packagesConfig = [
                 </p>`,
                 price: 1000,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3103.jpg",
                     alt: "",
                 },
                 features: {
@@ -64,7 +64,7 @@ export const packagesConfig = [
                 <p>This seemingly tranquil journey belies the presence of roughly ten grade III and III+ rapids, each demanding skill and attention. Notable rapids include "Three Blind Mice," a deceptively calm sequence of three closely spaced rapids, and others such as "Huge and Kiss," "Cross Fire," "Return to Sender Roller Coaster," "Golf Course," and "Club House."</p>`,
                 price: 1500,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
                     alt: "",
                 },
                 features: {
@@ -76,7 +76,7 @@ export const packagesConfig = [
                         total: "12",
                         grades: "I, II and III & III+",
                     },
-                    difficulty: "Moderate",
+                    difficulty: "Challenging",
                 },
                 url: "/adventure-in-rishikesh/river-rafting"
             },
@@ -92,7 +92,7 @@ export const packagesConfig = [
                     "Perfect for beginners, experience Grade I and II rapids",
                 price: 1999,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734968740/img-3505.jpg",
                     alt: "",
                 },
                 features: {
@@ -104,7 +104,7 @@ export const packagesConfig = [
                         total: "4",
                         grades: "I, II and III",
                     },
-                    difficulty: "Easy",
+                    difficulty: "Moderate",
                 },
                 url: "#"
             },
@@ -113,7 +113,7 @@ export const packagesConfig = [
                 description: "Advanced course with Grade III and IV rapids",
                 price: 1999,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734968742/img-3500.jpg",
                     alt: "",
                 },
                 features: {
@@ -125,7 +125,7 @@ export const packagesConfig = [
                         total: "4",
                         grades: "I, II and III",
                     },
-                    difficulty: "Easy",
+                    difficulty: "Challenging",
                 },
                 url: "#",
             },
@@ -157,7 +157,7 @@ export const packagesConfig = [
                         total: "4",
                         grades: "I-IV",
                     },
-                    difficulty: "Challenging",
+                    difficulty: "Moderate",
                 },
                 url: "/adventure-in-rishikesh/kayak-expedition"
             },
@@ -170,7 +170,7 @@ export const packagesConfig = [
                 <p>Daily packed lunches and picturesque lunch stops on white sand beaches are included. Each night's camping offers a unique riverside or beach setting enhanced by bonfires and barbecues. The journey offers a blend of thrilling rapids and opportunities for scenic exploration.</p>`,
                 price: 1999,
                 image: {
-                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
+                    src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734968741/img-3503.jpg",
                     alt: "",
                 },
                 features: {

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -11,8 +12,8 @@ const links = [
 
 export default function Footer() {
     return (
-        <footer className="bg-black font-insr text-white">
-            <div className="mx-auto max-w-7xl px-4 pt-32 pb-10">
+        <footer className="bg-neutral-950 font-insr text-white">
+            <div className="mx-auto max-w-7xl px-4 py-32 pb-10">
                 <motion.h2
                     className="mb-16 max-w-2xl text-4xl font-insr md:text-5xl"
                     initial={{ opacity: 0, y: 20 }}
@@ -109,16 +110,7 @@ export default function Footer() {
                     <p className="text-gray-400">
                         Sea Hawk Adventures © 2024. All Rights Reserved.
                     </p>
-                    <motion.button
-                        className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800"
-                        whileHover={{ y: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() =>
-                            window.scrollTo({ top: 0, behavior: "smooth" })
-                        }
-                    >
-                        ↑
-                    </motion.button>
+                    
                 </div>
             </div>
         </footer>

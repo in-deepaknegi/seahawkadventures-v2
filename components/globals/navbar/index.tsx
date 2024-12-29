@@ -1,9 +1,11 @@
+"use client"
 import React from "react";
 import { motion } from "framer-motion";
 import { ShoppingBag, X } from "lucide-react";
 import { Clock, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 import MobileMenu from "./mobile-menu";
+import Link from "next/link";
 
 const menuItems = [
     { label: "Home", href: "#" },
@@ -13,9 +15,9 @@ const menuItems = [
     { label: "Blog", href: "#" },
 ];
 
-export default function Navbar() {
+const Navbar = () => {
     return (
-        <header className="w-full mb-8 bg-white font-insr">
+        <>
             <motion.div
                 className="hidden bg-gray-50 py-3.5 text-[0.82rem] text-gray-500 md:block"
                 initial={{ y: -20, opacity: 0 }}
@@ -41,52 +43,54 @@ export default function Navbar() {
                     </div>
 
                     <div className="flex items-center space-x-4">
-                        <a
+                        <Link
                             href="#"
                             className="transition-colors hover:text-blue-600"
                         >
                             <motion.span whileHover={{ scale: 1.1 }}>
                                 Facebook
                             </motion.span>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="#"
                             className="transition-colors hover:text-blue-600"
                         >
                             <motion.span whileHover={{ scale: 1.1 }}>
                                 Twitter
                             </motion.span>
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href="#"
                             className="transition-colors hover:text-blue-600"
                         >
                             <motion.span whileHover={{ scale: 1.1 }}>
                                 Instagram
                             </motion.span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </motion.div>
 
-            <div className="mx-auto sticky w-full max-w-[90%]">
-                <div className="flex h-20 items-center justify-between">
+            <div className="sticky top-0 z-50 mb-8 w-full bg-white font-insr">
+                <div className="mx-auto flex h-20 max-w-[90%] items-center justify-between">
                     <motion.div
-                        className="flex items-center space-x-2"
+                        className=""
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <Image
-                            src="/images/meta/logo.png"
-                            alt=""
-                            width={1080}
-                            height={680}
-                            className="size-10 md:size-12"
-                        />
-                        <span className="font-insm text-xl text-gray-900 md:text-2xl">
-                            Sea Hawk Adventures
-                        </span>
+                        <Link href="/" className="flex items-center space-x-2">
+                            <Image
+                                src="/images/meta/logo.png"
+                                alt=""
+                                width={1080}
+                                height={680}
+                                className="size-10 md:size-12"
+                            />
+                            <span className="font-insm text-xl text-gray-900 md:text-2xl">
+                                Sea Hawk Adventures
+                            </span>
+                        </Link>
                     </motion.div>
                     <nav className="hidden items-center space-x-8 font-insm md:flex">
                         {menuItems.map((item, index) => (
@@ -116,6 +120,8 @@ export default function Navbar() {
                     <MobileMenu />
                 </div>
             </div>
-        </header>
+        </>
     );
-}
+};
+
+export default Navbar;

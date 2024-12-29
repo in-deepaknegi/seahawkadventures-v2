@@ -3,14 +3,14 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 import Navbar from "@/components/globals/navbar";
-import Footer from "@/components/globals/footer-1";
+import Footer from "@/components/globals/footer";
 
 const TermsPage = () => {
     return (
         <>
             <Navbar />
-            <main className="bg-gray-50 px-5 py-5 font-insr md:px-0">
-                <article className="company mx-auto space-y-6 bg-white p-5 md:max-w-[50%] md:p-10">
+            <main className="bg-white px-5 py-5 font-insr md:px-0 md:py-10">
+                <article className="company mx-auto space-y-6 bg-gray-50 p-5 md:max-w-[50%] md:p-10">
                     <h1 className="text-center font-mono text-2xl">
                         Terms and Conditions
                     </h1>
