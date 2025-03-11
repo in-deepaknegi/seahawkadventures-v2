@@ -227,7 +227,7 @@ export const raftingConfig = {
         {
             id: 1,
             title: "12 KM",
-            price: 1,
+            price: 640,
             route: "Marine Drive - Shivpuri",
             grade: "I-II",
             duration: "1.5 hours to 2 hours",

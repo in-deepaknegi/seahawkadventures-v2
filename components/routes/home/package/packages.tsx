@@ -6,6 +6,7 @@ import { fadeUp } from "@/lib/motion";
 import Image from "next/image";
 import Link from "next/link";
 
+
 export default function AdventuresSection() {
     const [activeTab, setActiveTab] = useState<string>("rafting"); // State to track active tab
     const ref = useRef(null);

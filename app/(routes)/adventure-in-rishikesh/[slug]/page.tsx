@@ -64,7 +64,7 @@ export default async function MainPage({ params }: { params: Params }) {
             <Navbar />
             <main>
                 <section className="relative isolate py-10 font-insr">
-                    <div className="mx-auto max-w-full px-5 md:max-w-[87%] md:px-0 xl:max-w-[70%]">
+                    <div className="mx-auto max-w-full px-5 md:max-w-[87%] md:px-0 xl:max-w-6xl">
                         <div>
                             <div className="flex flex-wrap items-center gap-1 text-sm">
                                 <div>Rishikesh</div>
