@@ -1,5 +1,5 @@
 import { Marquee } from "@/components/ui/marquee";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import Image, { ImageProps } from "next/image";
 import React, { useRef } from "react";
 

@@ -200,20 +200,20 @@ export function RaftingForm({
 
                     // do whatever page transition you want here as payment was successful
 
-                    try {
-                        const res = await fetch("/api/resend", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({ bookingData }),
-                        });
+                    // try {
+                    //     const res = await fetch("/api/resend", {
+                    //         method: "POST",
+                    //         headers: {
+                    //             "Content-Type": "application/json",
+                    //         },
+                    //         body: JSON.stringify({ bookingData }),
+                    //     });
 
-                        const json = await res.json();
-                        console.log(json);
-                    } catch (error) {
-                        console.error("Error:", error);
-                    }
+                    //     const json = await res.json();
+                    //     console.log(json);
+                    // } catch (error) {
+                    //     console.error("Error:", error);
+                    // }
                 } else {
                     alert("Payment failed");
                 }

@@ -10,8 +10,8 @@ export async function POST(req: Request): Promise<Response> {
     
     try {
         const data: any = await resend.emails.send({
-            from: 'booking@seahawkadventures.com',
-            to: "seahawk.adventures05@gmail.com",
+            from: 'booking-mail-server@ui.cnippet.site',
+            to: "negideepak.in@gmail.com",
             subject: `Booking Confimation`,
             react: MessageUsEmail({ bookingData }),
         });

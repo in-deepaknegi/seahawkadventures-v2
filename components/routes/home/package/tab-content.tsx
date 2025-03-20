@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Plus } from "lucide-react";
 import { useState } from "react";
 import { Clock, MapPin, Timer, ArrowRight } from "lucide-react";

@@ -73,7 +73,7 @@ const Logo = () => {
                                 alt={logo.image.alt}
                                 width={1080}
                                 height={680}
-                                className="w-24 md:w-32 opacity-70 grayscale hover:opacity-100 hover:grayscale-0"
+                                className="w-24 md:w-32"
                             />
                         </a>
                     ))}

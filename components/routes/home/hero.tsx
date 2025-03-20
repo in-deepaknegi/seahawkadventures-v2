@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion } from "motion/react";
 import { useRef } from "react";
 import { CldImage } from "next-cloudinary";
 import Image from "next/image";

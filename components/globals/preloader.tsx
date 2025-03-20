@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { animate, delay, motion } from "framer-motion";
+import { animate, delay, motion } from "motion/react";
 
 const words = [
     "Hello",

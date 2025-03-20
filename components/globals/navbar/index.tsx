@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ShoppingBag } from "lucide-react";
 import { Clock, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
@@ -10,7 +10,7 @@ import Link from "next/link";
 const menuItems = [
     { label: "Home", href: "#" },
     { label: "Activities", href: "#" },
-    { label: "About", href: "#" },
+    { label: "About", href: "/about" },
     { label: "Events", href: "#" },
     { label: "Blog", href: "#" },
 ];
@@ -79,7 +79,7 @@ const Navbar = () => {
                 </div>
             </motion.div>
 
-            <div className="sticky top-0 z-50 mb-0 w-full bg-white font-insr md:mb-8">
+            <div className="sticky top-0 z-10 mb-0 w-full bg-white font-insr md:mb-8">
                 <div className="mx-auto flex h-20 max-w-[90%] items-center justify-between">
                     <motion.div
                         className=""

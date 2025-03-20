@@ -227,7 +227,7 @@ export const raftingConfig = {
         {
             id: 1,
             title: "12 KM",
-            price: 640,
+            price: 1,
             route: "Marine Drive - Shivpuri",
             grade: "I-II",
             duration: "1.5 hours to 2 hours",
@@ -239,7 +239,7 @@ export const raftingConfig = {
             route: "Shivpuri - Nim Beach",
             grade: "II - III",
             duration: "2 hours to 2.5 hours",
-            price: 1020,
+            price: 999,
             link: "#",
         },
         {
@@ -248,7 +248,7 @@ export const raftingConfig = {
             route: "Marine Drive - Nim Beach",
             grade: "II - III",
             duration: "3.5 hours to 4 hours",
-            price: 1520,
+            price: 1499,
             link: "#",
         },
     ],
