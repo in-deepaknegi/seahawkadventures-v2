@@ -29,7 +29,7 @@ export function NumberOfUsersModal({
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="m-auto w-full max-w-md p-5">
+            <DialogContent className="m-auto w-full max-w-[90%] md:max-w-md p-5">
                 <DialogHeader className="mb-6">
                     <DialogTitle className="text-3xl font-semibold text-gray-900">
                         Booking Details

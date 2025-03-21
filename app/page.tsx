@@ -26,7 +26,7 @@ export default function Home() {
     return (
         <>
             <Navbar />
-            <main>
+            <main className="font-sans">
                 <Hero />
                 <Package/>
                 <BlogSection />

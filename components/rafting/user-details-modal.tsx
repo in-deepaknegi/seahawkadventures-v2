@@ -46,7 +46,7 @@ export function UserDetailsModal({
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className="m-auto w-full max-w-2xl">
+            <DialogContent className="m-auto w-full max-w-[90%] md:max-w-2xl">
                 <DialogHeader>
                     <DialogTitle className="text-3xl font-semibold text-gray-900">
                         Guest Information

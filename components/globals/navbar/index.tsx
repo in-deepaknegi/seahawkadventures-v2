@@ -79,8 +79,8 @@ const Navbar = () => {
                 </div>
             </motion.div>
 
-            <div className="sticky top-0 z-50 mb-0 w-full bg-white  md:mb-8">
-                <div className="mx-auto flex h-20 max-w-[90%] items-center justify-between">
+            <div className="sticky top-0 z-50 mb-0 w-full bg-white md:mb-8">
+                <div className="mx-auto flex h-16 md:h-20 max-w-[90%] items-center justify-between">
                     <motion.div
                         className=""
                         initial={{ opacity: 0, x: -20 }}

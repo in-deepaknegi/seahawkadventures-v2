@@ -16,7 +16,7 @@ export default function Footer() {
         <footer className="overflow-hidden bg-neutral-950  text-white">
             <div className="mx-auto max-w-7xl px-4 py-32 pb-10">
                 <motion.h2
-                    className="mb-16 max-w-2xl  text-4xl md:text-5xl"
+                    className="mb-16 max-w-2xl text-4xl md:text-5xl"
                 >
                     Create unforgettable memories with Us
                 </motion.h2>

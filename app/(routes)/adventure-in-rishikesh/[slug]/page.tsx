@@ -102,11 +102,11 @@ export default async function MainPage({ params }: { params: Params }) {
                                 <div className="text-black">{doc?.title}</div>
                             </div>
 
-                            <div className="mt-10 flex flex-col gap-2.5">
+                            <div className="mt-5 flex flex-col gap-2.5 md:mt-10">
                                 <h1 className="text-5xl font-medium">
                                     {doc?.title}
                                 </h1>
-                                <div className="flex flex-col gap-8 text-xs md:flex-row md:items-center md:text-base">
+                                <div className="flex flex-col gap-2 text-xs md:flex-row md:items-center md:gap-8 md:text-base">
                                     <div className="flex items-center gap-2">
                                         <Star className="size-4 fill-yellow-500 text-yellow-500" />
                                         5/5 (125 reviews)
@@ -241,7 +241,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                                     <CheckCircle2 className="h-5 w-5" />
                                                     Pre-requisites
                                                 </div>
-                                                <div className="p-4">
+                                                <div className="p-4 text-sm md:text-base">
                                                     <ol className="list-decimal space-y-1 pl-5">
                                                         {content_1?.map(
                                                             (item) => (
@@ -275,7 +275,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                                                 {item.label}
                                                             </h3>
                                                         </div>
-                                                        <p className="mt-2 text-[15px]">
+                                                        <p className="mt-2 text-sm md:text-[15px]">
                                                             {item.description}
                                                         </p>
                                                     </div>
@@ -307,10 +307,10 @@ export default async function MainPage({ params }: { params: Params }) {
                                             <div className="space-y-4 p-4">
                                                 {content_3?.map((item, i) => (
                                                     <div key={i}>
-                                                        <h3 className="text-lg font-medium">
+                                                        <h3 className="text-base font-medium md:text-lg">
                                                             {item.label}
                                                         </h3>
-                                                        <p className="text-base text-gray-600">
+                                                        <p className="text-sm text-gray-600 md:text-base">
                                                             {item.description}
                                                         </p>
                                                     </div>
@@ -460,7 +460,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                             </div>
                                             <Accordion
                                                 iconVariant="plus-minus"
-                                                className="mx-auto flex w-full max-w-full flex-col divide-y divide-zinc-200 p-10"
+                                                className="mx-auto flex w-full max-w-full flex-col divide-y divide-zinc-200 p-4 md:p-10"
                                                 transition={{
                                                     duration: 0.2,
                                                     ease: "easeInOut",
@@ -482,8 +482,8 @@ export default async function MainPage({ params }: { params: Params }) {
                                                                 </div>
                                                             </div>
                                                         </AccordionTrigger>
-                                                        <AccordionContent>
-                                                            <p className="pl-5 text-zinc-700">
+                                                        <AccordionContent className="mt-3">
+                                                            <p className="pl-5 text-sm text-zinc-700 md:text-base">
                                                                 {item.content}
                                                             </p>
                                                         </AccordionContent>
@@ -511,7 +511,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                                             i,
                                                         ) => (
                                                             <div key={i}>
-                                                                <p className="text-lg font-medium">
+                                                                <p className="text-base font-medium md:text-lg">
                                                                     {item.label}
                                                                 </p>
                                                                 {item.list && (
@@ -534,7 +534,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                                                         )}
                                                                     </ul>
                                                                 )}
-                                                                <p className="text-gray-700">
+                                                                <p className="text-sm text-gray-700 md:text-base">
                                                                     {
                                                                         item.description
                                                                     }
@@ -549,7 +549,7 @@ export default async function MainPage({ params }: { params: Params }) {
 
                                     {/* Right Column */}
                                     <div>
-                                        <div className="sticky top-24">
+                                        <div className="sticky top-24 space-y-5">
                                             {/* Booking Info */}
                                             <div className="overflow-hidden rounded-lg border bg-white">
                                                 <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
@@ -626,7 +626,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                                                         )}
                                                                     </div>
                                                                 </div>
-                                                                <p className="line-clamp-4 text-sm text-gray-700">
+                                                                <p className="line-clamp-4 text-xs text-gray-700 md:text-sm">
                                                                     {
                                                                         item.review
                                                                     }
