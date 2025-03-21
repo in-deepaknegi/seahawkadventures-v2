@@ -27,7 +27,7 @@ export default function CTASection() {
                     SEA HAWK ADVENTURES
                 </motion.span>
                 <motion.h2
-                    className="mb-8 font-insm text-4xl md:text-6xl"
+                    className="mb-8  text-4xl md:text-6xl"
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="visible"

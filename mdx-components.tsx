@@ -8,10 +8,10 @@ interface MDXProps {
 
 const components = {
     h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <h2 className={`text-3xl font-insm text-black`} {...props} />
+        <h2 className={`text-3xl  text-black`} {...props} />
     ),
     h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <h3 className={`text-xl font-insm text-black`} {...props} />
+        <h3 className={`text-xl  text-black`} {...props} />
     ),
     h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
         <h4 className={`text-lg text-black`} {...props} />
@@ -25,7 +25,7 @@ const components = {
         className,
         ...props
     }: React.HTMLAttributes<HTMLHeadingElement>) => (
-        <strong className={`font-monm font-medium text-black`} {...props} />
+        <strong className={` font-medium text-black`} {...props} />
     ),
 
     pre: ({ children, raw, ...props }: ExtendedPreProps) => (

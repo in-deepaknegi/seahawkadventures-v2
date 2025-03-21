@@ -15,11 +15,11 @@ export default function AdventuresSection() {
     const activeTabData = packagesConfig.find((tab) => tab.title === activeTab);
 
     return (
-        <motion.section className="overflow-hidden bg-white pt-20 font-insr md:pt-32">
+        <motion.section className="overflow-hidden bg-white pt-20  md:pt-32">
             <div className="mx-auto max-w-full px-4 sm:px-6 md:max-w-[85%] lg:px-8">
                 <div className="mb-16 text-center">
                     <motion.span
-                        className="font-insm text-sm uppercase tracking-wider text-gray-700"
+                        className=" text-sm uppercase tracking-wider text-gray-700"
                         variants={fadeUp}
                         initial="hidden"
                         whileInView="visible"
@@ -28,7 +28,7 @@ export default function AdventuresSection() {
                         What we offer
                     </motion.span>
                     <motion.h2
-                        className="mt-4 font-insr text-4xl text-gray-900 md:text-5xl"
+                        className="mt-4  text-4xl text-gray-900 md:text-5xl"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
@@ -48,7 +48,7 @@ export default function AdventuresSection() {
                             <button
                                 key={i}
                                 onClick={() => setActiveTab(item.title)}
-                                className={`px-6 py-2 font-insr text-base md:text-xl ${
+                                className={`px-6 py-2  text-base md:text-xl ${
                                     activeTab === item.title
                                         ? "bg-white text-black"
                                         : "text-neutral-100"

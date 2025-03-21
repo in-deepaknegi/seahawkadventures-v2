@@ -6,6 +6,7 @@ import { NumberOfUsersModal } from "./number-of-user-modal";
 import { UserDetailsModal } from "./user-details-modal";
 import { Package, UserDetails } from "@/types/booking";
 import Script from "next/script";
+import { createPayment, verifyPayment } from "@/lib/action/payment.actions";
 
 interface FormData {
     selectedDate: Date;
@@ -31,8 +32,11 @@ export function RaftingForm({
     const [showUsersModal, setShowUsersModal] = useState(false);
     const [showDetailsModal, setShowDetailsModal] = useState(false);
 
-    const [amount, setAmount] = useState("0");
-    const [currency, setCurrency] = useState("INR");
+    const [amount, setAmount] = useState("");
+    const [description, setDescription] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
+    const [paymentDetails, setPaymentDetails] = useState<any>(null);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -78,152 +82,136 @@ export function RaftingForm({
         setAmount(calculatedAmount.toString());
 
         // processPayment(bookingData);
-        createOrder(bookingData);
-
+        // createOrder(bookingData);
+        handlePayment();
         // console.log('Booking completed:', bookingData);
     };
 
-    const createOrderId = async () => {
-        try {
-            const response = await fetch("/api/order", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    amount: parseFloat(amount) * 100,
-                }),
-            });
+    // const createOrder = async (bookingData: any) => {
+    //     const res = await fetch("/api/order", {
+    //         method: "POST",
+    //         body: JSON.stringify({ amount: parseFloat(amount) * 100, }),
+    //     });
+    //     const data = await res.json();
 
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
+    //     console.log(data);
+
+    //     const paymentData = {
+    //         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+    //         order_id: data.id,
+
+    //         handler: async function (response: any) {
+    //             // verify payment
+    //             const res = await fetch("/api/verify", {
+    //                 method: "POST",
+    //                 body: JSON.stringify({
+    //                     orderId: response.razorpay_order_id,
+    //                     razorpayPaymentId: response.razorpay_payment_id,
+    //                     razorpaySignature: response.razorpay_signature,
+    //                 }),
+    //             });
+    //             const data = await res.json();
+    //             console.log(data);
+    //             if (data.isOk) {
+
+    //                 console.log("payment success");
+
+    //                 // do whatever page transition you want here as payment was successful
+
+    //                 try {
+    //                     const res = await fetch("/api/resend", {
+    //                         method: "POST",
+    //                         headers: {
+    //                             "Content-Type": "application/json",
+    //                         },
+    //                         body: JSON.stringify({ bookingData }),
+    //                     });
+
+    //                     const json = await res.json();
+    //                     console.log(json);
+    //                 } catch (error) {
+    //                     console.error("Error:", error);
+    //                 }
+    //             } else {
+    //                 alert("Payment failed");
+    //             }
+    //         },
+    //     };
+
+    //     const payment = new (window as any).Razorpay(paymentData);
+    //     payment.open();
+    // };
+
+    const handlePayment = async () => {
+        // e.preventDefault();
+        setLoading(true);
+        setError("");
+
+        try {
+            // Create payment order
+            const response = await createPayment(Number(amount));
+
+            if (response.error) {
+                setError(response.error);
+                return;
             }
 
-            const data = await response.json();
-            return data.orderId;
-        } catch (error) {
-            console.error(
-                "There was a problem with your fetch operation:",
-                error,
-            );
-        }
-    };
-
-    const processPayment = async (bookingData: any) => {
-        try {
-            const orderId: string = await createOrderId();
+            // Initialize Razorpay checkout
             const options = {
-                key: process.env.key_id,
-                amount: parseFloat(amount) * 100,
-                currency: currency,
+                key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+                amount: Number(amount) * 100, // Amount in paise
+                currency: response.currency,
                 name: "Cnippet",
-                description: "description",
-                order_id: orderId,
-                handler: async function (response: any) {
-                    const data = {
-                        orderCreationId: orderId,
-                        razorpayPaymentId: response.razorpay_payment_id,
-                        razorpayOrderId: response.razorpay_order_id,
-                        razorpaySignature: response.razorpay_signature,
-                    };
+                description: description,
+                order_id: response.orderId,
+                handler: async (response: any) => {
+                    try {
+                        // Verify payment
+                        const verification = await verifyPayment(
+                            response.razorpay_order_id,
+                            response.razorpay_payment_id,
+                            response.razorpay_signature,
+                        );
 
-                    console.log(data);
+                        if (verification.error) {
+                            setError(verification.error);
+                        } else {
+                            alert("Payment successful!");
 
-                    const result = await fetch("/api/verify", {
-                        method: "POST",
-                        body: JSON.stringify(data),
-                        headers: { "Content-Type": "application/json" },
-                    });
-                    const res = await result.json();
-
-                    if (res.isOk) {
-                        console.log("payment succeeded");
-
-                        try {
-                            const res = await fetch("/api/resend", {
-                                method: "POST",
-                                headers: {
-                                    "Content-Type": "application/json",
-                                },
-                                body: JSON.stringify({ bookingData }),
+                            // Set payment details for receipt
+                            setPaymentDetails({
+                                amount: Number(amount),
+                                razorpayPaymentId: response.razorpay_payment_id,
+                                razorpayOrderId: response.razorpay_order_id,
+                                createdAt: new Date(),
+                                status: "SUCCESS",
                             });
 
-                            const json = await res.json();
-                            console.log(json);
-                        } catch (error) {
-                            console.error("Error:", error);
+                            setAmount("");
+                            setDescription("");
                         }
-                    } else {
-                        console.log(res.message);
+                    } catch (err) {
+                        setError("Payment verification failed");
+                        alert("Payment verification failed");
                     }
                 },
+                prefill: {
+                    name: "Customer Name",
+                    email: "customer@example.com",
+                },
+                theme: {
+                    color: "#155dfc",
+                },
             };
-            const paymentObject = new window.Razorpay(options);
-            paymentObject.on("payment.failed", function (response: any) {
-                console.log(response.error.description);
-            });
-            paymentObject.open();
-        } catch (error) {
-            console.log(error);
+
+            const razorpay = new window.Razorpay(options);
+            razorpay.open();
+        } catch (err) {
+            setError("Failed to initialize payment");
+        } finally {
+            setLoading(false);
         }
     };
-
-    const createOrder = async (bookingData: any) => {
-        const res = await fetch("/api/order", {
-            method: "POST",
-            body: JSON.stringify({ amount: parseFloat(amount) * 100, }),
-        });
-        const data = await res.json();
-
-        console.log(data);
-        
-
-        const paymentData = {
-            key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-            order_id: data.id,
-
-            handler: async function (response: any) {
-                // verify payment
-                const res = await fetch("/api/verify", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        orderId: response.razorpay_order_id,
-                        razorpayPaymentId: response.razorpay_payment_id,
-                        razorpaySignature: response.razorpay_signature,
-                    }),
-                });
-                const data = await res.json();
-                console.log(data);
-                if (data.isOk) {
-
-                    console.log("payment success");
-
-                    // do whatever page transition you want here as payment was successful
-
-                    try {
-                        const res = await fetch("/api/resend", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({ bookingData }),
-                        });
-
-                        const json = await res.json();
-                        console.log(json);
-                    } catch (error) {
-                        console.error("Error:", error);
-                    }
-                } else {
-                    alert("Payment failed");
-                }
-            },
-        };
-
-        const payment = new (window as any).Razorpay(paymentData);
-        payment.open();
-    };
-
     return (
         <>
             <Script

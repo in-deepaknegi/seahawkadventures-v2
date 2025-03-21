@@ -11,6 +11,7 @@ export interface Package {
 export interface UserDetails {
     name: string;
     mobile: string;
+    email: string;
 }
 
 export interface BookingDetails {

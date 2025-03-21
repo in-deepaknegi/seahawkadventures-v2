@@ -26,7 +26,7 @@ export default function TabList({
                     <button
                         key={tab.title}
                         onClick={() => setActiveTab(tab.title)}
-                        className={`relative flex w-full items-center font-satm tracking-wide gap-3 rounded-xl px-6 py-3 transition-all duration-200 ${
+                        className={`relative flex w-full items-center  tracking-wide gap-3 rounded-xl px-6 py-3 transition-all duration-200 ${
                             isActive
                                 ? "bg-blue-50 text-blue-600 "
                                 : "text-neutral-500 hover:text-gray-900"

@@ -22,9 +22,9 @@ const Gallery: React.FC<CtaProps> = (props) => {
     const i4 = [...i2, ...i2, ...i2, ...i2, ...i2, ...i2];
 
     return (
-        <section ref={container} className="relative w-full py-24 font-insr">
+        <section ref={container} className="relative w-full py-24 ">
             <div>
-                <h2 className="text-center font-satr text-3xl sm:text-4xl md:text-5xl md:leading-[5rem] lg:text-6xl">
+                <h2 className="text-center  text-3xl sm:text-4xl md:text-5xl md:leading-[5rem] lg:text-6xl">
                     Sturdily beautiful. <br />
                     Warm, bright. <br />
                     By the Ganges. <br />

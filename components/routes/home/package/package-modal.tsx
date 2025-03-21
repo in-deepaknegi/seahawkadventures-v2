@@ -61,7 +61,7 @@ export default function PackageModal({
                         </div>
 
                         <div className="p-6">
-                            <h3 className="mb-2 font-insm text-2xl">
+                            <h3 className="mb-2  text-2xl">
                                 {pkg.title}
                             </h3>
                             <div
@@ -73,7 +73,7 @@ export default function PackageModal({
 
                             <div className="md:flex gap-10 hidden text-sm">
                                 <div className="w-full rounded-lg bg-gray-50 p-4">
-                                    <h4 className="mb-2 font-insm text-base">
+                                    <h4 className="mb-2  text-base">
                                         What&apos;s Included
                                     </h4>
                                     <ul className="list-inside list-disc space-y-1 text-gray-600">
@@ -85,7 +85,7 @@ export default function PackageModal({
                                 </div>
 
                                 <div className="w-full rounded-lg bg-gray-50 p-4">
-                                    <h4 className="mb-2 font-insm text-base">
+                                    <h4 className="mb-2  text-base">
                                         Requirements
                                     </h4>
                                     <ul className="list-inside list-disc space-y-1 text-gray-600">

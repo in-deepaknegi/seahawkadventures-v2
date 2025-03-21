@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import { Modal } from "@/components/ui/modal";
-import { Package } from '@/types/booking';
-import { format } from 'date-fns';
+import React, { useState } from "react";
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogClose,
+} from "@/components/ui/modal";
+import { Package } from "@/types/booking";
+import { format } from "date-fns";
 
 interface NumberOfUsersModalProps {
     isOpen: boolean;
@@ -20,49 +26,97 @@ export function NumberOfUsersModal({
 }: NumberOfUsersModalProps) {
     const [numberOfUsers, setNumberOfUsers] = useState(1);
     const totalAmount = numberOfUsers * selectedPackage.price;
-    console.log(totalAmount);
-    
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title="Booking Details">
-            <div className="space-y-6">
-                <div className="space-y-2">
-                    <h3 className="font-insm">Selected Package</h3>
-                    <p className='text-gray-600'>{selectedPackage.title} - {selectedPackage.route}</p>
-                    <p className="text-gray-600"><span className='text-black'>Date:</span> {format(selectedDate, 'MMMM d, yyyy')}</p>
-                </div>
-
-                <div className="space-y-2">
-                    <label className="block font-medium">Number of Users</label>
-                    <input
-                        type="number"
-                        min="1"
-                        max="10"
-                        value={numberOfUsers}
-                        onChange={(e) => setNumberOfUsers(Math.max(1, parseInt(e.target.value) || 1))}
-                        className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    />
-                </div>
-
-                <div className="space-y-2">
-                    <h3 className="font-insm">Price Details</h3>
-                    <div className="flex justify-between">
-                        <span>Price per person</span>
-                        <span>₹ {selectedPackage.price}</span>
+        <Dialog open={isOpen} onOpenChange={onClose}>
+            <DialogContent className="m-auto w-full max-w-md p-5">
+                <DialogHeader className="mb-6">
+                    <DialogTitle className="text-3xl font-semibold text-gray-900">
+                        Booking Details
+                    </DialogTitle>
+                    <DialogClose className="absolute top-4 right-4" />
+                </DialogHeader>
+                <div className="space-y-8">
+                    <div className="space-y-3 rounded-lg bg-slate-100 p-4">
+                        <h3 className="border-b border-gray-300 pb-2 text-base font-medium text-gray-900">
+                            Selected Package
+                        </h3>
+                        <div className="space-y-2">
+                            <div className="flex items-center justify-between">
+                                <p className="text-base text-black">
+                                    {selectedPackage.title}
+                                </p>
+                                <p className="text-sm text-gray-700">
+                                    {selectedPackage.route}
+                                </p>
+                            </div>
+                            <p className="text-base text-gray-800">
+                                <span className="font-medium text-gray-900">
+                                    Date:
+                                </span>{" "}
+                                {format(selectedDate, "MMMM d, yyyy")}
+                            </p>
+                        </div>
                     </div>
-                    <div className="flex justify-between font-insm">
-                        <span>Total Amount</span>
-                        <span>₹ {totalAmount}</span>
-                    </div>
-                </div>
 
-                <button
-                    onClick={() => onConfirm(numberOfUsers)}
-                    className="w-full bg-blue-500 text-white py-3 rounded-lg font-medium hover:bg-blue-600 transition-colors"
-                >
-                    Continue
-                </button>
-            </div>
-        </Modal>
+                    <div className="space-y-3">
+                        <label className="block text-base font-medium text-gray-900">
+                            Number of Users
+                        </label>
+                        <div className="relative">
+                            <input
+                                type="number"
+                                min="1"
+                                max="10"
+                                value={numberOfUsers}
+                                onChange={(e) =>
+                                    setNumberOfUsers(
+                                        Math.max(
+                                            1,
+                                            parseInt(e.target.value) || 1,
+                                        ),
+                                    )
+                                }
+                                className="w-full rounded-lg border border-gray-300 px-4 py-1.5 text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                            />
+                            <p className="mt-1 text-sm text-gray-500">
+                                Maximum 10 users per booking
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="space-y-3 rounded-lg bg-slate-900 p-4 text-sm">
+                        <h3 className="border-b border-gray-500 pb-2 font-medium text-white">
+                            Price Details
+                        </h3>
+                        <div className="space-y-2">
+                            <div className="flex items-center justify-between">
+                                <span className="text-white">
+                                    Price per person
+                                </span>
+                                <span className="font-medium text-white">
+                                    ₹{selectedPackage.price.toLocaleString()}
+                                </span>
+                            </div>
+                            <div className="flex items-center justify-between border-t pt-2">
+                                <span className="font-medium text-white">
+                                    Total Amount
+                                </span>
+                                <span className="text-base font-medium text-white">
+                                    ₹{totalAmount.toLocaleString()}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        onClick={() => onConfirm(numberOfUsers)}
+                        className="w-full rounded-lg bg-blue-700 py-2 text-base font-medium text-white shadow-sm transition-colors duration-200 hover:bg-blue-800"
+                    >
+                        Continue to Booking
+                    </button>
+                </div>
+            </DialogContent>
+        </Dialog>
     );
 }

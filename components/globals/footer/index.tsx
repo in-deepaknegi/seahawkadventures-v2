@@ -13,20 +13,17 @@ const links = [
 
 export default function Footer() {
     return (
-        <footer className="overflow-hidden bg-neutral-950 font-insr text-white">
+        <footer className="overflow-hidden bg-neutral-950  text-white">
             <div className="mx-auto max-w-7xl px-4 py-32 pb-10">
                 <motion.h2
-                    className="mb-16 max-w-2xl font-insr text-4xl md:text-5xl"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    className="mb-16 max-w-2xl  text-4xl md:text-5xl"
                 >
                     Create unforgettable memories with Us
                 </motion.h2>
 
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
                     <div className="space-y-4">
-                        <h3 className="font-insm text-xl">Address</h3>
+                        <h3 className=" text-xl">Address</h3>
                         <address className="not-italic text-gray-400">
                             India —<br />
                             Badrinath Rd
@@ -38,7 +35,7 @@ export default function Footer() {
                     </div>
 
                     <div className="space-y-4">
-                        <h3 className="font-insm text-xl">Say Hello</h3>
+                        <h3 className=" text-xl">Say Hello</h3>
                         <div className="space-y-2">
                             <Link
                                 href="mailto:info@seahawkadventures.com"
@@ -57,7 +54,7 @@ export default function Footer() {
 
 
                     <div className="space-y-4">
-                        <h3 className="font-insm text-xl text-white">Social</h3>
+                        <h3 className=" text-xl text-white">Social</h3>
                         <ul className="space-y-2">
                             {links.map((link) => (
                                 <li key={link.label}>

@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 export default function Index() {
     return (
         <>
-            <section className="relative overflow-hidden font-insr">
+            <section className="relative overflow-hidden ">
                 <div className="mx-auto max-w-full md:max-w-[90%]">
                     <div className="relative h-[62vh]">
                         <motion.video

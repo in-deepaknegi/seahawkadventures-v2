@@ -3,7 +3,7 @@ import React from "react";
 
 const page = () => {
     return (
-        <main className="relative h-screen font-insr">
+        <main className="relative h-screen ">
             <div className="absolute -z-20 h-full w-full bg-white"></div>
 
             <div className="mx-auto my-auto flex h-full w-full max-w-[80%] flex-col items-center gap-0 align-middle">
@@ -14,7 +14,7 @@ const page = () => {
                     <p className="text-black">
                         v3 coming soon. This page is under maintainance, it will
                         be updated soon😊 (go back to{" "}
-                        <Link href="/" className="font-insm text-blue-600">
+                        <Link href="/" className=" text-blue-600">
                             home
                         </Link>
                         )

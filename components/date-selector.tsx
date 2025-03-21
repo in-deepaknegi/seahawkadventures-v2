@@ -37,10 +37,10 @@ export function DateSelector({ selectedDate, price, onDateSelect }: DateSelector
                         <span className="text-sm font-medium text-gray-600">
                             {format(option.date, 'EEE')}
                         </span>
-                        <span className="text-lg font-satm text-gray-800">
+                        <span className="text-lg  text-gray-800">
                             {format(option.date, 'MMM d')}
                         </span>
-                        <span className="text-sm font-medium font-monm text-blue-600">
+                        <span className="text-sm font-medium  text-blue-600">
                             {price ? `₹${price}` : `N/A`}
                         </span>
                     </button>

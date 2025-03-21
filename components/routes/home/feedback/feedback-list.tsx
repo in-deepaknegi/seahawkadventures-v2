@@ -59,10 +59,10 @@ export const Feedback = () => {
                 <div className="max-w-full md:max-w-[80%] mx-auto">
                     <div className="flex items-center gap-2">
                         <div className="size-2 rounded-full bg-blue-600" />
-                        <p className="text-sm font-satm text-neutral-700">Feedbacks</p>
+                        <p className="text-sm  text-neutral-700">Feedbacks</p>
                         <div className="h-[0.5px] w-full bg-neutral-400" />
                     </div>
-                    <h2 className="text-5xl mt-5 font-satr">Hear directly from our adventurers</h2>
+                    <h2 className="text-5xl mt-5 ">Hear directly from our adventurers</h2>
                 </div>
                 <div className="overflow-x-auto mt-16">
                     <div
@@ -97,7 +97,7 @@ export const Feedback = () => {
                                                         )}
                                                     </div>
                                                     <div>
-                                                        <h3 className="font-insm text-lg text-gray-900">
+                                                        <h3 className=" text-lg text-gray-900">
                                                             {testimonial.name}
                                                         </h3>
                                                         <p className="text-xs text-neutral-600 md:text-right">

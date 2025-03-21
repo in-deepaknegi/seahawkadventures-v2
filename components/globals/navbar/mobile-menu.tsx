@@ -63,7 +63,7 @@ export default function MobileMenu() {
                                     height={680}
                                     className="size-10"
                                 />
-                                <span className="font-satm text-xl text-gray-100">
+                                <span className=" text-xl text-gray-100">
                                     Sea Hawk Adventures
                                 </span>
                             </motion.div>

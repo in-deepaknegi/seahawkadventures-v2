@@ -88,7 +88,7 @@ export default function TabContent({
                     </button>
                 </div>
                 <div className="p-6">
-                    <h3 className="mb-3 font-satm text-2xl">{pkg.title}</h3>
+                    <h3 className="mb-3  text-2xl">{pkg.title}</h3>
                     <div className="mb-6 space-y-2 text-[0.925rem]">
                         {[
                             { icon: Clock, text: pkg.features.duration, i: 1 },
@@ -127,9 +127,9 @@ export default function TabContent({
                             <span className="text-xs text-gray-700">
                                 Starting from
                             </span>
-                            <span className="font-satm">
+                            <span className="">
                                 ₹ {pkg.price}
-                                <span className="font-satr text-sm text-gray-400">
+                                <span className=" text-sm text-gray-400">
                                     /person
                                 </span>
                             </span>

@@ -79,7 +79,7 @@ const Navbar = () => {
                 </div>
             </motion.div>
 
-            <div className="sticky top-0 z-50 mb-0 w-full bg-white font-insr md:mb-8">
+            <div className="sticky top-0 z-50 mb-0 w-full bg-white  md:mb-8">
                 <div className="mx-auto flex h-20 max-w-[90%] items-center justify-between">
                     <motion.div
                         className=""
@@ -95,12 +95,12 @@ const Navbar = () => {
                                 height={680}
                                 className="size-10 md:size-12"
                             />
-                            <span className="font-insm text-xl text-gray-900 md:text-2xl">
+                            <span className=" text-xl text-gray-900 md:text-2xl">
                                 Sea Hawk Adventures
                             </span>
                         </Link>
                     </motion.div>
-                    <nav className="hidden items-center space-x-8 font-insm md:flex">
+                    <nav className="hidden items-center space-x-8  md:flex">
                         {menuItems.map((item, index) => (
                             <motion.a
                                 key={item.label}

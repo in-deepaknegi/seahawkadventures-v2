@@ -1,0 +1,28 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mongodb"
+    url      = env("DATABASE_URL")
+}
+
+model Payment {
+    id                String        @id @default(auto()) @map("_id") @db.ObjectId
+    razorpayOrderId   String        @unique
+    razorpayPaymentId String?
+    status            PaymentStatus @default(FAILED)
+    amount            Float
+    currency          String        @default("INR")
+    receiptId         String?
+    createdAt         DateTime      @default(now())
+    updatedAt         DateTime      @updatedAt
+
+    @@index([id])
+}
+
+enum PaymentStatus {
+    PENDING
+    SUCCESS
+    FAILED
+}

@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Modal } from "@/components/ui/modal";
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+    DialogClose,
+} from "@/components/ui/modal";
 import { UserDetails } from "@/types/booking";
 
 interface UserDetailsModalProps {
@@ -16,7 +22,7 @@ export function UserDetailsModal({
     numberOfUsers,
 }: UserDetailsModalProps) {
     const [users, setUsers] = useState<UserDetails[]>(() =>
-        Array.from({ length: numberOfUsers }, () => ({ name: "", mobile: "" })),
+        Array.from({ length: numberOfUsers }, () => ({ name: "", mobile: "", email: "" })),
     );
 
     const handleUserChange = (
@@ -30,76 +36,105 @@ export function UserDetailsModal({
     };
 
     const isValid = users.every(
-        (user) => user.name && user.mobile.length === 10,
+        (user) => user.name && user.mobile.length === 10 && user.email.includes("@"),
     );
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose} title="User Details">
-            <div className="max-h-[70vh] space-y-6 overflow-y-auto">
-                {users.map((user, index) => (
-                    <div
-                        key={index}
-                        className="space-y-4 border-b pb-4 last:border-0"
-                    >
-                        <div>
-                            <h3 className="font-insm">Enter your details</h3>
-                            <p className="text-xs text-neutral-600">
-                                These details will be use to contact you.
-                            </p>
+        <Dialog open={isOpen} onOpenChange={onClose}>
+            <DialogContent className='max-w-2xl w-full m-auto'>
+                <DialogHeader>
+                    <DialogTitle className='text-3xl font-semibold text-gray-900'>Guest Information</DialogTitle>
+                    <DialogClose />
+                </DialogHeader>
+                <div className="max-h-[75vh] space-y-8 overflow-y-auto px-1">
+                    {users.map((user, index) => (
+                        <div
+                            key={index}
+                            className="space-y-6 border-b border-gray-200 pb-8 last:border-0"
+                        >
+                            <div>
+                                {/* <h3 className="text-xl font-medium text-gray-900">Guest {index + 1}</h3> */}
+                                <p className="text-sm text-gray-600 mt-1">
+                                    Please provide accurate contact information, this will be used to contact you.
+                                </p>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Full Name
+                                    </label>
+                                    <input
+                                        type="text"
+                                        value={user.name}
+                                        onChange={(e) =>
+                                            handleUserChange(
+                                                index,
+                                                "name",
+                                                e.target.value,
+                                            )
+                                        }
+                                        className="w-full rounded-lg border border-gray-300 px-4 py-1.5 text-base outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                                        placeholder="Enter full name"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Mobile Number
+                                    </label>
+                                    <input
+                                        type="tel"
+                                        value={user.mobile}
+                                        onChange={(e) =>
+                                            handleUserChange(
+                                                index,
+                                                "mobile",
+                                                e.target.value.slice(0, 10),
+                                            )
+                                        }
+                                        className="w-full rounded-lg border border-gray-300 px-4 py-1.5 text-base outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                                        placeholder="Enter 10-digit mobile number"
+                                        maxLength={10}
+                                        pattern="[0-9]*"
+                                    />
+                                </div>
+                                <div className="space-y-2 md:col-span-2">
+                                    <label className="block text-sm font-medium text-gray-700">
+                                        Email Address
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={user.email}
+                                        onChange={(e) =>
+                                            handleUserChange(
+                                                index,
+                                                "email",
+                                                e.target.value,
+                                            )
+                                        }
+                                        className="w-full rounded-lg border border-gray-300 px-4 py-1.5 text-base outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                                        placeholder="Enter email address"
+                                    />
+                                </div>
+                            </div>
                         </div>
-                        <div className="space-y-2">
-                            <label className="block text-sm font-medium">
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                value={user.name}
-                                onChange={(e) =>
-                                    handleUserChange(
-                                        index,
-                                        "name",
-                                        e.target.value,
-                                    )
-                                }
-                                className="w-full rounded-lg border px-4 py-2 outline-blue-500"
-                                placeholder="Enter name"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="block text-sm font-medium">
-                                Mobile Number
-                            </label>
-                            <input
-                                type="tel"
-                                value={user.mobile}
-                                onChange={(e) =>
-                                    handleUserChange(
-                                        index,
-                                        "mobile",
-                                        e.target.value.slice(0, 10),
-                                    )
-                                }
-                                className="w-full rounded-lg border px-4 py-2 outline-blue-500"
-                                placeholder="Enter 10-digit mobile number"
-                                maxLength={10}
-                                pattern="[0-9]*"
-                            />
-                        </div>
-                    </div>
-                ))}
+                    ))}
 
-                <button
-                    onClick={() => onConfirm(users)}
-                    disabled={!isValid}
-                    className={`w-full rounded-lg py-3 font-medium transition-colors ${
-                        isValid
-                            ? "bg-blue-500 text-white hover:bg-blue-600"
-                            : "cursor-not-allowed bg-gray-300 text-gray-500"
-                    }`}
-                >
-                    Complete Booking
-                </button>
-            </div>
-        </Modal>
+                    <div className="pt-4">
+                        <button
+                            onClick={() => onConfirm(users)}
+                            disabled={!isValid}
+                            className={`w-full rounded-lg py-3 text-base font-medium transition-all duration-200 ${
+                                isValid
+                                    ? "bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                    : "cursor-not-allowed bg-gray-200 text-gray-500"
+                            }`}
+                        >
+                            Confirm Booking
+                        </button>
+                    </div>
+                </div>
+            </DialogContent>
+        </Dialog>
     );
 }

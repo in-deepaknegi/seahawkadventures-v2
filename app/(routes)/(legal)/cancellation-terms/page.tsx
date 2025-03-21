@@ -9,7 +9,7 @@ const CancellationPage = () => {
     return (
         <>
             <Navbar />
-            <main className="bg-white px-5 py-5 font-insr md:px-0 md:py-10">
+            <main className="bg-white px-5 py-5  md:px-0 md:py-10">
                 <article className="company mx-auto space-y-6 bg-gray-50 p-5 md:max-w-[50%] md:p-10">
                     <h1 className="text-center font-mono text-2xl">
                         Booking Policy & Cancellation Terms

@@ -1,3 +1,5 @@
+import { AtSignIcon, CommandIcon, EclipseIcon, Weight, Video } from "lucide-react";
+
 export const packagesConfig = [
     {
         title: "rafting",
@@ -226,8 +228,8 @@ export const raftingConfig = {
     package: [
         {
             id: 1,
-            title: "12 KM",
-            price: 640,
+            title: "12 KM River Rafting",
+            price: 1,
             route: "Marine Drive - Shivpuri",
             grade: "I-II",
             duration: "1.5 hours to 2 hours",
@@ -235,7 +237,7 @@ export const raftingConfig = {
         },
         {
             id: 2,
-            title: "16 KM",
+            title: "16 KM River Rafting",
             route: "Shivpuri - Nim Beach",
             grade: "II - III",
             duration: "2 hours to 2.5 hours",
@@ -244,13 +246,18 @@ export const raftingConfig = {
         },
         {
             id: 3,
-            title: "26 KM",
+            title: "26 KM River Rafting",
             route: "Marine Drive - Nim Beach",
             grade: "II - III",
             duration: "3.5 hours to 4 hours",
             price: 1520,
             link: "#",
         },
+    ],
+    pre_requisites: [
+        "Basic swimming",
+        "Good general health",
+        "Previous kayak experience not mandatory",
     ],
     gallery: [
         {
@@ -277,17 +284,50 @@ export const raftingConfig = {
     features: [
         {
             label: "Safety Instrument",
+            icon: "https://res.cloudinary.com/dkuixrz40/image/upload/v1742567391/ilus03_ogxlcn.png",
             description:
                 "Paddles, safety aids, life jackets, helmets, throw bags, and dry bags",
         },
         {
             label: "Transport",
+            icon: "https://res.cloudinary.com/dkuixrz40/image/upload/v1742567391/ilus04_fppfsy.png",
             description: "Transportation to and from Laxman Julla",
         },
         {
             label: "Trained Guide",
+            icon: "https://res.cloudinary.com/dkuixrz40/image/upload/v1742567391/ilus01_iwtptr.png",
             description:
                 "Highly trained guide with over 10 years of experience",
+        },
+    ],
+    faq: [
+        {
+            id: "1",
+            title: "Is rafting safe?",
+            icon: AtSignIcon,
+            content:
+                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
+        },
+        {
+            id: "2",
+            title: "Does rafting require any experience?",
+            icon: CommandIcon,
+            content:
+                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
+        },
+        {
+            id: "3",
+            icon: EclipseIcon,
+            title: "Is rafting suitable for beginners?",
+            content:
+                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
+        },
+        {
+            id: "4",
+            icon: EclipseIcon,
+            title: "What is the minimum age for rafting?",
+            content:
+                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
         },
     ],
     itinerary: [
@@ -295,21 +335,36 @@ export const raftingConfig = {
             label: "White Water Rafting",
             description:
                 "Engage in enthralling white water rafting expedition on the mighty Ganges in Rishikesh. Navigate through the thrilling rapids amidst the mountains",
-            image: {
-                src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3108.jpg",
-
-                alt: "",
-            },
         },
         {
             label: "Body Surfing",
             description:
                 "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
-            image: {
-                src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3107.jpg",
-
-                alt: "",
-            },
+        },
+    ],
+    tnk: [
+        {
+            label: "Our commitment",
+            description:
+                "Certified guides, clean changing rooms, no hidden fees.",
+        },
+        {
+            label: "Timings",
+            description:
+                "Hourly time slots from 7:00 AM to 4:00 PM. 7 AM, 8AM, 9AM....4PM.",
+        },
+        {
+            label: "Location",
+            description:
+                "Pickup / drop from Tapovan (Laxman Jhulla). If outside, report to our Tapovan office.",
+        },  
+        {
+            label: "Age / Weight",
+            description: "15-60 years, 35-110kg.",
+        },
+        {
+            label: "Photo / Video",
+            description: "Additional charge paid directly to the guide.",
         },
     ],
 };

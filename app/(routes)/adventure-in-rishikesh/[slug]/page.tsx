@@ -3,8 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mdx } from "@/mdx-components";
 
-import { Bookmark, ChevronRight, Star } from "lucide-react";
-
+import {
+    Bookmark,
+    Calendar,
+    CheckCircle2,
+    ChevronDown,
+    ChevronRight,
+    MapPin,
+    Star,
+} from "lucide-react";
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
 import allContents from "@/.content-collections/generated/allContents";
 import { expeditionConfig, raftingConfig } from "@/config/package";
 import { Package } from "@/types/booking";
@@ -36,13 +49,19 @@ export default async function MainPage({ params }: { params: Params }) {
     let content_0 = null;
     let content_1 = null;
     let content_2 = null;
+    let content_3 = null;
+    let content_4 = null;
+    let content_5 = null;
 
     switch (doc?.slug) {
         case "river-rafting":
             content = raftingConfig.package;
             content_0 = raftingConfig.gallery;
-            content_1 = raftingConfig.features;
-            content_2 = raftingConfig.itinerary;
+            content_1 = raftingConfig.pre_requisites;
+            content_2 = raftingConfig.features;
+            content_3 = raftingConfig.itinerary;
+            content_4 = raftingConfig.faq;
+            content_5 = raftingConfig.tnk;
             break;
         case "kayak-expedition":
             content;
@@ -62,29 +81,32 @@ export default async function MainPage({ params }: { params: Params }) {
     return (
         <>
             <Navbar />
-            <main>
-                <section className="relative isolate py-10 font-insr">
-                    <div className="mx-auto max-w-full px-5 md:max-w-[87%] md:px-0 xl:max-w-6xl">
+            <main className="font-sans">
+                <section className="relative isolate py-10">
+                    <div className="mx-auto max-w-full px-5 md:max-w-5xl md:px-10 xl:max-w-7xl">
                         <div>
-                            <div className="flex flex-wrap items-center gap-1 text-sm">
+                            <div className="flex flex-wrap items-center gap-1 text-base text-gray-700">
                                 <div>Rishikesh</div>
                                 <ChevronRight className="size-4" />
                                 <div>Experience</div>
                                 <ChevronRight className="size-4" />
-                                <div>{doc?.title}</div>
+                                <div className="text-black">{doc?.title}</div>
                             </div>
 
                             <div className="mt-10 flex flex-col gap-2.5">
-                                <h1 className="text-4xl">{doc?.title}</h1>
-                                <div className="flex flex-col gap-2 text-xs md:flex-row md:items-center md:text-sm">
+                                <h1 className="text-5xl font-medium">
+                                    {doc?.title}
+                                </h1>
+                                <div className="flex flex-col gap-8 text-xs md:flex-row md:items-center md:text-base">
                                     <div className="flex items-center gap-2">
-                                        <Star className="size-4" />
-                                        4.9 (23K+ community reviews)
+                                        <Star className="size-4 fill-yellow-500 text-yellow-500" />
+                                        5/5 (125 reviews)
                                     </div>
                                     <span className="hidden md:block">.</span>
                                     <div className="flex items-center gap-2">
-                                        <Bookmark className="size-4" />
-                                        8.5K+ booked
+                                        <Bookmark className="size-4 fill-rose-600 text-rose-600" />
+                                        #3 of 200 Tours & Activities in
+                                        Rishikesh
                                     </div>
                                 </div>
                             </div>
@@ -140,36 +162,480 @@ export default async function MainPage({ params }: { params: Params }) {
                                 </div>
                             )}
 
+                            <div className="mx-auto py-8">
+                                <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                                    {/* Left Column */}
+                                    <div className="space-y-10 md:col-span-2">
+                                        {/* Trip Details */}
+                                        {/* <div className="overflow-hidden rounded-lg border bg-white">
+                                            <div className="flex items-center gap-2 bg-blue-900 px-2 py-1 font-semibold text-white">
+                                                <Calendar className="h-5 w-5" />
+                                                3 Days | INR 19,500
+                                            </div>
+                                            <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2">
+                                                <div>
+                                                    <ul className="space-y-1">
+                                                        <li className="flex items-start gap-2">
+                                                            <span className="mt-1 text-blue-500">
+                                                                •
+                                                            </span>
+                                                            <span>
+                                                                Expert guiding
+                                                            </span>
+                                                        </li>
+                                                        <li className="flex items-start gap-2">
+                                                            <span className="mt-1 text-blue-500">
+                                                                •
+                                                            </span>
+                                                            <span>
+                                                                Everything you
+                                                                need
+                                                            </span>
+                                                        </li>
+                                                        <li className="flex items-start gap-2">
+                                                            <span className="mt-1 text-blue-500">
+                                                                •
+                                                            </span>
+                                                            <span>
+                                                                Best
+                                                                accommodation
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <ul className="space-y-1">
+                                                        <li className="flex items-start gap-2">
+                                                            <span className="mt-1 text-blue-500">
+                                                                •
+                                                            </span>
+                                                            <span>Meals</span>
+                                                        </li>
+                                                        <li className="flex items-start gap-2">
+                                                            <span className="mt-1 text-blue-500">
+                                                                •
+                                                            </span>
+                                                            <span>
+                                                                Transfers from
+                                                                Rishikesh
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div> */}
+
+                                        {/* Pre-requisites */}
+                                        {content_1 != undefined && (
+                                            <div className="overflow-hidden rounded-lg border bg-white">
+                                                <div className="flex items-center gap-2 bg-blue-600 px-4 py-2 font-medium text-white">
+                                                    <CheckCircle2 className="h-5 w-5" />
+                                                    Pre-requisites
+                                                </div>
+                                                <div className="p-4">
+                                                    <ol className="list-decimal space-y-1 pl-5">
+                                                        {content_1?.map(
+                                                            (item) => (
+                                                                <li key={item}>
+                                                                    {item}
+                                                                </li>
+                                                            ),
+                                                        )}
+                                                    </ol>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Features */}
+                                        {content_2 != undefined && (
+                                            <div className="mt-10 grid gap-5 md:grid-cols-3">
+                                                {content_2?.map((item, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="rounded-2xl border p-4"
+                                                    >
+                                                        <div className="flex items-center gap-2">
+                                                            <Image
+                                                                src={item.icon}
+                                                                alt={item.label}
+                                                                width={100}
+                                                                height={100}
+                                                                className="size-9"
+                                                            />
+                                                            <h3 className="text-lg font-medium">
+                                                                {item.label}
+                                                            </h3>
+                                                        </div>
+                                                        <p className="mt-2 text-[15px]">
+                                                            {item.description}
+                                                        </p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+
+                                        {/* packages */}
+                                        <div className="overflow-hidden rounded-lg border bg-white">
+                                            <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+                                                <MapPin className="h-5 w-5" />
+                                                Packages
+                                            </div>
+                                            <div className="p-4">
+                                                <RaftingForm
+                                                    packages={content}
+                                                    price={content[0]?.price}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        {/* Itinerary */}
+                                        <div className="overflow-hidden rounded-lg border bg-white">
+                                            <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+                                                <MapPin className="h-5 w-5" />
+                                                ITINERARY
+                                            </div>
+
+                                            <div className="space-y-4 p-4">
+                                                {content_3?.map((item, i) => (
+                                                    <div key={i}>
+                                                        <h3 className="text-lg font-medium">
+                                                            {item.label}
+                                                        </h3>
+                                                        <p className="text-base text-gray-600">
+                                                            {item.description}
+                                                        </p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Gallery */}
+                                        {/* <div className="grid grid-cols-4 gap-2">
+                                            <div className="col-span-4">
+                                                <Image
+                                                    src="/placeholder.svg?height=300&width=800"
+                                                    alt="Kayaking"
+                                                    width={800}
+                                                    height={300}
+                                                    className="h-48 w-full rounded-lg object-cover"
+                                                />
+                                            </div>
+                                            <div>
+                                                <Image
+                                                    src="/placeholder.svg?height=150&width=150"
+                                                    alt="Kayaking"
+                                                    width={150}
+                                                    height={150}
+                                                    className="h-24 w-full rounded-lg object-cover"
+                                                />
+                                            </div>
+                                            <div>
+                                                <Image
+                                                    src="/placeholder.svg?height=150&width=150"
+                                                    alt="Kayaking"
+                                                    width={150}
+                                                    height={150}
+                                                    className="h-24 w-full rounded-lg object-cover"
+                                                />
+                                            </div>
+                                            <div>
+                                                <Image
+                                                    src="/placeholder.svg?height=150&width=150"
+                                                    alt="Kayaking"
+                                                    width={150}
+                                                    height={150}
+                                                    className="h-24 w-full rounded-lg object-cover"
+                                                />
+                                            </div>
+                                            <div>
+                                                <Image
+                                                    src="/placeholder.svg?height=150&width=150"
+                                                    alt="Kayaking"
+                                                    width={150}
+                                                    height={150}
+                                                    className="h-24 w-full rounded-lg object-cover"
+                                                />
+                                            </div>
+                                        </div> */}
+
+                                        {/* Weather & Terrain */}
+                                        {/* <div className="overflow-hidden rounded-lg border bg-white">
+                                            <div className="bg-blue-500 p-4 font-semibold text-white">
+                                                Weather & terrain
+                                            </div>
+                                            <div className="p-4">
+                                                <div className="overflow-x-auto">
+                                                    <table className="min-w-full text-xs">
+                                                        <thead>
+                                                            <tr className="bg-gray-100">
+                                                                <th className="border p-2">
+                                                                    Temp (in °C)
+                                                                </th>
+                                                                <th className="border p-2">
+                                                                    Oct
+                                                                </th>
+                                                                <th className="border p-2">
+                                                                    Nov
+                                                                </th>
+                                                                <th className="border p-2">
+                                                                    Dec
+                                                                </th>
+                                                                <th className="border p-2">
+                                                                    Jan
+                                                                </th>
+                                                                <th className="border p-2">
+                                                                    Feb
+                                                                </th>
+                                                                <th className="border p-2">
+                                                                    Mar
+                                                                </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td className="border p-2">
+                                                                    Max
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    30
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    27
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    23
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    20
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    24
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    29
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td className="border p-2">
+                                                                    Min
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    18
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    12
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    8
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    6
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    9
+                                                                </td>
+                                                                <td className="border p-2">
+                                                                    13
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div> */}
+
+                                        {/* FAQ */}
+                                        <div className="overflow-hidden rounded-lg border bg-white">
+                                            <div className="p-4 text-center font-semibold">
+                                                Frequently asked questions
+                                            </div>
+                                            <Accordion
+                                                iconVariant="plus-minus"
+                                                className="mx-auto flex w-full max-w-full flex-col divide-y divide-zinc-200 p-10"
+                                                transition={{
+                                                    duration: 0.2,
+                                                    ease: "easeInOut",
+                                                }}
+                                            >
+                                                {content_4?.map((item, i) => (
+                                                    <AccordionItem
+                                                        key={i}
+                                                        value={item.id}
+                                                        className="py-2"
+                                                    >
+                                                        <AccordionTrigger className="w-full text-left text-zinc-950">
+                                                            <div className="flex items-center justify-between gap-2">
+                                                                <span>
+                                                                    <item.icon className="size-4 text-neutral-400" />
+                                                                </span>
+                                                                <div>
+                                                                    {item.title}
+                                                                </div>
+                                                            </div>
+                                                        </AccordionTrigger>
+                                                        <AccordionContent>
+                                                            <p className="pl-5 text-zinc-700">
+                                                                {item.content}
+                                                            </p>
+                                                        </AccordionContent>
+                                                    </AccordionItem>
+                                                ))}
+                                            </Accordion>
+                                        </div>
+
+                                        {/* Things to Know */}
+                                        <div className="overflow-hidden rounded-lg border bg-white">
+                                            <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+                                                <CheckCircle2 className="h-5 w-5" />
+                                                THINGS TO KNOW
+                                            </div>
+
+                                            {content_5 != undefined && (
+                                                <div className="space-y-2 p-4 text-base">
+                                                    {content_5?.map(
+                                                        (item, i) => (
+                                                            <div key={i}>
+                                                                <p className="font-medium text-lg">
+                                                                    {item.label}
+                                                                </p>
+                                                                <p className="text-gray-700">
+                                                                    {
+                                                                        item.description
+                                                                    }
+                                                                </p>
+                                                            </div>
+                                                        ),
+                                                    )}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* Right Column */}
+                                    <div className="space-y-6">
+                                        {/* Booking Info */}
+                                        <div className="overflow-hidden rounded-lg border bg-white">
+                                        <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+
+                                                <Calendar className="h-5 w-5" />
+                                                Upcoming Slots - 2024-25
+                                            </div>
+                                            <div className="space-y-3 p-4 text-sm">
+                                                <p>
+                                                    <span className="font-semibold">
+                                                        Weekend: APR 27-29 &
+                                                        30-MAY 2
+                                                    </span>
+                                                    <br />
+                                                    <span className="text-gray-600">
+                                                        Weekday: MAY 7-9 & 14-16
+                                                        & 21-23
+                                                    </span>
+                                                </p>
+                                                <p className="font-semibold">
+                                                    Bookings closed for 2023-24
+                                                </p>
+                                                <button className="w-full rounded-md bg-blue-500 py-2 font-semibold text-white transition hover:bg-blue-600">
+                                                    Book Now
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Why Choose Section */}
+                                {/* <div className="mt-12">
+                                    <h2 className="mb-8 text-center text-xl font-bold">
+                                        Why choose AdventurePlay?
+                                    </h2>
+                                    <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+                                        <div className="flex flex-col items-center text-center">
+                                            <div className="mb-3 rounded-full bg-blue-100 p-4">
+                                                <Image
+                                                    src="/placeholder.svg?height=50&width=50"
+                                                    alt="Verified"
+                                                    width={50}
+                                                    height={50}
+                                                    className="h-10 w-10"
+                                                />
+                                            </div>
+                                            <h3 className="mb-2 font-semibold">
+                                                Verified & researched
+                                            </h3>
+                                            <p className="text-sm text-gray-600">
+                                                We have spent years of
+                                                experience researching the best
+                                                adventure activities in India
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-col items-center text-center">
+                                            <div className="mb-3 rounded-full bg-blue-100 p-4">
+                                                <Image
+                                                    src="/placeholder.svg?height=50&width=50"
+                                                    alt="Locations"
+                                                    width={50}
+                                                    height={50}
+                                                    className="h-10 w-10"
+                                                />
+                                            </div>
+                                            <h3 className="mb-2 font-semibold">
+                                                Find locations
+                                            </h3>
+                                            <p className="text-sm text-gray-600">
+                                                Our adventures happen in
+                                                locations that are carefully
+                                                selected for maximum fun
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-col items-center text-center">
+                                            <div className="mb-3 rounded-full bg-blue-100 p-4">
+                                                <Image
+                                                    src="/placeholder.svg?height=50&width=50"
+                                                    alt="Better prices"
+                                                    width={50}
+                                                    height={50}
+                                                    className="h-10 w-10"
+                                                />
+                                            </div>
+                                            <h3 className="mb-2 font-semibold">
+                                                Better prices
+                                            </h3>
+                                            <p className="text-sm text-gray-600">
+                                                We find you the best deals with
+                                                our network of adventure
+                                                providers
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-col items-center text-center">
+                                            <div className="mb-3 rounded-full bg-blue-100 p-4">
+                                                <Image
+                                                    src="/placeholder.svg?height=50&width=50"
+                                                    alt="One-stop"
+                                                    width={50}
+                                                    height={50}
+                                                    className="h-10 w-10"
+                                                />
+                                            </div>
+                                            <h3 className="mb-2 font-semibold">
+                                                One-stop
+                                            </h3>
+                                            <p className="text-sm text-gray-600">
+                                                All your adventure needs in one
+                                                place - from gear rental to
+                                                guides
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> */}
+                            </div>
+
                             <div className="mt-20 flex gap-10">
                                 <article className="w-full space-y-10">
-                                    {doc?.description}
+                                    {/* {doc?.description} */}
 
-                                    {content_1 != undefined && (
-                                        <div className="mt-10 grid gap-5 md:grid-cols-3">
-                                            {content_1?.map((item, i) => (
-                                                <div
-                                                    key={i}
-                                                    className="rounded-2xl border p-5"
-                                                >
-                                                    <h3 className="font-monm text-lg">
-                                                        {item.label}
-                                                    </h3>
-                                                    <p className="mt-2 text-sm">
-                                                        {item.description}
-                                                    </p>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
+                                    {/* {doc?.body && <Mdx code={doc?.body.code} />} */}
 
-                                    {doc?.body && <Mdx code={doc?.body.code} />}
-
-                                    <RaftingForm
-                                        packages={content}
-                                        price={content[0]?.price}
-                                    />
-
-                                    {content_2 != undefined && (
+                                    {/* {content_2 != undefined && (
                                         <div>
                                             <h3 className="mb-8 text-3xl text-gray-900">
                                                 What will you do
@@ -205,7 +671,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                                                     }
                                                                     className="aspect-video h-full w-full object-cover md:w-[18rem]"
                                                                 />
-                                                                <div className="h-full py-5 pl-5 pr-5 md:py-10 md:pl-0 md:pr-10">
+                                                                <div className="h-full py-5 pr-5 pl-5 md:py-10 md:pr-10 md:pl-0">
                                                                     <h4 className="text-2xl">
                                                                         {
                                                                             item.label
@@ -223,13 +689,13 @@ export default async function MainPage({ params }: { params: Params }) {
                                                 </div>
                                             </div>
                                         </div>
-                                    )}
+                                    )} */}
 
-                                    <div>
+                                    {/* <div>
                                         <h3 className="mt-10 text-3xl text-gray-900">
                                             From Sea-Hawk Community
                                         </h3>
-                                        <ul className="ml-5 mt-10 list-disc">
+                                        <ul className="mt-10 ml-5 list-disc">
                                             <li>
                                                 No swimming skills required;
                                                 life jackets provided.
@@ -256,9 +722,9 @@ export default async function MainPage({ params }: { params: Params }) {
                                             the video, so it will be
                                             approximately ₹300 per person.
                                         </p>
-                                    </div>
+                                    </div> */}
                                 </article>
-                                <div className="sticky top-5 col-span-4 hidden h-fit w-full max-w-[22rem] rounded-xl border px-4 py-2 md:block">
+                                {/* <div className="sticky top-5 col-span-4 hidden h-fit w-full max-w-[22rem] rounded-xl border px-4 py-2 md:block">
                                     <div className="flex w-full items-center justify-between gap-4">
                                         <p className="text-2xl">
                                             {content[0]?.price
@@ -279,7 +745,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                             <Call className="size-5" />
                                         </Link>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

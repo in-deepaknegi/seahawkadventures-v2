@@ -33,7 +33,7 @@ export default function BlogSection() {
             <div className="mx-auto max-w-full px-4 sm:px-6 md:max-w-[90%] lg:px-8">
                 <div className="mb-16 text-center">
                     <motion.span
-                        className="font-insm text-sm uppercase tracking-wider text-gray-600"
+                        className=" text-sm uppercase tracking-wider text-gray-600"
                         variants={fadeUp}
                         initial="hidden"
                         whileInView="visible"
@@ -42,7 +42,7 @@ export default function BlogSection() {
                         FEATURED ARTICLES
                     </motion.span>
                     <motion.h2
-                        className="mt-4 font-insr text-4xl text-gray-900 md:text-5xl"
+                        className="mt-4  text-4xl text-gray-900 md:text-5xl"
                         variants={fadeUp}
                         initial="hidden"
                         whileInView="visible"
@@ -99,7 +99,7 @@ export default function BlogSection() {
                                     <span>•</span>
                                     <span>{post.comments} Comments</span>
                                 </div>
-                                <h3 className="font-insr text-xl font-semibold text-gray-900 transition-colors group-hover:text-blue-600 md:text-2xl">
+                                <h3 className=" text-xl font-semibold text-gray-900 transition-colors group-hover:text-blue-600 md:text-2xl">
                                     {post.title}
                                 </h3>
                                 <div className="absolute -top-8 right-4 z-40 bg-black/90 p-3 text-center text-white">
