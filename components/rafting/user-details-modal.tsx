@@ -22,7 +22,11 @@ export function UserDetailsModal({
     numberOfUsers,
 }: UserDetailsModalProps) {
     const [users, setUsers] = useState<UserDetails[]>(() =>
-        Array.from({ length: numberOfUsers }, () => ({ name: "", mobile: "", email: "" })),
+        Array.from({ length: numberOfUsers }, () => ({
+            name: "",
+            mobile: "",
+            email: "",
+        })),
     );
 
     const handleUserChange = (
@@ -36,14 +40,17 @@ export function UserDetailsModal({
     };
 
     const isValid = users.every(
-        (user) => user.name && user.mobile.length === 10 && user.email.includes("@"),
+        (user) =>
+            user.name && user.mobile.length === 10 && user.email.includes("@"),
     );
 
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-            <DialogContent className='max-w-2xl w-full m-auto'>
+            <DialogContent className="m-auto w-full max-w-2xl">
                 <DialogHeader>
-                    <DialogTitle className='text-3xl font-semibold text-gray-900'>Guest Information</DialogTitle>
+                    <DialogTitle className="text-3xl font-semibold text-gray-900">
+                        Guest Information
+                    </DialogTitle>
                     <DialogClose />
                 </DialogHeader>
                 <div className="max-h-[75vh] space-y-8 overflow-y-auto px-1">
@@ -54,11 +61,12 @@ export function UserDetailsModal({
                         >
                             <div>
                                 {/* <h3 className="text-xl font-medium text-gray-900">Guest {index + 1}</h3> */}
-                                <p className="text-sm text-gray-600 mt-1">
-                                    Please provide accurate contact information, this will be used to contact you.
+                                <p className="mt-1 text-sm text-gray-600">
+                                    Please provide accurate contact information,
+                                    this will be used to contact you.
                                 </p>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                                 <div className="space-y-2">
                                     <label className="block text-sm font-medium text-gray-700">
                                         Full Name
@@ -125,13 +133,13 @@ export function UserDetailsModal({
                         <button
                             onClick={() => onConfirm(users)}
                             disabled={!isValid}
-                            className={`w-full rounded-lg py-3 text-base font-medium transition-all duration-200 ${
+                            className={`w-full rounded-lg py-1.5 text-base font-medium transition-all duration-200 ${
                                 isValid
-                                    ? "bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                    ? "bg-slate-900 text-white hover:bg-slate-800 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
                                     : "cursor-not-allowed bg-gray-200 text-gray-500"
                             }`}
                         >
-                            Confirm Booking
+                            Continue to Payment
                         </button>
                     </div>
                 </div>

@@ -54,13 +54,13 @@ const logos = [
 
 const Logo = () => {
     return (
-        <section className="bg-white py-8 relative overflow-hidden sm:py-3">
+        <section className="relative overflow-hidden bg-white py-8 sm:py-3">
             <div className="mx-auto max-w-full px-6 md:max-w-[90%] lg:px-8">
                 {/* <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
                     Trusted by the world’s most innovative teams
                 </h2> */}
 
-                <div className="grid grid-cols-3 gap-5 md:gap-10 md:grid-cols-6">
+                <div className="grid grid-cols-3 gap-5 md:grid-cols-6 md:gap-10">
                     {logos.map((logo) => (
                         <a
                             href={logo.href}
@@ -73,7 +73,7 @@ const Logo = () => {
                                 alt={logo.image.alt}
                                 width={1080}
                                 height={680}
-                                className="w-24 md:w-32 opacity-70 grayscale hover:opacity-100 hover:grayscale-0"
+                                className="w-24 md:w-32"
                             />
                         </a>
                     ))}

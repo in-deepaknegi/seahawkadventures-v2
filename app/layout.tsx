@@ -65,7 +65,7 @@ export default function RootLayout({
                 {/* <SocialIcons /> */}
                 {children}
                 <SpeedInsights />
-                <Sonner richColors expand={true} closeButton position="bottom-right" />
+                <Sonner richColors position="top-right" />
 
             </body>
             <GoogleAnalytics gaId="G-1ZYE4TYDD6" />

@@ -122,7 +122,17 @@ export function RaftingForm({
                             setError(verification.error);
                         } else {
                             // alert("Payment successful!");
-                            toast.success("Payment successful!");
+                            toast.info("Event created successfully for:", {
+                                description: `${bookingData.users[0].name} - ${bookingData.package.title} on ${bookingData.date.toLocaleDateString(
+                                    "en-GB",
+                                    {
+                                        weekday: "short",
+                                        month: "short",
+                                        day: "2-digit",
+                                        year: "numeric",
+                                    },
+                                )}`,
+                            });
 
                             // Set payment details for receipt
                             setPaymentDetails({

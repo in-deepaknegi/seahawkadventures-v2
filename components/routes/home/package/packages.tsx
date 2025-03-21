@@ -6,7 +6,6 @@ import { fadeUp } from "@/lib/motion";
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function AdventuresSection() {
     const [activeTab, setActiveTab] = useState<string>("rafting"); // State to track active tab
     const ref = useRef(null);
@@ -15,11 +14,11 @@ export default function AdventuresSection() {
     const activeTabData = packagesConfig.find((tab) => tab.title === activeTab);
 
     return (
-        <motion.section className="overflow-hidden bg-white pt-20  md:pt-32">
+        <motion.section className="overflow-hidden bg-white pt-20 md:pt-32">
             <div className="mx-auto max-w-full px-4 sm:px-6 md:max-w-[85%] lg:px-8">
                 <div className="mb-16 text-center">
                     <motion.span
-                        className=" text-sm uppercase tracking-wider text-gray-700"
+                        className="text-sm tracking-wider text-gray-700 uppercase"
                         variants={fadeUp}
                         initial="hidden"
                         whileInView="visible"
@@ -28,7 +27,7 @@ export default function AdventuresSection() {
                         What we offer
                     </motion.span>
                     <motion.h2
-                        className="mt-4  text-4xl text-gray-900 md:text-5xl"
+                        className="mt-4 text-4xl text-gray-900 md:text-5xl"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
@@ -48,7 +47,7 @@ export default function AdventuresSection() {
                             <button
                                 key={i}
                                 onClick={() => setActiveTab(item.title)}
-                                className={`px-6 py-2  text-base md:text-xl ${
+                                className={`px-6 py-2 text-base md:text-xl cursor-pointer ${
                                     activeTab === item.title
                                         ? "bg-white text-black"
                                         : "text-neutral-100"
@@ -95,9 +94,9 @@ export default function AdventuresSection() {
                                         height={680}
                                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
-                                    <div className="absolute bottom-0 z-20 h-52 w-full bg-gradient-to-t from-black to-transparent md:from-black/80" />
+                                    <div className="absolute bottom-0 z-0 h-52 w-full bg-gradient-to-t from-black to-transparent md:from-black/80" />
                                 </div>
-                                <div className="absolute bottom-0 z-30 p-6 text-white">
+                                <div className="absolute bottom-0 z-0 p-6 text-white">
                                     <h3 className="text-3xl">
                                         {service.title}
                                     </h3>

@@ -1,4 +1,11 @@
-import { AtSignIcon, CommandIcon, EclipseIcon, Weight, Video } from "lucide-react";
+import {
+    AtSignIcon,
+    CommandIcon,
+    EclipseIcon,
+    Weight,
+    Video,
+} from "lucide-react";
+import { features } from "process";
 
 export const packagesConfig = [
     {
@@ -30,7 +37,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Easy",
                 },
-                url: "/adventure-in-rishikesh/river-rafting"
+                url: "/adventure-in-rishikesh/river-rafting",
             },
             {
                 title: "16 Km River Rafting",
@@ -56,7 +63,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Moderate",
                 },
-                url: "/adventure-in-rishikesh/river-rafting"
+                url: "/adventure-in-rishikesh/river-rafting",
             },
             {
                 title: "26 Km River Rafting",
@@ -80,7 +87,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Challenging",
                 },
-                url: "/adventure-in-rishikesh/river-rafting"
+                url: "/adventure-in-rishikesh/river-rafting",
             },
         ],
     },
@@ -108,7 +115,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Moderate",
                 },
-                url: "#"
+                url: "#",
             },
             {
                 title: "Advanced Training",
@@ -161,7 +168,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Moderate",
                 },
-                url: "/adventure-in-rishikesh/kayak-expedition"
+                url: "/adventure-in-rishikesh/kayak-expedition",
             },
             {
                 title: "Rafting Expedition",
@@ -186,7 +193,7 @@ export const packagesConfig = [
                     },
                     difficulty: "Challenging",
                 },
-                url: "/adventure-in-rishikesh/rafting-expedition"
+                url: "/adventure-in-rishikesh/rafting-expedition",
             },
         ],
     },
@@ -357,7 +364,7 @@ export const raftingConfig = {
             label: "Location",
             description:
                 "Pickup / drop from Tapovan (Laxman Jhulla). If outside, report to our Tapovan office.",
-        },  
+        },
         {
             label: "Age / Weight",
             description: "15-60 years, 35-110kg.",
@@ -430,22 +437,164 @@ export const kayakConfig = {
         {
             id: 1,
             title: "Beginners",
+            price: 1,
             route: "Brahmpuri",
+            grade: "I-II",
             duration: "2 Hours",
-            price: 800,
-            description:
-                "Perfect for beginners to learn basic kayaking skills in calm waters.",
             link: "#",
         },
         {
             id: 2,
-            title: "Advanced",
+            title: "Intermediate",
+            price: 1,
             route: "Shivpuri",
+            grade: "I-II",
             duration: "4 Hours",
-            price: 1500,
-            description:
-                "Perfect for beginners to learn basic kayaking skills in calm waters.",
             link: "#",
         },
     ],
+    gallery: [
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3501.jpg",
+
+            alt: "",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",
+
+            alt: "",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3505.jpg",
+
+            alt: "",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
+
+            alt: "",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3507.jpg",
+
+            alt: "",
+        },
+    ],
+    pre_requisites: [
+        "Basic swimming",
+        "Good general health",
+        "Previous kayak experience not mandatory",
+    ],
+    features: [
+        {
+            label: "Safety Instrument",
+            icon: "https://res.cloudinary.com/dkuixrz40/image/upload/v1742567391/ilus03_ogxlcn.png",
+            description:
+                "Paddles, safety aids, life jackets, helmets, throw bags, and dry bags",
+        },
+        {
+            label: "Transport",
+            icon: "https://res.cloudinary.com/dkuixrz40/image/upload/v1742567391/ilus04_fppfsy.png",
+            description: "Transportation to and from Laxman Julla",
+        },
+    ],
+    itinerary: [
+        {
+            label: "Day 1",
+            description:
+                "Meet your instructor and depart early morning from Rishikesh to Devprayag (2-3 hours). Begin your river expedition here. Beginners will receive an introduction to kayaking, learning paddling techniques, turns, stops, and basics of river hydrology. Kayak for 16 km downstream to Beas Ghat, a serene riverside beach. Set up camp, unwind with a bonfire, barbecue under the stars, and stay overnight.",
+        },
+        {
+            label: "Day 2",
+            description:
+                "After breakfast, resume your kayaking journey. Beginners will continue refining their skills while navigating the river. Cover 22 km to reach Marine Drive. Check into a luxury riverside camp by the Ganga. Practice kayak rolls in the camp's swimming pool and enjoy a tranquil evening by the river with a bonfire and barbecue.",
+        },
+        {
+            label: "Day 3",
+            description:
+                "Kayak the final stretch of 24 km towards Rishikesh, arriving by afternoon. After disembarking at Neem Beach, get transferred to your accommodation. Celebrate mastering a new skill and experiencing the Ganga's beauty from a unique perspective!",
+        },
+        {
+            label: "KAYAK TIMING",
+            description:
+                "A typical day involves kayaking from 9:00 AM to 1:00 PM. After reaching the campsite, set up tents, relax, and soak in the peacefulness of the Ganga. Evenings include leisure time, bonfires, and riverside activities.",
+        },
+    ],
+    faq: [
+        {
+            id: "1",
+            title: "Is kayaking safe?",
+            icon: AtSignIcon,
+            content:
+                "Yes, kayaking is safe. We have a team of trained guides who will guide you through the kayaking experience.",
+        },
+        {
+            id: "2",
+            title: "Does kayaking require previous experience?",
+            icon: CommandIcon,
+            content:
+                "No, kayaking does not require previous experience. We have a team of trained guides who will guide you through the kayaking experience.",
+        },
+        {
+            id: "3",
+            title: "Will i be able to kayak alone?",
+            icon: EclipseIcon,
+            content:
+                "You will be sitting alone in your kayak. But your instructor and other students will be around you at all times. Rescue kayaks will also accompany you when you go in the rapids.",
+        },
+        {
+            id: "4",
+            title: "What is teh closest airport to the starting point?",
+            icon: EclipseIcon,
+            content:
+                "The closest airport to the starting point is Dehradun Airport (40 km away).",
+        },
+        {
+            id: "5",
+            title: "How fit do i need to be to go kayaking?",
+            icon: EclipseIcon,
+            content:
+                "You should be able to swim 200 meters and be comfortable in the water. If you are not comfortable in the water, you can opt for a life jacket.",
+        },
+    ],
+    tnk: [
+        {
+            label: "Price details",
+            description:
+                "Price mentioned is per person for a minimum of 2 people. If you are travelling solo, let us know and will customise the price.",
+        },
+        {
+            label: "Accommodation",
+            description:
+                "Accommodation includes tent stay on day 1 & luxury camp stay on day 2, with all 3 meals (breakfast, lunch, dinner).",
+        },
+        {
+            label: "Cancellation/ Rescheduling Policy",
+            description:
+                "We charge 10% of total price as a cancellation fee if cancelled 7 days before start date. And 20% of total price if cancelled within 7 days of start date.",
+        },
+        {
+            label: "Disclaimer",
+            list: [
+                "It is mandatory for players to abide by sport safety regulations of the school and destination.",
+                "The school reserves a right to charge for gear damage, if any.",
+                "AdventurePlay is not liable for any injury or death caused.",
+            ],
+        },
+    ],
 };
+
+export const reviewsConfig = [
+    {
+        id: 1,
+        name: "Dhaval Shani",
+        rating: 5,
+        review: "The first trip was during summers in June 2024, where I went with 7 friends for a 75 km rafting expedition. Initially planned as a 3-day, 105 km journey, it was shortened to 2 days due to high water levels, but it was still thrilling. Our raft guide, Sandeep Rana and kayak guide, Nitesh Negi was not only incredibly skilled but also hilarious, keeping us entertained throughout the trip with his sense of humour. During this expedition, we had the unique experience of spending about 60% of the time floating in the river without raft, and we also jumped into many rapids, which was both thrilling and exhilarating!",
+    },
+    {
+        id: 2,
+        name: "Sanidhya Shani",
+        rating: 5,
+        review: "Seahawk Adventures delivered an absolutely thrilling and unforgettable whitewater rafting experience. From the moment we arrived, the team was incredibly professional, friendly, and safety-conscious. Our guides were experienced and enthusiastic, providing clear instructions and making sure everyone felt comfortable throughout the journey.   ",
+    },
+];

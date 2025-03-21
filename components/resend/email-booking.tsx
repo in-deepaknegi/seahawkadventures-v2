@@ -113,7 +113,7 @@ const MessageUsEmail = ({ bookingData }: any) => {
                                         Adventures
                                     </Heading>
 
-                                    <Text className="mb-4 text-center text-[14px] text-[#5f6368]">
+                                    <Text className="mb-4 text-[14px] text-[#5f6368]">
                                         Dear {data.users[0].name},
                                     </Text>
 
@@ -124,11 +124,12 @@ const MessageUsEmail = ({ bookingData }: any) => {
                                         info@seahawkadventures.com.
                                     </Text>
 
+                                    <Text className="m-0 mb-2 text-[14px] font-medium text-[#202124]">
+                                        Here&apos;s a copy of the booking
+                                        details:
+                                    </Text>
+
                                     <div className="rounded-lg bg-[#f8f9fa] p-6">
-                                        <Text className="m-0 mb-2 text-[14px] font-medium text-[#202124]">
-                                            Here&apos;s a copy of the booking
-                                            details:
-                                        </Text>
                                         <div className="mb-3 flex flex-col gap-2">
                                             <Text className="m-0 text-[14px] font-medium text-[#202124]">
                                                 Name:
@@ -156,31 +157,46 @@ const MessageUsEmail = ({ bookingData }: any) => {
                                             </Text>
                                         </div>
 
-                                        <div className="mb-3 flex flex-col gap-2">
-                                            <Text className="m-0 text-[14px] font-medium text-[#202124]">
-                                                Date:
+                                        <div className="">
+                                            <Text className="text-[14px] font-medium text-[#202124]">
+                                                Adventure Details:
                                             </Text>
-                                            <Text className="m-0 pl-2 text-[14px] text-[#5f6368]">
-                                                {formattedDate}
-                                            </Text>
-                                        </div>
-
-                                        <div className="mb-3 flex flex-col gap-2">
-                                            <Text className="m-0 text-[14px] font-medium text-[#202124]">
-                                                Number of Users:
-                                            </Text>
-                                            <Text className="m-0 pl-2 text-[14px] text-[#5f6368]">
-                                                {data.numberOfUsers}
-                                            </Text>
-                                        </div>
-
-                                        <div className="mb-3 flex flex-col gap-2">
-                                            <Text className="m-0 text-[14px] font-medium text-[#202124]">
-                                                Total Amount Paid:
-                                            </Text>
-                                            <Text className="m-0 pl-2 text-[14px] text-[#5f6368]">
-                                                {data.totalAmount}
-                                            </Text>
+                                            <div className="">
+                                                <div className="mb-2 flex flex-col gap-2">
+                                                    <Text className="m-0 text-[14px] font-medium text-[#202124]">
+                                                        Name:
+                                                    </Text>
+                                                    <Text className="m-0 pl-2 text-[14px] text-[#5f6368]">
+                                                        {data.package.name}
+                                                        {" - "}
+                                                        {data.package.route}
+                                                    </Text>
+                                                </div>
+                                                <div className="mb-2 flex flex-col gap-2">
+                                                    <Text className="m-0 text-[14px] font-medium text-[#202124]">
+                                                        Date:
+                                                    </Text>
+                                                    <Text className="m-0 pl-2 text-[14px] text-[#5f6368]">
+                                                        {formattedDate}
+                                                    </Text>
+                                                </div>
+                                                <div className="mb-2 flex flex-col gap-2">
+                                                    <Text className="m-0 text-[14px] font-medium text-[#202124]">
+                                                        Number of Users:
+                                                    </Text>
+                                                    <Text className="m-0 pl-2 text-[14px] text-[#5f6368]">
+                                                        {data.numberOfUsers}
+                                                    </Text>
+                                                </div>
+                                                <div className="mb-2 flex flex-col gap-2">
+                                                    <Text className="m-0 text-[14px] font-medium text-[#202124]">
+                                                        Total Amount Paid:
+                                                    </Text>
+                                                    <Text className="m-0 pl-2 text-[14px] text-[#5f6368]">
+                                                        {data.totalAmount}
+                                                    </Text>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 

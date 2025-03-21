@@ -18,7 +18,7 @@ export default function Index() {
                             className="h-full w-full overflow-hidden object-cover"
                         >
                             <source
-                                src="https://res.cloudinary.com/dkuixrz40/video/upload/v1735366866/16232801-uhd_3840_2160_30fps_u0e9ru.mp4"
+                                src="/video/vhc1.mp4"
                                 type="video/mp4"
                             />
                             Your browser does not support the video tag.

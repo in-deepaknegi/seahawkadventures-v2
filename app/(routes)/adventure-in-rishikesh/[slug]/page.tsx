@@ -19,7 +19,12 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import allContents from "@/.content-collections/generated/allContents";
-import { expeditionConfig, raftingConfig } from "@/config/package";
+import {
+    expeditionConfig,
+    kayakConfig,
+    raftingConfig,
+    reviewsConfig,
+} from "@/config/package";
 import { Package } from "@/types/booking";
 
 import { Call, Whatsapp } from "@/components/icons";
@@ -64,9 +69,13 @@ export default async function MainPage({ params }: { params: Params }) {
             content_5 = raftingConfig.tnk;
             break;
         case "kayak-expedition":
-            content;
-            content_0 = expeditionConfig.gallery;
-            content_1;
+            content = kayakConfig.package;
+            content_0 = kayakConfig.gallery;
+            content_1 = raftingConfig.pre_requisites;
+            content_2 = kayakConfig.features;
+            content_3 = kayakConfig.itinerary;
+            content_4 = kayakConfig.faq;
+            content_5 = kayakConfig.tnk;
             break;
         case "rafting-expedition":
             content;
@@ -228,7 +237,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                         {/* Pre-requisites */}
                                         {content_1 != undefined && (
                                             <div className="overflow-hidden rounded-lg border bg-white">
-                                                <div className="flex items-center gap-2 bg-blue-600 px-4 py-2 font-medium text-white">
+                                                <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
                                                     <CheckCircle2 className="h-5 w-5" />
                                                     Pre-requisites
                                                 </div>
@@ -463,7 +472,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                                         value={item.id}
                                                         className="py-2"
                                                     >
-                                                        <AccordionTrigger className="w-full text-left text-zinc-950">
+                                                        <AccordionTrigger className="w-full text-left text-base text-zinc-950">
                                                             <div className="flex items-center justify-between gap-2">
                                                                 <span>
                                                                     <item.icon className="size-4 text-neutral-400" />
@@ -493,11 +502,38 @@ export default async function MainPage({ params }: { params: Params }) {
                                             {content_5 != undefined && (
                                                 <div className="space-y-2 p-4 text-base">
                                                     {content_5?.map(
-                                                        (item, i) => (
+                                                        (
+                                                            item: {
+                                                                label: string;
+                                                                description?: string;
+                                                                list?: string[];
+                                                            },
+                                                            i,
+                                                        ) => (
                                                             <div key={i}>
-                                                                <p className="font-medium text-lg">
+                                                                <p className="text-lg font-medium">
                                                                     {item.label}
                                                                 </p>
+                                                                {item.list && (
+                                                                    <ul className="ml-2 list-decimal pl-5 text-gray-700">
+                                                                        {item.list.map(
+                                                                            (
+                                                                                item,
+                                                                                i,
+                                                                            ) => (
+                                                                                <li
+                                                                                    key={
+                                                                                        i
+                                                                                    }
+                                                                                >
+                                                                                    {
+                                                                                        item
+                                                                                    }
+                                                                                </li>
+                                                                            ),
+                                                                        )}
+                                                                    </ul>
+                                                                )}
                                                                 <p className="text-gray-700">
                                                                     {
                                                                         item.description
@@ -512,54 +548,126 @@ export default async function MainPage({ params }: { params: Params }) {
                                     </div>
 
                                     {/* Right Column */}
-                                    <div className="space-y-6">
-                                        {/* Booking Info */}
-                                        <div className="overflow-hidden rounded-lg border bg-white">
-                                        <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
-
-                                                <Calendar className="h-5 w-5" />
-                                                Upcoming Slots - 2024-25
+                                    <div>
+                                        <div className="sticky top-24">
+                                            {/* Booking Info */}
+                                            <div className="overflow-hidden rounded-lg border bg-white">
+                                                <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+                                                    <Calendar className="h-5 w-5" />
+                                                    Upcoming Slots - 2024-25
+                                                </div>
+                                                <div className="space-y-3 p-4 text-sm">
+                                                    <p>
+                                                        <span className="font-semibold">
+                                                            Weekend: APR 27-29 &
+                                                            30-MAY 2
+                                                        </span>
+                                                        <br />
+                                                        <span className="text-gray-600">
+                                                            Weekday: MAY 7-9 &
+                                                            14-16 & 21-23
+                                                        </span>
+                                                    </p>
+                                                    <p className="font-semibold">
+                                                        Bookings closed for
+                                                        2023-24
+                                                    </p>
+                                                    <button className="w-full rounded-md bg-blue-500 py-2 font-semibold text-white transition hover:bg-blue-600">
+                                                        Book Now
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div className="space-y-3 p-4 text-sm">
-                                                <p>
-                                                    <span className="font-semibold">
-                                                        Weekend: APR 27-29 &
-                                                        30-MAY 2
-                                                    </span>
-                                                    <br />
-                                                    <span className="text-gray-600">
-                                                        Weekday: MAY 7-9 & 14-16
-                                                        & 21-23
-                                                    </span>
-                                                </p>
-                                                <p className="font-semibold">
-                                                    Bookings closed for 2023-24
-                                                </p>
-                                                <button className="w-full rounded-md bg-blue-500 py-2 font-semibold text-white transition hover:bg-blue-600">
-                                                    Book Now
-                                                </button>
+
+                                            <div>
+                                                <h3 className="mb-3 text-lg font-bold">
+                                                    Participant Reviews
+                                                </h3>
+                                                <div className="space-y-3">
+                                                    {reviewsConfig.map(
+                                                        (item, i) => (
+                                                            <div
+                                                                key={i}
+                                                                className="rounded-lg border bg-white p-3"
+                                                            >
+                                                                <div className="mb-2 flex items-center justify-between">
+                                                                    <div className="flex items-center gap-2">
+                                                                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-xs font-bold">
+                                                                            {item.name.slice(
+                                                                                0,
+                                                                                2,
+                                                                            )}
+                                                                        </div>
+                                                                        <span className="font-semibold">
+                                                                            {
+                                                                                item.name
+                                                                            }
+                                                                        </span>
+                                                                    </div>
+                                                                    <div className="flex">
+                                                                        {[
+                                                                            1,
+                                                                            2,
+                                                                            3,
+                                                                            4,
+                                                                            5,
+                                                                        ].map(
+                                                                            (
+                                                                                star,
+                                                                            ) => (
+                                                                                <span
+                                                                                    key={
+                                                                                        star
+                                                                                    }
+                                                                                    className="text-yellow-400"
+                                                                                >
+                                                                                    ★
+                                                                                </span>
+                                                                            ),
+                                                                        )}
+                                                                    </div>
+                                                                </div>
+                                                                <p className="line-clamp-4 text-sm text-gray-700">
+                                                                    {
+                                                                        item.review
+                                                                    }
+                                                                </p>
+                                                                <p className="mt-2 text-right text-xs font-semibold">
+                                                                    {item.name}
+                                                                </p>
+                                                            </div>
+                                                        ),
+                                                    )}
+                                                </div>
+
+                                                <Link
+                                                    href="https://www.google.com/maps/place/Sea+Hawk+Adventures/@30.137576,78.3890825,17z/data=!4m8!3m7!1s0x39091100497dec09:0x723dbf644ff9f1a7!8m2!3d30.137576!4d78.3890825!9m1!1b1!16s%2Fg%2F11vrv_x63t?entry=ttu&g_ep=EgoyMDI1MDMxOS4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                                                    target="_blank"
+                                                    className="mt-3 flex items-center justify-center text-center text-xs font-semibold text-blue-500"
+                                                >
+                                                    Write us a review
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Why Choose Section */}
-                                {/* <div className="mt-12">
-                                    <h2 className="mb-8 text-center text-xl font-bold">
-                                        Why choose AdventurePlay?
+                                <div className="mt-16 md:mt-32">
+                                    <h2 className="mb-8 text-center text-2xl font-medium">
+                                        Why choose Sea Hawk Adventures?
                                     </h2>
                                     <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
                                         <div className="flex flex-col items-center text-center">
                                             <div className="mb-3 rounded-full bg-blue-100 p-4">
                                                 <Image
-                                                    src="/placeholder.svg?height=50&width=50"
+                                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1742587109/approved_4303973_nany2o.png"
                                                     alt="Verified"
                                                     width={50}
                                                     height={50}
-                                                    className="h-10 w-10"
+                                                    className="size-20"
                                                 />
                                             </div>
-                                            <h3 className="mb-2 font-semibold">
+                                            <h3 className="mb-2 text-lg font-semibold">
                                                 Verified & researched
                                             </h3>
                                             <p className="text-sm text-gray-600">
@@ -571,14 +679,14 @@ export default async function MainPage({ params }: { params: Params }) {
                                         <div className="flex flex-col items-center text-center">
                                             <div className="mb-3 rounded-full bg-blue-100 p-4">
                                                 <Image
-                                                    src="/placeholder.svg?height=50&width=50"
+                                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1742587082/ilus06_dlstou.png"
                                                     alt="Locations"
                                                     width={50}
                                                     height={50}
-                                                    className="h-10 w-10"
+                                                    className="size-20"
                                                 />
                                             </div>
-                                            <h3 className="mb-2 font-semibold">
+                                            <h3 className="mb-2 text-lg font-semibold">
                                                 Find locations
                                             </h3>
                                             <p className="text-sm text-gray-600">
@@ -590,14 +698,14 @@ export default async function MainPage({ params }: { params: Params }) {
                                         <div className="flex flex-col items-center text-center">
                                             <div className="mb-3 rounded-full bg-blue-100 p-4">
                                                 <Image
-                                                    src="/placeholder.svg?height=50&width=50"
+                                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1742587082/ilus07_yv3zvz.png"
                                                     alt="Better prices"
                                                     width={50}
                                                     height={50}
-                                                    className="h-10 w-10"
+                                                    className="size-20"
                                                 />
                                             </div>
-                                            <h3 className="mb-2 font-semibold">
+                                            <h3 className="mb-2 text-lg font-semibold">
                                                 Better prices
                                             </h3>
                                             <p className="text-sm text-gray-600">
@@ -609,14 +717,14 @@ export default async function MainPage({ params }: { params: Params }) {
                                         <div className="flex flex-col items-center text-center">
                                             <div className="mb-3 rounded-full bg-blue-100 p-4">
                                                 <Image
-                                                    src="/placeholder.svg?height=50&width=50"
+                                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1742587082/ilus08_b5w00h.png"
                                                     alt="One-stop"
                                                     width={50}
                                                     height={50}
-                                                    className="h-10 w-10"
+                                                    className="size-20"
                                                 />
                                             </div>
-                                            <h3 className="mb-2 font-semibold">
+                                            <h3 className="mb-2 text-lg font-semibold">
                                                 One-stop
                                             </h3>
                                             <p className="text-sm text-gray-600">
@@ -626,7 +734,7 @@ export default async function MainPage({ params }: { params: Params }) {
                                             </p>
                                         </div>
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
 
                             <div className="mt-20 flex gap-10">
