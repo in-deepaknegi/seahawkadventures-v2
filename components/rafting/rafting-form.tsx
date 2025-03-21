@@ -7,6 +7,7 @@ import { UserDetailsModal } from "./user-details-modal";
 import { Package, UserDetails } from "@/types/booking";
 import Script from "next/script";
 import { createPayment, verifyPayment } from "@/lib/action/payment.actions";
+import { toast } from "sonner";
 
 interface FormData {
     selectedDate: Date;
@@ -81,75 +82,18 @@ export function RaftingForm({
             formData.numberOfUsers * (formData.selectedPackage?.price || 0);
         setAmount(calculatedAmount.toString());
 
-        // processPayment(bookingData);
-        // createOrder(bookingData);
-        handlePayment();
-        // console.log('Booking completed:', bookingData);
+        handlePayment(bookingData);
     };
 
-    // const createOrder = async (bookingData: any) => {
-    //     const res = await fetch("/api/order", {
-    //         method: "POST",
-    //         body: JSON.stringify({ amount: parseFloat(amount) * 100, }),
-    //     });
-    //     const data = await res.json();
-
-    //     console.log(data);
-
-    //     const paymentData = {
-    //         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-    //         order_id: data.id,
-
-    //         handler: async function (response: any) {
-    //             // verify payment
-    //             const res = await fetch("/api/verify", {
-    //                 method: "POST",
-    //                 body: JSON.stringify({
-    //                     orderId: response.razorpay_order_id,
-    //                     razorpayPaymentId: response.razorpay_payment_id,
-    //                     razorpaySignature: response.razorpay_signature,
-    //                 }),
-    //             });
-    //             const data = await res.json();
-    //             console.log(data);
-    //             if (data.isOk) {
-
-    //                 console.log("payment success");
-
-    //                 // do whatever page transition you want here as payment was successful
-
-    //                 try {
-    //                     const res = await fetch("/api/resend", {
-    //                         method: "POST",
-    //                         headers: {
-    //                             "Content-Type": "application/json",
-    //                         },
-    //                         body: JSON.stringify({ bookingData }),
-    //                     });
-
-    //                     const json = await res.json();
-    //                     console.log(json);
-    //                 } catch (error) {
-    //                     console.error("Error:", error);
-    //                 }
-    //             } else {
-    //                 alert("Payment failed");
-    //             }
-    //         },
-    //     };
-
-    //     const payment = new (window as any).Razorpay(paymentData);
-    //     payment.open();
-    // };
-
-    const handlePayment = async () => {
+    const handlePayment = async (bookingData: any) => {
         // e.preventDefault();
         setLoading(true);
         setError("");
 
         try {
             // Create payment order
-            const response = await createPayment(Number(amount));
+            const response = await createPayment(Number(amount), bookingData);
+            console.log(bookingData);
 
             if (response.error) {
                 setError(response.error);
@@ -171,12 +115,14 @@ export function RaftingForm({
                             response.razorpay_order_id,
                             response.razorpay_payment_id,
                             response.razorpay_signature,
+                            bookingData,
                         );
 
                         if (verification.error) {
                             setError(verification.error);
                         } else {
-                            alert("Payment successful!");
+                            // alert("Payment successful!");
+                            toast.success("Payment successful!");
 
                             // Set payment details for receipt
                             setPaymentDetails({
@@ -192,12 +138,12 @@ export function RaftingForm({
                         }
                     } catch (err) {
                         setError("Payment verification failed");
-                        alert("Payment verification failed");
+                        toast.error("Payment verification failed");
                     }
                 },
                 prefill: {
-                    name: "Customer Name",
-                    email: "customer@example.com",
+                    name: formData.users[0].name,
+                    email: formData.users[0].email,
                 },
                 theme: {
                     color: "#155dfc",
@@ -212,6 +158,7 @@ export function RaftingForm({
             setLoading(false);
         }
     };
+
     return (
         <>
             <Script

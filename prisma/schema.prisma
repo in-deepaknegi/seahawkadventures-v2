@@ -7,6 +7,18 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
+model User {
+    id                String        @id @default(auto()) @map("_id") @db.ObjectId
+    name              String
+    email             String
+    phone             String
+    payments          Payment[]
+    createdAt         DateTime      @default(now())
+    updatedAt         DateTime      @updatedAt
+
+    @@index([id])
+}
+
 model Payment {
     id                String        @id @default(auto()) @map("_id") @db.ObjectId
     razorpayOrderId   String        @unique
@@ -15,6 +27,9 @@ model Payment {
     amount            Float
     currency          String        @default("INR")
     receiptId         String?
+    userId            String        @db.ObjectId
+    user              User          @relation(fields: [userId], references: [id])
+
     createdAt         DateTime      @default(now())
     updatedAt         DateTime      @updatedAt
 

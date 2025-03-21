@@ -83,6 +83,7 @@ export function UserDetailsModal({
                                     </label>
                                     <input
                                         type="tel"
+                                        name="mobile"
                                         value={user.mobile}
                                         onChange={(e) =>
                                             handleUserChange(
