@@ -56,7 +56,6 @@ export async function POST(request: Request) {
 
         // Create new subscriber
         try {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const subscriber = await prisma.newsletter.create({
                 data: { email },
             });

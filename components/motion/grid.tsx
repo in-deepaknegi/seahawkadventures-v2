@@ -28,7 +28,6 @@ export const Grid = ({ children, className }: GridProps) => {
     );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Block = ({ className, ...rest }: any) => {
     return (
         <motion.div

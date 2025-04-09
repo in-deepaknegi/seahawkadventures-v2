@@ -65,7 +65,7 @@ export default function AboutUs() {
                                 <div className="text-4xl mb-4">🌿</div>
                                 <h3 className="text-xl font-semibold mb-4">Environmental Stewardship</h3>
                                 <p className="text-gray-700">
-                                    We're committed to preserving the natural beauty of our destinations for future generations.
+                                    We&apos;re committed to preserving the natural beauty of our destinations for future generations.
                                 </p>
                             </div>
                             <div className="text-center p-6">
