@@ -10,32 +10,22 @@ import CTASection from "@/components/globals/cta";
 import BlogSection from "@/components/globals/blog";
 import { ArrowUpFromDot, UserX } from "lucide-react";
 import Package from "@/components/routes/home/package/packages";
-
+import List from "@/components/routes/home/List";
 export default function Home() {
-    // useEffect(() => {
-    //     const lenis = new Lenis();
-
-    //     function raf(time: number) {
-    //         lenis.raf(time);
-    //         requestAnimationFrame(raf);
-    //     }
-
-    //     requestAnimationFrame(raf);
-    // }, []);
-
     return (
         <>
             <Navbar />
             <main>
                 <Hero />
                 <Package/>
-                <BlogSection />
+                <List/>
+                {/* <BlogSection /> */}
                 <CTASection />
             </main>
-           
+
             <Footer />
 
-            <div className="fixed md:bottom-10 bottom-3 right-3 md:right-10 z-50">
+            {/* <div className="fixed md:bottom-10 bottom-3 right-3 md:right-10 z-50">
                 <button
                     className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 text-white"
                     onClick={() =>
@@ -44,8 +34,7 @@ export default function Home() {
                 >
                     <ArrowUpFromDot className="size-5"/>
                 </button>
-            </div>
-            
+            </div> */}
         </>
     );
 }

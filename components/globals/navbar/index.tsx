@@ -1,134 +1,151 @@
 "use client";
-import React from "react";
-import { motion } from "motion/react";
-import { ShoppingBag } from "lucide-react";
+import React, { useState } from "react";
 import { Clock, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 import MobileMenu from "./mobile-menu";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const menuItems = [
-    { label: "Home", href: "#" },
-    { label: "Activities", href: "#" },
-    { label: "About", href: "/about" },
-    { label: "Events", href: "#" },
-    { label: "Blog", href: "#" },
+    { label: "HOME", href: "/" },
+    { 
+        label: "RAFTING", 
+        subItems: [
+            { label: "12 KM RAFTING", href: "#" },
+            { label: "16 KM RAFTING", href: "#" },
+            { label: "26 KM RAFTING", href: "#" }
+        ]
+    },
+    { 
+        label: "TREKKING", 
+        subItems: [
+            { label: "TREK 1", href: "#" },
+            { label: "TREK 2", href: "#" }
+        ]
+    },
+    { label: "ACCOMMODATION", href: "/accommodation" },
+    { label: "WILDLIFE", href: "/wildlife" },
+    { 
+        label: "More links", 
+        subItems: [
+            { label: "About us", href: "/about" },
+            { label: "Contact us", href: "/contact" },
+            { label: "Terms & Conditions", href: "/terms" }
+        ]
+    }
 ];
 
 const Navbar = () => {
+    const [openStates, setOpenStates] = useState<Record<string, boolean>>({});
+
+    const handleOpenChange = (label: string, isOpen: boolean) => {
+        setOpenStates(prev => ({ ...prev, [label]: isOpen }));
+    };
+
     return (
-        <>
-            <motion.div
-                className="hidden bg-gray-50 py-3.5 text-[0.82rem] text-gray-500 md:block"
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-            >
-                <div className="mx-auto flex w-full max-w-[90%] flex-row justify-between">
-                    <div className="flex items-center space-x-8">
-                        <div className="flex items-center space-x-2">
-                            <Clock className="h-4 w-4" />
-                            <span>
-                                Mon - Fri 8:00 - 18:00 / Sunday 8:00 - 14:00
-                            </span>
-                        </div>
-                        <Link
-                            href={`tel:+919756620538`}
-                            target="_blank"
-                            className="flex items-center space-x-2"
-                        >
-                            <Phone className="h-4 w-4" />
-                            <span> +91 97566 20538</span>
-                        </Link>
-                        <Link
-                            href="https://maps.app.goo.gl/ga3Bg1z1zrMJoDen9"
-                            target="_blank"
-                            className="flex items-center space-x-2"
-                        >
-                            <MapPin className="h-4 w-4" />
-                            <span>Rishikesh, Uttarakhand, India</span>
-                        </Link>
+        <div className="absolute left-0 right-0 top-0 z-50 w-full">
+            {/* Top Bar */}
+            <div className="hidden bg-transparent px-4 py-2 text-white md:flex md:items-center md:justify-between md:px-10">
+                <div className="flex items-center space-x-8">
+                    <div className="flex items-center space-x-2">
+                        <Clock className="h-4 w-4" />
+                        <span>Mon - Fri 8:00 - 18:00 / Sunday 8:00 - 14:00</span>
                     </div>
-
-                    <div className="flex items-center space-x-4">
-                        <Link
-                            href="#"
-                            className="transition-colors hover:text-blue-600"
-                        >
-                            <motion.span whileHover={{ scale: 1.1 }}>
-                                Facebook
-                            </motion.span>
-                        </Link>
-                        <Link
-                            href="#"
-                            className="transition-colors hover:text-blue-600"
-                        >
-                            <motion.span whileHover={{ scale: 1.1 }}>
-                                Twitter
-                            </motion.span>
-                        </Link>
-                        <Link
-                            href="#"
-                            className="transition-colors hover:text-blue-600"
-                        >
-                            <motion.span whileHover={{ scale: 1.1 }}>
-                                Instagram
-                            </motion.span>
-                        </Link>
-                    </div>
-                </div>
-            </motion.div>
-
-            <div className="sticky top-0 z-10 mb-0 w-full bg-white font-insr md:mb-8">
-                <div className="mx-auto flex h-20 max-w-[90%] items-center justify-between">
-                    <motion.div
-                        className=""
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
+                    <Link
+                        href="tel:+919756620538"
+                        className="flex items-center space-x-2 transition-colors hover:text-blue-200"
                     >
-                        <Link href="/" className="flex items-center space-x-2">
-                            <Image
-                                src="/images/meta/logo.png"
-                                alt=""
-                                width={1080}
-                                height={680}
-                                className="size-10 md:size-12"
-                            />
-                            <span className="font-insm text-xl text-gray-900 md:text-2xl">
-                                Sea Hawk Adventures
-                            </span>
-                        </Link>
-                    </motion.div>
-                    <nav className="hidden items-center space-x-8 font-insm md:flex">
-                        {menuItems.map((item, index) => (
-                            <motion.a
-                                key={item.label}
-                                href={item.href}
-                                className="group relative font-medium text-neutral-900 transition-colors hover:text-blue-600"
-                                whileHover={{ scale: 1.05 }}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                            >
-                                {item.label}
-                                <span className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transform bg-blue-600 transition-transform group-hover:scale-x-100" />
-                            </motion.a>
+                        <Phone className="h-4 w-4" />
+                        <span>+91 97566 20538</span>
+                    </Link>
+                    <Link
+                        href="https://maps.app.goo.gl/ga3Bg1z1zrMJoDen9"
+                        target="_blank"
+                        className="flex items-center space-x-2 transition-colors hover:text-blue-200"
+                    >
+                        <MapPin className="h-4 w-4" />
+                        <span>Rishikesh, Uttarakhand, India</span>
+                    </Link>
+                </div>
+                <select className="bg-transparent text-white outline-none">
+                    <option value="INR">INR</option>
+                </select>
+            </div>
+
+            {/* Navigation */}
+            <div className="px-4 py-4 md:px-10">
+                <div className="flex items-center justify-between">
+                    <Link href="/" className="w-40">
+                        <Image 
+                            src="/logo.png"
+                            alt="Seahawk Adventure"
+                            width={160}
+                            height={60}
+                            className="object-contain"
+                        />
+                    </Link>
+                    <div className="hidden items-center space-x-6 text-white md:flex">
+                        {menuItems.map((item) => (
+                            <div key={item.label}>
+                                {item.subItems ? (
+                                    <DropdownMenu
+                                        open={openStates[item.label]}
+                                        onOpenChange={(isOpen) => handleOpenChange(item.label, isOpen)}
+                                    >
+                                        <DropdownMenuTrigger asChild>
+                                            <Button
+                                                variant="ghost"
+                                                className="text-white hover:text-red-400"
+                                                onMouseEnter={() => handleOpenChange(item.label, true)}
+                                                onMouseLeave={() => handleOpenChange(item.label, false)}
+                                            >
+                                                {item.label}
+                                            </Button>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent
+                                            className="w-48 bg-white/90 backdrop-blur-sm"
+                                            onMouseEnter={() => handleOpenChange(item.label, true)}
+                                            onMouseLeave={() => handleOpenChange(item.label, false)}
+                                        >
+                                            {item.subItems.map((subItem) => (
+                                                <DropdownMenuItem
+                                                    key={subItem.label}
+                                                    className="focus:bg-red-50"
+                                                >
+                                                    <Link href={subItem.href} className="w-full">
+                                                        {subItem.label}
+                                                    </Link>
+                                                </DropdownMenuItem>
+                                            ))}
+                                        </DropdownMenuContent>
+                                    </DropdownMenu>
+                                ) : (
+                                    <Link 
+                                        href={item.href}
+                                        className={cn(
+                                            "text-white transition-colors hover:text-red-400",
+                                            item.label === "HOME" && "text-red-500"
+                                        )}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                )}
+                            </div>
                         ))}
-                        <motion.div
-                            className="relative"
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            <ShoppingBag className="h-6 w-6 text-gray-700" />
-                            <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs text-white">
-                                0
-                            </span>
-                        </motion.div>
-                    </nav>
-                    <MobileMenu />
+                    </div>
+                    <div className="md:hidden">
+                        <MobileMenu />
+                    </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
