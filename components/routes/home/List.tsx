@@ -36,7 +36,7 @@ const items = [
 
 const List = () => {
     return (
-        <section className="mx-auto max-w-7xl px-4 py-16">
+        <section className="mx-auto max-w-7xl px-4 py-16 md:max-w-[95%] md:py-20 xl:max-w-[90%] bg-gray-50">
             <h2 className="mb-12 text-center text-4xl font-medium">
                 Our Routes Amidst Hills, Mountains, Jungles & Rivers
             </h2>
@@ -44,7 +44,7 @@ const List = () => {
             <div className="grid gap-6">
                 {/* First Row */}
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-                    <div className="relative col-span-2 h-[300px] overflow-hidden">
+                    <div className="relative md:col-span-2 h-[300px] overflow-hidden">
                         <Image
                             src={items[0].image}
                             alt={items[0].title}
@@ -52,7 +52,7 @@ const List = () => {
                             className="object-cover"
                             priority
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                         <div className="absolute bottom-0 left-0 p-6 text-white">
                             <div className="mb-4 space-y-1">
                                 <div className="text-sm tracking-wide uppercase opacity-90">
@@ -81,14 +81,14 @@ const List = () => {
                             </Button>
                         </div>
                     </div>
-                    <div className="group relative h-[300px] overflow-hidden">
+                    <div className="group relative h-[300px] w-full overflow-hidden">
                         <Image
                             src={items[1].image}
                             alt={items[1].title}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent transition-opacity duration-500 group-hover:opacity-90" />
                         <div className="absolute -bottom-20 left-0 w-full p-6 text-white">
                             <div className="transform transition-all duration-500 group-hover:-translate-y-20">
                                 <h3 className="text-2xl font-medium">

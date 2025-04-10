@@ -4,6 +4,7 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import SocialIcons from "@/components/globals/social";
+import { ThemeProvider } from "next-themes";
 
 const { SITE_NAME } = process.env;
 
@@ -62,9 +63,16 @@ export default function RootLayout({
             <GoogleTagManager gtmId="GTM-WWQ9J7ZF" />
 
             <body className="relative">
-                {/* <SocialIcons /> */}
-                {children}
-                <SpeedInsights />
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="light"
+                    // enableSystem
+                    disableTransitionOnChange
+                >
+                    {/* <SocialIcons /> */}
+                    {children}
+                    <SpeedInsights />
+                </ThemeProvider>
             </body>
             <GoogleAnalytics gaId="G-1ZYE4TYDD6" />
         </html>

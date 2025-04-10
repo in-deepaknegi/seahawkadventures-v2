@@ -19,7 +19,7 @@ const links = [
 
 export default function Footer() {
     return (
-        <footer className="overflow-hidden mx-10 bg-neutral-950 text-white">
+        <footer className="mx-auto overflow-hidden bg-neutral-950 text-white md:max-w-[95%] xl:max-w-[90%]">
             <div className="mx-auto max-w-7xl px-4 py-32 pb-10">
                 <motion.h2
                     className="font-insr mb-16 max-w-2xl text-4xl md:text-5xl"
@@ -35,7 +35,9 @@ export default function Footer() {
                         <h3 className="mb-4 font-bold">Company Info</h3>
                         <ul className="space-y-2 text-sm">
                             <li>
-                                <Link href="/about">About Red Chilli</Link>
+                                <Link href="/about">
+                                    About Seahawk Adventure
+                                </Link>
                             </li>
                             <li>
                                 <Link href="/contact">Contact Us</Link>
@@ -86,9 +88,9 @@ export default function Footer() {
                             <p>Badrinath Rd, near Shivpuri Police Station,</p>
                             <p>Rishikesh, Uttarakhand, India</p>
                             <p>PIN CODE: 249192</p>
-                            <p>OFFICE PHONE: +91-135-2442786</p>
-                            <p>MOBILE: +91-9412052734</p>
-                            <p>WHATSAPP: +91-9412052734</p>
+                            <p>OFFICE PHONE:+91 97566 20538</p>
+                            <p>MOBILE: +91 97566 20538</p>
+                            <p>WHATSAPP: +91 97566 20538</p>
                         </address>
                     </div>
 
@@ -167,7 +169,7 @@ export default function Footer() {
                 </div> */}
                 <div className="mt-16 border-t border-neutral-700 pt-8 pb-4 text-neutral-400">
                     <div className="text-center text-xs">
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-0">
                             <p>
                                 Online booking system by Cnippet Labs ©
                                 2025{" "}
@@ -177,7 +179,7 @@ export default function Footer() {
                                 Reserved.
                             </p>
                         </div>
-                        <div className="mt-2 flex flex-wrap justify-center gap-4">
+                        <div className="mt-5 flex flex-wrap justify-center gap-4 md:mt-2">
                             <Link href="/sitemap" className="hover:text-white">
                                 Sitemap
                             </Link>

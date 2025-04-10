@@ -6,7 +6,7 @@ import { fadeUp } from "@/lib/motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { CldImage } from 'next-cloudinary';
+import { CldImage } from "next-cloudinary";
 
 export default function AdventuresSection() {
     const [activeTab, setActiveTab] = useState<string>("rafting"); // State to track active tab
@@ -16,7 +16,7 @@ export default function AdventuresSection() {
     const activeTabData = packagesConfig.find((tab) => tab.title === activeTab);
 
     return (
-        <motion.section className="font-insr overflow-hidden bg-white pb-8 md:pb-16">
+        <motion.section className="mx-auto overflow-hidden bg-gray-50 py-8 md:max-w-[95%] md:py-20 xl:max-w-[90%]">
             <div className="mx-auto max-w-full px-4 sm:px-6 md:max-w-7xl lg:px-8">
                 <div className="text-center">
                     <motion.span
@@ -34,7 +34,7 @@ export default function AdventuresSection() {
                         // whileInView={{ opacity: 1, y: 0 }}
                         // transition={{ duration: 0.5, delay: 0.5 }}
                     >
-                       Popular Adventure Tours In Rishikesh
+                        Popular Adventure Tours In Rishikesh
                     </motion.h2>
 
                     <div
@@ -95,7 +95,7 @@ export default function AdventuresSection() {
                                         height={680}
                                         className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                                     />
-                                    <div className="absolute bottom-0 z-20 h-60 w-full bg-gradient-to-t from-black to-black/10 md:from-black/80" />
+                                    <div className="absolute bottom-0 z-20 h-60 w-full bg-gradient-to-t from-black/40 to-transparent md:from-black/80" />
                                 </div>
                                 <div className="absolute bottom-0 z-30 p-6 text-white">
                                     <h3 className="text-3xl font-medium">

@@ -45,25 +45,58 @@ const images = [
             startingPrice: "21,000",
         },
     },
+    {
+        title: "Kayaking Adventures",
+        image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
+            alt: "Kayaking Adventures",
+        },
+        stats: {
+            tours: 8,
+            startingPrice: "15,000",
+        },
+    },
+    {
+        title: "Rafting in Rishikesh",
+        image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
+            alt: "Rafting in Rishikesh",
+        },
+        stats: {
+            tours: 12,
+            startingPrice: "18,000",
+        },
+    },
+    {
+        title: "Trekking Adventures",
+        image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3110.jpg",
+            alt: "Trekking Adventures",
+        },
+        stats: {
+            tours: 9,
+            startingPrice: "21,000",
+        },
+    },
 ];
 
 export default function Hero() {
     const plugin = React.useRef(
-        Autoplay({ delay: 6000, stopOnInteraction: true }),
+        Autoplay({ delay: 4000, stopOnInteraction: false }),
     );
 
     return (
-        <div className="relative h-screen w-full overflow-hidden px-16">
+        <div className="relative mx-auto -mt-[8.5rem] w-full overflow-hidden md:max-w-[95%] xl:max-w-[90%]">
             <Carousel
                 plugins={[plugin.current]}
-                className="h-screen w-full"
-                onMouseEnter={plugin.current.stop}
-                onMouseLeave={plugin.current.reset}
+                className="h-full w-full"
+                // onMouseEnter={plugin.current.stop}
+                // onMouseLeave={plugin.current.reset}
             >
                 <CarouselContent className="-ml-0">
                     {images.map((item, index) => (
                         <CarouselItem key={index} className="pl-0">
-                            <div className="relative h-[85vh] w-full">
+                            <div className="relative h-[95vh] w-full md:h-[87vh]">
                                 <Image
                                     src={item.image.src}
                                     alt={item.image.alt}
@@ -74,29 +107,29 @@ export default function Hero() {
                                     quality={100}
                                 />
                                 <div className="absolute bottom-0 h-72 w-full bg-gradient-to-t from-black/80 to-transparent" />
-                                <div className="absolute bottom-10 flex w-full flex-col items-center justify-center px-4 text-center text-white">
-                                    <h1 className="mb-6 text-5xl font-medium tracking-wide md:text-6xl">
+                                <div className="absolute bottom-5 flex w-full flex-col items-center justify-center px-4 text-center text-white md:bottom-10">
+                                    <h1 className="mb-6 text-3xl font-medium tracking-wide md:text-5xl">
                                         {item.title}
                                     </h1>
                                     <div className="mb-6 flex items-center justify-center gap-8 md:gap-16">
                                         <div>
-                                            <div className="text-5xl font-medium md:text-5xl">
+                                            <div className="text-3xl font-medium md:text-5xl">
                                                 {item.stats.tours}
                                             </div>
-                                            <div className="mt-2 text-xl">
+                                            <div className="mt-2 text-sm md:text-xl">
                                                 TOURS
                                             </div>
                                         </div>
                                         <div>
-                                            <div className="text-5xl font-medium md:text-5xl">
+                                            <div className="text-3xl font-medium md:text-5xl">
                                                 ₹ {item.stats.startingPrice}
                                             </div>
-                                            <div className="mt-2 text-xl">
+                                            <div className="mt-2 text-sm md:text-xl">
                                                 STARTING FROM
                                             </div>
                                         </div>
                                     </div>
-                                    <Button className="rounded-full bg-blue-600 px-4 py-2 text-base font-normal tracking-widest text-white transition-colors hover:bg-blue-700">
+                                    <Button className="rounded-full bg-blue-600 px-4 py-2 text-sm font-normal tracking-widest text-white transition-colors hover:bg-blue-700 md:text-base">
                                         CHOOSE YOUR TREK
                                     </Button>
                                 </div>
@@ -104,9 +137,9 @@ export default function Hero() {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute left-4 z-50 size-12 border-none bg-transparent hover:bg-transparent [&>svg]:size-10" />
-                <CarouselNext className="absolute right-4 z-50 size-12 border-none bg-transparent hover:bg-transparent [&>svg]:size-10" />
-                <div className="absolute right-0 bottom-8 left-0 z-50 flex justify-center gap-2">
+                <CarouselPrevious className="absolute left-4 z-50 hidden size-12 border-none bg-transparent hover:bg-transparent md:block [&>svg]:size-10" />
+                <CarouselNext className="absolute right-4 z-50 hidden size-12 border-none bg-transparent hover:bg-transparent md:block [&>svg]:size-10" />
+                <div className="absolute right-0 bottom-2 left-0 z-50 flex justify-center gap-2">
                     {images.map((_, i) => (
                         <div
                             key={i}
