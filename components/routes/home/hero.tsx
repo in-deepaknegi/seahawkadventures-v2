@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { CldImage } from "next-cloudinary";
 
 const images = [
     {
@@ -97,13 +98,15 @@ export default function Hero() {
                     {images.map((item, index) => (
                         <CarouselItem key={index} className="pl-0">
                             <div className="relative h-[95vh] w-full md:h-[87vh]">
-                                <Image
+                                <CldImage
                                     src={item.image.src}
                                     alt={item.image.alt}
-                                    fill
+                                    // fill
+                                    width={1920}
+                                    height={1080}
                                     priority={index === 0}
-                                    className="object-cover"
-                                    sizes="100vw"
+                                    className="object-cover size-full"
+                                    // sizes="100vw"
                                     quality={100}
                                 />
                                 <div className="absolute bottom-0 h-72 w-full bg-gradient-to-t from-black/80 to-transparent" />
