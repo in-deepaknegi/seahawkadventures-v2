@@ -1,4 +1,3 @@
-
 export const motions = [
     {
         name: "Main Links",
@@ -9,23 +8,23 @@ export const motions = [
             // },
             {
                 name: "Rafting",
-                href: "/rafting",
+                href: "/adventure-in-rishikesh/river-rafting",
             },
             {
                 name: "Kayaking",
-                href: "/kayaking",
+                href: "#",
             },
             {
                 name: "Expedition",
-                href: "/expedition",
+                href: "/adventure-in-rishikesh/rafting-expedition",
             },
             {
                 name: "About",
-                href: "/about",
+                href: "#",
             },
             {
                 name: "Contact",
-                href: "/contact",
+                href: "#",
             },
         ],
     },
@@ -34,15 +33,15 @@ export const motions = [
         items: [
             {
                 name: "12 km Rafting",
-                href: "/rafting/12-km-rafting",
+                href: "/adventure-in-rishikesh/river-rafting",
             },
             {
                 name: "16 km Rafting",
-                href: "/rafting/16-km-rafting",
+                href: "/adventure-in-rishikesh/river-rafting",
             },
             {
                 name: "26 km Rafting",
-                href: "/rafting/26-km-rafting",
+                href: "/adventure-in-rishikesh/river-rafting",
             },
         ],
     },
@@ -51,15 +50,15 @@ export const motions = [
         items: [
             {
                 name: "Beginner Course",
-                href: "/kayaking/beginner-course",
+                href: "#",
             },
             {
                 name: "Intermediate Course",
-                href: "/kayaking/intermediate-course",
+                href: "#",
             },
             {
                 name: "Advanced Course",
-                href: "/kayaking/advanced-course",
+                href: "#",
             },
         ],
     },
@@ -68,11 +67,11 @@ export const motions = [
         items: [
             {
                 name: "Rafting Expedition",
-                href: "/motion/dialog",
+                href: "/adventure-in-rishikesh/rafting-expedition",
             },
             {
                 name: "Kayaking Expedition",
-                href: "/expedition/kayaking-expedition",
+                href: "/adventure-in-rishikesh/kayaking-expedition",
             },
         ],
     },
@@ -81,7 +80,7 @@ export const motions = [
 export const searchDocs = [
     {
         name: "Rafting",
-        href: "/rafting",
+        href: "/adventure-in-rishikesh/river-rafting",
         items: [
             {
                 name: "12 km Rafting",
@@ -99,7 +98,7 @@ export const searchDocs = [
     },
     {
         name: "Kayaking",
-        href: "/kayaking",
+        href: "#",
         items: [
             {
                 name: "Beginner Course",
@@ -117,7 +116,7 @@ export const searchDocs = [
     },
     {
         name: "Expedition",
-        href: "/expedition",
+        href: "/adventure-in-rishikesh/rafting-expedition",
         items: [
             {
                 name: "Rafting Expedition",

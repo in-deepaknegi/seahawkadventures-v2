@@ -108,18 +108,16 @@ export function NumberOfUsersModal({
                             <div className="relative">
                                 <Input
                                     type="number"
-                                    min="1"
-                                    max="10"
-                                    value={numberOfUsers}
+                                    max={10}
+                                    min={1}
+                                    value={numberOfUsers ? numberOfUsers : ""}
                                     onChange={(e) =>
                                         setNumberOfUsers(
-                                            Math.max(
-                                                1,
-                                                parseInt(e.target.value) || 1,
-                                            ),
+                                            parseInt(e.target.value),
                                         )
                                     }
-                                    className="w-full rounded-lg border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                                    placeholder="Enter number of users"
+                                    className="w-full rounded-lg border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
                                 />
                                 <p className="mt-2 text-sm text-gray-500">
                                     Maximum 10 users per booking
