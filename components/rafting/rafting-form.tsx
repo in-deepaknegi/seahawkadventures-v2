@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { DateSelector } from "../date-selector";
 import { PackageCard } from "./package-card";
 import { NumberOfUsersModal } from "./number-of-user-modal";
 import { UserDetailsModal } from "./user-details-modal";
@@ -8,6 +7,12 @@ import { Package, UserDetails } from "@/types/booking";
 import Script from "next/script";
 import { createPayment, verifyPayment } from "@/lib/action/payment.actions";
 import { toast } from "sonner";
+
+declare global {
+    interface Window {
+        Razorpay: any;
+    }
+}
 
 interface FormData {
     selectedDate: Date;
@@ -110,6 +115,11 @@ export function RaftingForm({
                 order_id: response.orderId,
                 handler: async (response: any) => {
                     try {
+                        if (!response.razorpay_payment_id || !response.razorpay_signature) {
+                            toast.error("Payment verification failed - Missing payment details");
+                            return;
+                        }
+
                         // Verify payment
                         const verification = await verifyPayment(
                             response.razorpay_order_id,
@@ -160,8 +170,12 @@ export function RaftingForm({
                 },
             };
 
-            const razorpay = new window.Razorpay(options);
-            razorpay.open();
+            if (typeof window !== 'undefined' && window.Razorpay) {
+                const razorpay = new window.Razorpay(options);
+                razorpay.open();
+            } else {
+                toast.error("Payment system not initialized");
+            }
         } catch (err) {
             setError("Failed to initialize payment");
         } finally {
@@ -174,23 +188,17 @@ export function RaftingForm({
             <Script
                 id="razorpay-checkout-js"
                 src="https://checkout.razorpay.com/v1/checkout.js"
+                // strategy="beforeInteractive"
+                onError={(e) => {
+                    console.error("Error loading Razorpay script:", e);
+                    toast.error("Failed to load payment system");
+                }}
+                onLoad={() => {
+                    console.log("Razorpay script loaded successfully");
+                }}
             />
 
             <form onSubmit={handleSubmit} className="mt-10 space-y-0">
-                <div className="bg-white pb-6">
-                    <h2 className="mb-4 text-2xl">Select Date</h2>
-                    <DateSelector
-                        price={price}
-                        selectedDate={formData.selectedDate}
-                        onDateSelect={(date) =>
-                            setFormData((prev) => ({
-                                ...prev,
-                                selectedDate: date,
-                            }))
-                        }
-                    />
-                </div>
-
                 <div className="space-y-4">
                     {validPackages.map((pkg) => (
                         <PackageCard
@@ -215,6 +223,12 @@ export function RaftingForm({
                             onConfirm={handleNumberOfUsersConfirm}
                             selectedPackage={formData.selectedPackage}
                             selectedDate={formData.selectedDate}
+                            onDateSelect={(date: Date) =>
+                                setFormData((prev) => ({
+                                    ...prev,
+                                    selectedDate: date,
+                                }))
+                            }
                         />
                         <UserDetailsModal
                             isOpen={showDetailsModal}

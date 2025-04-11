@@ -1,11 +1,11 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { fadeUp } from "@/lib/motion";
 import Image from "next/image";
 
 export default function CTASection() {
     return (
-        <section className="relative h-[40vh] overflow-hidden bg-black text-white md:h-[50vh]">
+        <section className="relative mx-auto h-[40vh] overflow-hidden bg-black text-white md:h-[50vh] md:max-w-full">
             <div className="absolute inset-0">
                 <Image
                     src="https://res.cloudinary.com/dkuixrz40/image/upload/v1735479492/water-rafting-T0100.jpg"
@@ -18,7 +18,7 @@ export default function CTASection() {
             <div className="absolute bottom-0 z-10 h-[30vh] w-full bg-gradient-to-t from-neutral-950"></div>
             <div className="relative z-40 mx-auto flex h-full max-w-7xl flex-col items-center justify-end px-4 text-center">
                 <motion.span
-                    className="mb-4 text-sm uppercase tracking-wider"
+                    className="mb-4 text-sm tracking-wider uppercase"
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="visible"
@@ -27,7 +27,7 @@ export default function CTASection() {
                     SEA HAWK ADVENTURES
                 </motion.span>
                 <motion.h2
-                    className="mb-8  text-4xl md:text-6xl"
+                    className="font-insm mb-8 text-4xl md:text-6xl"
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="visible"

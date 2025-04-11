@@ -28,7 +28,7 @@ export const packagesConfig = [
                 </p>`,
                 features: {
                     distance: "12km",
-                    duration: "1.5 hours to 2 hours",
+                    duration: "1.5-2 hours",
                     startingPoint: "Marine Drive",
                     endingPoint: "Shivpuri",
                     rapids: {
@@ -54,7 +54,7 @@ export const packagesConfig = [
                 },
                 features: {
                     distance: "16km",
-                    duration: "2 hours to 2.5 hours",
+                    duration: "2-2.5 hours",
                     startingPoint: "Shivpuri",
                     endingPoint: "Nim Beach",
                     rapids: {
@@ -236,29 +236,47 @@ export const raftingConfig = {
         {
             id: 1,
             title: "12 KM River Rafting",
-            price: 1,
+            price: 620,
             route: "Marine Drive - Shivpuri",
             grade: "I-II",
-            duration: "1.5 hours to 2 hours",
+            duration: "1.5-2 hours",
             link: "#",
+            description: `<p>
+            River rafting from Marine Drive to Shivpuri is an excellent choice for those looking to experience their first rafting trip in a safe yet exciting manner. Rafting in Rishikesh is truly a thrilling adventure that offers a mix of fun and natural beauty. This rafting journey takes you from the Marine Drive Rafting Point to Shivpuri.
+            </p>
+            <br/>
+            <p>
+            Many experienced rafters prefer this route over the Barahmpuri rafting stretch, as it is generally considered more enjoyable. Although it is a shorter rafting trip, this lovely stretch allows adventurers to connect closely with nature. Overall, the Marine Drive to Shivpuri rafting experience provides both safety and enjoyment, making it ideal for beginners.
+            </p>`,
         },
         {
             id: 2,
             title: "16 KM River Rafting",
             route: "Shivpuri - Nim Beach",
             grade: "II - III",
-            duration: "2 hours to 2.5 hours",
+            duration: "2-2.5 hours",
             price: 1020,
             link: "#",
+            description: `<p>
+                    Rafting from Shivpuri to Rishikesh is an exciting adventure suitable for both beginners and those with previous experience. The journey begins at the Shivpuri River Rafting Starting Point and ends 16 kilometers later at Nim Beach in Rishikesh.
+                    </p>
+                    <br/>
+                    <p>
+                    This river rafting trip lasts about two hours and can be quite challenging due to the strong currents of the Ganges River and some steep rapids along the way. This particular stretch of river is the most popular for rafting in Rishikesh, attracting many thrill-seekers looking for an unforgettable experience on the water.
+                </p>`,
         },
         {
             id: 3,
             title: "26 KM River Rafting",
             route: "Marine Drive - Nim Beach",
             grade: "II - III",
-            duration: "3.5 hours to 4 hours",
+            duration: "3.5-4 hours",
             price: 1520,
             link: "#",
+            description: `
+            <p>The 21km rafting from Marine Drive to NIM Beach, while advertised as a 21km road distance from Rishikesh, covers approximately 17-18km by river, requiring 3 to 4 hours.</p> 
+            <br/>
+            <p>This seemingly tranquil journey belies the presence of roughly ten grade III and III+ rapids, each demanding skill and attention. Notable rapids include "Three Blind Mice," a deceptively calm sequence of three closely spaced rapids, and others such as "Huge and Kiss," "Cross Fire," "Return to Sender Roller Coaster," "Golf Course," and "Club House."</p>`,
         },
     ],
     pre_requisites: [

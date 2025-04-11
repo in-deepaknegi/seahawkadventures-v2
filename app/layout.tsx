@@ -3,7 +3,7 @@ import "./globals.css";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-
+import ThemeProvider from "@/providers/theme-provider";
 
 const { SITE_NAME } = process.env;
 
@@ -61,12 +61,18 @@ export default function RootLayout({
         <html lang="en">
             <GoogleTagManager gtmId="GTM-WWQ9J7ZF" />
 
-            <body className="relative">
+            <body className="relative" suppressHydrationWarning>
                 {/* <SocialIcons /> */}
-                {children}
-                <SpeedInsights />
-                <Sonner richColors position="top-right" />
-
+                <ThemeProvider
+                    attribute="class"
+                    defaultTheme="light"
+                    // enableSystem
+                    disableTransitionOnChange
+                >
+                    {children}
+                    <SpeedInsights />
+                    <Sonner richColors position="top-right" />
+                </ThemeProvider>
             </body>
             <GoogleAnalytics gaId="G-1ZYE4TYDD6" />
         </html>

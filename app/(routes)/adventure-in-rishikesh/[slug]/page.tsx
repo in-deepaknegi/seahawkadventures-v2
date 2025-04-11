@@ -1,13 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Mdx } from "@/mdx-components";
-
 import {
     Bookmark,
     Calendar,
     CheckCircle2,
-    ChevronDown,
     ChevronRight,
     MapPin,
     Star,
@@ -27,7 +24,6 @@ import {
 } from "@/config/package";
 import { Package } from "@/types/booking";
 
-import { Call, Whatsapp } from "@/components/icons";
 import { RaftingForm } from "@/components/rafting/rafting-form";
 import Footer from "@/components/globals/footer";
 import { Metadata } from "next";
@@ -106,17 +102,25 @@ export default async function MainPage({ params }: { params: Params }) {
                                 <h1 className="text-5xl font-medium">
                                     {doc?.title}
                                 </h1>
-                                <div className="flex flex-col gap-2 text-xs md:flex-row md:items-center md:gap-8 md:text-base">
-                                    <div className="flex items-center gap-2">
-                                        <Star className="size-4 fill-yellow-500 text-yellow-500" />
-                                        5/5 (125 reviews)
-                                    </div>
-                                    <span className="hidden md:block">.</span>
-                                    <div className="flex items-center gap-2">
-                                        <Bookmark className="size-4 fill-rose-600 text-rose-600" />
-                                        #3 of 200 Tours & Activities in
-                                        Rishikesh
-                                    </div>
+                                <div>
+                                    <Link
+                                        href="https://www.tripadvisor.in/Attraction_Review-g580106-d21358541-Reviews-Sea_Hawk_Adventure-Rishikesh_Dehradun_District_Uttarakhand.html"
+                                        target="_blank"
+                                        className="flex flex-col gap-2 text-xs md:flex-row md:items-center md:gap-8 md:text-base"
+                                    >
+                                        <div className="flex items-center gap-2">
+                                            <Star className="size-4 fill-yellow-500 text-yellow-500" />
+                                            5/5 (125 reviews)
+                                        </div>
+                                        <span className="hidden md:block">
+                                            .
+                                        </span>
+                                        <div className="flex items-center gap-2">
+                                            <Bookmark className="size-4 fill-rose-600 text-rose-600" />
+                                            #3 of 200 Tours & Activities in
+                                            Rishikesh
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                             {content_0 != undefined && (
@@ -236,8 +240,8 @@ export default async function MainPage({ params }: { params: Params }) {
 
                                         {/* Pre-requisites */}
                                         {content_1 != undefined && (
-                                            <div className="overflow-hidden rounded-lg border bg-white">
-                                                <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+                                            <div className="overflow-hidden bg-white">
+                                                <div className="flex items-center gap-2 border-b border-neutral-200 px-4 py-2 text-2xl font-medium text-black">
                                                     <CheckCircle2 className="h-5 w-5" />
                                                     Pre-requisites
                                                 </div>
@@ -284,12 +288,12 @@ export default async function MainPage({ params }: { params: Params }) {
                                         )}
 
                                         {/* packages */}
-                                        <div className="overflow-hidden rounded-lg border bg-white">
-                                            <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+                                        <div className="overflow-hidden bg-white">
+                                            <div className="flex items-center gap-2 border-b border-neutral-200 px-4 py-2 text-2xl font-medium text-black">
                                                 <MapPin className="h-5 w-5" />
                                                 Packages
                                             </div>
-                                            <div className="p-4">
+                                            <div className="px-4">
                                                 <RaftingForm
                                                     packages={content}
                                                     price={content[0]?.price}
@@ -298,8 +302,8 @@ export default async function MainPage({ params }: { params: Params }) {
                                         </div>
 
                                         {/* Itinerary */}
-                                        <div className="overflow-hidden rounded-lg border bg-white">
-                                            <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+                                        <div className="overflow-hidden bg-white">
+                                            <div className="flex items-center gap-2 border-b border-neutral-200 px-4 py-2 text-2xl font-medium text-black">
                                                 <MapPin className="h-5 w-5" />
                                                 ITINERARY
                                             </div>
@@ -454,8 +458,8 @@ export default async function MainPage({ params }: { params: Params }) {
                                         </div> */}
 
                                         {/* FAQ */}
-                                        <div className="overflow-hidden rounded-lg border bg-white">
-                                            <div className="p-4 text-center font-semibold">
+                                        <div className="overflow-hidden bg-white">
+                                            <div className="flex items-center gap-2 border-b border-neutral-200 px-4 py-2 text-2xl font-medium text-black">
                                                 Frequently asked questions
                                             </div>
                                             <Accordion
@@ -493,8 +497,8 @@ export default async function MainPage({ params }: { params: Params }) {
                                         </div>
 
                                         {/* Things to Know */}
-                                        <div className="overflow-hidden rounded-lg border bg-white">
-                                            <div className="flex items-center gap-2 bg-blue-700 px-4 py-2 font-medium text-white">
+                                        <div className="overflow-hidden bg-white">
+                                            <div className="flex items-center gap-2 border-b border-neutral-200 px-4 py-2 text-2xl font-medium text-black">
                                                 <CheckCircle2 className="h-5 w-5" />
                                                 THINGS TO KNOW
                                             </div>

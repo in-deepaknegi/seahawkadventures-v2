@@ -1,72 +1,91 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const links = [
-    { label: "Facebook", href: "#" },
-    { label: "Twitter", href: "#" },
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
+    { label: "Facebook", href: "https://facebook.com" },
+    { label: "Twitter", href: "https://twitter.com" },
+    { label: "Instagram", href: "https://instagram.com" },
+    { label: "YouTube", href: "https://youtube.com" },
 ];
 
 export default function Footer() {
     return (
-        <footer className="overflow-hidden bg-neutral-950  text-white">
+        <footer className="mx-auto overflow-hidden bg-neutral-950 text-white md:max-w-full">
             <div className="mx-auto max-w-7xl px-4 py-32 pb-10">
                 <motion.h2
-                    className="mb-16 max-w-2xl text-4xl md:text-5xl"
+                    className="font-insr mb-16 max-w-2xl text-4xl md:text-5xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
                 >
                     Create unforgettable memories with Us
                 </motion.h2>
 
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
                     <div className="space-y-4">
-                        <h3 className=" text-xl">Address</h3>
-                        <address className="not-italic text-gray-400">
-                            India —<br />
-                            Badrinath Rd
-                            <br />
-                            near Shivpuri Police Station
-                            <br />
-                            Rishikesh, Uttarakhand
-                        </address>
-                    </div>
-
-                    <div className="space-y-4">
-                        <h3 className=" text-xl">Say Hello</h3>
-                        <div className="space-y-2">
-                            <Link
-                                href="mailto:info@seahawkadventures.com"
-                                className="block text-gray-400 hover:text-white"
-                            >
-                                info@seahawkadventures.com
-                            </Link>
-                            <Link
-                                href="tel:+919756620538"
-                                className="block text-gray-400 hover:text-white"
-                            >
-                               +91 97566 20538
-                            </Link>
-                        </div>
-                    </div>
-
-
-                    <div className="space-y-4">
-                        <h3 className=" text-xl text-white">Social</h3>
-                        <ul className="space-y-2">
-                            {links.map((link) => (
-                                <li key={link.label}>
-                                    <a
-                                        href={link.href}
-                                        className="text-gray-400 transition-colors hover:text-white"
-                                    >
-                                        {link.label}
-                                    </a>
-                                </li>
-                            ))}
+                        <h3 className="mb-4 font-bold">Company Info</h3>
+                        <ul className="space-y-2 text-sm">
+                            <li>
+                                <Link href="#">
+                                    About Seahawk Adventure
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="#">Contact Us</Link>
+                            </li>
+                            <li>
+                                <Link href="#">Careers</Link>
+                            </li>
+                            <li>
+                                <Link href="#">Blog</Link>
+                            </li>
+                            <li>
+                                <Link href="#">FAQs</Link>
+                            </li>
                         </ul>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h3 className="font-insm text-xl">See More</h3>
+                        <ul className="space-y-2 text-sm">
+                            <li>
+                                <Link href="/adventure-in-rishikesh/river-rafting">
+                                    Rafting in Rishikesh
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/adventure-in-rishikesh/rafting-expedition">
+                                    Camping in Rishikesh
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/adventure-in-rishikesh/kayaking-expedition">
+                                    Trekking in Uttarakhand
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="#">Packages</Link>
+                            </li>
+                            <li>
+                                <Link href="#">Photo Gallery</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h3 className="font-insm text-xl">Address</h3>
+                        <address className="space-y-2 text-sm text-gray-400 not-italic">
+                            <p>Sea Hawk Adventures</p>
+                            <p>Badrinath Rd, near Shivpuri Police Station,</p>
+                            <p>Rishikesh, Uttarakhand, India</p>
+                            <p>PIN CODE: 249192</p>
+                            <p>OFFICE PHONE:+91 97566 20538</p>
+                            <p>MOBILE: +91 97566 20538</p>
+                            <p>WHATSAPP: +91 97566 20538</p>
+                        </address>
                     </div>
 
                     <div className="space-y-4">
@@ -82,7 +101,7 @@ export default function Footer() {
                                 />
                                 <button
                                     type="submit"
-                                    className="absolute right-0 top-2"
+                                    className="absolute top-2 right-0"
                                 >
                                     <ArrowRight className="h-6 w-6 text-white" />
                                 </button>
@@ -107,7 +126,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-16 flex flex-col items-center justify-between border-t border-gray-800 pt-8 md:flex-row">
+                {/* <div className="mt-16 flex flex-col items-center justify-between border-t border-gray-800 pt-8 md:flex-row">
                     <p className="text-sm text-gray-400">
                         Sea Hawk Adventures © 2025. All Rights Reserved.
                     </p>
@@ -140,6 +159,39 @@ export default function Footer() {
                         >
                             Website by Cnippet
                         </Link>{" "}
+                    </div>
+                </div> */}
+                <div className="mt-16 border-t border-neutral-700 pt-8 pb-4 text-neutral-400">
+                    <div className="text-center text-xs">
+                        <div className="flex flex-col items-center justify-between gap-2 md:flex-row md:gap-0">
+                            <p>
+                                Online booking system by Cnippet Labs © 2025{" "}
+                            </p>
+                            <p>
+                                Sea Hawk Adventures © 2025. All Rights
+                                Reserved.
+                            </p>
+                        </div>
+                        <div className="mt-5 flex flex-wrap justify-center gap-4 md:mt-2">
+                            <Link href="/sitemap" className="hover:text-white">
+                                Sitemap
+                            </Link>
+                            <Link
+                                href="/copyright"
+                                className="hover:text-white"
+                            >
+                                Copyright Statement
+                            </Link>
+                            <Link href="/terms" className="hover:text-white">
+                                Terms & Conditions
+                            </Link>
+                            <Link href="/privacy" className="hover:text-white">
+                                Privacy Policy
+                            </Link>
+                            <Link href="/cookies" className="hover:text-white">
+                                Cookie Policy
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,30 +1,99 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { ShoppingBag } from "lucide-react";
+import React, { useEffect, useState } from "react";
 import { Clock, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
-import MobileMenu from "./mobile-menu";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { motion } from "motion/react";
+import { MobileNav } from "./mobile-nav";
+import { CommandMenu } from "@/components/command-menu";
 
 const menuItems = [
-    { label: "Home", href: "#" },
-    { label: "Activities", href: "#" },
-    { label: "About", href: "#" },
-    { label: "Events", href: "#" },
-    { label: "Blog", href: "#" },
+    { label: "HOME", href: "/" },
+    {
+        label: "RAFTING",
+        subItems: [
+            {
+                label: "12 KM RAFTING",
+                href: "/adventure-in-rishikesh/river-rafting",
+            },
+            {
+                label: "16 KM RAFTING",
+                href: "/adventure-in-rishikesh/river-rafting",
+            },
+            {
+                label: "26 KM RAFTING",
+                href: "/adventure-in-rishikesh/river-rafting",
+            },
+        ],
+    },
+    {
+        label: "KAYAKING",
+        subItems: [
+            { label: "BEGINNER COURSE", href: "#" },
+            { label: "INTERMEDIATE COURSE", href: "#" },
+            { label: "ADVANCED COURSE", href: "#" },
+        ],
+    },
+    {
+        label: "EXPEDITION",
+        subItems: [
+            {
+                label: "RAFTING EXPEDITION",
+                href: "/adventure-in-rishikesh/rafting-expedition",
+            },
+            {
+                label: "KAYAKING EXPEDITION",
+                href: "/adventure-in-rishikesh/kayaking-expedition",
+            },
+        ],
+    },
+    // { label: "WILDLIFE", href: "/wildlife" },
+    {
+        label: "More links",
+        subItems: [
+            { label: "About us", href: "/about" },
+            { label: "Contact us", href: "/contact" },
+            { label: "Terms & Conditions", href: "/terms" },
+        ],
+    },
 ];
 
 const Navbar = () => {
+    const [openStates, setOpenStates] = useState<Record<string, boolean>>({});
+
+    const handleOpenChange = (label: string, isOpen: boolean) => {
+        setOpenStates((prev) => ({ ...prev, [label]: isOpen }));
+    };
+
+    const [scrollPosition, setScrollPosition] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 1) {
+                setScrollPosition(true);
+            } else {
+                setScrollPosition(false);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
     return (
         <>
-            <motion.div
-                className="hidden bg-gray-50 py-3.5 text-[0.82rem] text-gray-500 md:block"
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
+            <div
+                className={`relative z-50 hidden bg-black/80 px-4 py-2 text-white backdrop-blur-[2px] md:flex md:items-center md:justify-between`}
             >
-                <div className="mx-auto flex w-full max-w-[90%] flex-row justify-between">
+                <div className="mx-auto flex w-full max-w-[90%] flex-row justify-between text-sm">
                     <div className="flex items-center space-x-8">
                         <div className="flex items-center space-x-2">
                             <Clock className="h-4 w-4" />
@@ -52,7 +121,8 @@ const Navbar = () => {
 
                     <div className="flex items-center space-x-4">
                         <Link
-                            href="#"
+                            href="https://www.facebook.com/seahawkadventure/"
+                            target="_blank"
                             className="transition-colors hover:text-blue-600"
                         >
                             <motion.span whileHover={{ scale: 1.1 }}>
@@ -68,7 +138,8 @@ const Navbar = () => {
                             </motion.span>
                         </Link>
                         <Link
-                            href="#"
+                            href="https://www.instagram.com/seahawkadventures/"
+                            target="_blank"
                             className="transition-colors hover:text-blue-600"
                         >
                             <motion.span whileHover={{ scale: 1.1 }}>
@@ -77,55 +148,130 @@ const Navbar = () => {
                         </Link>
                     </div>
                 </div>
-            </motion.div>
+            </div>
 
-            <div className="sticky top-0 z-50 mb-0 w-full bg-white md:mb-8">
-                <div className="mx-auto flex h-16 md:h-20 max-w-[90%] items-center justify-between">
-                    <motion.div
-                        className=""
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <Link href="/" className="flex items-center space-x-2">
-                            <Image
-                                src="/images/meta/logo.png"
-                                alt=""
-                                width={1080}
-                                height={680}
-                                className="size-10 md:size-12"
-                            />
-                            <span className=" text-xl text-gray-900 md:text-2xl">
-                                Sea Hawk Adventures
-                            </span>
-                        </Link>
-                    </motion.div>
-                    <nav className="hidden items-center space-x-8  md:flex">
-                        {menuItems.map((item, index) => (
-                            <motion.a
-                                key={item.label}
-                                href={item.href}
-                                className="group relative font-medium text-neutral-900 transition-colors hover:text-blue-600"
-                                whileHover={{ scale: 1.05 }}
-                                initial={{ opacity: 0, y: -20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
+            <div className="sticky top-0 z-50">
+                {/* Top Bar */}
+
+                {/* Navigation */}
+                <div
+                    className={`relative px-4 py-2 backdrop-blur-[2px] transition-all duration-300 ease-in md:px-12 md:py-4 ${scrollPosition ? "bg-black/60 text-white" : "bg-white/20 text-black"}`}
+                >
+                    <div className="">
+                        <div className="flex items-center justify-between">
+                            <Link
+                                href="/"
+                                className="absolute top-4 left-12 hidden w-20 bg-white/90 p-2 backdrop-blur-xs md:block md:w-40 md:p-4"
                             >
-                                {item.label}
-                                <span className="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 transform bg-blue-600 transition-transform group-hover:scale-x-100" />
-                            </motion.a>
-                        ))}
-                        <motion.div
-                            className="relative"
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            <ShoppingBag className="h-6 w-6 text-gray-700" />
-                            <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-xs text-white">
-                                0
-                            </span>
-                        </motion.div>
-                    </nav>
-                    <MobileMenu />
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="Seahawk Adventure"
+                                    width={160}
+                                    height={60}
+                                    className="object-contain"
+                                />
+                            </Link>
+                            <div className="ml-auto hidden items-center space-x-6 md:flex">
+                                {menuItems.map((item) => (
+                                    <div key={item.label}>
+                                        {item.subItems ? (
+                                            <DropdownMenu
+                                                open={openStates[item.label]}
+                                                onOpenChange={(isOpen) =>
+                                                    handleOpenChange(
+                                                        item.label,
+                                                        isOpen,
+                                                    )
+                                                }
+                                            >
+                                                <DropdownMenuTrigger asChild>
+                                                    <Button
+                                                        variant="ghost"
+                                                        className="hover:text-blue-500"
+                                                        onMouseEnter={() =>
+                                                            handleOpenChange(
+                                                                item.label,
+                                                                true,
+                                                            )
+                                                        }
+                                                        onMouseLeave={() =>
+                                                            handleOpenChange(
+                                                                item.label,
+                                                                false,
+                                                            )
+                                                        }
+                                                    >
+                                                        {item.label}
+                                                    </Button>
+                                                </DropdownMenuTrigger>
+                                                <DropdownMenuContent
+                                                    className="w-48 bg-white/90 backdrop-blur-sm"
+                                                    onMouseEnter={() =>
+                                                        handleOpenChange(
+                                                            item.label,
+                                                            true,
+                                                        )
+                                                    }
+                                                    onMouseLeave={() =>
+                                                        handleOpenChange(
+                                                            item.label,
+                                                            false,
+                                                        )
+                                                    }
+                                                >
+                                                    {item.subItems.map(
+                                                        (subItem) => (
+                                                            <DropdownMenuItem
+                                                                key={
+                                                                    subItem.label
+                                                                }
+                                                                className="focus:bg-blue-50"
+                                                            >
+                                                                <Link
+                                                                    href={
+                                                                        subItem.href
+                                                                    }
+                                                                    className="w-full"
+                                                                >
+                                                                    {
+                                                                        subItem.label
+                                                                    }
+                                                                </Link>
+                                                            </DropdownMenuItem>
+                                                        ),
+                                                    )}
+                                                </DropdownMenuContent>
+                                            </DropdownMenu>
+                                        ) : (
+                                            <Link
+                                                href={item.href}
+                                                className={cn(
+                                                    "transition-colors hover:text-blue-500",
+                                                )}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
+                            {/* <div className="md:hidden">
+                                <MobileMenu />
+                            </div> */}
+
+                            <Link href="/" className="block md:hidden">
+                                <Image
+                                    src="/images/meta/logo.png"
+                                    alt="Seahawk Adventure"
+                                    width={160}
+                                    height={60}
+                                    className="w-10 object-contain"
+                                />
+                            </Link>
+                            <CommandMenu />
+                            <MobileNav />
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
