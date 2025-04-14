@@ -52,7 +52,7 @@ export default function Hero() {
     }, []);
 
     return (
-        <section className="relative h-[600px] overflow-hidden md:h-[700px]">
+        <section className="relative h-[600px] overflow-hidden md:h-[90vh] -mt-[5rem]">
             {/* Carousel */}
             <div className="relative h-full">
                 {carouselImages.map((image, index) => (
@@ -86,6 +86,16 @@ export default function Hero() {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            <div className="absolute right-0 bottom-0 left-0 z-30">
+                <Image
+                    src="/images/b.png"
+                    alt="Hero Image"
+                    width={1000}
+                    height={1000}
+                    className="w-full object-cover"
+                />
             </div>
 
             {/* Navigation buttons */}

@@ -3,31 +3,31 @@ import { Shield, Award, Users } from "lucide-react";
 
 export default function AboutUs() {
     return (
-        <section id="about" className="py-16 bg-white">
-            <div className="mx-auto max-w-7xl ">
+        <section id="about" className="bg-white py-16">
+            <div className="mx-auto max-w-7xl">
                 <div className="mb-12 text-center">
-                    <h2 className="mb-4 text-3xl font-bold text-blue-800">
+                    <h2 className="mb-4 text-4xl font-medium md:text-6xl">
                         Why Sea Hawk Adventure?
                     </h2>
-                    <p className="mx-auto max-w-3xl text-lg text-blue-600">
+                    <p className="mx-auto max-w-3xl text-lg">
                         Discover what makes us the premier adventure company in
                         Rishikesh
                     </p>
                 </div>
 
-                <div className="grid items-center gap-12 md:grid-cols-2">
-                    <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
+                <div className="grid items-center gap-12 md:grid-cols-12">
+                    <div className="relative col-span-5 h-full overflow-hidden rounded-lg shadow-lg">
                         <Image
-                            src="/placeholder.svg?height=800&width=600"
+                            src="https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg"
                             alt="Sea Hawk Adventure team"
                             fill
                             className="object-cover"
                         />
                     </div>
 
-                    <div className="space-y-6">
+                    <div className="col-span-7 space-y-6">
                         <div className="space-y-2">
-                            <h3 className="text-2xl font-bold text-blue-700">
+                            <h3 className="text-2xl font-medium md:text-4xl">
                                 Our Story
                             </h3>
                             <p className="leading-relaxed text-gray-700">
