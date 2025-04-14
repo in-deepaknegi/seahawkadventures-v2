@@ -190,14 +190,14 @@ export default function AboutUs() {
                         </div>
 
                         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                            {[1, 2, 3, 4].map((index) => (
+                            {[0, 1, 2].map((index) => (
                                 <div
                                     key={index}
                                     className="overflow-hidden rounded-lg bg-white shadow-sm"
                                 >
-                                    <div className="relative h-64">
+                                    <div className="relative h-64 rounded-full overflow-hidden">
                                         <Image
-                                            src={`/placeholder.svg?height=300&width=300&text=Team Member ${index}`}
+                                            src={`/images/main/t0${index}.jpg`}
                                             alt={`Team Member ${index}`}
                                             fill
                                             className="object-cover"
@@ -245,7 +245,7 @@ export default function AboutUs() {
                             <div className="rounded-lg bg-white p-6 text-center shadow-sm">
                                 <div className="relative mx-auto mb-4 h-24 w-24">
                                     <Image
-                                        src="/placeholder-logo.svg"
+                                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
                                         alt="International Rafting Federation"
                                         fill
                                         className="object-contain"
@@ -264,7 +264,7 @@ export default function AboutUs() {
                             <div className="rounded-lg bg-white p-6 text-center shadow-sm">
                                 <div className="relative mx-auto mb-4 h-24 w-24">
                                     <Image
-                                        src="/placeholder-logo.svg"
+                                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
                                         alt="Wilderness First Responder"
                                         fill
                                         className="object-contain"
@@ -282,7 +282,7 @@ export default function AboutUs() {
                             <div className="rounded-lg bg-white p-6 text-center shadow-sm">
                                 <div className="relative mx-auto mb-4 h-24 w-24">
                                     <Image
-                                        src="/placeholder-logo.svg"
+                                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
                                         alt="Adventure Tour Operators Association"
                                         fill
                                         className="object-contain"
@@ -308,7 +308,7 @@ export default function AboutUs() {
                         <div className="grid items-center gap-12 md:grid-cols-2">
                             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
                                 <Image
-                                    src="/placeholder.svg?height=800&width=600"
+                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3101.jpg"
                                     alt="Community initiatives"
                                     fill
                                     className="object-cover"
