@@ -7,9 +7,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         : "http://localhost:3000";
 
     const allRoutes = [
-        `/privacy-policy`,
+        `/about-us`,
+        `/contact`,
+        `/gallery`,
+        `/feedback`,
         `/terms-and-conditions`,
-        `/cancellation-terms`,
+        `/privacy-policy`,
+        `/refund-policy`,
+        `/cancellation-policy`,
+        `/copyright`,
     ];
 
     const routes: MetadataRoute.Sitemap = allRoutes.map((route) => ({

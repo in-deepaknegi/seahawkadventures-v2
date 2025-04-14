@@ -1,208 +1,159 @@
-import { Marquee } from "@/components/ui/marquee";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image, { ImageProps } from "next/image";
-import React, { useRef } from "react";
+"use client";
 
-const Gallery: React.FC<CtaProps> = (props) => {
-    const { heading, description, images } = {
-        ...CtaDefaults,
-        ...props,
-    };
-    const container = useRef<HTMLDivElement>(null);
+import { useState } from "react";
+import Image from "next/image";
+import { X } from "lucide-react";
 
-    const { scrollYProgress } = useScroll({
-        target: container,
-        offset: ["start end", "end start"],
-    });
+const galleryImages = [
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3100.jpg",
+        alt: "Rafting through rapids",
+        category: "rafting",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
+        alt: "Kayaking in calm waters",
+        category: "kayaking",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+        alt: "Expedition team at campsite",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3103.jpg",
+        alt: "Group rafting adventure",
+        category: "rafting",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
+        alt: "Kayaking instruction session",
+        category: "kayaking",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
+        alt: "Trekking through mountain trails",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3106.jpg",
+        alt: "White water rafting excitement",
+        category: "rafting",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3107.jpg",
+        alt: "Kayaking through gentle rapids",
+        category: "kayaking",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3108.jpg",
+        alt: "Camping under the stars",
+        category: "expedition",
+    },
+];
 
-    const i1 = images.slice(0, 5);
-    const i2 = images.slice(6, 11);
+export default function Gallery() {
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [filter, setFilter] = useState<string | null>(null);
 
-    const i3 = [...i1, ...i1, ...i1, ...i1, ...i1, ...i1];
-    const i4 = [...i2, ...i2, ...i2, ...i2, ...i2, ...i2];
+    const filteredImages = filter
+        ? galleryImages.filter((img) => img.category === filter)
+        : galleryImages;
 
     return (
-        <section ref={container} className="relative w-full py-24 ">
-            <div>
-                <h2 className="text-center  text-3xl sm:text-4xl md:text-5xl md:leading-[5rem] lg:text-6xl">
-                    Sturdily beautiful. <br />
-                    Warm, bright. <br />
-                    By the Ganges. <br />
-                    Adventures transform lives. <br />
-                </h2>
-            </div>
-
-            <div className="mt-16 overflow-hidden sm:mt-20 md:mt-28">
-                <div className="overflow-x-auto">
-                    <Marquee pauseOnHover={true}>
-                        {i3?.map((item, i) => (
-                            <div
-                            key={i}
-                                className={
-                                    "mt-auto flex w-40 items-end justify-end py-1 md:w-64"
-                                }
-                            >
-                                <Image
-                                    src={item.src}
-                                    alt=""
-                                    width={1280}
-                                    height={780}
-                                    className={`object-cover object-center ${i % 2 == 0 ? "aspect-[16/11]" : "aspect-square"}`}
-                                />
-                            </div>
-                        ))}
-                    </Marquee>
-                    <Marquee reverse pauseOnHover={true}>
-                        {i4?.map((item, i) => (
-                            <div
-                            key={i}
-                                className={
-                                    "mb-auto flex w-40 items-end justify-end py-1 md:w-60"
-                                }
-                            >
-                                <Image
-                                    src={item.src}
-                                    alt=""
-                                    width={1280}
-                                    height={780}
-                                    className={`object-cover object-center ${i % 2 == 0 ? "aspect-[16/11]" : "aspect-square"}`}
-                                />
-                            </div>
-                        ))}
-                    </Marquee>
-                    {/* <Slide
-                        direction={"left"}
-                        progress={scrollYProgress}
-                        images={i1}
-                    />
-                    <Slide
-                        direction={"right"}
-                        progress={scrollYProgress}
-                        images={i2}
-                    /> */}
+        <section id="gallery" className="bg-blue-50 py-16">
+            <div className="mx-auto max-w-7xl">
+                <div className="mb-12 text-center">
+                    <h2 className="mb-4 text-3xl font-bold text-blue-800">
+                        Adventure Gallery
+                    </h2>
+                    <p className="mx-auto max-w-3xl text-lg text-blue-600">
+                        Glimpses of the thrilling experiences that await you
+                    </p>
                 </div>
+
+                <div className="mb-8 flex justify-center">
+                    <div className="flex flex-wrap gap-2 rounded-lg bg-white p-1 shadow-sm">
+                        <button
+                            onClick={() => setFilter(null)}
+                            className={`rounded-md px-4 py-2 transition ${
+                                filter === null
+                                    ? "bg-blue-600 text-white"
+                                    : "hover:bg-blue-100"
+                            }`}
+                        >
+                            All
+                        </button>
+                        <button
+                            onClick={() => setFilter("rafting")}
+                            className={`rounded-md px-4 py-2 transition ${
+                                filter === "rafting"
+                                    ? "bg-blue-600 text-white"
+                                    : "hover:bg-blue-100"
+                            }`}
+                        >
+                            Rafting
+                        </button>
+                        <button
+                            onClick={() => setFilter("kayaking")}
+                            className={`rounded-md px-4 py-2 transition ${
+                                filter === "kayaking"
+                                    ? "bg-blue-600 text-white"
+                                    : "hover:bg-blue-100"
+                            }`}
+                        >
+                            Kayaking
+                        </button>
+                        <button
+                            onClick={() => setFilter("expedition")}
+                            className={`rounded-md px-4 py-2 transition ${
+                                filter === "expedition"
+                                    ? "bg-blue-600 text-white"
+                                    : "hover:bg-blue-100"
+                            }`}
+                        >
+                            Expedition
+                        </button>
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+                    {filteredImages.map((image, index) => (
+                        <div
+                            key={index}
+                            className="relative aspect-square cursor-pointer overflow-hidden rounded-lg shadow-md transition hover:opacity-90"
+                            onClick={() => setSelectedImage(image.src)}
+                        >
+                            <Image
+                                src={image.src || "/placeholder.svg"}
+                                alt={image.alt}
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    ))}
+                </div>
+
+                {/* Lightbox */}
+                {selectedImage && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4">
+                        <button
+                            className="absolute top-4 right-4 rounded-full bg-black/50 p-2 text-white"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <X className="h-6 w-6" />
+                        </button>
+                        <div className="relative h-[80vh] w-full max-w-4xl">
+                            <Image
+                                src={selectedImage || "/placeholder.svg"}
+                                alt="Gallery image"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     );
-};
-
-export default Gallery;
-
-const Slide = (props: any) => {
-    const direction = props.direction == "left" ? -1 : 1;
-    const translateX = useTransform(
-        props.progress,
-        [0, 1],
-        [250 * direction, -250 * direction],
-    );
-
-    const i = props.images;
-
-    return (
-        <motion.div
-            style={{ x: translateX }}
-            className={`relative mt-5 flex w-auto ${props.direction == "left" ? "items-end justify-end" : "translate-x-32 justify-start"} gap-5 whitespace-nowrap`}
-        >
-            {i.map((index: any, j: number) => (
-                <div key={j} className="">
-                    <div
-                        className={
-                            "mt-auto flex w-40 items-end justify-end py-1 md:w-80"
-                        }
-                    >
-                        <Image
-                            src={index.src}
-                            alt=""
-                            width={1280}
-                            height={780}
-                            className={`object-cover object-center ${j % 2 == 0 ? "aspect-[16/11]" : "aspect-square"}`}
-                        />
-                    </div>
-                </div>
-            ))}
-        </motion.div>
-    );
-};
-
-type Props = {
-    heading: string;
-    description: string;
-
-    images: ImageProps[];
-};
-
-type CtaProps = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
-
-const CtaDefaults: Props = {
-    heading: "Let's make your Website shine",
-    description:
-        "Premium web design, development, and SEO services to help your business stand out.",
-
-    images: [
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3501.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3502.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3503.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3505.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3506.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3103.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3106.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3107.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3108.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "sdf",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "sdf",
-        },
-    ],
-};
-
-// CSS for the marquee effect
-const styles = `
-   
-`;
+}
