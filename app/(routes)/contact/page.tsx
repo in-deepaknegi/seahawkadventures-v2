@@ -45,11 +45,11 @@ export default function ContactPage() {
     return (
         <div className="min-h-screen bg-white">
             <Navbar />
-            <main>
+            <main className="-mt-[5rem]">
                 {/* Hero Section */}
                 <section className="relative h-[400px] overflow-hidden">
                     <Image
-                        src="/placeholder.svg?height=800&width=1600"
+                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1735479492/water-rafting-T0100.jpg"
                         alt="Contact Us"
                         fill
                         className="object-cover"

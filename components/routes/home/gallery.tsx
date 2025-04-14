@@ -67,7 +67,7 @@ export default function Gallery() {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path
                         fill="#ffffff"
-                        fill-opacity="1"
+                        fillOpacity="1"
                         d="M0,224L60,192C120,160,240,96,360,101.3C480,107,600,181,720,197.3C840,213,960,171,1080,149.3C1200,128,1320,128,1380,128L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
                     ></path>
                 </svg>
@@ -129,7 +129,10 @@ export default function Gallery() {
 
                 <Grid>
                     {filteredImages.map((image, index) => (
-                        <Block className={`col-span-3 aspect-video`}>
+                        <Block
+                            key={index}
+                            className={`col-span-4 aspect-video md:col-span-3`}
+                        >
                             <div
                                 key={index}
                                 className="relative aspect-square cursor-pointer overflow-hidden rounded-lg shadow-md transition hover:opacity-90"
@@ -168,8 +171,6 @@ export default function Gallery() {
                     </div>
                 )}
             </div>
-
-            
         </section>
     );
 }

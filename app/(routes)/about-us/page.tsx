@@ -7,11 +7,11 @@ export default function AboutUs() {
     return (
         <div className="min-h-screen bg-white">
             <Navbar/>
-            <main>
+            <main className="-mt-[5rem]">
                 {/* Hero Section */}
                 <section className="relative h-[400px] overflow-hidden">
                     <Image
-                        src="/placeholder.svg?height=800&width=1600"
+                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
                         alt="About Sea Hawk Adventure"
                         fill
                         className="object-cover"
@@ -46,7 +46,7 @@ export default function AboutUs() {
                                         mountains of Rishikesh. What started as
                                         a small rafting operation with just two
                                         rafts and three guides has grown into
-                                        the region's most trusted adventure
+                                        the region&apos;s most trusted adventure
                                         company.
                                     </p>
                                     <p className="mb-4 leading-relaxed text-gray-700">
@@ -63,7 +63,7 @@ export default function AboutUs() {
                                         Today, Sea Hawk Adventure employs over
                                         30 local guides and staff, all
                                         extensively trained in safety procedures
-                                        and environmental conservation. We've
+                                        and environmental conservation. We&apos;ve
                                         expanded our offerings to include a wide
                                         range of adventures while maintaining
                                         our commitment to responsible tourism
@@ -73,7 +73,7 @@ export default function AboutUs() {
                             </div>
                             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
                                 <Image
-                                    src="/placeholder.svg?height=800&width=600"
+                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
                                     alt="Sea Hawk Adventure founders"
                                     fill
                                     className="object-cover"
@@ -152,8 +152,8 @@ export default function AboutUs() {
                                     Customer Experience
                                 </h4>
                                 <p className="text-gray-700">
-                                    We're dedicated to creating memorable
-                                    experiences tailored to each guest's
+                                    We&apos;re dedicated to creating memorable
+                                    experiences tailored to each guest&apos;s
                                     abilities and interests, with personalized
                                     attention and exceptional service.
                                 </p>
@@ -166,7 +166,7 @@ export default function AboutUs() {
                                     Environmental Stewardship
                                 </h4>
                                 <p className="text-gray-700">
-                                    We're committed to minimizing our
+                                    We&apos;re committed to minimizing our
                                     environmental impact through sustainable
                                     practices and educating our guests about the
                                     importance of conservation.
@@ -292,7 +292,7 @@ export default function AboutUs() {
                                     Adventure Tour Operators Association
                                 </h3>
                                 <p className="text-gray-700">
-                                    We're proud members of the Adventure Tour
+                                    We&apos;re proud members of the Adventure Tour
                                     Operators Association of India, committed to
                                     maintaining high standards in adventure
                                     tourism.
@@ -322,7 +322,7 @@ export default function AboutUs() {
                                     <p className="mb-4 leading-relaxed text-gray-700">
                                         At Sea Hawk Adventure, we believe in
                                         giving back to the communities that make
-                                        our adventures possible. We're committed
+                                        our adventures possible. We&apos;re committed
                                         to sustainable tourism practices that
                                         benefit local residents and preserve the
                                         natural environment for future
@@ -338,10 +338,10 @@ export default function AboutUs() {
                                         strengthen the local economy.
                                     </p>
                                     <p className="leading-relaxed text-gray-700">
-                                        Through our "Clean Rivers Initiative,"
-                                        we organize regular river clean-up
-                                        drives and educate visitors about
-                                        responsible waste management. We also
+                                        Through our &quot;Clean Rivers
+                                        Initiative,&quot; we organize regular
+                                        river clean-up drives and educate visitors
+                                        about responsible waste management. We also
                                         contribute a portion of our profits to
                                         local schools and environmental
                                         conservation projects in the Rishikesh

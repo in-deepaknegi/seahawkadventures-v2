@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -243,13 +243,16 @@ export default function Feedback() {
         );
     };
 
-    // Calculate visible testimonials (3 on desktop, 1 on mobile)
-    const visibleTestimonials = [];
-    for (let i = 0; i < testimonials.length; i++) {
-        const index = (currentIndex + i) % testimonials.length;
-        visibleTestimonials.push(testimonials[index]);
-        if (visibleTestimonials.length === 3) break;
-    }
+    // Calculate visible testimonials using useMemo
+    const visibleTestimonials = useMemo(() => {
+        const visible = [];
+        for (let i = 0; i < testimonials.length; i++) {
+            const index = (currentIndex + i) % testimonials.length;
+            visible.push(testimonials[index]);
+            if (visible.length === 3) break;
+        }
+        return visible;
+    }, [currentIndex]);
 
     return (
         <section id="testimonials" className="relative overflow-hidden">
@@ -257,17 +260,17 @@ export default function Feedback() {
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path
                         fill="#eff6ff"
-                        fill-opacity="1"
+                        fillOpacity="1"
                         d="M0,32L40,32C80,32,160,32,240,37.3C320,43,400,53,480,85.3C560,117,640,171,720,186.7C800,203,880,181,960,165.3C1040,149,1120,139,1200,154.7C1280,171,1360,213,1400,234.7L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
                     ></path>
                 </svg>
             </div>
-            <div className="relative z-10 mx-auto max-w-7xl py-16">
+            <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-10 py-16">
                 <div className="mb-12 text-center">
-                    <h2 className="mb-4 text-3xl font-bold text-blue-800">
+                    <h2 className="mb-4 text-3xl font-semibold md:text-4xl">
                         What Our Adventurers Say
                     </h2>
-                    <p className="mx-auto max-w-3xl text-lg text-blue-600">
+                    <p className="mx-auto max-w-3xl text-lg">
                         Hear from those who have experienced the thrill with Sea
                         Hawk Adventure
                     </p>
@@ -321,7 +324,7 @@ function TestimonialCard({
         <Card className="h-full bg-white shadow-md">
             <CardContent className="flex h-full flex-col p-6">
                 <div className="mb-4 flex items-center gap-4">
-                    <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-2 bg-gradient-to-br from-blue-500 to-violet-600 text-2xl text-white font-medium">
+                    <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-2 bg-gradient-to-br from-blue-500 to-violet-600 text-2xl font-medium text-white">
                         {testimonial.name.charAt(0)}
                     </div>
                     <div>

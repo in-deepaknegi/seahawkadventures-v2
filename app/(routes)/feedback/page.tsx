@@ -12,7 +12,7 @@ const testimonials = [
         comment:
             "The rafting experience with Sea Hawk Adventure was absolutely thrilling! The guides were professional and ensured our safety throughout. Will definitely come back for more adventures!",
         image: "/placeholder.svg?height=200&width=200",
-        adventure: "Beginner's Rafting Adventure",
+        adventure: "Beginner&apos;s Rafting Adventure",
     },
     {
         name: "John Miller",
@@ -46,7 +46,7 @@ const testimonials = [
         location: "Bangalore, India",
         rating: 5,
         comment:
-            "The overnight camping expedition was magical. Sleeping under the stars and waking up to the sound of the river - an experience I'll cherish forever!",
+            "The overnight camping expedition was magical. Sleeping under the stars and waking up to the sound of the river - an experience I&apos;ll cherish forever!",
         image: "/placeholder.svg?height=200&width=200",
         adventure: "Multi-Day Himalayan Expedition",
     },
@@ -82,12 +82,12 @@ const testimonials = [
 export default function TestimonialsPage() {
     return (
         <div className="min-h-screen bg-white">
-            <Navbar/>
-            <main>
+            <Navbar />
+            <main className="-mt-[5rem]">
                 {/* Hero Section */}
                 <section className="relative h-[400px] overflow-hidden">
                     <Image
-                        src="/placeholder.svg?height=800&width=1600"
+                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
                         alt="Customer Testimonials"
                         fill
                         className="object-cover"
@@ -113,16 +113,8 @@ export default function TestimonialsPage() {
                                 <Card key={index} className="h-full shadow-md">
                                     <CardContent className="flex h-full flex-col p-6">
                                         <div className="mb-4 flex items-center gap-4">
-                                            <div className="relative h-16 w-16 overflow-hidden rounded-full border-2 border-blue-100">
-                                                <Image
-                                                    src={
-                                                        testimonial.image ||
-                                                        "/placeholder.svg"
-                                                    }
-                                                    alt={testimonial.name}
-                                                    fill
-                                                    className="object-cover"
-                                                />
+                                            <div className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-2 bg-gradient-to-br from-blue-500 to-violet-600 text-2xl font-medium text-white">
+                                                {testimonial.name.charAt(0)}
                                             </div>
                                             <div>
                                                 <h4 className="font-semibold">
@@ -232,7 +224,7 @@ export default function TestimonialsPage() {
                                     Share Your Experience
                                 </h2>
                                 <p className="text-gray-600">
-                                    Had an adventure with us? We'd love to hear
+                                    Had an adventure with us? We&apos;d love to hear
                                     about your experience!
                                 </p>
                             </div>
@@ -300,7 +292,7 @@ export default function TestimonialsPage() {
                                                 Select an adventure
                                             </option>
                                             <option value="beginner-rafting">
-                                                Beginner's Rafting Adventure
+                                                Beginner&apos;s Rafting Adventure
                                             </option>
                                             <option value="intermediate-rafting">
                                                 Intermediate Rafting Challenge
@@ -392,7 +384,7 @@ export default function TestimonialsPage() {
                     </div>
                 </section>
             </main>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

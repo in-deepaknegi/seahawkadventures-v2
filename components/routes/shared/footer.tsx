@@ -13,8 +13,8 @@ import { Input } from "@/components/ui/input";
 
 export default function Footer() {
     return (
-        <footer className="bg-blue-950 text-white">
-            <div className="mx-auto max-w-7xl py-12">
+        <footer className="bg-indigo-950 text-white">
+            <div className="mx-auto max-w-7xl px-4 py-12 md:py-20 md:px-10">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {/* Company Info */}
                     <div>
@@ -149,9 +149,9 @@ export default function Footer() {
                             <Input
                                 type="email"
                                 placeholder="Your email address"
-                                className="border-blue-700 bg-blue-800 text-white placeholder:text-blue-400"
+                                className="border-indigo-700 bg-indigo-800 text-white placeholder:text-indigo-400"
                             />
-                            <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                            <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
                                 Subscribe
                             </Button>
                         </form>

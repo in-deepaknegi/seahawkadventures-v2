@@ -10,12 +10,7 @@ interface GridProps {
 
 export const Grid = ({ children, className }: GridProps) => {
     return (
-        <div
-            className={twMerge(
-                "px-4 py-12 text-neutral-50",
-                className,
-            )}
-        >
+        <div className={twMerge("px-4 py-12 text-neutral-50", className)}>
             <motion.div
                 initial="initial"
                 animate="animate"
@@ -28,7 +23,6 @@ export const Grid = ({ children, className }: GridProps) => {
     );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Block = ({ className, ...rest }: any) => {
     return (
         <motion.div
@@ -42,10 +36,7 @@ export const Block = ({ className, ...rest }: any) => {
                 stiffness: 400,
                 damping: 50,
             }}
-            className={twMerge(
-                "col-span-4 rounded-lg",
-                className,
-            )}
+            className={twMerge("col-span-4 rounded-lg", className)}
             {...rest}
         />
     );

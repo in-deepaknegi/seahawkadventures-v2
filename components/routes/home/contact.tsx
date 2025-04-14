@@ -40,19 +40,28 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="bg-blue-50 py-16">
-            <div className="mx-auto max-w-7xl">
+        <section id="contact" className="relative overflow-hidden bg-blue-50">
+            <div className="absolute z-0 w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path
+                        fill="#ffffff"
+                        fillOpacity="1"
+                        d="M0,160L40,170.7C80,181,160,203,240,208C320,213,400,203,480,192C560,181,640,171,720,160C800,149,880,139,960,149.3C1040,160,1120,192,1200,218.7C1280,245,1360,267,1400,277.3L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
+                    ></path>
+                </svg>
+            </div>
+            <div className="relative z-10 mx-auto max-w-7xl px-4 pt-20 pb-52 md:px-10">
                 <div className="mb-12 text-center">
-                    <h2 className="mb-4 text-3xl font-bold text-blue-800">
+                    <h2 className="mb-4 text-3xl font-medium md:text-4xl">
                         Contact Us
                     </h2>
-                    <p className="mx-auto max-w-3xl text-lg text-blue-600">
+                    <p className="mx-auto max-w-3xl text-lg">
                         Have questions or ready to book your adventure? Get in
                         touch with our team.
                     </p>
                 </div>
 
-                <div className="grid items-start gap-8 md:grid-cols-2">
+                <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
                     {/* Contact Form */}
                     <Card className="shadow-md">
                         <CardContent className="p-6">
@@ -157,7 +166,7 @@ export default function Contact() {
 
                     {/* Contact Information */}
                     <div className="space-y-6">
-                        <Card className="shadow-md h-full">
+                        <Card className="h-full shadow-md">
                             <CardContent className="p-6">
                                 <h3 className="mb-4 text-xl font-bold text-blue-700">
                                     Contact Information
@@ -171,7 +180,7 @@ export default function Contact() {
                                             <h4 className="font-medium text-gray-900">
                                                 Our Location
                                             </h4>
-                                            <p className="text-gray-600">
+                                            <p className="text-sm text-gray-600 md:text-base">
                                                 Near Laxman Jhula, Rishikesh,
                                                 Uttarakhand, India - 249302
                                             </p>
@@ -185,10 +194,10 @@ export default function Contact() {
                                             <h4 className="font-medium text-gray-900">
                                                 Phone Number
                                             </h4>
-                                            <p className="text-gray-600">
+                                            <p className="text-sm text-gray-600 md:text-base">
                                                 +91 98765 43210
                                             </p>
-                                            <p className="text-gray-600">
+                                            <p className="text-sm text-gray-600 md:text-base">
                                                 +91 98765 43211
                                             </p>
                                         </div>
@@ -201,10 +210,10 @@ export default function Contact() {
                                             <h4 className="font-medium text-gray-900">
                                                 Email Address
                                             </h4>
-                                            <p className="text-gray-600">
+                                            <p className="text-sm text-gray-600 md:text-base">
                                                 info@seahawkadventure.com
                                             </p>
-                                            <p className="text-gray-600">
+                                            <p className="text-sm text-gray-600 md:text-base">
                                                 bookings@seahawkadventure.com
                                             </p>
                                         </div>
@@ -217,11 +226,11 @@ export default function Contact() {
                                             <h4 className="font-medium text-gray-900">
                                                 Office Hours
                                             </h4>
-                                            <p className="text-gray-600">
+                                            <p className="text-sm text-gray-600 md:text-base">
                                                 Monday - Saturday: 9:00 AM -
                                                 6:00 PM
                                             </p>
-                                            <p className="text-gray-600">
+                                            <p className="text-sm text-gray-600 md:text-base">
                                                 Sunday: 10:00 AM - 4:00 PM
                                             </p>
                                         </div>
@@ -231,10 +240,13 @@ export default function Contact() {
                         </Card>
 
                         {/* Map */}
+                    </div>
+
+                    <div className="md:col-span-2">
                         <Card className="overflow-hidden shadow-md">
                             <div className="relative h-[300px] w-full">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13782.480160887305!2d78.31292672962051!3d30.12048198101542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091630a9b2c1f7%3A0x3c8ebb3f53f29187!2sLaxman%20Jhula%2C%20Rishikesh%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1713099481121!5m2!1sen!2sin"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.7370203955406!2d78.3890825!3d30.137575999999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39091100497dec09%3A0x723dbf644ff9f1a7!2sSea%20Hawk%20Adventures!5e1!3m2!1sen!2sin!4v1744657313748!5m2!1sen!2sin"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
@@ -247,6 +259,15 @@ export default function Contact() {
                         </Card>
                     </div>
                 </div>
+            </div>
+            <div className="absolute bottom-0 z-0 w-full  h-full rotate-180 max-w-full">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path
+                        fill="#1e1a4d"
+                        fillOpacity="1"
+                        d="M0,96L120,106.7C240,117,480,139,720,133.3C960,128,1200,96,1320,80L1440,64L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
+                    ></path>
+                </svg>
             </div>
         </section>
     );

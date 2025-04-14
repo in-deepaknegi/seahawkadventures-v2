@@ -4,7 +4,7 @@ import { Shield, Award, Users } from "lucide-react";
 export default function AboutUs() {
     return (
         <section id="about" className="bg-white py-16">
-            <div className="mx-auto max-w-7xl">
+            <div className="mx-auto max-w-7xl px-4 md:px-10">
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-4xl font-medium md:text-6xl">
                         Why Sea Hawk Adventure?
@@ -35,7 +35,7 @@ export default function AboutUs() {
                                 years of experience, Sea Hawk Adventure was born
                                 from a passion for the rivers and mountains of
                                 Rishikesh. What started as a small rafting
-                                operation has grown into the region's most
+                                operation has grown into the region&apos;s most
                                 trusted adventure company.
                             </p>
                             <p className="mt-4 leading-relaxed text-gray-700">

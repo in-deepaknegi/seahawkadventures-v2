@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Clock, Users, Award } from "lucide-react";
+import Link from "next/link";
 
 const packages = {
     rafting: [
@@ -21,7 +22,7 @@ const packages = {
                 "Perfect for first-timers, experience Grade I-II rapids with expert guides",
             duration: "2 hours",
             groupSize: "6-8 people",
-            price: "₹1,200",
+            price: "₹620",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
         },
         {
@@ -30,7 +31,7 @@ const packages = {
                 "Navigate through exciting Grade II-III rapids with increased difficulty",
             duration: "3 hours",
             groupSize: "6-8 people",
-            price: "₹1,800",
+            price: "₹1,020",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
         },
         {
@@ -39,7 +40,7 @@ const packages = {
                 "Conquer Grade III-IV rapids for experienced rafters seeking an adrenaline rush",
             duration: "4 hours",
             groupSize: "6-8 people",
-            price: "₹2,500",
+            price: "₹1,520",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
         },
     ],
@@ -106,7 +107,7 @@ const packages = {
 export default function Packages() {
     return (
         <section id="packages" className="relative -mt-1 bg-blue-50 py-16">
-            <div className="mx-auto max-w-7xl px-10">
+            <div className="mx-auto max-w-7xl px-4 md:px-10">
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-4xl font-medium md:text-6xl">
                         Our Adventure Packages
@@ -117,7 +118,7 @@ export default function Packages() {
                     </p>
                 </div>
 
-                <Tabs defaultValue="rafting" className="w-full relative z-20">
+                <Tabs defaultValue="rafting" className="relative z-20 w-full">
                     <TabsList className="mx-auto mb-8 grid h-full w-full max-w-3xl grid-cols-3 bg-blue-900 text-white">
                         <TabsTrigger value="rafting" className="text-lg">
                             Rafting
@@ -184,7 +185,9 @@ export default function Packages() {
                                                 {pkg.price}
                                             </div>
                                             <Button className="bg-blue-600 hover:bg-blue-700">
-                                                Book Now
+                                                <Link href="packages/beginner-rafting-adventure">
+                                                    Book Now
+                                                </Link>
                                             </Button>
                                         </CardFooter>
                                     </Card>

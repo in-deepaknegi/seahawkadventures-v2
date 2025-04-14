@@ -9,26 +9,28 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BookingForm from "@/components/booking-form";
-
+import Navbar from "@/components/routes/shared/navbar";
+import Footer from "@/components/routes/shared/footer";
 export default function BeginnerRaftingAdventure() {
     return (
         <div className="min-h-screen bg-white">
-            <main>
+            <Navbar />
+            <main className="-mt-[5rem]">
                 {/* Hero Section */}
-                <section className="relative h-[400px] overflow-hidden md:h-[500px]">
+                <section className="relative h-[300px] md:h-[400px] lg:h-[600px] overflow-hidden">
                     <Image
                         src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
-                        alt="Beginner's Rafting Adventure"
+                        alt="Beginner&apos;s Rafting Adventure"
                         fill
                         className="object-cover"
                         priority
                     />
                     <div className="absolute inset-0 bg-black/40" />
                     <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white">
-                        <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-                            Beginner's Rafting Adventure
+                        <h1 className="mb-2 md:mb-4 text-3xl md:text-4xl lg:text-5xl font-bold">
+                            Beginner&apos;s Rafting Adventure
                         </h1>
-                        <p className="max-w-3xl text-xl">
+                        <p className="max-w-3xl text-lg md:text-xl">
                             Perfect for first-timers, experience Grade I-II
                             rapids with expert guides
                         </p>
@@ -36,9 +38,9 @@ export default function BeginnerRaftingAdventure() {
                 </section>
 
                 {/* Breadcrumb */}
-                <div className="bg-blue-50 py-3">
-                    <div className="mx-auto max-w-7xl">
-                        <div className="flex items-center text-sm">
+                <div className="bg-blue-50 py-2 md:py-3">
+                    <div className="mx-auto max-w-7xl px-4">
+                        <div className="flex flex-wrap items-center text-sm">
                             <Link
                                 href="/"
                                 className="text-blue-600 hover:text-blue-800"
@@ -54,19 +56,19 @@ export default function BeginnerRaftingAdventure() {
                             </Link>
                             <span className="mx-2">/</span>
                             <span className="text-gray-600">
-                                Beginner's Rafting Adventure
+                                Beginner&apos;s Rafting Adventure
                             </span>
                         </div>
                     </div>
                 </div>
 
                 {/* Package Details */}
-                <section className="py-12">
-                    <div className="mx-auto max-w-7xl">
-                        <div className="flex gap-8">
+                <section className="py-8 md:py-12">
+                    <div className="mx-auto max-w-7xl px-4 md:px-10">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
                             {/* Main Content */}
-                            <div className="space-y-8">
-                                <div className="flex items-center justify-between">
+                            <div className="space-y-6 md:space-y-8 md:col-span-8">
+                                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                                     <Link
                                         href="/#packages"
                                         className="flex items-center text-blue-600 hover:text-blue-800"
@@ -74,7 +76,7 @@ export default function BeginnerRaftingAdventure() {
                                         <ChevronLeft className="mr-1 h-4 w-4" />
                                         Back to Packages
                                     </Link>
-                                    <div className="text-2xl font-bold text-blue-700">
+                                    <div className="text-xl md:text-2xl font-bold text-blue-700">
                                         ₹1,200{" "}
                                         <span className="text-sm font-normal text-gray-500">
                                             per person
@@ -82,7 +84,7 @@ export default function BeginnerRaftingAdventure() {
                                     </div>
                                 </div>
 
-                                <div className="grid grid-cols-3 gap-4 text-center">
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                                     <div className="rounded-lg bg-blue-50 p-4">
                                         <Clock className="mx-auto mb-2 h-6 w-6 text-blue-600" />
                                         <h3 className="font-medium">
@@ -111,7 +113,7 @@ export default function BeginnerRaftingAdventure() {
                                         Overview
                                     </h2>
                                     <p className="mb-4 text-gray-700">
-                                        Our Beginner's Rafting Adventure is the
+                                        Our Beginner&apos;s Rafting Adventure is the
                                         perfect introduction to the exciting
                                         world of white water rafting. Designed
                                         specifically for first-timers and those
@@ -122,7 +124,7 @@ export default function BeginnerRaftingAdventure() {
                                     </p>
                                     <p className="mb-4 text-gray-700">
                                         Under the guidance of our certified
-                                        instructors, you'll learn the basics of
+                                        instructors, you&apos;ll learn the basics of
                                         paddling techniques, safety procedures,
                                         and river navigation. The adventure
                                         begins with a comprehensive safety
@@ -135,7 +137,7 @@ export default function BeginnerRaftingAdventure() {
                                         balance of excitement and safety, making
                                         it ideal for families, beginners, and
                                         those looking for a gentle introduction
-                                        to rafting. You'll experience the thrill
+                                        to rafting. You&apos;ll experience the thrill
                                         of navigating rapids while enjoying the
                                         stunning natural scenery of the
                                         Himalayan foothills.
@@ -214,8 +216,8 @@ export default function BeginnerRaftingAdventure() {
                                                 <p className="text-gray-700">
                                                     Navigate through exciting
                                                     Grade I-II rapids with names
-                                                    like "Small Wave" and
-                                                    "Gentle Drop."
+                                                    like &quot;Small Wave&quot; and
+                                                    &quot;Gentle Drop.&quot;
                                                 </p>
                                             </div>
                                         </div>
@@ -287,7 +289,7 @@ export default function BeginnerRaftingAdventure() {
 
                                 <div>
                                     <h2 className="mb-4 text-2xl font-bold text-blue-800">
-                                        What's Included
+                                        What&apos;s Included
                                     </h2>
                                     <ul className="grid gap-2 md:grid-cols-2">
                                         <li className="flex items-center">
@@ -331,7 +333,7 @@ export default function BeginnerRaftingAdventure() {
                                     </h2>
                                     <p className="mb-4 text-gray-700">
                                         At Sea Hawk Adventure, safety is our top
-                                        priority. Our beginner's rafting
+                                        priority. Our beginner&apos;s rafting
                                         adventure is designed with safety in
                                         mind, and all our guides are certified
                                         in swift water rescue and first aid.
@@ -369,18 +371,18 @@ export default function BeginnerRaftingAdventure() {
                                     </div>
                                 </div>
 
-                                <div className="grid gap-6 md:grid-cols-2">
-                                    <div className="relative h-64 overflow-hidden rounded-lg">
+                                <div className="grid gap-4 md:gap-6 md:grid-cols-2">
+                                    <div className="relative h-48 md:h-64 overflow-hidden rounded-lg">
                                         <Image
-                                            src="/placeholder.svg?height=400&width=600"
+                                            src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
                                             alt="Rafting group photo"
                                             fill
                                             className="object-cover"
                                         />
                                     </div>
-                                    <div className="relative h-64 overflow-hidden rounded-lg">
+                                    <div className="relative h-48 md:h-64 overflow-hidden rounded-lg">
                                         <Image
-                                            src="/placeholder.svg?height=400&width=600"
+                                            src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3112.jpg"
                                             alt="Rafting action shot"
                                             fill
                                             className="object-cover"
@@ -390,84 +392,45 @@ export default function BeginnerRaftingAdventure() {
                             </div>
 
                             {/* Sidebar */}
-                            <div className="space-y-6">
-                                <div className="rounded-lg bg-blue-50 p-6 shadow-sm">
-                                    <h2 className="mb-4 text-xl font-bold text-blue-800">
+                            <div className="space-y-6 md:col-span-4">
+                                <div className="rounded-lg bg-blue-50 p-4 md:p-6 shadow-sm">
+                                    <h2 className="mb-3 md:mb-4 text-lg md:text-xl font-bold text-blue-800">
                                         Book This Adventure
                                     </h2>
                                     <BookingForm
-                                        packageName="Beginner's Rafting Adventure"
+                                        packageName="Beginner&apos;s Rafting Adventure"
                                         packagePrice="₹1,200"
                                     />
                                 </div>
 
-                                <div className="rounded-lg border bg-white p-6 shadow-sm">
-                                    <h3 className="mb-3 text-lg font-bold text-blue-800">
-                                        Available Dates
-                                    </h3>
-                                    <div className="mb-4 flex items-center">
-                                        <CalendarDays className="mr-2 h-5 w-5 text-blue-600" />
-                                        <span className="font-medium">
-                                            Daily departures available
-                                        </span>
-                                    </div>
-                                    <p className="mb-4 text-sm text-gray-700">
-                                        We offer multiple departure times
-                                        throughout the day:
-                                    </p>
-                                    <ul className="space-y-2 text-sm text-gray-700">
-                                        <li className="flex items-center">
-                                            <div className="mr-2 h-2 w-2 rounded-full bg-blue-600"></div>
-                                            Morning: 9:00 AM
-                                        </li>
-                                        <li className="flex items-center">
-                                            <div className="mr-2 h-2 w-2 rounded-full bg-blue-600"></div>
-                                            Afternoon: 12:00 PM
-                                        </li>
-                                        <li className="flex items-center">
-                                            <div className="mr-2 h-2 w-2 rounded-full bg-blue-600"></div>
-                                            Evening: 3:00 PM
-                                        </li>
-                                    </ul>
-                                    <div className="mt-4 border-t pt-4">
-                                        <p className="text-sm text-gray-600">
-                                            <strong>Note:</strong> Booking at
-                                            least 24 hours in advance is
-                                            recommended. Group discounts
-                                            available for bookings of 6 or more
-                                            people.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div className="rounded-lg border bg-white p-6 shadow-sm">
+                                <div className="rounded-lg border bg-white p-4 md:p-6 shadow-sm">
                                     <h3 className="mb-3 text-lg font-bold text-blue-800">
                                         Need Help?
                                     </h3>
-                                    <p className="mb-4 text-gray-700">
+                                    <p className="mb-4 text-sm md:text-base text-gray-700">
                                         Have questions about this package or
                                         need assistance with booking?
                                     </p>
                                     <div className="space-y-3">
-                                        <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                                        <Button className="w-full bg-blue-600 hover:bg-blue-700 text-sm md:text-base">
                                             Chat With Us
                                         </Button>
                                         <Button
                                             variant="outline"
-                                            className="w-full"
+                                            className="w-full text-sm md:text-base"
                                         >
                                             Call: +91 98765 43210
                                         </Button>
                                     </div>
                                 </div>
 
-                                <div className="rounded-lg border bg-white p-6 shadow-sm">
+                                <div className="rounded-lg border bg-white p-4 md:p-6 shadow-sm">
                                     <h3 className="mb-3 text-lg font-bold text-blue-800">
                                         You May Also Like
                                     </h3>
                                     <div className="space-y-4">
                                         <div className="flex gap-3">
-                                            <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded">
+                                            <div className="relative h-14 w-14 md:h-16 md:w-16 flex-shrink-0 overflow-hidden rounded">
                                                 <Image
                                                     src="/placeholder.svg?height=100&width=100"
                                                     alt="Intermediate Rafting"
@@ -492,7 +455,7 @@ export default function BeginnerRaftingAdventure() {
                                             </div>
                                         </div>
                                         <div className="flex gap-3">
-                                            <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded">
+                                            <div className="relative h-14 w-14 md:h-16 md:w-16 flex-shrink-0 overflow-hidden rounded">
                                                 <Image
                                                     src="/placeholder.svg?height=100&width=100"
                                                     alt="Kayaking Basics"
@@ -522,6 +485,7 @@ export default function BeginnerRaftingAdventure() {
                     </div>
                 </section>
             </main>
+            <Footer />
         </div>
     );
 }
