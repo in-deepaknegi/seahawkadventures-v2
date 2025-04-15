@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Wave3 } from "../shared/wave";
 
 const testimonials = [
     {
@@ -256,16 +257,8 @@ export default function Feedback() {
 
     return (
         <section id="testimonials" className="relative overflow-hidden">
-            <div className="absolute z-0 w-full">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path
-                        fill="#eff6ff"
-                        fillOpacity="1"
-                        d="M0,32L40,32C80,32,160,32,240,37.3C320,43,400,53,480,85.3C560,117,640,171,720,186.7C800,203,880,181,960,165.3C1040,149,1120,139,1200,154.7C1280,171,1360,213,1400,234.7L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-                    ></path>
-                </svg>
-            </div>
-            <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-10 py-16">
+            <Wave3 />
+            <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 md:px-10">
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-3xl font-semibold md:text-4xl">
                         What Our Adventurers Say

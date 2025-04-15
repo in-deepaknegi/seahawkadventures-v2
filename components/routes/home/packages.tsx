@@ -13,35 +13,39 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Clock, Users, Award } from "lucide-react";
 import Link from "next/link";
+import { Wave1 } from "../shared/wave";
 
 const packages = {
     rafting: [
         {
-            title: "Beginner's Rafting Adventure",
+            title: "12 Km Rafting",
             description:
                 "Perfect for first-timers, experience Grade I-II rapids with expert guides",
             duration: "2 hours",
+            link: "/tours/ganga-river-rafting-marine-drive-shivpuri",
             groupSize: "6-8 people",
             price: "₹620",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
         },
         {
-            title: "Intermediate Rafting Challenge",
+            title: "16 Km Rafting",
             description:
                 "Navigate through exciting Grade II-III rapids with increased difficulty",
             duration: "3 hours",
+            link: "/tours/ganga-river-rafting-shivpuri-tapovan",
             groupSize: "6-8 people",
             price: "₹1,020",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
         },
         {
-            title: "Advanced Rafting Expedition",
+            title: "26 Km Rafting",
             description:
                 "Conquer Grade III-IV rapids for experienced rafters seeking an adrenaline rush",
             duration: "4 hours",
+            link: "/tours/ganga-river-rafting-marine-drive-tapovan",
             groupSize: "6-8 people",
             price: "₹1,520",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
         },
     ],
     kayaking: [
@@ -50,27 +54,30 @@ const packages = {
             description:
                 "Learn fundamental kayaking skills in calm waters with certified instructors",
             duration: "2 hours",
+            link: "#",
             groupSize: "4-6 people",
             price: "₹1,500",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3106.jpg",
         },
         {
             title: "River Kayaking Tour",
             description:
                 "Explore the scenic beauty of Rishikesh rivers with a guided kayaking tour",
             duration: "3 hours",
+            link: "#",
             groupSize: "4-6 people",
             price: "₹2,200",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3107.jpg",
         },
         {
             title: "Advanced Kayaking",
             description:
                 "Master advanced techniques and navigate challenging water conditions",
             duration: "4 hours",
+            link: "#",
             groupSize: "4-6 people",
             price: "₹3,000",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3108.jpg",
         },
     ],
     expedition: [
@@ -79,27 +86,30 @@ const packages = {
             description:
                 "Explore the foothills of the Himalayas with a guided day trek",
             duration: "8 hours",
+            link: "#",
             groupSize: "8-12 people",
             price: "₹2,000",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3109.jpg",
         },
         {
             title: "Overnight Camping Adventure",
             description:
                 "Experience the wilderness with an overnight camping expedition",
             duration: "2 days",
+            link: "#",
             groupSize: "8-12 people",
             price: "₹4,500",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3110.jpg",
         },
         {
             title: "Multi-Day Himalayan Expedition",
             description:
                 "Embark on a comprehensive journey through diverse Himalayan landscapes",
             duration: "5 days",
+            link: "#",
             groupSize: "8-12 people",
             price: "₹12,000",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
         },
     ],
 };
@@ -185,7 +195,7 @@ export default function Packages() {
                                                 {pkg.price}
                                             </div>
                                             <Button className="bg-blue-600 hover:bg-blue-700">
-                                                <Link href="packages/beginner-rafting-adventure">
+                                                <Link href={pkg.link}>
                                                     Book Now
                                                 </Link>
                                             </Button>
@@ -197,19 +207,7 @@ export default function Packages() {
                     ))}
                 </Tabs>
             </div>
-            <div className="absolute right-0 bottom-0 z-0 w-full">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 840 200"
-                    className=""
-                >
-                    <path
-                        fill="#ffffff"
-                        fillOpacity="1"
-                        d="M0,160L80,165.3C160,171,320,181,480,160C640,139,800,85,960,69.3C1120,53,1280,75,1360,85.3L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-                    ></path>
-                </svg>
-            </div>
+            <Wave1 />
         </section>
     );
 }

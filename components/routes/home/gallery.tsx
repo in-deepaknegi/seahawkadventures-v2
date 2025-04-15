@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 import { Block, Grid } from "@/components/motion/grid";
+import { Wave2 } from "../shared/wave";
 
 const galleryImages = [
     {
@@ -63,15 +64,7 @@ export default function Gallery() {
 
     return (
         <section id="gallery" className="relative bg-blue-50">
-            <div className="absolute z-0 w-full rotate-180">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path
-                        fill="#ffffff"
-                        fillOpacity="1"
-                        d="M0,224L60,192C120,160,240,96,360,101.3C480,107,600,181,720,197.3C840,213,960,171,1080,149.3C1200,128,1320,128,1380,128L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-                    ></path>
-                </svg>
-            </div>
+            <Wave2 />
             <div className="relative z-10 mx-auto max-w-7xl pt-16">
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-4xl font-medium md:text-6xl">

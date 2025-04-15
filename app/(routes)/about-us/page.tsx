@@ -2,11 +2,12 @@ import Image from "next/image";
 import { Shield, Award, Users, MapPin, Target } from "lucide-react";
 import Navbar from "@/components/routes/shared/navbar";
 import Footer from "@/components/routes/shared/footer";
+import { Wave1, Wave2, Wave3, Wave4 } from "@/components/routes/shared/wave";
 
 export default function AboutUs() {
     return (
         <div className="min-h-screen bg-white">
-            <Navbar/>
+            <Navbar />
             <main className="-mt-[5rem]">
                 {/* Hero Section */}
                 <section className="relative h-[400px] overflow-hidden">
@@ -63,11 +64,12 @@ export default function AboutUs() {
                                         Today, Sea Hawk Adventure employs over
                                         30 local guides and staff, all
                                         extensively trained in safety procedures
-                                        and environmental conservation. We&apos;ve
-                                        expanded our offerings to include a wide
-                                        range of adventures while maintaining
-                                        our commitment to responsible tourism
-                                        and exceptional customer experiences.
+                                        and environmental conservation.
+                                        We&apos;ve expanded our offerings to
+                                        include a wide range of adventures while
+                                        maintaining our commitment to
+                                        responsible tourism and exceptional
+                                        customer experiences.
                                     </p>
                                 </div>
                             </div>
@@ -84,8 +86,9 @@ export default function AboutUs() {
                 </section>
 
                 {/* Our Mission */}
-                <section className="bg-blue-50 py-16">
-                    <div className="mx-auto max-w-7xl">
+                <section className="relative bg-blue-50">
+                    <Wave2 />
+                    <div className="relative z-10 mx-auto max-w-7xl py-16">
                         <div className="mb-12 text-center">
                             <h2 className="mb-4 text-3xl font-bold text-blue-800">
                                 Our Mission & Values
@@ -174,11 +177,13 @@ export default function AboutUs() {
                             </div>
                         </div>
                     </div>
+                    {/* <Wave1 /> */}
                 </section>
 
                 {/* Our Team */}
-                <section className="py-16">
-                    <div className="mx-auto max-w-7xl">
+                <section className="relative">
+                    <Wave3 />
+                    <div className="relative z-10 mx-auto max-w-7xl py-16">
                         <div className="mb-12 text-center">
                             <h2 className="mb-4 text-3xl font-bold text-blue-800">
                                 Meet Our Team
@@ -195,7 +200,7 @@ export default function AboutUs() {
                                     key={index}
                                     className="overflow-hidden rounded-lg bg-white shadow-sm"
                                 >
-                                    <div className="relative h-64 rounded-full overflow-hidden">
+                                    <div className="relative h-64 overflow-hidden rounded-full">
                                         <Image
                                             src={`/images/main/t0${index}.jpg`}
                                             alt={`Team Member ${index}`}
@@ -229,8 +234,9 @@ export default function AboutUs() {
                 </section>
 
                 {/* Certifications */}
-                <section className="bg-blue-50 py-16">
-                    <div className="mx-auto max-w-7xl">
+                <section className="relative bg-blue-50">
+                    <Wave4 />
+                    <div className="relative z-10 mx-auto max-w-7xl py-16">
                         <div className="mb-12 text-center">
                             <h2 className="mb-4 text-3xl font-bold text-blue-800">
                                 Our Certifications
@@ -292,10 +298,10 @@ export default function AboutUs() {
                                     Adventure Tour Operators Association
                                 </h3>
                                 <p className="text-gray-700">
-                                    We&apos;re proud members of the Adventure Tour
-                                    Operators Association of India, committed to
-                                    maintaining high standards in adventure
-                                    tourism.
+                                    We&apos;re proud members of the Adventure
+                                    Tour Operators Association of India,
+                                    committed to maintaining high standards in
+                                    adventure tourism.
                                 </p>
                             </div>
                         </div>
@@ -322,11 +328,11 @@ export default function AboutUs() {
                                     <p className="mb-4 leading-relaxed text-gray-700">
                                         At Sea Hawk Adventure, we believe in
                                         giving back to the communities that make
-                                        our adventures possible. We&apos;re committed
-                                        to sustainable tourism practices that
-                                        benefit local residents and preserve the
-                                        natural environment for future
-                                        generations.
+                                        our adventures possible. We&apos;re
+                                        committed to sustainable tourism
+                                        practices that benefit local residents
+                                        and preserve the natural environment for
+                                        future generations.
                                     </p>
                                     <p className="mb-4 leading-relaxed text-gray-700">
                                         We prioritize hiring and training local
@@ -340,12 +346,12 @@ export default function AboutUs() {
                                     <p className="leading-relaxed text-gray-700">
                                         Through our &quot;Clean Rivers
                                         Initiative,&quot; we organize regular
-                                        river clean-up drives and educate visitors
-                                        about responsible waste management. We also
-                                        contribute a portion of our profits to
-                                        local schools and environmental
-                                        conservation projects in the Rishikesh
-                                        region.
+                                        river clean-up drives and educate
+                                        visitors about responsible waste
+                                        management. We also contribute a portion
+                                        of our profits to local schools and
+                                        environmental conservation projects in
+                                        the Rishikesh region.
                                     </p>
                                 </div>
                             </div>
@@ -353,7 +359,7 @@ export default function AboutUs() {
                     </div>
                 </section>
             </main>
-            <Footer/>
+            <Footer />
         </div>
     );
 }

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Wave4 } from "../shared/wave";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -41,15 +42,7 @@ export default function Contact() {
 
     return (
         <section id="contact" className="relative overflow-hidden bg-blue-50">
-            <div className="absolute z-0 w-full">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path
-                        fill="#ffffff"
-                        fillOpacity="1"
-                        d="M0,160L40,170.7C80,181,160,203,240,208C320,213,400,203,480,192C560,181,640,171,720,160C800,149,880,139,960,149.3C1040,160,1120,192,1200,218.7C1280,245,1360,267,1400,277.3L1440,288L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-                    ></path>
-                </svg>
-            </div>
+            <Wave4 />
             <div className="relative z-10 mx-auto max-w-7xl px-4 pt-20 pb-52 md:px-10">
                 <div className="mb-12 text-center">
                     <h2 className="mb-4 text-3xl font-medium md:text-4xl">
@@ -260,7 +253,7 @@ export default function Contact() {
                     </div>
                 </div>
             </div>
-            <div className="absolute bottom-0 z-0 w-full  h-full rotate-180 max-w-full">
+            <div className="absolute bottom-0 z-0 h-full w-full max-w-full rotate-180">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path
                         fill="#1e1a4d"
