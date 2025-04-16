@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import {
     Users,
     Calendar,
@@ -24,17 +25,114 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import AdminSidebar from "@/app/admin/_components/admin-sidebar";
 import AdminHeader from "@/app/admin/_components/admin-header";
 
+interface DashboardStats {
+    totalBookings: number;
+    totalUsers: number;
+    totalRevenue: number;
+    recentBookings: any[];
+    recentPayments: any[];
+}
+
+interface Booking {
+    id: string;
+    bookingId: string;
+    customer: string;
+    package: string;
+    amount: number;
+    date: Date;
+    status: string;
+    user: {
+        name: string;
+        email: string;
+    };
+}
+
+interface User {
+    id: string;
+    userId: string;
+    name: string;
+    email: string;
+    phone: string;
+    bookings: Booking[];
+    joinedAt: Date;
+}
+
+interface Payment {
+    id: string;
+    paymentId: string;
+    amount: number;
+    status: string;
+    currency: string;
+    createdAt: Date;
+    user: {
+        name: string;
+        email: string;
+    };
+}
+
 export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState("overview");
+    const [stats, setStats] = useState<DashboardStats | null>(null);
+    const [bookings, setBookings] = useState<Booking[]>([]);
+    const [users, setUsers] = useState<User[]>([]);
+    const [payments, setPayments] = useState<Payment[]>([]);
+    const [loading, setLoading] = useState(true);
+    const router = useRouter();
+
+    useEffect(() => {
+        // Check authentication
+        const isAuthenticated = localStorage.getItem("adminAuthenticated");
+        if (!isAuthenticated) {
+            router.push("/admin/login");
+            return;
+        }
+
+        const fetchData = async () => {
+            try {
+                const [statsRes, bookingsRes, usersRes, paymentsRes] = await Promise.all([
+                    fetch("/api/admin/stats"),
+                    fetch("/api/admin/bookings"),
+                    fetch("/api/admin/users"),
+                    fetch("/api/admin/payments"),
+                ]);
+
+                const [statsData, bookingsData, usersData, paymentsData] = await Promise.all([
+                    statsRes.json(),
+                    bookingsRes.json(),
+                    usersRes.json(),
+                    paymentsRes.json(),
+                ]);
+
+                setStats(statsData);
+                setBookings(bookingsData);
+                setUsers(usersData);
+                setPayments(paymentsData);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, [router]);
+
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900"></div>
+            </div>
+        );
+    }
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-white">
             <div className="flex">
                 {/* Sidebar */}
-                <AdminSidebar />
+                {/* <AdminSidebar /> */}
 
                 {/* Main Content */}
-                <div className="flex-1">
+                <div className="flex-1 mx-auto max-w-7xl">
                     <AdminHeader title="Dashboard" />
 
                     <main className="p-6">
@@ -48,7 +146,7 @@ export default function AdminDashboard() {
                                                 Total Bookings
                                             </p>
                                             <h3 className="mt-1 text-2xl font-bold">
-                                                1,248
+                                                {stats?.totalBookings || 0}
                                             </h3>
                                             <p className="mt-1 flex items-center text-xs text-green-600">
                                                 <ArrowUpRight className="mr-1 h-3 w-3" />
@@ -70,7 +168,7 @@ export default function AdminDashboard() {
                                                 Total Revenue
                                             </p>
                                             <h3 className="mt-1 text-2xl font-bold">
-                                                ₹24,35,800
+                                                ₹{stats?.totalRevenue.toLocaleString() || 0}
                                             </h3>
                                             <p className="mt-1 flex items-center text-xs text-green-600">
                                                 <ArrowUpRight className="mr-1 h-3 w-3" />
@@ -92,7 +190,7 @@ export default function AdminDashboard() {
                                                 Total Users
                                             </p>
                                             <h3 className="mt-1 text-2xl font-bold">
-                                                3,642
+                                                {stats?.totalUsers || 0}
                                             </h3>
                                             <p className="mt-1 flex items-center text-xs text-green-600">
                                                 <ArrowUpRight className="mr-1 h-3 w-3" />
@@ -132,11 +230,11 @@ export default function AdminDashboard() {
                         {/* Main Content Tabs */}
                         <Tabs
                             defaultValue="overview"
-                            className="space-y-4"
+                            className="space-y-4 mt-10"
                             onValueChange={setActiveTab}
                         >
                             <div className="flex items-center justify-between">
-                                <TabsList>
+                                <TabsList className="bg-black text-gray-300">
                                     <TabsTrigger value="overview">
                                         Overview
                                     </TabsTrigger>
@@ -258,63 +356,25 @@ export default function AdminDashboard() {
                                         </CardHeader>
                                         <CardContent>
                                             <div className="space-y-4">
-                                                {[
-                                                    {
-                                                        name: "Priya Sharma",
-                                                        package:
-                                                            "Beginner's Rafting",
-                                                        date: "Today, 10:30 AM",
-                                                        amount: "₹1,200",
-                                                    },
-                                                    {
-                                                        name: "Rahul Verma",
-                                                        package:
-                                                            "Kayaking Basics",
-                                                        date: "Today, 9:15 AM",
-                                                        amount: "₹1,500",
-                                                    },
-                                                    {
-                                                        name: "John Miller",
-                                                        package:
-                                                            "Intermediate Rafting",
-                                                        date: "Yesterday",
-                                                        amount: "₹1,800",
-                                                    },
-                                                    {
-                                                        name: "Ananya Patel",
-                                                        package:
-                                                            "Overnight Camping",
-                                                        date: "Yesterday",
-                                                        amount: "₹4,500",
-                                                    },
-                                                    {
-                                                        name: "Sarah Johnson",
-                                                        package:
-                                                            "Advanced Rafting",
-                                                        date: "Apr 14, 2025",
-                                                        amount: "₹2,500",
-                                                    },
-                                                ].map((booking, index) => (
+                                                {stats?.recentBookings.map((booking, index) => (
                                                     <div
                                                         key={index}
                                                         className="flex items-center justify-between"
                                                     >
                                                         <div>
                                                             <p className="font-medium">
-                                                                {booking.name}
+                                                                {booking.user.name}
                                                             </p>
                                                             <p className="text-sm text-gray-500">
-                                                                {
-                                                                    booking.package
-                                                                }
+                                                                {booking.package}
                                                             </p>
                                                         </div>
                                                         <div className="text-right">
                                                             <p className="font-medium">
-                                                                {booking.amount}
+                                                                ₹{booking.amount}
                                                             </p>
                                                             <p className="text-sm text-gray-500">
-                                                                {booking.date}
+                                                                {new Date(booking.date).toLocaleDateString()}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -479,177 +539,66 @@ export default function AdminDashboard() {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        {[
-                                                            {
-                                                                id: "B-1248",
-                                                                name: "Priya Sharma",
-                                                                package:
-                                                                    "Beginner's Rafting",
-                                                                date: "Apr 15, 2025",
-                                                                amount: "₹1,200",
-                                                                status: "Confirmed",
-                                                            },
-                                                            {
-                                                                id: "B-1247",
-                                                                name: "Rahul Verma",
-                                                                package:
-                                                                    "Kayaking Basics",
-                                                                date: "Apr 15, 2025",
-                                                                amount: "₹1,500",
-                                                                status: "Confirmed",
-                                                            },
-                                                            {
-                                                                id: "B-1246",
-                                                                name: "John Miller",
-                                                                package:
-                                                                    "Intermediate Rafting",
-                                                                date: "Apr 14, 2025",
-                                                                amount: "₹1,800",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                id: "B-1245",
-                                                                name: "Ananya Patel",
-                                                                package:
-                                                                    "Overnight Camping",
-                                                                date: "Apr 16, 2025",
-                                                                amount: "₹4,500",
-                                                                status: "Pending",
-                                                            },
-                                                            {
-                                                                id: "B-1244",
-                                                                name: "Sarah Johnson",
-                                                                package:
-                                                                    "Advanced Rafting",
-                                                                date: "Apr 18, 2025",
-                                                                amount: "₹2,500",
-                                                                status: "Confirmed",
-                                                            },
-                                                            {
-                                                                id: "B-1243",
-                                                                name: "Vikram Mehta",
-                                                                package:
-                                                                    "Intermediate Rafting",
-                                                                date: "Apr 13, 2025",
-                                                                amount: "₹1,800",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                id: "B-1242",
-                                                                name: "Emma Wilson",
-                                                                package:
-                                                                    "Kayaking Basics",
-                                                                date: "Apr 17, 2025",
-                                                                amount: "₹1,500",
-                                                                status: "Cancelled",
-                                                            },
-                                                            {
-                                                                id: "B-1241",
-                                                                name: "Raj Patel",
-                                                                package:
-                                                                    "Overnight Camping",
-                                                                date: "Apr 20, 2025",
-                                                                amount: "₹4,500",
-                                                                status: "Pending",
-                                                            },
-                                                            {
-                                                                id: "B-1240",
-                                                                name: "Lisa Chen",
-                                                                package:
-                                                                    "Beginner's Rafting",
-                                                                date: "Apr 12, 2025",
-                                                                amount: "₹1,200",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                id: "B-1239",
-                                                                name: "Akshay Kumar",
-                                                                package:
-                                                                    "Advanced Rafting",
-                                                                date: "Apr 19, 2025",
-                                                                amount: "₹2,500",
-                                                                status: "Confirmed",
-                                                            },
-                                                        ].map(
-                                                            (
-                                                                booking,
-                                                                index,
-                                                            ) => (
-                                                                <tr
-                                                                    key={index}
-                                                                    className="border-b hover:bg-gray-50"
-                                                                >
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            booking.id
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            booking.name
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            booking.package
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            booking.date
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            booking.amount
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        <span
-                                                                            className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                                                                                booking.status ===
-                                                                                "Confirmed"
-                                                                                    ? "bg-blue-100 text-blue-800"
-                                                                                    : booking.status ===
-                                                                                        "Completed"
-                                                                                      ? "bg-green-100 text-green-800"
-                                                                                      : booking.status ===
-                                                                                          "Pending"
-                                                                                        ? "bg-yellow-100 text-yellow-800"
-                                                                                        : "bg-red-100 text-red-800"
-                                                                            }`}
+                                                        {bookings.map((booking) => (
+                                                            <tr
+                                                                key={booking.id}
+                                                                className="border-b hover:bg-gray-50"
+                                                            >
+                                                                <td className="p-4 align-middle">
+                                                                    {booking.bookingId}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    {booking.user.name}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    {booking.package}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    {new Date(booking.date).toLocaleDateString()}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    ₹{booking.amount}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    <span
+                                                                        className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
+                                                                            booking.status ===
+                                                                            "SUCCESS"
+                                                                                ? "bg-green-100 text-green-800"
+                                                                                : booking.status ===
+                                                                                    "PENDING"
+                                                                                  ? "bg-yellow-100 text-yellow-800"
+                                                                                  : "bg-red-100 text-red-800"
+                                                                        }`}
+                                                                    >
+                                                                        {booking.status}
+                                                                    </span>
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    <div className="flex items-center gap-2">
+                                                                        <Button
+                                                                            variant="ghost"
+                                                                            size="sm"
                                                                         >
-                                                                            {
-                                                                                booking.status
-                                                                            }
-                                                                        </span>
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        <div className="flex items-center gap-2">
-                                                                            <Button
-                                                                                variant="ghost"
-                                                                                size="sm"
-                                                                            >
-                                                                                View
-                                                                            </Button>
-                                                                            <Button
-                                                                                variant="ghost"
-                                                                                size="sm"
-                                                                            >
-                                                                                Edit
-                                                                            </Button>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            ),
-                                                        )}
+                                                                            View
+                                                                        </Button>
+                                                                        <Button
+                                                                            variant="ghost"
+                                                                            size="sm"
+                                                                        >
+                                                                            Edit
+                                                                        </Button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        ))}
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                         <div className="mt-4 flex items-center justify-between">
                                             <p className="text-sm text-gray-500">
-                                                Showing 1-10 of 1,248 bookings
+                                                Showing 1-{bookings.length} of {bookings.length} bookings
                                             </p>
                                             <div className="flex items-center gap-2">
                                                 <Button
@@ -726,94 +675,13 @@ export default function AdminDashboard() {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        {[
-                                                            {
-                                                                id: "U-3642",
-                                                                name: "Priya Sharma",
-                                                                email: "priya@example.com",
-                                                                phone: "+91 98765 43210",
-                                                                bookings: 3,
-                                                                joined: "Jan 15, 2025",
-                                                            },
-                                                            {
-                                                                id: "U-3641",
-                                                                name: "Rahul Verma",
-                                                                email: "rahul@example.com",
-                                                                phone: "+91 98765 43211",
-                                                                bookings: 1,
-                                                                joined: "Feb 20, 2025",
-                                                            },
-                                                            {
-                                                                id: "U-3640",
-                                                                name: "John Miller",
-                                                                email: "john@example.com",
-                                                                phone: "+44 7911 123456",
-                                                                bookings: 2,
-                                                                joined: "Dec 10, 2024",
-                                                            },
-                                                            {
-                                                                id: "U-3639",
-                                                                name: "Ananya Patel",
-                                                                email: "ananya@example.com",
-                                                                phone: "+91 98765 43212",
-                                                                bookings: 5,
-                                                                joined: "Nov 5, 2024",
-                                                            },
-                                                            {
-                                                                id: "U-3638",
-                                                                name: "Sarah Johnson",
-                                                                email: "sarah@example.com",
-                                                                phone: "+61 4123 123456",
-                                                                bookings: 1,
-                                                                joined: "Mar 22, 2025",
-                                                            },
-                                                            {
-                                                                id: "U-3637",
-                                                                name: "Vikram Mehta",
-                                                                email: "vikram@example.com",
-                                                                phone: "+91 98765 43213",
-                                                                bookings: 2,
-                                                                joined: "Jan 30, 2025",
-                                                            },
-                                                            {
-                                                                id: "U-3636",
-                                                                name: "Emma Wilson",
-                                                                email: "emma@example.com",
-                                                                phone: "+1 212 555 1234",
-                                                                bookings: 1,
-                                                                joined: "Feb 14, 2025",
-                                                            },
-                                                            {
-                                                                id: "U-3635",
-                                                                name: "Raj Patel",
-                                                                email: "raj@example.com",
-                                                                phone: "+91 98765 43214",
-                                                                bookings: 3,
-                                                                joined: "Dec 5, 2024",
-                                                            },
-                                                            {
-                                                                id: "U-3634",
-                                                                name: "Lisa Chen",
-                                                                email: "lisa@example.com",
-                                                                phone: "+65 9123 4567",
-                                                                bookings: 1,
-                                                                joined: "Mar 10, 2025",
-                                                            },
-                                                            {
-                                                                id: "U-3633",
-                                                                name: "Akshay Kumar",
-                                                                email: "akshay@example.com",
-                                                                phone: "+91 98765 43215",
-                                                                bookings: 2,
-                                                                joined: "Jan 5, 2025",
-                                                            },
-                                                        ].map((user, index) => (
+                                                        {users.map((user) => (
                                                             <tr
-                                                                key={index}
+                                                                key={user.id}
                                                                 className="border-b hover:bg-gray-50"
                                                             >
                                                                 <td className="p-4 align-middle">
-                                                                    {user.id}
+                                                                    {user.userId}
                                                                 </td>
                                                                 <td className="p-4 align-middle">
                                                                     {user.name}
@@ -825,14 +693,10 @@ export default function AdminDashboard() {
                                                                     {user.phone}
                                                                 </td>
                                                                 <td className="p-4 align-middle">
-                                                                    {
-                                                                        user.bookings
-                                                                    }
+                                                                    {user.bookings.length}
                                                                 </td>
                                                                 <td className="p-4 align-middle">
-                                                                    {
-                                                                        user.joined
-                                                                    }
+                                                                    {new Date(user.joinedAt).toLocaleDateString()}
                                                                 </td>
                                                                 <td className="p-4 align-middle">
                                                                     <div className="flex items-center gap-2">
@@ -858,7 +722,7 @@ export default function AdminDashboard() {
                                         </div>
                                         <div className="mt-4 flex items-center justify-between">
                                             <p className="text-sm text-gray-500">
-                                                Showing 1-10 of 3,642 users
+                                                Showing 1-{users.length} of {users.length} users
                                             </p>
                                             <div className="flex items-center gap-2">
                                                 <Button
@@ -917,9 +781,6 @@ export default function AdminDashboard() {
                                                                 Transaction ID
                                                             </th>
                                                             <th className="h-12 px-4 text-left align-middle font-medium">
-                                                                Booking ID
-                                                            </th>
-                                                            <th className="h-12 px-4 text-left align-middle font-medium">
                                                                 Customer
                                                             </th>
                                                             <th className="h-12 px-4 text-left align-middle font-medium">
@@ -929,182 +790,52 @@ export default function AdminDashboard() {
                                                                 Amount
                                                             </th>
                                                             <th className="h-12 px-4 text-left align-middle font-medium">
-                                                                Method
-                                                            </th>
-                                                            <th className="h-12 px-4 text-left align-middle font-medium">
                                                                 Status
                                                             </th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        {[
-                                                            {
-                                                                txnId: "TXN-5678",
-                                                                bookingId:
-                                                                    "B-1248",
-                                                                name: "Priya Sharma",
-                                                                date: "Apr 15, 2025",
-                                                                amount: "₹1,200",
-                                                                method: "Credit Card",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5677",
-                                                                bookingId:
-                                                                    "B-1247",
-                                                                name: "Rahul Verma",
-                                                                date: "Apr 15, 2025",
-                                                                amount: "₹1,500",
-                                                                method: "UPI",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5676",
-                                                                bookingId:
-                                                                    "B-1246",
-                                                                name: "John Miller",
-                                                                date: "Apr 14, 2025",
-                                                                amount: "₹1,800",
-                                                                method: "PayPal",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5675",
-                                                                bookingId:
-                                                                    "B-1245",
-                                                                name: "Ananya Patel",
-                                                                date: "Apr 14, 2025",
-                                                                amount: "₹900",
-                                                                method: "UPI",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5674",
-                                                                bookingId:
-                                                                    "B-1245",
-                                                                name: "Ananya Patel",
-                                                                date: "Apr 14, 2025",
-                                                                amount: "₹3,600",
-                                                                method: "Credit Card",
-                                                                status: "Pending",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5673",
-                                                                bookingId:
-                                                                    "B-1244",
-                                                                name: "Sarah Johnson",
-                                                                date: "Apr 13, 2025",
-                                                                amount: "₹2,500",
-                                                                method: "Debit Card",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5672",
-                                                                bookingId:
-                                                                    "B-1243",
-                                                                name: "Vikram Mehta",
-                                                                date: "Apr 12, 2025",
-                                                                amount: "₹1,800",
-                                                                method: "UPI",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5671",
-                                                                bookingId:
-                                                                    "B-1242",
-                                                                name: "Emma Wilson",
-                                                                date: "Apr 12, 2025",
-                                                                amount: "₹1,500",
-                                                                method: "Credit Card",
-                                                                status: "Refunded",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5670",
-                                                                bookingId:
-                                                                    "B-1241",
-                                                                name: "Raj Patel",
-                                                                date: "Apr 11, 2025",
-                                                                amount: "₹900",
-                                                                method: "UPI",
-                                                                status: "Completed",
-                                                            },
-                                                            {
-                                                                txnId: "TXN-5669",
-                                                                bookingId:
-                                                                    "B-1240",
-                                                                name: "Lisa Chen",
-                                                                date: "Apr 10, 2025",
-                                                                amount: "₹1,200",
-                                                                method: "PayPal",
-                                                                status: "Completed",
-                                                            },
-                                                        ].map(
-                                                            (
-                                                                payment,
-                                                                index,
-                                                            ) => (
-                                                                <tr
-                                                                    key={index}
-                                                                    className="border-b hover:bg-gray-50"
-                                                                >
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            payment.txnId
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            payment.bookingId
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            payment.name
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            payment.date
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            payment.amount
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        {
-                                                                            payment.method
-                                                                        }
-                                                                    </td>
-                                                                    <td className="p-4 align-middle">
-                                                                        <span
-                                                                            className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                                                                                payment.status ===
-                                                                                "Completed"
-                                                                                    ? "bg-green-100 text-green-800"
-                                                                                    : payment.status ===
-                                                                                        "Pending"
-                                                                                      ? "bg-yellow-100 text-yellow-800"
-                                                                                      : "bg-red-100 text-red-800"
-                                                                            }`}
-                                                                        >
-                                                                            {
-                                                                                payment.status
-                                                                            }
-                                                                        </span>
-                                                                    </td>
-                                                                </tr>
-                                                            ),
-                                                        )}
+                                                        {payments.map((payment) => (
+                                                            <tr
+                                                                key={payment.id}
+                                                                className="border-b hover:bg-gray-50"
+                                                            >
+                                                                <td className="p-4 align-middle">
+                                                                    {payment.paymentId}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    {payment.user.name}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    {new Date(payment.createdAt).toLocaleDateString()}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    {payment.currency} {payment.amount}
+                                                                </td>
+                                                                <td className="p-4 align-middle">
+                                                                    <span
+                                                                        className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
+                                                                            payment.status ===
+                                                                            "SUCCESS"
+                                                                                ? "bg-green-100 text-green-800"
+                                                                                : payment.status ===
+                                                                                    "PENDING"
+                                                                                  ? "bg-yellow-100 text-yellow-800"
+                                                                                  : "bg-red-100 text-red-800"
+                                                                        }`}
+                                                                    >
+                                                                        {payment.status}
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        ))}
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                         <div className="mt-4 flex items-center justify-between">
                                             <p className="text-sm text-gray-500">
-                                                Showing 1-10 of 5,678
-                                                transactions
+                                                Showing 1-{payments.length} of {payments.length} transactions
                                             </p>
                                             <div className="flex items-center gap-2">
                                                 <Button

@@ -53,7 +53,7 @@ interface VerificationResult {
 
 // Sanitize user input
 function sanitizeUserInput(input: string): string {
-    return input.replace(/[<>]/g, '');
+    return input.replace(/[<>]/g, "");
 }
 
 // Validate email format
@@ -68,14 +68,23 @@ function isValidPhone(phone: string): boolean {
     return phoneRegex.test(phone);
 }
 
-export async function createPayment(amount: number, bookingData: BookingData): Promise<PaymentResult> {
+export async function createPayment(
+    amount: number,
+    bookingData: BookingData,
+): Promise<PaymentResult> {
     try {
         // Input validation
-        if (!bookingData.users?.[0]?.email || !isValidEmail(bookingData.users[0].email)) {
+        if (
+            !bookingData.users?.[0]?.email ||
+            !isValidEmail(bookingData.users[0].email)
+        ) {
             return { error: "Invalid email address" };
         }
 
-        if (!bookingData.users[0].mobile || !isValidPhone(bookingData.users[0].mobile)) {
+        if (
+            !bookingData.users[0].mobile ||
+            !isValidPhone(bookingData.users[0].mobile)
+        ) {
             return { error: "Invalid phone number" };
         }
 
@@ -93,11 +102,11 @@ export async function createPayment(amount: number, bookingData: BookingData): P
         // Sanitize user input
         const sanitizedUserData = {
             ...bookingData,
-            users: bookingData.users.map(user => ({
+            users: bookingData.users.map((user) => ({
                 name: sanitizeUserInput(user.name),
                 email: user.email.toLowerCase().trim(),
-                mobile: user.mobile.trim()
-            }))
+                mobile: user.mobile.trim(),
+            })),
         };
 
         const userExists = await prisma.user.findUnique({
@@ -347,7 +356,7 @@ export async function verifyPayment(
         // Sanitize email addresses
         const sanitizedEmails = [
             "seahawk.adventures05@gmail.com",
-            bookingData.users[0].email.toLowerCase().trim()
+            bookingData.users[0].email.toLowerCase().trim(),
         ];
 
         await resend.emails.send({
