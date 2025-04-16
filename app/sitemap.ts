@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         `/contact`,
         `/gallery`,
         `/feedback`,
-        
+
         // `/terms-and-conditions`,
         // `/privacy-policy`,
         // `/refund-policy`,
@@ -28,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const contents: MetadataRoute.Sitemap = allContents.map(
         ({ slugAsParams }) => ({
-            url: `${BASE_URL}/adventure-in-rishikesh/${slugAsParams}`,
+            url: `${BASE_URL}/tours/${slugAsParams}`,
             lastModified: new Date(),
             changeFrequency: "daily",
             priority: 0.9,

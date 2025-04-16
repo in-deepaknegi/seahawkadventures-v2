@@ -92,10 +92,12 @@ export default function BookingForm({
             // Create payment order
             const response = await createPayment(amount, bookingData);
 
-            if (response.error) {
+            if ('error' in response) {
                 setError(response.error);
                 return;
             }
+
+            console.log("Payment Response:", response);
 
             // Initialize Razorpay checkout
             const options = {
@@ -107,6 +109,10 @@ export default function BookingForm({
                 order_id: response.orderId,
                 handler: async (response: any) => {
                     try {
+                        console.log("Razorpay Response:", response);
+                        console.log("Booking ID:", response.bookingId);
+                        console.log("Payment ID:", response.paymentId);
+
                         if (!response.razorpay_payment_id || !response.razorpay_signature) {
                             toast.error("Payment verification failed - Missing payment details");
                             return;

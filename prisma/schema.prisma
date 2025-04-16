@@ -8,19 +8,35 @@ datasource db {
 }
 
 model User {
-    id                String        @id @default(auto()) @map("_id") @db.ObjectId
-    name              String
-    email             String
-    phone             String
-    payments          Payment[]
-    createdAt         DateTime      @default(now())
-    updatedAt         DateTime      @updatedAt
+    id        String    @id @default(auto()) @map("_id") @db.ObjectId
+    userId    String    @unique
+    name      String
+    email     String    @unique
+    phone     String
+    bookings  Booking[]
+    payments  Payment[]
+    joinedAt  DateTime  @default(now())
+    createdAt DateTime  @default(now())
+    updatedAt DateTime  @updatedAt
+}
 
-    @@index([id])
+model Booking {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    bookingId String   @unique
+    customer  String
+    package   String
+    amount    Float
+    date      DateTime
+    status    BookingStatus @default(PENDING)
+    userId    String   @db.ObjectId
+    user      User     @relation(fields: [userId], references: [id])
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 model Payment {
     id                String        @id @default(auto()) @map("_id") @db.ObjectId
+    paymentId         String        @unique
     razorpayOrderId   String        @unique
     razorpayPaymentId String?
     status            PaymentStatus @default(FAILED)
@@ -30,10 +46,25 @@ model Payment {
     userId            String        @db.ObjectId
     user              User          @relation(fields: [userId], references: [id])
 
-    createdAt         DateTime      @default(now())
-    updatedAt         DateTime      @updatedAt
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
 
-    @@index([id])
+model Newsletter {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    email     String   @unique
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Contact {
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    name      String
+    email     String
+    subject   String
+    message   String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 enum PaymentStatus {
@@ -41,3 +72,10 @@ enum PaymentStatus {
     SUCCESS
     FAILED
 }
+
+enum BookingStatus {
+    PENDING
+    SUCCESS
+    FAILED
+}
+

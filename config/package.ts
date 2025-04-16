@@ -16,7 +16,7 @@ export const __R1__ = {
         },
         difficulty: "Easy",
         season: "Mid Sept till end of June",
-        price: "620",
+        price: "1",
         groupSize: "6-8",
     },
 
