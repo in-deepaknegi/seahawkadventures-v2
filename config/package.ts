@@ -1,8 +1,6 @@
-import {
-    AtSignIcon,
-    CommandIcon,
-    EclipseIcon,
-} from "lucide-react";
+import { AtSignIcon, CommandIcon, EclipseIcon } from "lucide-react";
+
+export const BASE_URL = process.env.NEXT_PUBLIC_URL ?? "http://localhost:3000";
 
 export const __R1__ = {
     __p__: {
@@ -26,7 +24,7 @@ export const __R1__ = {
 
     <br/>
 
-    <p>We complete our rafting excursion just before Laxman Jhula and then drive back to the Red Chilli Adventure office in 5 minutes.</p>`,
+    <p>We complete our rafting excursion just before Laxman Jhula and then drive back to the Sea Hawk Adventure office in 5 minutes.</p>`,
 
     gallery: [
         {
@@ -94,7 +92,6 @@ export const __R1__ = {
                 "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
         },
     ],
- 
 };
 
 export const __R2__ = {
@@ -119,7 +116,7 @@ export const __R2__ = {
 
     <br/>
 
-    <p>We complete our rafting excursion just before Laxman Jhula and then drive back to the Red Chilli Adventure office in 5 minutes.</p>`,
+    <p>We complete our rafting excursion just before Laxman Jhula and then drive back to the Sea Hawk Adventure office in 5 minutes.</p>`,
 
     gallery: [
         {
@@ -187,7 +184,6 @@ export const __R2__ = {
                 "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
         },
     ],
- 
 };
 
 export const __R3__ = {
@@ -212,7 +208,7 @@ export const __R3__ = {
 
     <br/>
 
-    <p>We complete our rafting excursion just before Laxman Jhula and then drive back to the Red Chilli Adventure office in 5 minutes.</p>`,
+    <p>We complete our rafting excursion just before Laxman Jhula and then drive back to the Sea Hawk Adventure office in 5 minutes.</p>`,
 
     gallery: [
         {
@@ -280,7 +276,6 @@ export const __R3__ = {
                 "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
         },
     ],
- 
 };
 
 export const __G1__ = {
@@ -295,4 +290,4 @@ export const __G1__ = {
             "Expenses of Personal Nature",
         ],
     },
-}
+};

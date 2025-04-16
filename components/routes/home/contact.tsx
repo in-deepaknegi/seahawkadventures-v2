@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Wave4 } from "../shared/wave";
+import Link from "next/link";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -56,9 +57,9 @@ export default function Contact() {
 
                 <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
                     {/* Contact Form */}
-                    <Card className="shadow-md">
+                    <Card className="h-full shadow-md">
                         <CardContent className="p-6">
-                            <h3 className="mb-4 text-xl font-bold text-blue-700">
+                            <h3 className="mb-4 text-2xl font-medium">
                                 Send Us a Message
                             </h3>
                             <form onSubmit={handleSubmit} className="space-y-4">
@@ -66,7 +67,7 @@ export default function Contact() {
                                     <div className="space-y-2">
                                         <label
                                             htmlFor="name"
-                                            className="text-sm font-medium"
+                                            className="text-sm font-medium text-gray-600"
                                         >
                                             Your Name
                                         </label>
@@ -82,7 +83,7 @@ export default function Contact() {
                                     <div className="space-y-2">
                                         <label
                                             htmlFor="email"
-                                            className="text-sm font-medium"
+                                            className="text-sm font-medium text-gray-600"
                                         >
                                             Email Address
                                         </label>
@@ -101,7 +102,7 @@ export default function Contact() {
                                     <div className="space-y-2">
                                         <label
                                             htmlFor="phone"
-                                            className="text-sm font-medium"
+                                            className="text-sm font-medium text-gray-600"
                                         >
                                             Phone Number
                                         </label>
@@ -116,7 +117,7 @@ export default function Contact() {
                                     <div className="space-y-2">
                                         <label
                                             htmlFor="subject"
-                                            className="text-sm font-medium"
+                                            className="text-sm font-medium text-gray-600"
                                         >
                                             Subject
                                         </label>
@@ -133,7 +134,7 @@ export default function Contact() {
                                 <div className="space-y-2">
                                     <label
                                         htmlFor="message"
-                                        className="text-sm font-medium"
+                                        className="text-sm font-medium text-gray-600"
                                     >
                                         Your Message
                                     </label>
@@ -161,7 +162,7 @@ export default function Contact() {
                     <div className="space-y-6">
                         <Card className="h-full shadow-md">
                             <CardContent className="p-6">
-                                <h3 className="mb-4 text-xl font-bold text-blue-700">
+                                <h3 className="mb-4 text-2xl font-medium">
                                     Contact Information
                                 </h3>
                                 <div className="space-y-4">
@@ -174,8 +175,11 @@ export default function Contact() {
                                                 Our Location
                                             </h4>
                                             <p className="text-sm text-gray-600 md:text-base">
-                                                Near Laxman Jhula, Rishikesh,
-                                                Uttarakhand, India - 249302
+                                                Badrinath Rd, near Shivpuri
+                                                Police Station, Rishikesh,
+                                                Uttarakhand, India
+                                                <br />
+                                                PIN CODE: 249192
                                             </p>
                                         </div>
                                     </div>
@@ -187,12 +191,12 @@ export default function Contact() {
                                             <h4 className="font-medium text-gray-900">
                                                 Phone Number
                                             </h4>
-                                            <p className="text-sm text-gray-600 md:text-base">
-                                                +91 98765 43210
-                                            </p>
-                                            <p className="text-sm text-gray-600 md:text-base">
-                                                +91 98765 43211
-                                            </p>
+                                            <Link
+                                                href="tel:+919756620538"
+                                                className="text-sm text-gray-600 md:text-base"
+                                            >
+                                                +91 97566 20538
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
@@ -203,12 +207,19 @@ export default function Contact() {
                                             <h4 className="font-medium text-gray-900">
                                                 Email Address
                                             </h4>
-                                            <p className="text-sm text-gray-600 md:text-base">
-                                                info@seahawkadventure.com
-                                            </p>
-                                            <p className="text-sm text-gray-600 md:text-base">
+                                            <Link
+                                                href="mailto:kayakinginrishikesh@gmail.com"
+                                                className="text-sm text-gray-600 md:text-base block"
+                                            >
+                                                kayakinginrishikesh@gmail.com
+                                            </Link>
+
+                                            <Link
+                                                href="mailto:bookings@seahawkadventure.com"
+                                                className="text-sm text-gray-600 md:text-base"
+                                            >
                                                 bookings@seahawkadventure.com
-                                            </p>
+                                            </Link>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
@@ -256,7 +267,7 @@ export default function Contact() {
             <div className="absolute bottom-0 z-0 h-full w-full max-w-full rotate-180">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path
-                        fill="#1e1a4d"
+                        fill="#ffffff"
                         fillOpacity="1"
                         d="M0,96L120,106.7C240,117,480,139,720,133.3C960,128,1200,96,1320,80L1440,64L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
                     ></path>

@@ -1,6 +1,6 @@
 import allContents from "@/.content-collections/generated/allContents";
 import React from "react";
-import { __G1__, __R1__, __R2__, __R3__ } from "@/config/package";
+import { __G1__, __R1__, __R2__, __R3__, BASE_URL } from "@/config/package";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -255,7 +255,10 @@ const page = async ({ params }: { params: Params }) => {
                                     </h2>
                                     <div className="mt-3 space-y-4">
                                         {content_5?.map((item, index) => (
-                                            <div key={index} className="flex gap-4">
+                                            <div
+                                                key={index}
+                                                className="flex gap-4"
+                                            >
                                                 <div className="flex items-start gap-2">
                                                     <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
                                                         <span className="font-bold text-blue-600">
@@ -621,3 +624,39 @@ const page = async ({ params }: { params: Params }) => {
 };
 
 export default page;
+
+export async function generateMetadata({ params }: { params: Params }) {
+    const id = await params;
+
+    const doc = await getContentFromParams({ id });
+
+    return {
+        title: doc?.title,
+        description: doc?.description,
+        openGraph: {
+            type: "website",
+            title: doc?.title,
+            description: doc?.description,
+            url: `${BASE_URL}/tours/${doc?.slugAsParams}`,
+            images: [
+                {
+                    url: `https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg`,
+                    width: 1200,
+                    height: 630,
+                    alt: doc?.title,
+                },
+            ],
+            siteName: "Sea Hawk Adventure",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: doc?.title,
+            description: doc?.description,
+            images: [
+                `https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg`,
+            ],
+            site: "@SeaHawkAdventure",
+            creator: "@SeaHawkAdventure",
+        },
+    };
+}

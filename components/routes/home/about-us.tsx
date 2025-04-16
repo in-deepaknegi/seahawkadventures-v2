@@ -1,5 +1,6 @@
-import Image from "next/image";
+"use client";
 import { Shield, Award, Users } from "lucide-react";
+import { CldImage } from "next-cloudinary";
 
 export default function AboutUs() {
     return (
@@ -17,11 +18,12 @@ export default function AboutUs() {
 
                 <div className="grid items-center gap-12 md:grid-cols-12">
                     <div className="relative col-span-5 h-full overflow-hidden rounded-lg shadow-lg">
-                        <Image
+                        <CldImage
                             src="https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg"
                             alt="Sea Hawk Adventure team"
-                            fill
-                            className="object-cover"
+                            width={1920}
+                            height={1080}
+                            className="object-cover size-full"
                         />
                     </div>
 

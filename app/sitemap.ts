@@ -11,11 +11,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         `/contact`,
         `/gallery`,
         `/feedback`,
-        `/terms-and-conditions`,
-        `/privacy-policy`,
-        `/refund-policy`,
-        `/cancellation-policy`,
-        `/copyright`,
+        
+        // `/terms-and-conditions`,
+        // `/privacy-policy`,
+        // `/refund-policy`,
+        // `/cancellation-policy`,
+        // `/copyright`,
     ];
 
     const routes: MetadataRoute.Sitemap = allRoutes.map((route) => ({

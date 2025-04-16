@@ -97,8 +97,8 @@ export default function Navbar() {
         <header
             className={`sticky top-0 z-50 w-full ${scrollPosition ? "bg-white text-black" : "bg-black/50 text-white"} transition-all duration-700 ease-in-out`}
         >
-            <div className="mx-auto flex items-center justify-between px-10 py-2">
-                <div className="flex items-center gap-2">
+            <div className="mx-auto flex items-center justify-between px-10 py-1.5">
+                <div className="flex items-center gap-2 bg-white rounded-xl p-2">
                     <Link href="/" className="flex items-center">
                         <Image
                             src="/images/logo.png"

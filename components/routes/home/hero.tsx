@@ -146,14 +146,14 @@ import Link from "next/link";
 
 const images = [
     {
-        title: "Kayaking Adventures",
+        title: "Kayak School",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
-            alt: "Kayaking Adventures",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3200.heic",
+            alt: "Kayak School",
         },
         stats: {
             tours: 8,
-            startingPrice: "5,000",
+            startingPrice: "3,999",
         },
     },
     {
@@ -164,51 +164,51 @@ const images = [
         },
         stats: {
             tours: 3,
-            startingPrice: "620",
+            startingPrice: "599",
         },
     },
     {
         title: "Expedition Adventures",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
             alt: "Expedition Adventures",
         },
         stats: {
             tours: 9,
-            startingPrice: "15000",
+            startingPrice: "12,000",
         },
     },
     {
-        title: "Kayaking Adventures",
+        title: "Kayak School",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
-            alt: "Kayaking Adventures",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3200.heic",
+            alt: "Kayak School",
         },
         stats: {
             tours: 8,
-            startingPrice: "15,000",
+            startingPrice: "3,999",
         },
     },
     {
         title: "Rafting in Rishikesh",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3103.jpg",
             alt: "Rafting in Rishikesh",
         },
         stats: {
-            tours: 12,
-            startingPrice: "18,000",
+            tours: 3,
+            startingPrice: "599",
         },
     },
     {
-        title: "Trekking Adventures",
+        title: "Expedition Adventures",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3110.jpg",
-            alt: "Trekking Adventures",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
+            alt: "Expedition Adventures",
         },
         stats: {
             tours: 9,
-            startingPrice: "21,000",
+            startingPrice: "12,000",
         },
     },
 ];
@@ -229,7 +229,7 @@ export default function Hero() {
                 <CarouselContent className="-ml-0">
                     {images.map((item, index) => (
                         <CarouselItem key={index} className="pl-0">
-                            <div className="relative h-[95vh] w-full md:h-[95vh]">
+                            <div className="relative h-[95vh] w-full md:h-[100vh]">
                                 <CldImage
                                     src={item.image.src}
                                     alt={item.image.alt}
@@ -237,24 +237,24 @@ export default function Hero() {
                                     width={1920}
                                     height={1080}
                                     priority={index === 0}
-                                    className="size-full object-cover"
+                                    className="size-full object-cover object-bottom"
                                     // sizes="100vw"
                                     quality={100}
                                 />
-                                <div className="absolute bottom-0 h-72 w-full bg-gradient-to-t from-black/80 to-transparent" />
-                                <div className="absolute bottom-5 flex w-full flex-col items-center justify-center px-4 text-center text-white md:bottom-52">
+                                <div className="absolute bottom-0 h-72 w-full bg-gradient-to-t from-black to-transparent" />
+                                <div className="absolute bottom-5 flex w-full flex-col items-center justify-center px-4 text-center text-white md:bottom-40">
                                     <h1 className="mb-6 text-3xl font-medium tracking-wide md:text-5xl">
                                         {item.title}
                                     </h1>
                                     <div className="mb-6 flex items-center justify-center gap-8 md:gap-16">
-                                        <div>
+                                        {/* <div>
                                             <div className="text-3xl font-medium md:text-5xl">
                                                 {item.stats.tours}
                                             </div>
                                             <div className="mt-2 text-sm md:text-xl">
                                                 TOURS
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div>
                                             <div className="text-3xl font-medium md:text-5xl">
                                                 ₹ {item.stats.startingPrice}

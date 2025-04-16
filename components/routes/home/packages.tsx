@@ -10,10 +10,10 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { Clock, Users, Award } from "lucide-react";
 import Link from "next/link";
 import { Wave1 } from "../shared/wave";
+import { CldImage } from "next-cloudinary";
 
 const packages = {
     rafting: [
@@ -57,7 +57,7 @@ const packages = {
             link: "#",
             groupSize: "4-6 people",
             price: "₹1,500",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3106.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3200.heic",
         },
         {
             title: "River Kayaking Tour",
@@ -67,49 +67,29 @@ const packages = {
             link: "#",
             groupSize: "4-6 people",
             price: "₹2,200",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3107.jpg",
-        },
-        {
-            title: "Advanced Kayaking",
-            description:
-                "Master advanced techniques and navigate challenging water conditions",
-            duration: "4 hours",
-            link: "#",
-            groupSize: "4-6 people",
-            price: "₹3,000",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3108.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3201.heic",
         },
     ],
     expedition: [
         {
-            title: "Himalayan Day Trek",
+            title: "Rafting Expedition",
             description:
                 "Explore the foothills of the Himalayas with a guided day trek",
             duration: "8 hours",
             link: "#",
             groupSize: "8-12 people",
             price: "₹2,000",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3109.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
         },
         {
-            title: "Overnight Camping Adventure",
+            title: "Kayak Expedition",
             description:
                 "Experience the wilderness with an overnight camping expedition",
             duration: "2 days",
             link: "#",
             groupSize: "8-12 people",
             price: "₹4,500",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3110.jpg",
-        },
-        {
-            title: "Multi-Day Himalayan Expedition",
-            description:
-                "Embark on a comprehensive journey through diverse Himalayan landscapes",
-            duration: "5 days",
-            link: "#",
-            groupSize: "8-12 people",
-            price: "₹12,000",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",
         },
     ],
 };
@@ -153,15 +133,16 @@ export default function Packages() {
                                         key={index}
                                         className="overflow-hidden shadow-none"
                                     >
-                                        <div className="relative h-60">
-                                            <Image
+                                        <div className="relative h-60 overflow-hidden">
+                                            <CldImage
                                                 src={
                                                     pkg.image ||
                                                     "/placeholder.svg"
                                                 }
                                                 alt={pkg.title}
-                                                fill
-                                                className="object-cover"
+                                                width={1920}
+                                                height={1080}
+                                                className="size-full object-cover"
                                             />
                                         </div>
                                         <CardHeader className="bg-white text-black">

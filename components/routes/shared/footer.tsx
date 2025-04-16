@@ -10,46 +10,56 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
 
 export default function Footer() {
     return (
-        <footer className="bg-indigo-950 text-white">
-            <div className="mx-auto max-w-7xl px-4 py-12 md:py-20 md:px-10">
+        <footer className="bg-white text-black">
+            <div className="mx-auto max-w-7xl px-4 py-12 md:px-10 md:py-20">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {/* Company Info */}
                     <div>
-                        <h3 className="mb-4 text-xl font-bold">
-                            Sea Hawk Adventure
-                        </h3>
-                        <p className="mb-4 text-blue-200">
+                        <Link
+                            href="/"
+                            className="mb-4 flex flex-col items-start"
+                        >
+                            <Image
+                                src="/images/logo.png"
+                                alt="Seahawk Adventure"
+                                width={160}
+                                height={60}
+                                className="object-contain"
+                            />
+                        </Link>
+                        <p className="mb-4 text-gray-700">
                             Providing thrilling and safe adventure experiences
                             in Rishikesh since 2010.
                         </p>
                         <div className="flex space-x-4">
                             <Link
                                 href="#"
-                                className="text-blue-200 hover:text-white"
+                                className="text-gray-700 hover:text-gray-900"
                             >
                                 <Facebook className="h-5 w-5" />
                                 <span className="sr-only">Facebook</span>
                             </Link>
                             <Link
                                 href="#"
-                                className="text-blue-200 hover:text-white"
+                                className="text-gray-700 hover:text-gray-900"
                             >
                                 <Instagram className="h-5 w-5" />
                                 <span className="sr-only">Instagram</span>
                             </Link>
                             <Link
                                 href="#"
-                                className="text-blue-200 hover:text-white"
+                                className="text-gray-700 hover:text-gray-900"
                             >
                                 <Twitter className="h-5 w-5" />
                                 <span className="sr-only">Twitter</span>
                             </Link>
                             <Link
                                 href="#"
-                                className="text-blue-200 hover:text-white"
+                                className="text-gray-700 hover:text-gray-900"
                             >
                                 <Youtube className="h-5 w-5" />
                                 <span className="sr-only">YouTube</span>
@@ -59,12 +69,12 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="mb-4 text-xl font-bold">Quick Links</h3>
+                        <h3 className="mb-4 text-xl font-medium">Quick Links</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link
                                     href="#"
-                                    className="text-blue-200 hover:text-white"
+                                    className="text-gray-700 hover:text-gray-900"
                                 >
                                     Home
                                 </Link>
@@ -72,7 +82,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#packages"
-                                    className="text-blue-200 hover:text-white"
+                                    className="text-gray-700 hover:text-gray-900"
                                 >
                                     Packages
                                 </Link>
@@ -80,7 +90,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#about"
-                                    className="text-blue-200 hover:text-white"
+                                    className="text-gray-700 hover:text-gray-900"
                                 >
                                     About Us
                                 </Link>
@@ -88,7 +98,7 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#gallery"
-                                    className="text-blue-200 hover:text-white"
+                                    className="text-gray-700 hover:text-gray-900"
                                 >
                                     Gallery
                                 </Link>
@@ -96,15 +106,15 @@ export default function Footer() {
                             <li>
                                 <Link
                                     href="#testimonials"
-                                    className="text-blue-200 hover:text-white"
+                                    className="text-gray-700 hover:text-gray-900"
                                 >
                                     Testimonials
                                 </Link>
                             </li>
                             <li>
                                 <Link
-                                    href="#"
-                                    className="text-blue-200 hover:text-white"
+                                    href="#contact"
+                                    className="text-gray-700 hover:text-gray-900"
                                 >
                                     Contact
                                 </Link>
@@ -114,34 +124,42 @@ export default function Footer() {
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className="mb-4 text-xl font-bold">Contact Us</h3>
+                        <h3 className="mb-4 text-xl font-medium">Contact Us</h3>
                         <ul className="space-y-3">
                             <li className="flex items-start gap-3">
-                                <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-300" />
-                                <span className="text-blue-200">
-                                    Near Laxman Jhula, Rishikesh, Uttarakhand,
-                                    India - 249302
+                                <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-gray-700" />
+                                <span className="text-gray-700">
+                                    Badrinath Rd, near Shivpuri Police Station,
+                                    Rishikesh, Uttarakhand, India
+                                    <br />
+                                    PIN CODE: 249192
                                 </span>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Phone className="h-5 w-5 flex-shrink-0 text-blue-300" />
-                                <span className="text-blue-200">
-                                    +91 98765 43210
-                                </span>
+                                <Phone className="h-5 w-5 flex-shrink-0 text-gray-700" />
+                                <Link
+                                    href="tel:+919756620538"
+                                    className="text-gray-700"
+                                >
+                                    +91 97566 20538
+                                </Link>
                             </li>
                             <li className="flex items-center gap-3">
-                                <Mail className="h-5 w-5 flex-shrink-0 text-blue-300" />
-                                <span className="text-blue-200">
-                                    info@seahawkadventure.com
-                                </span>
+                                <Mail className="h-5 w-5 flex-shrink-0 text-gray-700" />
+                                <Link
+                                    href="mailto:kayakinginrishikesh@gmail.com"
+                                    className="text-gray-700"
+                                >
+                                    kayakinginrishikesh@gmail.com
+                                </Link>
                             </li>
                         </ul>
                     </div>
 
                     {/* Newsletter */}
                     <div>
-                        <h3 className="mb-4 text-xl font-bold">Newsletter</h3>
-                        <p className="mb-4 text-blue-200">
+                        <h3 className="mb-4 text-xl font-medium">Newsletter</h3>
+                        <p className="text -blue-200 mb-4">
                             Subscribe to our newsletter for the latest updates
                             and offers.
                         </p>
@@ -149,16 +167,16 @@ export default function Footer() {
                             <Input
                                 type="email"
                                 placeholder="Your email address"
-                                className="border-indigo-700 bg-indigo-800 text-white placeholder:text-indigo-400"
+                                className="text-white"
                             />
-                            <Button className="w-full bg-indigo-600 hover:bg-indigo-700">
+                            <Button className="w-full bg-blue-600">
                                 Subscribe
                             </Button>
                         </form>
                     </div>
                 </div>
 
-                <div className="mt-12 border-t border-blue-800 pt-6 text-center text-sm text-blue-300">
+                <div className="mt-12 border-t border-gray-300 pt-6 text-center text-sm text-gray-700">
                     <p>
                         © {new Date().getFullYear()} Sea Hawk Adventure. All
                         rights reserved.

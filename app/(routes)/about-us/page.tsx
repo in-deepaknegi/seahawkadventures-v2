@@ -2,7 +2,35 @@ import Image from "next/image";
 import { Shield, Award, Users, MapPin, Target } from "lucide-react";
 import Navbar from "@/components/routes/shared/navbar";
 import Footer from "@/components/routes/shared/footer";
-import { Wave1, Wave2, Wave3, Wave4 } from "@/components/routes/shared/wave";
+import { Wave2, Wave3, Wave4 } from "@/components/routes/shared/wave";
+import CldImageComponent from "@/components/cld-image";
+import { Metadata } from "next";
+import { BASE_URL } from "@/config/package";
+import Profile1 from "@/public/images/team/t00.jpg";
+import Profile2 from "@/public/images/team/t01.jpg";
+import Profile3 from "@/public/images/team/t02.jpg";
+
+const teams = [
+    {
+        image: Profile1,
+        author: "Rishi Rana (Founder)",
+        description: "Professional Kayaker & Raft Guide",
+        username: "@rishi_aquaholic",
+        href: "https://www.instagram.com/rishi_aquaholic/",
+    },
+    {
+        image: Profile2,
+        author: "Rakesh Rana",
+        description: "Professional Raft Guide",
+        username: "@rakesh_rana",
+    },
+    {
+        image: Profile3,
+        author: "Nitesh Negi",
+        description: "Professional Raft Guide",
+        username: "@nitesh_negi",
+    },
+];
 
 export default function AboutUs() {
     return (
@@ -11,11 +39,20 @@ export default function AboutUs() {
             <main className="-mt-[5rem]">
                 {/* Hero Section */}
                 <section className="relative h-[400px] overflow-hidden">
-                    <Image
+                    {/* <CldImage
                         src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
                         alt="About Sea Hawk Adventure"
-                        fill
-                        className="object-cover"
+                        width={1920}
+                        height={1080}
+                        className="object-cover size-full"
+                        priority
+                    /> */}
+                    <CldImageComponent
+                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
+                        alt="About Sea Hawk Adventure"
+                        width={1920}
+                        height={1080}
+                        className="size-full object-cover"
                         priority
                     />
                     <div className="absolute inset-0 bg-black/40" />
@@ -36,7 +73,7 @@ export default function AboutUs() {
                         <div className="grid items-center gap-12 md:grid-cols-2">
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="mb-4 text-3xl font-bold text-blue-800">
+                                    <h2 className="mb-4 text-3xl font-medium md:text-4xl">
                                         Our Story
                                     </h2>
                                     <p className="mb-4 leading-relaxed text-gray-700">
@@ -74,11 +111,12 @@ export default function AboutUs() {
                                 </div>
                             </div>
                             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-                                <Image
+                                <CldImageComponent
                                     src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
                                     alt="Sea Hawk Adventure founders"
-                                    fill
-                                    className="object-cover"
+                                    width={1920}
+                                    height={1080}
+                                    className="size-full object-cover"
                                 />
                             </div>
                         </div>
@@ -90,16 +128,16 @@ export default function AboutUs() {
                     <Wave2 />
                     <div className="relative z-10 mx-auto max-w-7xl py-16">
                         <div className="mb-12 text-center">
-                            <h2 className="mb-4 text-3xl font-bold text-blue-800">
+                            <h2 className="mb-4 text-3xl font-medium md:text-4xl">
                                 Our Mission & Values
                             </h2>
-                            <p className="mx-auto max-w-3xl text-lg text-blue-600">
+                            <p className="text-lg mx-auto max-w-3xl">
                                 Guiding principles that drive everything we do
                                 at Sea Hawk Adventure
                             </p>
                         </div>
 
-                        <div className="mb-12 grid gap-8 md:grid-cols-2">
+                        <div className="mb-12 grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
                             <div className="rounded-lg bg-white p-8 shadow-sm">
                                 <div className="mb-6 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
                                     <Target className="h-8 w-8 text-blue-600" />
@@ -132,7 +170,7 @@ export default function AboutUs() {
                             </div>
                         </div>
 
-                        <div className="grid gap-6 md:grid-cols-3">
+                        <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
                             <div className="rounded-lg bg-white p-6 shadow-sm">
                                 <div className="mb-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
                                     <Shield className="h-6 w-6 text-blue-600" />
@@ -181,54 +219,56 @@ export default function AboutUs() {
                 </section>
 
                 {/* Our Team */}
-                <section className="relative">
+                <section className="relative overflow-hidden bg-white">
                     <Wave3 />
-                    <div className="relative z-10 mx-auto max-w-7xl py-16">
-                        <div className="mb-12 text-center">
-                            <h2 className="mb-4 text-3xl font-bold text-blue-800">
-                                Meet Our Team
-                            </h2>
-                            <p className="mx-auto max-w-3xl text-lg text-blue-600">
-                                Our experienced guides and staff are the heart
-                                of Sea Hawk Adventure
-                            </p>
+
+                    <div className="relative z-10 py-24 sm:py-24">
+                        <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
+                            <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-6">
+                                <p className="text-3xl font-medium text-black sm:text-5xl">
+                                    Meet the team
+                                </p>
+
+                                <p className="mt-auto max-w-xl text-center text-lg leading-8 text-gray-600">
+                                    Our experienced guides and staff are the
+                                    heart of Sea Hawk Adventure
+                                </p>
+                            </div>
                         </div>
 
-                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                            {[0, 1, 2].map((index) => (
-                                <div
-                                    key={index}
-                                    className="overflow-hidden rounded-lg bg-white shadow-sm"
-                                >
-                                    <div className="relative h-64 overflow-hidden rounded-full">
-                                        <Image
-                                            src={`/images/main/t0${index}.jpg`}
-                                            alt={`Team Member ${index}`}
-                                            fill
-                                            className="object-cover"
-                                        />
+                        <div className="mx-auto mt-6 px-6 lg:px-8">
+                            <div className="relative mx-auto grid max-w-full gap-8 md:max-w-5xl md:grid-cols-3 md:gap-16 md:px-6">
+                                {teams.map((team, i) => (
+                                    <div
+                                        key={i}
+                                        className="group relative mt-8 flex cursor-pointer items-center gap-4 transition-all duration-300 ease-in hover:scale-[1.082] md:flex-col"
+                                    >
+                                        <div className="">
+                                            <Image
+                                                src={team.image}
+                                                alt="profile 1"
+                                                className="aspect-[1/1] h-40 w-40 rounded-full object-cover md:h-full md:w-full"
+                                            />
+                                        </div>
+                                        <div className="font-swim my-auto text-center">
+                                            <h3 className="text-2xl font-medium">
+                                                {team.author}
+                                            </h3>
+                                            <p className="text-base text-gray-500">
+                                                {team.description}
+                                            </p>
+                                            <a
+                                                href={team.href}
+                                                target="_black"
+                                                className="text-primary text-base tracking-wide"
+                                            >
+                                                <span className="absolute inset-0"></span>
+                                                {team.username}
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div className="p-4">
-                                        <h3 className="text-lg font-bold">{`Team Member ${index}`}</h3>
-                                        <p className="mb-2 text-blue-600">{`${
-                                            index === 1
-                                                ? "Founder & Lead Guide"
-                                                : index === 2
-                                                  ? "Co-Founder & Operations Manager"
-                                                  : index === 3
-                                                    ? "Senior Rafting Guide"
-                                                    : "Expedition Leader"
-                                        }`}</p>
-                                        <p className="text-sm text-gray-700">
-                                            With over {5 + index} years of
-                                            experience in adventure sports and a
-                                            passion for the outdoors, our team
-                                            member ensures every adventure is
-                                            safe and memorable.
-                                        </p>
-                                    </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -238,10 +278,10 @@ export default function AboutUs() {
                     <Wave4 />
                     <div className="relative z-10 mx-auto max-w-7xl py-16">
                         <div className="mb-12 text-center">
-                            <h2 className="mb-4 text-3xl font-bold text-blue-800">
+                            <h2 className="mb-4 text-3xl font-medium md:text-4xl">
                                 Our Certifications
                             </h2>
-                            <p className="mx-auto max-w-3xl text-lg text-blue-600">
+                            <p className="mx-auto max-w-3xl text-lg text-gray-700">
                                 We maintain the highest standards of safety and
                                 professionalism
                             </p>
@@ -313,7 +353,7 @@ export default function AboutUs() {
                     <div className="mx-auto max-w-7xl">
                         <div className="grid items-center gap-12 md:grid-cols-2">
                             <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-                                <Image
+                                <CldImageComponent
                                     src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3101.jpg"
                                     alt="Community initiatives"
                                     fill
@@ -322,7 +362,7 @@ export default function AboutUs() {
                             </div>
                             <div className="space-y-6">
                                 <div>
-                                    <h2 className="mb-4 text-3xl font-bold text-blue-800">
+                                    <h2 className="mb-4 text-3xl font-medium md:text-4xl">
                                         Our Community Impact
                                     </h2>
                                     <p className="mb-4 leading-relaxed text-gray-700">
@@ -363,3 +403,36 @@ export default function AboutUs() {
         </div>
     );
 }
+
+export const metadata: Metadata = {
+    title: "About Us",
+    description:
+        "Discover the story behind Sea Hawk Adventure and our passion for adventure",
+    openGraph: {
+        type: "website",
+        title: "About Us",
+        description:
+            "Discover the story behind Sea Hawk Adventure and our passion for adventure",
+        url: `${BASE_URL}/about-us`,
+        images: [
+            {
+                url: `https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg`,
+                width: 1200,
+                height: 630,
+                alt: "About Us",
+            },
+        ],
+        siteName: "Sea Hawk Adventure",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About Us",
+        description:
+            "Discover the story behind Sea Hawk Adventure and our passion for adventure",
+        images: [
+            `https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg`,
+        ],
+        site: "@SeaHawkAdventure",
+        creator: "@SeaHawkAdventure",
+    },
+};

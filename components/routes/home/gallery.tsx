@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { X } from "lucide-react";
 import { Block, Grid } from "@/components/motion/grid";
 import { Wave2 } from "../shared/wave";
+import { CldImage } from "next-cloudinary";
 
 const galleryImages = [
     {
@@ -131,11 +131,12 @@ export default function Gallery() {
                                 className="relative aspect-square cursor-pointer overflow-hidden rounded-lg shadow-md transition hover:opacity-90"
                                 onClick={() => setSelectedImage(image.src)}
                             >
-                                <Image
+                                <CldImage
                                     src={image.src || "/placeholder.svg"}
                                     alt={image.alt}
-                                    fill
-                                    className="aspect-video object-cover"
+                                    width={1920}
+                                    height={1080}
+                                    className="aspect-video object-cover size-full"
                                 />
                             </div>
                         </Block>
@@ -154,11 +155,12 @@ export default function Gallery() {
                             <X className="h-6 w-6" />
                         </button>
                         <div className="relative h-[80vh] w-full max-w-4xl">
-                            <Image
+                            <CldImage
                                 src={selectedImage || "/placeholder.svg"}
                                 alt="Gallery image"
-                                fill
-                                className="object-contain"
+                                width={1920}
+                                height={1080}
+                                className="object-contain size-full"
                             />
                         </div>
                     </div>
