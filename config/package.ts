@@ -16,7 +16,7 @@ export const __R1__ = {
         },
         difficulty: "Family Friendly",
         season: "Mid Sept till end of June",
-        price: "1",
+        price: "599",
         groupSize: "6-8",
     },
 
