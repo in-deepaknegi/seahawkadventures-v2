@@ -1,6 +1,13 @@
 import allContents from "@/.content-collections/generated/allContents";
 import React from "react";
-import { __G1__, __R1__, __R2__, __R3__, BASE_URL } from "@/config/package";
+import {
+    __R1__,
+    __R2__,
+    __R3__,
+    __K1__,
+    __K2__,
+    BASE_URL,
+} from "@/config/package";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -49,12 +56,13 @@ const page = async ({ params }: { params: Params }) => {
     let content_3 = null;
     let content_4 = null;
     let content_5 = null;
+    let content_6 = null;
 
     switch (doc?.slug) {
         case "ganga-river-rafting-marine-drive-shivpuri":
             content_0 = __R1__.__p__;
             content_1 = __R1__.overview;
-            content_2 = __G1__.__i__;
+            content_2 = __R1__.__i__;
             content_3 = __R1__.gallery;
             content_4 = __R1__.faq;
             content_5 = __R1__.itinerary;
@@ -62,7 +70,7 @@ const page = async ({ params }: { params: Params }) => {
         case "ganga-river-rafting-shivpuri-tapovan":
             content_0 = __R2__.__p__;
             content_1 = __R2__.overview;
-            content_2 = __G1__.__i__;
+            content_2 = __R2__.__i__;
             content_3 = __R2__.gallery;
             content_4 = __R2__.faq;
             content_5 = __R2__.itinerary;
@@ -70,10 +78,28 @@ const page = async ({ params }: { params: Params }) => {
         case "ganga-river-rafting-marine-drive-tapovan":
             content_0 = __R3__.__p__;
             content_1 = __R3__.overview;
-            content_2 = __G1__.__i__;
+            content_2 = __R3__.__i__;
             content_3 = __R3__.gallery;
             content_4 = __R3__.faq;
             content_5 = __R3__.itinerary;
+            break;
+        case "kayak-basic-lessons-in-rishikesh":
+            content_0 = __K1__.__p__;
+            content_1 = __K1__.overview;
+            content_2 = __K1__.__i__;
+            content_3 = __K1__.gallery;
+            content_4 = __K1__.faq;
+            content_5 = __K1__.itinerary;
+            content_6 = __K1__.extras;
+            break;
+        case "kayak-complete-lessons-in-rishikesh":
+            content_0 = __K2__.__p__;
+            content_1 = __K2__.overview;
+            content_2 = __K2__.__i__;
+            content_3 = __K2__.gallery;
+            content_4 = __K2__.faq;
+            content_5 = __K2__.itinerary;
+            content_6 = __K2__.extras;
             break;
         default:
             break;
@@ -265,6 +291,32 @@ const page = async ({ params }: { params: Params }) => {
                                                             {index + 1}
                                                         </span>
                                                     </div>
+                                                    <div>
+                                                        <h3 className="text-lg font-semibold">
+                                                            {item.label}
+                                                        </h3>
+                                                        <p className="text-gray-700">
+                                                            {item.description}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Itinerary */}
+                                <div>
+                                    <h2 className="mb-4 border-b py-2 text-2xl font-medium text-blue-700 md:text-3xl">
+                                        Extras
+                                    </h2>
+                                    <div className="mt-3 space-y-4">
+                                        {content_6?.map((item, index) => (
+                                            <div
+                                                key={index}
+                                                className="flex gap-4"
+                                            >
+                                                <div className="flex items-start gap-2">
                                                     <div>
                                                         <h3 className="text-lg font-semibold">
                                                             {item.label}

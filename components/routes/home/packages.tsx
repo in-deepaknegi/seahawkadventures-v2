@@ -24,7 +24,7 @@ const packages = {
             duration: "2 hours",
             link: "/tours/ganga-river-rafting-marine-drive-shivpuri",
             groupSize: "6-8 people",
-            price: "₹620",
+            price: "₹ 599",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
         },
         {
@@ -34,7 +34,7 @@ const packages = {
             duration: "3 hours",
             link: "/tours/ganga-river-rafting-shivpuri-tapovan",
             groupSize: "6-8 people",
-            price: "₹1,020",
+            price: "₹ 999",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
         },
         {
@@ -44,31 +44,42 @@ const packages = {
             duration: "4 hours",
             link: "/tours/ganga-river-rafting-marine-drive-tapovan",
             groupSize: "6-8 people",
-            price: "₹1,520",
+            price: "₹ 1499",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
+        },
+        {
+            title: "36 Km Rafting",
+            description:
+                "Conquer Grade III-IV rapids for experienced rafters seeking an adrenaline rush",
+            duration: "4 hours",
+            link: "/tours/ganga-river-rafting-marine-drive-tapovan",
+            groupSize: "6-8 people",
+            price: "₹ 2499",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
         },
     ],
     kayaking: [
         {
-            title: "Kayaking Basics",
+            title: "Basics Kayak Lessons (4 days)",
             description:
                 "Learn fundamental kayaking skills in calm waters with certified instructors",
-            duration: "2 hours",
-            link: "#",
-            groupSize: "4-6 people",
-            price: "₹1,500",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3200.heic",
+            duration: "2-3 hours per day",
+            link: "/tours/kayak-basic-lessons-in-rishikesh",
+            groupSize: "2-5 people",
+            price: "₹ 3499",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744875212/img-3202.jpg",
         },
         {
-            title: "River Kayaking Tour",
+            title: "Complete Kayak Lessons (7 days)",
             description:
-                "Explore the scenic beauty of Rishikesh rivers with a guided kayaking tour",
-            duration: "3 hours",
-            link: "#",
-            groupSize: "4-6 people",
-            price: "₹2,200",
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3201.heic",
+                "Learn fundamental kayaking skills in calm waters with certified instructors",
+            duration: "2-3 hours per day",
+            link: "/tours/kayak-complete-lessons-in-rishikesh",
+            groupSize: "2-5 people",
+            price: "₹ 2999",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3200.heic",
         },
+        
     ],
     expedition: [
         {
@@ -78,7 +89,7 @@ const packages = {
             duration: "8 hours",
             link: "#",
             groupSize: "8-12 people",
-            price: "₹2,000",
+            price: "₹2000",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
         },
         {
@@ -88,7 +99,29 @@ const packages = {
             duration: "2 days",
             link: "#",
             groupSize: "8-12 people",
-            price: "₹4,500",
+            price: "₹4500",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",
+        },
+    ],
+    camping: [
+        {
+            title: "Camping with Rafting (16 Km)",
+            description:
+                "Explore the foothills of the Himalayas with a guided day trek",
+            duration: "1 day 1 night",
+            link: "#",
+            groupSize: "No limit",
+            price: "₹ 2200",
+            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
+        },
+        {
+            title: "Camping without Rafting",
+            description:
+                "Experience the wilderness with an overnight camping expedition",
+            duration: "1 day 1 night",
+            link: "#",
+            groupSize: "No limit",
+            price: "₹1500",
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",
         },
     ],
@@ -109,7 +142,7 @@ export default function Packages() {
                 </div>
 
                 <Tabs defaultValue="rafting" className="relative z-20 w-full">
-                    <TabsList className="mx-auto mb-8 grid h-full w-full max-w-3xl grid-cols-3 bg-blue-900 text-white">
+                    <TabsList className="mx-auto mb-8 grid h-full w-full max-w-3xl grid-cols-4 bg-blue-900 text-white">
                         <TabsTrigger value="rafting" className="text-lg">
                             Rafting
                         </TabsTrigger>
@@ -118,6 +151,9 @@ export default function Packages() {
                         </TabsTrigger>
                         <TabsTrigger value="expedition" className="text-lg">
                             Expedition
+                        </TabsTrigger>
+                        <TabsTrigger value="camping" className="text-lg">
+                            Camping
                         </TabsTrigger>
                     </TabsList>
 
@@ -140,8 +176,8 @@ export default function Packages() {
                                                     "/placeholder.svg"
                                                 }
                                                 alt={pkg.title}
-                                                width={1920}
-                                                height={1080}
+                                                width={1080}
+                                                height={680}
                                                 className="size-full object-cover"
                                             />
                                         </div>

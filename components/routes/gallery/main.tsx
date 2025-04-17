@@ -135,6 +135,101 @@ const galleryImages = [
         alt: "Rafting safety demonstration",
         category: "expedition",
     },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3202.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3203.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3204.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3205.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3206.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3207.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3208.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3209.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3210.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3211.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3212.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3213.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3214.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3215.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3216.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3217.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3218.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    {
+        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744876522/img-3219.jpg",
+        alt: "Rafting safety demonstration",
+        category: "expedition",
+    },
+    
+    
+
+    
+    
 ];
 
 export default function GalleryPage() {

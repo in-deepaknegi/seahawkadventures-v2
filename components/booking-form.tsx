@@ -93,7 +93,7 @@ export default function BookingForm({
             const response = await createPayment(amount, bookingData);
 
             if ('error' in response) {
-                setError(response.error);
+                setError(response.error || "An error occurred");
                 return;
             }
 
