@@ -3,20 +3,15 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { usePathname } from "next/navigation";
 import {
     Menu,
     X,
     ChevronDown,
     ChevronRight,
-    Facebook,
-    Instagram,
-    MessageCircle,
 } from "lucide-react";
 import {
     RiFacebookFill,
-    RiFacebookLine,
     RiInstagramLine,
     RiWhatsappLine,
 } from "@remixicon/react";
@@ -169,14 +164,14 @@ export default function Navbar() {
 
     return (
         <header className="fixed top-0 z-[9999] w-full bg-white shadow-sm backdrop-blur-sm">
-            <div className="mx-auto flex w-full max-w-full items-center justify-between px-10 py-2 md:px-10">
+            <div className="mx-auto flex w-full max-w-full items-center justify-between px-4 py-0 md:px-10">
                 <Link href="/" className="flex items-center">
                     <Image
                         src="/images/logo.png"
                         alt="Seahawk Adventure"
-                        width={160}
-                        height={60}
-                        className="object-contain"
+                        width={1000}
+                        height={1000}
+                        className="aspect-video h-full w-28 object-contain md:w-32"
                     />
                 </Link>
 
@@ -258,7 +253,7 @@ export default function Navbar() {
 
                 <div className="hidden items-center space-x-2 md:flex">
                     <Link
-                        href="https://facebook.com"
+                        href="https://www.facebook.com/seahawkadventure/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-full p-1 text-white transition-colors hover:opacity-90"
@@ -267,7 +262,7 @@ export default function Navbar() {
                         <RiFacebookFill className="h-5 w-5" />
                     </Link>
                     <Link
-                        href="https://instagram.com"
+                        href={`https://www.instagram.com/seahawkadventures/`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-full p-1 text-white transition-colors hover:opacity-90"
@@ -279,7 +274,7 @@ export default function Navbar() {
                         <RiInstagramLine className="h-5 w-5" />
                     </Link>
                     <Link
-                        href="https://wa.me/your-number"
+                        href={`https://wa.me/919756620538/?text=Hi there!`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-full p-1 text-white transition-colors hover:opacity-90"
@@ -288,7 +283,7 @@ export default function Navbar() {
                         <RiWhatsappLine className="h-5 w-5" />
                     </Link>
                     <Link
-                        href="https://wa.me/your-number"
+                        href="https://www.tripadvisor.in/Attraction_Review-g580106-d21358541-Reviews-Sea_Hawk_Adventure-Rishikesh_Dehradun_District_Uttarakhand.html"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-full p-1 text-white transition-colors hover:opacity-90"
@@ -321,7 +316,7 @@ export default function Navbar() {
             {/* Mobile Navigation */}
             {isMenuOpen && (
                 <div className="border-t bg-white md:hidden">
-                    <div className="container space-y-1 py-4">
+                    <div className="container space-y-1 px-2 py-4">
                         {navItems.map((item) => (
                             <div
                                 key={item.title}
@@ -335,7 +330,7 @@ export default function Navbar() {
                                                     item.title,
                                                 )
                                             }
-                                            className={`flex w-full items-center justify-between py-3 text-base font-medium ${
+                                            className={`flex w-full items-center justify-between py-3 text-[15px] font-medium ${
                                                 isActive(item.href)
                                                     ? "text-primary"
                                                     : ""
@@ -353,29 +348,35 @@ export default function Navbar() {
                                         </button>
                                         {openMobileDropdown === item.title && (
                                             <div className="space-y-1 pb-2 pl-4">
-                                                {item.children.map((child) => (
-                                                    <Link
-                                                        key={child.href}
-                                                        href={child.href}
-                                                        className={`block py-2 text-sm ${
-                                                            isActive(child.href)
-                                                                ? "text-primary font-medium"
-                                                                : "text-gray-600"
-                                                        }`}
-                                                        onClick={() =>
-                                                            setIsMenuOpen(false)
-                                                        }
-                                                    >
-                                                        {child.title}
-                                                    </Link>
-                                                ))}
+                                                {item.children.map(
+                                                    (child, index) => (
+                                                        <Link
+                                                            key={`${child.href}-${index}`}
+                                                            href={child.href}
+                                                            className={`block py-2 text-[15px] ${
+                                                                isActive(
+                                                                    child.href,
+                                                                )
+                                                                    ? "text-primary font-medium"
+                                                                    : "text-gray-600"
+                                                            }`}
+                                                            onClick={() =>
+                                                                setIsMenuOpen(
+                                                                    false,
+                                                                )
+                                                            }
+                                                        >
+                                                            {child.title}
+                                                        </Link>
+                                                    ),
+                                                )}
                                             </div>
                                         )}
                                     </div>
                                 ) : (
                                     <Link
                                         href={item.href}
-                                        className={`block py-3 text-base font-medium ${isActive(item.href) ? "text-primary" : ""}`}
+                                        className={`block py-3 text-[15px] font-medium ${isActive(item.href) ? "text-primary" : ""}`}
                                         onClick={() => setIsMenuOpen(false)}
                                     >
                                         {item.title}
@@ -385,36 +386,51 @@ export default function Navbar() {
                         ))}
                         <div className="pt-2">
                             <div className="flex items-center justify-center space-x-4">
-                                <a
-                                    href="https://facebook.com"
+                                <Link
+                                    href="https://www.facebook.com/seahawkadventure/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="rounded-full p-2 text-white transition-colors hover:opacity-90"
+                                    className="rounded-full p-1 text-white transition-colors hover:opacity-90"
                                     style={{ backgroundColor: "#1877F2" }}
                                 >
-                                    <Facebook className="h-5 w-5" />
-                                </a>
-                                <a
-                                    href="https://instagram.com"
+                                    <RiFacebookFill className="h-5 w-5" />
+                                </Link>
+                                <Link
+                                    href={`https://www.instagram.com/seahawkadventures/`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="rounded-full p-2 text-white transition-colors hover:opacity-90"
+                                    className="rounded-full p-1 text-white transition-colors hover:opacity-90"
                                     style={{
                                         background:
                                             "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
                                     }}
                                 >
-                                    <Instagram className="h-5 w-5" />
-                                </a>
-                                <a
-                                    href="https://wa.me/your-number"
+                                    <RiInstagramLine className="h-5 w-5" />
+                                </Link>
+                                <Link
+                                    href={`https://wa.me/919756620538/?text=Hi there!`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="rounded-full p-2 text-white transition-colors hover:opacity-90"
+                                    className="rounded-full p-1 text-white transition-colors hover:opacity-90"
                                     style={{ backgroundColor: "#25D366" }}
                                 >
-                                    <MessageCircle className="h-5 w-5" />
-                                </a>
+                                    <RiWhatsappLine className="h-5 w-5" />
+                                </Link>
+                                <Link
+                                    href="https://www.tripadvisor.in/Attraction_Review-g580106-d21358541-Reviews-Sea_Hawk_Adventure-Rishikesh_Dehradun_District_Uttarakhand.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-full p-1 text-white transition-colors hover:opacity-90"
+                                    style={{ backgroundColor: "#25D366" }}
+                                >
+                                    <Image
+                                        src="/images/logos/tripadvisor-icon.png"
+                                        alt="Whatsapp"
+                                        width={100}
+                                        height={100}
+                                        className="size-5 rounded-full"
+                                    />
+                                </Link>
                             </div>
                         </div>
                     </div>

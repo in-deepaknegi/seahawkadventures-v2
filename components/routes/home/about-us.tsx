@@ -1,7 +1,5 @@
 "use client";
-import { Shield, Award, Users, Check } from "lucide-react";
 import { CldImage } from "next-cloudinary";
-import { Wave2 } from "../shared/wave";
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
 const images = [
     "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1101.jpg",
@@ -14,20 +12,19 @@ const images = [
     "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1402.jpg",
     "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1403.jpg",
     "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1404.jpg",
-    
 ];
 
 export default function AboutUs() {
     return (
         <>
             <section className="overflow-hidden bg-gray-900 text-white">
-                <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-10 md:grid-cols-[1fr_300px] md:px-20 xl:px-10">
-                    <div className="space-y-6 py-16 md:py-24">
+                <div className="relative mx-auto grid w-full max-w-7xl gap-12 px-0 md:grid-cols-[1fr_300px] md:px-20 xl:px-10">
+                    <div className="space-y-6 px-5 py-16 md:py-24">
                         <div className="text-sm uppercase">Experience</div>
                         <h2 className="mb-4 text-4xl font-normal md:text-4xl xl:text-5xl">
                             Why Sea Hawk Adventure?
                         </h2>
-                        
+
                         <p className="max-w-xl text-gray-300">
                             Founded by adventure enthusiasts with over 15 years
                             of experience, Sea Hawk Adventure was born from a
@@ -70,8 +67,8 @@ export default function AboutUs() {
                             </div>
                         </div>
                     </div>
-                    <div className="absolute right-0 w-96">
-                        <div className="flex h-full w-full items-center justify-center gap-8 bg-yellow-50 px-6 text-center text-gray-800">
+                    <div className="relative right-0 h-80 w-full md:h-full overflow-hidden md:absolute md:w-96">
+                        <div className="flex h-full w-full items-center justify-center gap-8 bg-yellow-50 px-10 text-center text-gray-800 md:px-6">
                             <InfiniteSlider direction="vertical" speed={50}>
                                 {images.map((image, i) => (
                                     <CldImage

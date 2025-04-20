@@ -3,14 +3,9 @@
 import type React from "react";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { Wave4 } from "../shared/wave";
 import Link from "next/link";
-import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 
 export default function Contact() {
@@ -46,8 +41,8 @@ export default function Contact() {
     return (
         <>
             <section id="contact" className="bg-gray-900 py-20 text-white">
-                <div className="mx-auto w-full max-w-7xl px-10 md:px-16 xl:px-10">
-                    <div className="mx-auto mb-14 max-w-3xl text-center">
+                <div className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10">
+                    <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
                         <div className="text-sm uppercase">GET IN TOUCH</div>
 
                         <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
@@ -61,12 +56,12 @@ export default function Contact() {
                     </div>
 
                     <div className="grid gap-16 md:grid-cols-2">
-                        <div className="rounded-xl bg-gray-900 p-8">
+                        <div className="rounded-xl bg-gray-900 px-2 md:p-8">
                             <ContactForm />
                         </div>
 
                         <div className="space-y-8">
-                            <div className="space-y-4 rounded-xl bg-gray-800 p-8">
+                            <div className="space-y-4 rounded-xl bg-gray-800 px-2 py-4 md:p-8">
                                 <div className="flex gap-4">
                                     <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gray-900">
                                         <MapPin className="h-5 w-5 text-white" />

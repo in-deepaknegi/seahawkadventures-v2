@@ -19,11 +19,9 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Award, Check } from "lucide-react";
+import { Clock, Users, Award } from "lucide-react";
 import Link from "next/link";
-import { Wave1 } from "../shared/wave";
 import { CldImage } from "next-cloudinary";
-import Image from "next/image";
 
 const packages = {
     rafting: [
@@ -136,7 +134,7 @@ const packages = {
     ],
 };
 
-export default function     Packages() {
+export default function Packages() {
     const plugin = React.useRef(
         Autoplay({ delay: 4000, stopOnInteraction: false }),
     );
@@ -248,7 +246,7 @@ export default function     Packages() {
                 <Wave1 />
             </section> */}
 
-            <section id="packages" className="font-open-sans py-20 bg-white">
+            <section id="packages" className="font-open-sans bg-white py-20">
                 <div className="">
                     <div className="mx-auto mb-14 max-w-3xl text-center">
                         <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
@@ -263,31 +261,31 @@ export default function     Packages() {
 
                     <Tabs
                         defaultValue="rafting"
-                        className="mx-auto w-full max-w-7xl px-10 md:px-16 xl:px-10"
+                        className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10"
                     >
                         <div className="mb-12 flex justify-center">
                             <TabsList className="h-auto rounded-full bg-gray-100 p-1">
                                 <TabsTrigger
                                     value="rafting"
-                                    className="rounded-full px-8 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white cursor-pointer"
+                                    className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
                                 >
                                     Rafting
                                 </TabsTrigger>
                                 <TabsTrigger
                                     value="kayaking"
-                                    className="rounded-full px-8 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white cursor-pointer"
+                                    className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
                                 >
                                     Kayaking
                                 </TabsTrigger>
                                 <TabsTrigger
                                     value="expedition"
-                                    className="rounded-full px-8 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white cursor-pointer"
+                                    className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
                                 >
                                     Expedition
                                 </TabsTrigger>
                                 <TabsTrigger
                                     value="camping"
-                                    className="rounded-full px-8 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white cursor-pointer"
+                                    className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
                                 >
                                     Camping
                                 </TabsTrigger>
@@ -361,16 +359,29 @@ export default function     Packages() {
                                                             </div>
                                                         </div>
                                                     </CardContent>
-                                                    <CardFooter className="flex gap-4 justify-between bg-white p-6 text-black">
+                                                    <CardFooter className="flex justify-between gap-4 bg-white p-6 text-black">
                                                         <div className="flex flex-col">
                                                             <div className="flex items-baseline gap-2">
-                                                                <span className="text-3xl font-medium">₹{pkg.price}</span>
-                                                                <span className="text-sm text-gray-500 line-through">₹{pkg.price + pkg.price * 15 / 100}</span>
+                                                                <span className="text-3xl font-medium">
+                                                                    ₹{pkg.price}
+                                                                </span>
+                                                                <span className="text-sm text-gray-500 line-through">
+                                                                    ₹
+                                                                    {pkg.price +
+                                                                        (pkg.price *
+                                                                            15) /
+                                                                            100}
+                                                                </span>
                                                             </div>
-                                                            <span className="text-xs text-gray-500">per person</span>
+                                                            <span className="text-xs text-gray-500">
+                                                                per person
+                                                            </span>
                                                         </div>
                                                         <Button className="rounded-full bg-blue-700 font-medium hover:bg-blue-800">
-                                                            <Link href={pkg.link} className="flex w-full items-center justify-center">
+                                                            <Link
+                                                                href={pkg.link}
+                                                                className="flex w-full items-center justify-center"
+                                                            >
                                                                 Book Now
                                                             </Link>
                                                         </Button>
@@ -379,6 +390,12 @@ export default function     Packages() {
                                             </CarouselItem>
                                         ))}
                                     </CarouselContent>
+
+                                    <div className="flex items-end justify-end gap-2">
+                                        <CarouselPrevious className="relative inset-0 mt-8 block size-9 bg-transparent bg-none shadow-none hover:bg-transparent md:hidden [&>svg]:size-7 [&>svg]:text-black" />
+                                        <CarouselNext className="relative inset-0 mt-8 block size-9 bg-transparent bg-none shadow-none hover:bg-transparent md:hidden [&>svg]:size-7 [&>svg]:text-black" />
+                                    </div>
+
                                     <CarouselPrevious className="absolute -left-10 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
                                     <CarouselNext className="absolute -right-13 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
                                 </Carousel>

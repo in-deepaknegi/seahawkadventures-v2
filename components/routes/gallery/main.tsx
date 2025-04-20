@@ -211,11 +211,6 @@ const galleryImages = [
         category: "camping",
     },
     {
-        src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1411.jpg",
-        alt: "Rafting safety demonstration",
-        category: "camping",
-    },
-    {
         src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1301.jpg",
         alt: "Rafting safety demonstration",
         category: "expedition",
