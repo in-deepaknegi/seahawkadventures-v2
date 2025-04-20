@@ -136,7 +136,7 @@ const packages = {
     ],
 };
 
-export default function Packages() {
+export default function     Packages() {
     const plugin = React.useRef(
         Autoplay({ delay: 4000, stopOnInteraction: false }),
     );
@@ -298,7 +298,7 @@ export default function Packages() {
                             <TabsContent
                                 key={category}
                                 value={category}
-                                className="mt-0"
+                                className="mt-0 mb-1"
                             >
                                 <Carousel
                                     opts={{

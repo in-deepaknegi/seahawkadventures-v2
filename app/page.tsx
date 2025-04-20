@@ -19,6 +19,9 @@ import Hero from "@/components/routes/home/hero";
 import Packages from "@/components/routes/home/packages";
 import AboutUs from "@/components/routes/home/about-us";
 import Gallery from "@/components/routes/home/gallery";
+import Feedback from "@/components/routes/home/feedback";
+import Contact from "@/components/routes/home/contact";
+import Affiliations from "@/components/routes/home/affiliations";
 
 export default function Home() {
     return (
@@ -28,7 +31,12 @@ export default function Home() {
                 <Packages />
                 <AboutUs />
                 <Gallery />
+                <Feedback />
+                <Affiliations/>
+                <Contact/>
             </main>
+
+
             <div className="flex min-h-screen flex-col">
                 {/* <SiteHeader /> */}
 
@@ -66,223 +74,10 @@ export default function Home() {
                     {/* Packages Section */}
 
                     {/* Why Choose Us Section */}
-                    <section
-                        id="about"
-                        className="relative bg-gray-900 text-white"
-                    >
-                        <Wave2 />
-                        <div className="container px-16 py-20">
-                            <div className="grid gap-16 md:grid-cols-[1fr_400px]">
-                                <div className="space-y-8">
-                                    <div>
-                                        <h5 className="text-primary mb-3 mix-blend-difference">
-                                            OUR EXPERIENCE
-                                        </h5>
-                                        <h2 className="mb-5 text-3xl font-bold mix-blend-difference md:text-4xl">
-                                            Why Sea Hawk Adventure?
-                                        </h2>
-                                        <p className="max-w-2xl text-base text-gray-300 mix-blend-difference">
-                                            With 15 years of experience, we are
-                                            ready to help you. Sea Hawk
-                                            Adventure is tailor-made for
-                                            adventure seekers looking for safe,
-                                            exciting, and memorable experiences.
-                                        </p>
-                                    </div>
-
-                                    <div className="grid grid-cols-3 gap-8 py-8">
-                                        <div>
-                                            <p className="text-3xl font-bold">
-                                                100+
-                                            </p>
-                                            <p className="text-gray-400">
-                                                Rafting Trips
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p className="text-3xl font-bold">
-                                                43,000+
-                                            </p>
-                                            <p className="text-gray-400">
-                                                Happy Adventurers
-                                            </p>
-                                        </div>
-                                        <div>
-                                            <p className="text-3xl font-bold">
-                                                30+
-                                            </p>
-                                            <p className="text-gray-400">
-                                                Expert Guides
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="space-y-6">
-                                        <div className="flex">
-                                            <div className="bg-primary/20 mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full">
-                                                <Check className="text-primary h-6 w-6" />
-                                            </div>
-                                            <div>
-                                                <h4 className="mb-2 text-lg font-medium">
-                                                    Safety First
-                                                </h4>
-                                                <p className="text-gray-300">
-                                                    We maintain the highest
-                                                    safety standards with
-                                                    regular equipment checks and
-                                                    comprehensive training for
-                                                    all guides.
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex">
-                                            <div className="bg-primary/20 mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full">
-                                                <Check className="text-primary h-6 w-6" />
-                                            </div>
-                                            <div>
-                                                <h4 className="mb-2 text-lg font-medium">
-                                                    Experienced Guides
-                                                </h4>
-                                                <p className="text-gray-300">
-                                                    Our team consists of
-                                                    certified professionals with
-                                                    years of experience in
-                                                    adventure sports and local
-                                                    knowledge.
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex">
-                                            <div className="bg-primary/20 mr-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full">
-                                                <Check className="text-primary h-6 w-6" />
-                                            </div>
-                                            <div>
-                                                <h4 className="mb-2 text-lg font-medium">
-                                                    Quality Equipment
-                                                </h4>
-                                                <p className="text-gray-300">
-                                                    We use only the best,
-                                                    internationally certified
-                                                    equipment that is regularly
-                                                    maintained and updated.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="bg-primary/10 flex flex-col items-center justify-center rounded-xl p-12 text-center">
-                                    <div className="origin-center rotate-90 transform">
-                                        <p className="text-primary mb-2 text-lg">
-                                            With 15 Years of experience
-                                        </p>
-                                        <p className="text-2xl font-medium">
-                                            we are ready to help you
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
 
                     {/* Gallery Section */}
-               
 
                     {/* Testimonials Section */}
-                    <section
-                        id="testimonials"
-                        className="bg-gray-900 py-20 text-white"
-                    >
-                        <div className="container">
-                            <div className="mx-auto mb-14 max-w-3xl text-center">
-                                <h5 className="text-primary mb-3">
-                                    TESTIMONIALS
-                                </h5>
-                                <h2 className="mb-5 text-3xl font-bold md:text-4xl">
-                                    What Our Adventurers Say
-                                </h2>
-                                <p className="text-gray-300">
-                                    Hear from those who've experienced our
-                                    adventures firsthand
-                                </p>
-                            </div>
-
-                            <div className="grid gap-8 md:grid-cols-3">
-                                {[
-                                    {
-                                        name: "Vikram Sharma",
-                                        location: "Delhi",
-                                        rating: 5,
-                                        comment:
-                                            "Amazing experience with Sea Hawk! The guides were professional and the rafting was thrilling.",
-                                        color: "bg-gray-800",
-                                        icon: "V",
-                                    },
-                                    {
-                                        name: "Samantha Jain",
-                                        location: "Mumbai",
-                                        rating: 5,
-                                        comment:
-                                            "Best adventure company in Rishikesh. The kayaking lessons were excellent and the instructors were patient.",
-                                        color: "bg-gray-800",
-                                        icon: "S",
-                                    },
-                                    {
-                                        name: "Rahul Patel",
-                                        location: "Ahmedabad",
-                                        rating: 5,
-                                        comment:
-                                            "Had an incredible time with the 26km rafting package. Will definitely come back!",
-                                        color: "bg-gray-800",
-                                        icon: "R",
-                                    },
-                                ].map((testimonial, index) => (
-                                    <div
-                                        key={index}
-                                        className="rounded-xl bg-gray-800 p-8"
-                                    >
-                                        <div className="mb-6 flex items-center">
-                                            <div
-                                                className={`bg-primary/20 text-primary mr-4 flex h-12 w-12 items-center justify-center rounded-full text-xl font-bold`}
-                                            >
-                                                {testimonial.icon}
-                                            </div>
-                                            <div>
-                                                <h4 className="text-lg font-bold">
-                                                    {testimonial.name}
-                                                </h4>
-                                                <p className="text-gray-400">
-                                                    {testimonial.location}
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="mb-4 flex text-yellow-400">
-                                            {Array.from({
-                                                length: testimonial.rating,
-                                            }).map((_, i) => (
-                                                <Star
-                                                    key={i}
-                                                    className="h-5 w-5 fill-current"
-                                                />
-                                            ))}
-                                        </div>
-                                        <p className="text-gray-300">
-                                            {testimonial.comment}
-                                        </p>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mt-10 text-center">
-                                <Link href="/feedback">
-                                    <Button className="bg-primary hover:bg-primary/90 rounded-full px-8 py-5">
-                                        View All Testimonials
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                    </section>
 
                     {/* Affiliations Section */}
                     <section className="py-16">

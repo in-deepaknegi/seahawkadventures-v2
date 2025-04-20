@@ -121,36 +121,10 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 import { feedback as data } from "@/config/feedback";
-import { Star } from "lucide-react";
+import { ChevronRight, Star } from "lucide-react";
 import { Wave3 } from "../shared/wave";
-const reviews = [
-    {
-        name: "John",
-        username: "@john",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        avatar: "https://avatar.vercel.sh/john",
-    },
-    {
-        name: "Jack",
-        username: "@jack",
-        body: "I've never seen anything like this before. It's amazing. I love it.",
-        avatar: "https://avatar.vercel.sh/jack",
-    },
-    {
-        name: "James",
-        username: "@james",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        avatar: "https://avatar.vercel.sh/james",
-    },
-    {
-        name: "Jane",
-        username: "@jane",
-        body: "I'm at a loss for words. This is amazing. I love it.",
-        avatar: "https://avatar.vercel.sh/jane",
-    },
-    // Add more reviews as needed from the feedback data
-];
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const firstRow = data.slice(0, data.length / 2);
 const secondRow = data.slice(data.length / 2);
 
@@ -170,8 +144,8 @@ const ReviewCard = ({
     return (
         <figure
             className={cn(
-                "relative h-full w-[350px] cursor-pointer overflow-hidden rounded-xl border p-6",
-                "border-gray-950/[.1] bg-white",
+                "relative h-full w-[350px] cursor-pointer overflow-hidden rounded-xl border p-4 xl:p-6",
+                "border-gray-950/[.1] bg-yellow-50",
             )}
         >
             <div className="flex items-start gap-4">
@@ -223,39 +197,53 @@ const ReviewCard = ({
 
 export default function Feedback() {
     return (
-        <div className="relative overflow-hidden">
-            <Wave3 />
-            <div className="py-20 relative z-10">
-                <div className="mb-12 text-center">
-                    <h2 className="mb-4 text-3xl font-semibold md:text-4xl">
-                        What Our Adventurers Say
-                    </h2>
-                    <p className="mx-auto max-w-3xl text-lg text-gray-600 dark:text-gray-400">
-                        Hear from those who have experienced the thrill with Sea
-                        Hawk Adventure
-                    </p>
+        <>
+            <section
+                id="testimonials"
+                className="bg-gray-900 py-20 text-white md:py-24"
+            >
+                <div className="mx-auto w-full max-w-full px-0">
+                    <div className="mx-auto mb-14 max-w-3xl text-center">
+                        <div className="text-sm uppercase">feedbacks</div>
+                        <h2 className="mb-4 text-4xl font-normal md:text-4xl xl:text-5xl">
+                            What Our Adventurers Say
+                        </h2>
+                        <p className="text-gray-300">
+                            Hear from those who've experienced our adventures
+                            firsthand
+                        </p>
+                    </div>
+
+                    <Marquee pauseOnHover className="[--duration:120s]">
+                        {firstRow.map((review, i) => (
+                            <ReviewCard
+                                key={`${review.username}-${i}`}
+                                {...review}
+                                index={i}
+                            />
+                        ))}
+                    </Marquee>
+                    <Marquee reverse pauseOnHover className="[--duration:120s]">
+                        {secondRow.map((review, i) => (
+                            <ReviewCard
+                                key={`${review.username}-${i}`}
+                                {...review}
+                                index={i}
+                            />
+                        ))}
+                    </Marquee>
+
+                    <div className="mt-10 text-center">
+                        <Link
+                            href="/feedback"
+                            className="flex items-center justify-center gap-2 text-white"
+                        >
+                            View All Testimonials
+                            <ChevronRight className="size-5" />
+                        </Link>
+                    </div>
                 </div>
-                <Marquee pauseOnHover className="[--duration:120s]">
-                    {firstRow.map((review, i) => (
-                        <ReviewCard
-                            key={`${review.username}-${i}`}
-                            {...review}
-                            index={i}
-                        />
-                    ))}
-                </Marquee>
-                <Marquee reverse pauseOnHover className="[--duration:120s]">
-                    {secondRow.map((review, i) => (
-                        <ReviewCard
-                            key={`${review.username}-${i}`}
-                            {...review}
-                            index={i}
-                        />
-                    ))}
-                </Marquee>
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-gray-50"></div>
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-gray-50"></div>
-            </div>
-        </div>
+            </section>
+        </>
     );
 }

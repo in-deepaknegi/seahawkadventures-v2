@@ -10,6 +10,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Wave4 } from "../shared/wave";
 import Link from "next/link";
+import Image from "next/image";
+import { ContactForm } from "@/components/contact-form";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -42,6 +44,61 @@ export default function Contact() {
     };
 
     return (
+        <>
+        <section id="contact" className="py-20 bg-gray-900 text-white">
+          <div className="container">
+            <div className="max-w-3xl mx-auto text-center mb-14">
+              <h5 className="text-primary mb-3">GET IN TOUCH</h5>
+              <h2 className="text-3xl md:text-4xl font-bold mb-5">Contact Us</h2>
+              <p className="text-gray-300">
+                Have questions or ready to book your adventure? Get in touch with our team!
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-16">
+              <div className="bg-gray-800 p-8 rounded-xl">
+                <ContactForm />
+              </div>
+
+              <div className="space-y-8">
+                <div className="bg-gray-800 p-8 rounded-xl">
+                  <h3 className="text-xl font-bold mb-6">Our Location</h3>
+                  <div className="flex items-start mb-6">
+                    <MapPin className="h-5 w-5 mr-4 mt-1 text-primary" />
+                    <p className="text-gray-300">
+                      123 Adventure Lane, Near Laxman Jhula,
+                      <br />
+                      Rishikesh, Uttarakhand, India - 249201
+                    </p>
+                  </div>
+                  <div className="flex items-center mb-6">
+                    <Phone className="h-5 w-5 mr-4 text-primary" />
+                    <p className="text-gray-300">+91 98765 43210</p>
+                  </div>
+                  <div className="flex items-center mb-6">
+                    <Mail className="h-5 w-5 mr-4 text-primary" />
+                    <p className="text-gray-300">info@seahawkadventure.com</p>
+                  </div>
+                  <div className="flex items-center">
+                    <Clock className="h-5 w-5 mr-4 text-primary" />
+                    <p className="text-gray-300">Open Daily: 8:00 AM - 8:00 PM</p>
+                  </div>
+                </div>
+
+                <div className="h-64 bg-gray-800 rounded-xl overflow-hidden">
+                  <Image
+                    src="/placeholder.svg?height=300&width=600&text=Google+Map"
+                    alt="Location Map"
+                    width={600}
+                    height={300}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="contact" className="relative overflow-hidden bg-blue-50">
             <Wave4 />
             <div className="relative z-10 mx-auto max-w-7xl px-4 pt-20 pb-52 md:px-10">
@@ -274,5 +331,7 @@ export default function Contact() {
                 </svg>
             </div>
         </section>
+        </>
+       
     );
 }
