@@ -1,285 +1,422 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
+    Menu,
+    X,
+    ChevronDown,
+    ChevronRight,
+    Facebook,
+    Instagram,
+    MessageCircle,
+} from "lucide-react";
+import {
+    RiFacebookFill,
+    RiFacebookLine,
+    RiInstagramLine,
+    RiWhatsappLine,
+} from "@remixicon/react";
 
-const menuItems = [
-    { label: "Home", href: "/" },
-    {
-        label: "Rafting",
-        subItems: [
-            {
-                label: "12 KM RAFTING",
-                href: "/packages/beginner-rafting-adventure",
-            },
-            {
-                label: "16 KM RAFTING",
-                href: "/packages/beginner-rafting-adventure",
-            },
-            {
-                label: "26 KM RAFTING",
-                href: "/packages/beginner-rafting-adventure",
-            },
-        ],
-    },
-    {
-        label: "Kayaking",
-        subItems: [
-            { label: "BEGINNER COURSE", href: "#" },
-            { label: "INTERMEDIATE COURSE", href: "#" },
-            { label: "ADVANCED COURSE", href: "#" },
-        ],
-    },
-    {
-        label: "Expedition",
-        subItems: [
-            {
-                label: "RAFTING EXPEDITION",
-                href: "/adventure-in-rishikesh/rafting-expedition",
-            },
-            {
-                label: "KAYAKING EXPEDITION",
-                href: "/adventure-in-rishikesh/kayaking-expedition",
-            },
-        ],
-    },
-    { label: "Gallery", href: "/gallery" },
-    {
-        label: "More links",
-        subItems: [
-            { label: "About us", href: "/about-us" },
-            { label: "Contact us", href: "/contact" },
-            { label: "Feedback", href: "/feedback" },
-            { label: "Terms & Conditions", href: "#" },
-        ],
-    },
-];
+type NavItem = {
+    title: string;
+    href: string;
+    children?: {
+        title: string;
+        href: string;
+    }[];
+};
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(
+        null,
+    );
     const pathname = usePathname();
-    const [scrollPosition, setScrollPosition] = useState(false);
-    const [openStates, setOpenStates] = useState<Record<string, boolean>>({});
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
-    const handleOpenChange = (label: string, isOpen: boolean) => {
-        setOpenStates((prev) => ({ ...prev, [label]: isOpen }));
-    };
     const isActive = (path: string) => {
         return pathname === path;
     };
 
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+        setOpenMobileDropdown(null);
+    };
+
+    const handleDropdownToggle = (title: string) => {
+        setOpenDropdown(title);
+    };
+
+    const handleDropdownClose = () => {
+        setOpenDropdown(null);
+    };
+
+    const handleMobileDropdownToggle = (title: string) => {
+        setOpenMobileDropdown(openMobileDropdown === title ? null : title);
+    };
+
+    // Close dropdown when clicking outside
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 1) {
-                setScrollPosition(true);
-            } else {
-                setScrollPosition(false);
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target as Node)
+            ) {
+                setOpenDropdown(null);
             }
         };
-        window.addEventListener("scroll", handleScroll);
+
+        document.addEventListener("mousedown", handleClickOutside);
         return () => {
-            window.removeEventListener("scroll", handleScroll);
+            document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
 
-    return (
-        <header
-            className={`sticky top-0 z-50 w-full ${scrollPosition ? "bg-white text-black" : "bg-black/50 text-white"} transition-all duration-700 ease-in-out`}
-        >
-            <div className="mx-auto flex items-center justify-between px-10 py-1.5">
-                <div className="flex items-center gap-2 bg-white rounded-xl p-2">
-                    <Link href="/" className="flex items-center">
-                        <Image
-                            src="/images/logo.png"
-                            alt="Seahawk Adventure"
-                            width={160}
-                            height={60}
-                            className="object-contain"
-                        />
-                    </Link>
-                </div>
+    const navItems: NavItem[] = [
+        { title: "Home", href: "/" },
+        {
+            title: "Rafting",
+            href: "#",
+            children: [
+                {
+                    title: "12 Km Rafting",
+                    href: "/tours/ganga-river-rafting-marine-drive-shivpuri",
+                },
+                {
+                    title: "16 Km Rafting",
+                    href: "/tours/ganga-river-rafting-shivpuri-tapovan",
+                },
+                {
+                    title: "26 Km Rafting",
+                    href: "/tours/ganga-river-rafting-marine-drive-tapovan",
+                },
+                {
+                    title: "36 Km Rafting",
+                    href: "/tours/ganga-river-rafting-kaudiyala-tapovan",
+                },
+            ],
+        },
+        {
+            title: "Kayaking",
+            href: "#",
+            children: [
+                {
+                    title: "Basics Kayak Lessons",
+                    href: "/tours/kayak-basic-lessons-in-rishikesh",
+                },
+                {
+                    title: "Complete Kayak Lessons",
+                    href: "/tours/kayak-complete-lessons-in-rishikesh",
+                },
+            ],
+        },
+        {
+            title: "Expedition",
+            href: "#",
+            children: [
+                {
+                    title: "Rafting Expedition",
+                    href: "#",
+                },
+                {
+                    title: "Kayak Expedition",
+                    href: "#",
+                },
+            ],
+        },
+        {
+            title: "Camping",
+            href: "#",
+            children: [
+                {
+                    title: "Camping with Rafting",
+                    href: "#",
+                },
+                {
+                    title: "Camping without Rafting",
+                    href: "#",
+                },
+            ],
+        },
+        {
+            title: "More links",
+            href: "#",
+            children: [
+                {
+                    title: "About Us",
+                    href: "#",
+                },
+                {
+                    title: "Contact Us",
+                    href: "#",
+                },
+                {
+                    title: "Gallery",
+                    href: "#",
+                },
+                {
+                    title: "Feedback",
+                    href: "#",
+                },
+            ],
+        },
+    ];
 
-                <div className="mx-auto hidden items-center space-x-6 md:flex">
-                    {menuItems.map((item) => (
-                        <div key={item.label}>
-                            {item.subItems ? (
-                                <DropdownMenu
-                                    open={openStates[item.label]}
-                                    onOpenChange={(isOpen) =>
-                                        handleOpenChange(item.label, isOpen)
+    return (
+        <header className="fixed top-0 z-[9999] w-full bg-white shadow-sm backdrop-blur-sm">
+            <div className="mx-auto flex w-full max-w-full items-center justify-between px-10 py-2 md:px-10">
+                <Link href="/" className="flex items-center">
+                    <Image
+                        src="/images/logo.png"
+                        alt="Seahawk Adventure"
+                        width={160}
+                        height={60}
+                        className="object-contain"
+                    />
+                </Link>
+
+                {/* Desktop Navigation */}
+                <nav
+                    className="font-open-sans hidden items-center space-x-8 md:flex"
+                    ref={dropdownRef}
+                >
+                    {navItems.map((item, index) => (
+                        <div
+                            key={`${item.title}-${index}`}
+                            className="group relative"
+                        >
+                            {item.children ? (
+                                <div
+                                    onMouseEnter={() =>
+                                        handleDropdownToggle(item.title)
                                     }
+                                    onMouseLeave={handleDropdownClose}
                                 >
-                                    <DropdownMenuTrigger asChild>
-                                        <Button
-                                            variant="ghost"
-                                            className="w-full cursor-pointer border-none text-base font-normal shadow-none hover:bg-transparent hover:text-blue-500"
-                                            onMouseEnter={() =>
-                                                handleOpenChange(
-                                                    item.label,
-                                                    true,
-                                                )
-                                            }
-                                            onMouseLeave={() =>
-                                                handleOpenChange(
-                                                    item.label,
-                                                    false,
-                                                )
-                                            }
-                                        >
-                                            {item.label}
-                                        </Button>
-                                    </DropdownMenuTrigger>
-                                    <DropdownMenuContent
-                                        className="w-48 bg-white backdrop-blur-sm"
-                                        onMouseEnter={() =>
-                                            handleOpenChange(item.label, true)
-                                        }
-                                        onMouseLeave={() =>
-                                            handleOpenChange(item.label, false)
-                                        }
+                                    <button
+                                        className={`flex cursor-pointer items-center text-[15px] font-normal transition-colors duration-200 ${
+                                            isActive(item.href)
+                                                ? "text-primary"
+                                                : "hover:text-primary text-black"
+                                        }`}
                                     >
-                                        {item.subItems.map((subItem) => (
-                                            <DropdownMenuItem
-                                                key={subItem.label}
-                                                className="focus:bg-blue-100"
-                                            >
-                                                <Link
-                                                    href={subItem.href}
-                                                    className="w-full"
-                                                >
-                                                    {subItem.label}
-                                                </Link>
-                                            </DropdownMenuItem>
-                                        ))}
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
+                                        {item.title}
+                                        <ChevronDown
+                                            className={`ml-1 h-4 w-4 transition-transform duration-200 ${
+                                                openDropdown === item.title
+                                                    ? "rotate-180"
+                                                    : ""
+                                            }`}
+                                        />
+                                    </button>
+                                    {openDropdown === item.title && (
+                                        <div
+                                            className="absolute top-full left-0 z-50 mt-0 w-56 origin-top pt-2.5 transition-all duration-200 ease-in-out"
+                                            // onMouseEnter={() => handleDropdownToggle(item.title)}
+                                            // onMouseLeave={handleDropdownClose}
+                                        >
+                                            <div className="rounded-md border bg-white/95 py-1 backdrop-blur-sm">
+                                                {item.children.map(
+                                                    (child, index) => (
+                                                        <Link
+                                                            key={`${child.href}-${index}`}
+                                                            href={child.href}
+                                                            className="hover:text-primary block px-4 py-1.5 text-sm font-normal text-black uppercase transition-colors duration-200 hover:bg-gray-100"
+                                                            onClick={() =>
+                                                                setOpenDropdown(
+                                                                    null,
+                                                                )
+                                                            }
+                                                        >
+                                                            {child.title}
+                                                        </Link>
+                                                    ),
+                                                )}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             ) : (
                                 <Link
                                     href={item.href}
-                                    className={cn(
-                                        "transition-colors hover:text-blue-500",
-                                    )}
+                                    className={`text-sm font-medium transition-colors duration-200 ${
+                                        isActive(item.href)
+                                            ? "text-primary"
+                                            : "hover:text-primary text-gray-700"
+                                    }`}
                                 >
-                                    {item.label}
+                                    {item.title}
                                 </Link>
                             )}
                         </div>
                     ))}
+                </nav>
+
+                <div className="hidden items-center space-x-2 md:flex">
+                    <Link
+                        href="https://facebook.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full p-1 text-white transition-colors hover:opacity-90"
+                        style={{ backgroundColor: "#1877F2" }}
+                    >
+                        <RiFacebookFill className="h-5 w-5" />
+                    </Link>
+                    <Link
+                        href="https://instagram.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full p-1 text-white transition-colors hover:opacity-90"
+                        style={{
+                            background:
+                                "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
+                        }}
+                    >
+                        <RiInstagramLine className="h-5 w-5" />
+                    </Link>
+                    <Link
+                        href="https://wa.me/your-number"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full p-1 text-white transition-colors hover:opacity-90"
+                        style={{ backgroundColor: "#25D366" }}
+                    >
+                        <RiWhatsappLine className="h-5 w-5" />
+                    </Link>
+                    <Link
+                        href="https://wa.me/your-number"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full p-1 text-white transition-colors hover:opacity-90"
+                        style={{ backgroundColor: "#25D366" }}
+                    >
+                        <Image
+                            src="/images/logos/tripadvisor-icon.png"
+                            alt="Whatsapp"
+                            width={100}
+                            height={100}
+                            className="size-5 rounded-full"
+                        />
+                    </Link>
                 </div>
 
-                {/* <nav className="hidden gap-6 md:flex">
-                    <Link
-                        href="/"
-                        className={`text-sm font-medium ${isActive("/") ? "text-blue-700" : "hover:text-blue-700"}`}
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        href="/packages/beginner-rafting-adventure"
-                        className={`text-sm font-medium ${isActive("/packages/beginner-rafting-adventure") ? "text-blue-700" : "hover:text-blue-700"}`}
-                    >
-                        Packages
-                    </Link>
-                    <Link
-                        href="/about-us"
-                        className={`text-sm font-medium ${isActive("/about-us") ? "text-blue-700" : "hover:text-blue-700"}`}
-                    >
-                        About Us
-                    </Link>
-                    <Link
-                        href="/gallery"
-                        className={`text-sm font-medium ${isActive("/gallery") ? "text-blue-700" : "hover:text-blue-700"}`}
-                    >
-                        Gallery
-                    </Link>
-                    <Link
-                        href="/feedback"
-                        className={`text-sm font-medium ${isActive("/feedback") ? "text-blue-700" : "hover:text-blue-700"}`}
-                    >
-                        Feedback
-                    </Link>
-                    <Link
-                        href="/contact"
-                        className={`text-sm font-medium ${isActive("/contact") ? "text-blue-700" : "hover:text-blue-700"}`}
-                    >
-                        Contact
-                    </Link>
-                </nav> */}
-
-                <div className="hidden md:block">
-                    <Button className="bg-blue-600 hover:bg-blue-700">
-                        Book Now
-                    </Button>
-                </div>
-
+                {/* Mobile Menu Button */}
                 <button
-                    className="block md:hidden"
-                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="p-2 md:hidden"
+                    onClick={toggleMenu}
+                    aria-label="Toggle menu"
                 >
-                    {isMenuOpen ? <X /> : <Menu />}
+                    {isMenuOpen ? (
+                        <X className="h-6 w-6" />
+                    ) : (
+                        <Menu className="h-6 w-6" />
+                    )}
                 </button>
             </div>
 
-            {/* Mobile menu */}
+            {/* Mobile Navigation */}
             {isMenuOpen && (
-                <div className="border-t md:hidden">
-                    <div className="container flex flex-col gap-4 py-4">
-                        <Link
-                            href="/"
-                            className={`text-sm font-medium ${isActive("/") ? "text-blue-700" : "hover:text-blue-700"}`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            href="/packages/beginner-rafting-adventure"
-                            className={`text-sm font-medium ${isActive("/packages/beginner-rafting-adventure") ? "text-blue-700" : "hover:text-blue-700"}`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Packages
-                        </Link>
-                        <Link
-                            href="/about-us"
-                            className={`text-sm font-medium ${isActive("/about-us") ? "text-blue-700" : "hover:text-blue-700"}`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            About Us
-                        </Link>
-                        <Link
-                            href="/gallery"
-                            className={`text-sm font-medium ${isActive("/gallery") ? "text-blue-700" : "hover:text-blue-700"}`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Gallery
-                        </Link>
-                        <Link
-                            href="/testimonials"
-                            className={`text-sm font-medium ${isActive("/testimonials") ? "text-blue-700" : "hover:text-blue-700"}`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Testimonials
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className={`text-sm font-medium ${isActive("/contact") ? "text-blue-700" : "hover:text-blue-700"}`}
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Contact
-                        </Link>
-                        <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                            Book Now
-                        </Button>
+                <div className="border-t bg-white md:hidden">
+                    <div className="container space-y-1 py-4">
+                        {navItems.map((item) => (
+                            <div
+                                key={item.title}
+                                className="border-b border-gray-100 last:border-b-0"
+                            >
+                                {item.children ? (
+                                    <div>
+                                        <button
+                                            onClick={() =>
+                                                handleMobileDropdownToggle(
+                                                    item.title,
+                                                )
+                                            }
+                                            className={`flex w-full items-center justify-between py-3 text-base font-medium ${
+                                                isActive(item.href)
+                                                    ? "text-primary"
+                                                    : ""
+                                            }`}
+                                        >
+                                            {item.title}
+                                            <ChevronRight
+                                                className={`h-5 w-5 transition-transform ${
+                                                    openMobileDropdown ===
+                                                    item.title
+                                                        ? "rotate-90"
+                                                        : ""
+                                                }`}
+                                            />
+                                        </button>
+                                        {openMobileDropdown === item.title && (
+                                            <div className="space-y-1 pb-2 pl-4">
+                                                {item.children.map((child) => (
+                                                    <Link
+                                                        key={child.href}
+                                                        href={child.href}
+                                                        className={`block py-2 text-sm ${
+                                                            isActive(child.href)
+                                                                ? "text-primary font-medium"
+                                                                : "text-gray-600"
+                                                        }`}
+                                                        onClick={() =>
+                                                            setIsMenuOpen(false)
+                                                        }
+                                                    >
+                                                        {child.title}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <Link
+                                        href={item.href}
+                                        className={`block py-3 text-base font-medium ${isActive(item.href) ? "text-primary" : ""}`}
+                                        onClick={() => setIsMenuOpen(false)}
+                                    >
+                                        {item.title}
+                                    </Link>
+                                )}
+                            </div>
+                        ))}
+                        <div className="pt-2">
+                            <div className="flex items-center justify-center space-x-4">
+                                <a
+                                    href="https://facebook.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-full p-2 text-white transition-colors hover:opacity-90"
+                                    style={{ backgroundColor: "#1877F2" }}
+                                >
+                                    <Facebook className="h-5 w-5" />
+                                </a>
+                                <a
+                                    href="https://instagram.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-full p-2 text-white transition-colors hover:opacity-90"
+                                    style={{
+                                        background:
+                                            "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
+                                    }}
+                                >
+                                    <Instagram className="h-5 w-5" />
+                                </a>
+                                <a
+                                    href="https://wa.me/your-number"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-full p-2 text-white transition-colors hover:opacity-90"
+                                    style={{ backgroundColor: "#25D366" }}
+                                >
+                                    <MessageCircle className="h-5 w-5" />
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )}

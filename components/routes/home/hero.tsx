@@ -200,7 +200,7 @@ export default function Hero() {
     const items = [...images, ...images, ...images, ...images];
 
     return (
-        <div className="relative mx-auto -mt-[8.5rem] w-full max-w-full overflow-hidden">
+        <div className="relative mx-auto -mt-[3rem] xl:-mt-[8rem] w-full max-w-full overflow-hidden ">
             <Carousel
                 plugins={[plugin.current]}
                 className="h-full w-full"

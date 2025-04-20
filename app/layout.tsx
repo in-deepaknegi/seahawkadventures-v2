@@ -3,7 +3,7 @@ import "./globals.css";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Open_Sans } from "next/font/google";
-
+import SocialIcons from "@/components/social";
 const openSans = Open_Sans({
     variable: "--font-open-sans",
     subsets: ["latin"],
@@ -69,6 +69,7 @@ export default function RootLayout({
                 className={`${openSans.variable} antialiased relative`}
                 suppressHydrationWarning
             >
+                <SocialIcons />
                 {children}
                 <SpeedInsights />
             </body>

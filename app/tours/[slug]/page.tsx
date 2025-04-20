@@ -4,6 +4,7 @@ import {
     __R1__,
     __R2__,
     __R3__,
+    __R4__,
     __K1__,
     __K2__,
     BASE_URL,
@@ -91,6 +92,14 @@ const page = async ({ params }: { params: Params }) => {
             content_4 = __K1__.faq;
             content_5 = __K1__.itinerary;
             content_6 = __K1__.extras;
+            break;
+        case "ganga-river-rafting-kaudiyala-tapovan":
+            content_0 = __R4__.__p__;
+            content_1 = __R4__.overview;
+            content_2 = __R4__.__i__;
+            content_3 = __R4__.gallery;
+            content_4 = __R4__.faq;
+            content_5 = __R4__.itinerary;
             break;
         case "kayak-complete-lessons-in-rishikesh":
             content_0 = __K2__.__p__;

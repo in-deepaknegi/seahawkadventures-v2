@@ -426,6 +426,17 @@ export const __R4__ = {
                 "Experience swimming, balancing on the rapid, and other water activities",
         },
     ],
+    __i__: {
+        included: [
+            "Transportation from Office to Office/ to the starting and from finishing point back to office.",
+            "All rafting gear including imported life jackets, Helmet, paddle and wet suites in winter time ( Dec til March)",
+            "Safety Kayaker with all the trips",
+        ],
+        notIncluded: [
+            "Rafting Video ( It costs INR 1500 per raft and 8 people sit in one raft)",
+            "Expenses of Personal Nature",
+        ],
+    },
 };
 
 export const __K1__ = {

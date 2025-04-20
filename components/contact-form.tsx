@@ -39,7 +39,7 @@ export function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
-            <h3 className="mb-6 text-xl font-bold text-white">
+            <h3 className="mb-6 text-2xl font-medium text-white">
                 Send Us a Message
             </h3>
 
@@ -58,7 +58,7 @@ export function ContactForm() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white focus:ring-2 focus:outline-none"
+                        className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-800 px-4 py-1.5 text-white focus:ring-2 focus:outline-none"
                         placeholder="John Doe"
                     />
                 </div>
@@ -77,7 +77,7 @@ export function ContactForm() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white focus:ring-2 focus:outline-none"
+                        className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-800 px-4 py-1.5 text-white focus:ring-2 focus:outline-none"
                         placeholder="john@example.com"
                     />
                 </div>
@@ -97,7 +97,7 @@ export function ContactForm() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white focus:ring-2 focus:outline-none"
+                        className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-800 px-4 py-1.5 text-white focus:ring-2 focus:outline-none"
                         placeholder="+91 98765 43210"
                     />
                 </div>
@@ -114,7 +114,7 @@ export function ContactForm() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white focus:ring-2 focus:outline-none"
+                        className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-800 px-4 py-1.5 text-white focus:ring-2 focus:outline-none"
                     >
                         <option value="">Select a subject</option>
                         <option value="booking">Booking Inquiry</option>
@@ -139,14 +139,14 @@ export function ContactForm() {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-700 px-4 py-3 text-white focus:ring-2 focus:outline-none"
+                    className="focus:ring-primary/50 w-full rounded-lg border border-gray-600 bg-gray-800 px-4 py-1.5 text-white focus:ring-2 focus:outline-none"
                     placeholder="How can we help you?"
                 ></textarea>
             </div>
 
             <Button
                 type="submit"
-                className="bg-primary hover:bg-primary/90 w-full rounded-full py-5 text-base"
+                className="bg-blue-800 hover:bg-blue-700 cursor-pointer font-normal w-full rounded-full py-5 text-base"
             >
                 Send Message
             </Button>
