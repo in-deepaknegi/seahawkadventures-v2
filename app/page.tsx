@@ -18,15 +18,17 @@ import { Wave1, Wave2 } from "@/components/routes/shared/wave";
 import Hero from "@/components/routes/home/hero";
 import Packages from "@/components/routes/home/packages";
 import AboutUs from "@/components/routes/home/about-us";
+import Gallery from "@/components/routes/home/gallery";
 
 export default function Home() {
     return (
         <>
-        <main className="flex-1 pt-20">
-            <Hero />
-            <Packages/>
-            <AboutUs/>
-        </main>
+            <main className="flex-1 pt-20">
+                <Hero />
+                <Packages />
+                <AboutUs />
+                <Gallery />
+            </main>
             <div className="flex min-h-screen flex-col">
                 {/* <SiteHeader /> */}
 
@@ -62,7 +64,6 @@ export default function Home() {
                     </section>
 
                     {/* Packages Section */}
-                    
 
                     {/* Why Choose Us Section */}
                     <section
@@ -187,140 +188,7 @@ export default function Home() {
                     </section>
 
                     {/* Gallery Section */}
-                    <section id="gallery" className="py-20">
-                        <div className="container">
-                            <div className="mx-auto mb-14 max-w-3xl text-center">
-                                <h5 className="text-primary mb-3">
-                                    VISUAL JOURNEY
-                                </h5>
-                                <h2 className="mb-5 text-3xl font-bold md:text-4xl">
-                                    Adventure Gallery
-                                </h2>
-                                <p className="text-gray-600">
-                                    Glimpses of the thrilling experiences that
-                                    await you
-                                </p>
-                            </div>
-
-                            <Tabs defaultValue="all" className="w-full">
-                                <div className="mb-12 flex justify-center">
-                                    <TabsList className="h-auto rounded-full bg-gray-100 p-1">
-                                        <TabsTrigger
-                                            value="all"
-                                            className="rounded-full px-6 py-3 data-[state=active]:bg-black data-[state=active]:text-white"
-                                        >
-                                            All
-                                        </TabsTrigger>
-                                        <TabsTrigger
-                                            value="rafting"
-                                            className="rounded-full px-6 py-3 data-[state=active]:bg-black data-[state=active]:text-white"
-                                        >
-                                            Rafting
-                                        </TabsTrigger>
-                                        <TabsTrigger
-                                            value="kayaking"
-                                            className="rounded-full px-6 py-3 data-[state=active]:bg-black data-[state=active]:text-white"
-                                        >
-                                            Kayaking
-                                        </TabsTrigger>
-                                        <TabsTrigger
-                                            value="expedition"
-                                            className="rounded-full px-6 py-3 data-[state=active]:bg-black data-[state=active]:text-white"
-                                        >
-                                            Expedition
-                                        </TabsTrigger>
-                                    </TabsList>
-                                </div>
-
-                                <TabsContent value="all" className="mt-0">
-                                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                                        {Array.from({ length: 8 }).map(
-                                            (_, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="aspect-square overflow-hidden rounded-xl"
-                                                >
-                                                    <Image
-                                                        src={`/placeholder.svg?height=400&width=400&text=Adventure+${index + 1}`}
-                                                        alt={`Adventure Gallery ${index + 1}`}
-                                                        width={400}
-                                                        height={400}
-                                                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                                                    />
-                                                </div>
-                                            ),
-                                        )}
-                                    </div>
-                                </TabsContent>
-
-                                <TabsContent value="rafting" className="mt-0">
-                                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                                        {Array.from({ length: 4 }).map(
-                                            (_, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="aspect-square overflow-hidden rounded-xl"
-                                                >
-                                                    <Image
-                                                        src={`/placeholder.svg?height=400&width=400&text=Rafting+${index + 1}`}
-                                                        alt={`Rafting Gallery ${index + 1}`}
-                                                        width={400}
-                                                        height={400}
-                                                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                                                    />
-                                                </div>
-                                            ),
-                                        )}
-                                    </div>
-                                </TabsContent>
-
-                                <TabsContent value="kayaking" className="mt-0">
-                                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                                        {Array.from({ length: 4 }).map(
-                                            (_, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="aspect-square overflow-hidden rounded-xl"
-                                                >
-                                                    <Image
-                                                        src={`/placeholder.svg?height=400&width=400&text=Kayaking+${index + 1}`}
-                                                        alt={`Kayaking Gallery ${index + 1}`}
-                                                        width={400}
-                                                        height={400}
-                                                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                                                    />
-                                                </div>
-                                            ),
-                                        )}
-                                    </div>
-                                </TabsContent>
-
-                                <TabsContent
-                                    value="expedition"
-                                    className="mt-0"
-                                >
-                                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                                        {Array.from({ length: 4 }).map(
-                                            (_, index) => (
-                                                <div
-                                                    key={index}
-                                                    className="aspect-square overflow-hidden rounded-xl"
-                                                >
-                                                    <Image
-                                                        src={`/placeholder.svg?height=400&width=400&text=Expedition+${index + 1}`}
-                                                        alt={`Expedition Gallery ${index + 1}`}
-                                                        width={400}
-                                                        height={400}
-                                                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-                                                    />
-                                                </div>
-                                            ),
-                                        )}
-                                    </div>
-                                </TabsContent>
-                            </Tabs>
-                        </div>
-                    </section>
+               
 
                     {/* Testimonials Section */}
                     <section

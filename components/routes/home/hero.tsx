@@ -223,7 +223,7 @@ export default function Hero() {
                                     quality={100}
                                 />
                                 <div className="absolute bottom-0 h-full w-1/3 bg-gradient-to-r from-black/55 to-transparent" />
-                                <div className="absolute bottom-5 container flex w-full flex-col items-start justify-start px-4 text-center text-white xl:bottom-40 md:px-20">
+                                <div className="absolute bottom-5 container flex w-full flex-col items-start justify-start px-4 text-center text-white md:px-20 xl:bottom-40">
                                     <h5 className="mb-3 tracking-wide text-white/80">
                                         YOUR ADVENTURE AWAITS
                                     </h5>
@@ -238,7 +238,7 @@ export default function Hero() {
 
                                     <div className="flex flex-col gap-4 sm:flex-row">
                                         <Link href="/packages">
-                                            <Button className="rounded-full px-8 py-5 font-normal text-base">
+                                            <Button className="rounded-full px-8 py-5 text-base font-normal">
                                                 Explore Packages
                                             </Button>
                                         </Link>
@@ -250,7 +250,7 @@ export default function Hero() {
                                         </Link>
                                     </div>
 
-                                    <div className="mt-5 mb-6 flex items-start justify-start flex-col gap-2">
+                                    <div className="mt-5 mb-6 flex flex-col items-start justify-start gap-2">
                                         <div className="mt-2 text-sm md:text-xl">
                                             STARTING FROM
                                         </div>

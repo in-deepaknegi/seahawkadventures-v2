@@ -263,7 +263,7 @@ export default function Packages() {
 
                     <Tabs
                         defaultValue="rafting"
-                        className="mx-auto w-full max-w-7xl px-10 md:px-20 xl:px-10"
+                        className="mx-auto w-full max-w-7xl px-10 md:px-16 xl:px-10"
                     >
                         <div className="mb-12 flex justify-center">
                             <TabsList className="h-auto rounded-full bg-gray-100 p-1">
@@ -379,8 +379,8 @@ export default function Packages() {
                                             </CarouselItem>
                                         ))}
                                     </CarouselContent>
-                                    <CarouselPrevious className="absolute -left-16 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
-                                    <CarouselNext className="absolute -right-16 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
+                                    <CarouselPrevious className="absolute -left-10 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
+                                    <CarouselNext className="absolute -right-13 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
                                 </Carousel>
                             </TabsContent>
                         ))}
