@@ -6,6 +6,7 @@
 @theme {
     --font-sans: "DM Sans", sans-serif;
     --font-mono: "Space Mono", monospace;
+    --font-open-sans: "Open Sans", sans-serif;
 }
 
 :root {

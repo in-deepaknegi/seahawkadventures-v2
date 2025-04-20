@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import ThemeProvider from "@/providers/theme-provider";
+import { Open_Sans } from "next/font/google";
+
+const openSans = Open_Sans({
+    variable: "--font-open-sans",
+    subsets: ["latin"],
+});
 
 const { SITE_NAME } = process.env;
 
@@ -60,7 +65,10 @@ export default function RootLayout({
         <html lang="en">
             <GoogleTagManager gtmId="GTM-WWQ9J7ZF" />
 
-            <body className="relative" suppressHydrationWarning>
+            <body
+                className={`${openSans.variable} antialiased relative`}
+                suppressHydrationWarning
+            >
                 {children}
                 <SpeedInsights />
             </body>

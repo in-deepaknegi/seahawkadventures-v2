@@ -143,12 +143,13 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { CldImage } from "next-cloudinary";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 const images = [
     {
         title: "Kayak School",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3200.heic",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1218.jpg",
             alt: "Kayak School",
         },
         stats: {
@@ -159,7 +160,7 @@ const images = [
     {
         title: "Rafting in Rishikesh",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3103.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1101.jpg",
             alt: "Rafting in Rishikesh",
         },
         stats: {
@@ -170,7 +171,7 @@ const images = [
     {
         title: "Expedition Adventures",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1313.jpg",
             alt: "Expedition Adventures",
         },
         stats: {
@@ -179,36 +180,14 @@ const images = [
         },
     },
     {
-        title: "Kayak School",
+        title: "Camping in Rishikesh",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3200.heic",
-            alt: "Kayak School",
-        },
-        stats: {
-            tours: 8,
-            startingPrice: "3,999",
-        },
-    },
-    {
-        title: "Rafting in Rishikesh",
-        image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3103.jpg",
-            alt: "Rafting in Rishikesh",
-        },
-        stats: {
-            tours: 3,
-            startingPrice: "599",
-        },
-    },
-    {
-        title: "Expedition Adventures",
-        image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
-            alt: "Expedition Adventures",
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1406.jpg",
+            alt: "Camping in Rishikesh",
         },
         stats: {
             tours: 9,
-            startingPrice: "12,000",
+            startingPrice: "1,500",
         },
     },
 ];
@@ -217,6 +196,8 @@ export default function Hero() {
     const plugin = React.useRef(
         Autoplay({ delay: 4000, stopOnInteraction: false }),
     );
+
+    const items = [...images, ...images, ...images, ...images];
 
     return (
         <div className="relative mx-auto -mt-[8.5rem] w-full max-w-full overflow-hidden">
@@ -227,48 +208,61 @@ export default function Hero() {
                 // onMouseLeave={plugin.current.reset}
             >
                 <CarouselContent className="-ml-0">
-                    {images.map((item, index) => (
+                    {items.map((item, index) => (
                         <CarouselItem key={index} className="pl-0">
                             <div className="relative h-[95vh] w-full md:h-[100vh]">
                                 <CldImage
                                     src={item.image.src}
                                     alt={item.image.alt}
-                                    // fill
-                                    width={1920}
-                                    height={1080}
+                                    fill
+                                    // width={1920}
+                                    // height={1080}
                                     priority={index === 0}
-                                    className="size-full object-cover object-bottom"
+                                    className="size-full object-cover object-center"
                                     // sizes="100vw"
                                     quality={100}
                                 />
-                                <div className="absolute bottom-0 h-72 w-full bg-gradient-to-t from-black to-transparent" />
-                                <div className="absolute bottom-5 flex w-full flex-col items-center justify-center px-4 text-center text-white md:bottom-40">
-                                    <h1 className="mb-6 text-3xl font-medium tracking-wide md:text-5xl">
+                                <div className="absolute bottom-0 h-full w-1/3 bg-gradient-to-r from-black/55 to-transparent" />
+                                <div className="absolute bottom-5 container flex w-full flex-col items-start justify-start px-4 text-center text-white xl:bottom-40 md:px-20">
+                                    <h5 className="mb-3 tracking-wide text-white/80">
+                                        YOUR ADVENTURE AWAITS
+                                    </h5>
+                                    <h1 className="mb-6 text-3xl font-medium tracking-wide md:text-5xl xl:text-6xl">
                                         {item.title}
                                     </h1>
-                                    <div className="mb-6 flex items-center justify-center gap-8 md:gap-16">
-                                        {/* <div>
-                                            <div className="text-3xl font-medium md:text-5xl">
-                                                {item.stats.tours}
-                                            </div>
-                                            <div className="mt-2 text-sm md:text-xl">
-                                                TOURS
-                                            </div>
-                                        </div> */}
-                                        <div>
-                                            <div className="text-3xl font-medium md:text-5xl">
-                                                ₹ {item.stats.startingPrice}
-                                            </div>
-                                            <div className="mt-2 text-sm md:text-xl">
-                                                STARTING FROM
-                                            </div>
+                                    <p className="mb-8 max-w-md text-left text-base text-white/90">
+                                        Experience the rush of white water
+                                        rafting and kayaking in the heart of
+                                        Rishikesh
+                                    </p>
+
+                                    <div className="flex flex-col gap-4 sm:flex-row">
+                                        <Link href="/packages">
+                                            <Button className="rounded-full px-8 py-5 font-normal text-base">
+                                                Explore Packages
+                                            </Button>
+                                        </Link>
+                                        <Link href="/packages">
+                                            <Button className="flex items-center rounded-full bg-white/20 px-6 py-5 backdrop-blur-sm">
+                                                {item.title}
+                                                <ChevronRight className="h-5 w-5 text-white" />
+                                            </Button>
+                                        </Link>
+                                    </div>
+
+                                    <div className="mt-5 mb-6 flex items-start justify-start flex-col gap-2">
+                                        <div className="mt-2 text-sm md:text-xl">
+                                            STARTING FROM
+                                        </div>
+                                        <div className="text-3xl font-medium md:text-5xl">
+                                            ₹ {item.stats.startingPrice}
                                         </div>
                                     </div>
-                                    <Button className="rounded-full bg-blue-600 px-4 py-2 text-sm font-normal tracking-widest text-white transition-colors hover:bg-blue-700 md:text-base">
+                                    {/* <Button className="rounded-full bg-blue-600 px-4 py-2 text-sm font-normal tracking-widest text-white transition-colors hover:bg-blue-700 md:text-base">
                                         <Link href="/adventure-in-rishikesh/river-rafting">
                                             BOOK NOW
                                         </Link>
-                                    </Button>
+                                    </Button> */}
                                 </div>
                             </div>
                         </CarouselItem>
@@ -286,7 +280,7 @@ export default function Hero() {
                 </div>
             </Carousel>
 
-            <div className="absolute right-0 bottom-0 left-0 z-30">
+            {/* <div className="absolute right-0 bottom-0 left-0 z-30">
                 <Image
                     src="/images/b.png"
                     alt="Hero Image"
@@ -294,7 +288,7 @@ export default function Hero() {
                     height={1000}
                     className="w-full object-cover"
                 />
-            </div>
+            </div> */}
         </div>
     );
 }
