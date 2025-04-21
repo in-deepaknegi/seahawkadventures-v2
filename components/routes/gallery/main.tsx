@@ -301,24 +301,31 @@ export default function GalleryPage() {
         : galleryImages;
 
     return (
-        <main className="-mt-[5rem]">
+        <main className="-mt-5">
             {/* Hero Section */}
-            <section className="relative h-[400px] overflow-hidden">
+
+            <section className="relative flex h-[60vh] items-center">
                 <CldImageComponent
-                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1735479492/water-rafting-T0100.jpg"
-                    alt="Adventure Gallery"
+                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1407.jpg"
+                    alt="About Sea Hawk Adventure"
                     fill
-                    className="object-cover"
+                    className="object-cover object-center"
                     priority
                 />
-                <div className="absolute inset-0 bg-black/40" />
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white">
-                    <h1 className="mb-4 text-4xl font-medium md:text-5xl">
-                        Adventure Gallery
-                    </h1>
-                    <p className="max-w-3xl text-xl">
-                        Glimpses of the thrilling experiences that await you
-                    </p>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+                <div className="relative z-10 mx-auto w-full max-w-full px-4 md:px-16 xl:px-10">
+                    <div className="max-w-2xl">
+                        <h5 className="mb-3 tracking-wide text-white/80">
+                            VISUAL JOURNEY
+                        </h5>
+                        <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
+                            Gallery
+                        </h1>
+                        <p className="mb-8 max-w-md text-lg text-white/90">
+                            Explore our collection of thrilling adventures and
+                            breathtaking moments
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -339,53 +346,53 @@ export default function GalleryPage() {
             <section className="py-16">
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-8 flex justify-center">
-                        <div className="flex flex-wrap gap-2 rounded-lg bg-white p-1 shadow-sm">
+                        <div className="flex flex-wrap gap-2 rounded-full bg-gray-100 p-1 shadow-sm">
                             <button
                                 onClick={() => setFilter(null)}
-                                className={`rounded-md px-4 py-2 transition ${
+                                className={`rounded-full px-4 py-2 cursor-pointer transition ${
                                     filter === null
-                                        ? "bg-blue-600 text-white"
-                                        : "hover:bg-blue-100"
+                                        ? "bg-blue-700 text-white"
+                                        : ""
                                 }`}
                             >
                                 All Adventures
                             </button>
                             <button
                                 onClick={() => setFilter("rafting")}
-                                className={`rounded-md px-4 py-2 transition ${
+                                className={`cursor-pointer rounded-full px-4 py-2 transition ${
                                     filter === "rafting"
-                                        ? "bg-blue-600 text-white"
-                                        : "hover:bg-blue-100"
+                                        ? "bg-blue-700 text-white"
+                                        : ""
                                 }`}
                             >
                                 Rafting
                             </button>
                             <button
                                 onClick={() => setFilter("kayaking")}
-                                className={`rounded-md px-4 py-2 transition ${
+                                className={`cursor-pointer rounded-full px-4 py-2 transition ${
                                     filter === "kayaking"
-                                        ? "bg-blue-600 text-white"
-                                        : "hover:bg-blue-100"
+                                        ? "bg-blue-700 text-white"
+                                        : ""
                                 }`}
                             >
                                 Kayaking
                             </button>
                             <button
                                 onClick={() => setFilter("camping")}
-                                className={`rounded-md px-4 py-2 transition ${
+                                className={`cursor-pointer rounded-full px-4 py-2 transition ${
                                     filter === "camping"
-                                        ? "bg-blue-600 text-white"
-                                        : "hover:bg-blue-100"
+                                        ? "bg-blue-700 text-white"
+                                        : ""
                                 }`}
                             >
                                 Camping
                             </button>
                             <button
                                 onClick={() => setFilter("expedition")}
-                                className={`rounded-md px-4 py-2 transition ${
+                                className={`cursor-pointer rounded-full px-4 py-2 transition ${
                                     filter === "expedition"
-                                        ? "bg-blue-600 text-white"
-                                        : "hover:bg-blue-100"
+                                        ? "bg-blue-700 text-white"
+                                        : ""
                                 }`}
                             >
                                 Expedition
@@ -402,7 +409,7 @@ export default function GalleryPage() {
                             >
                                 <div className="absolute top-2 right-2 z-50">
                                     <button
-                                        className="rounded-full cursor-pointer bg-black/50 p-2 text-white hover:bg-black/70"
+                                        className="cursor-pointer rounded-full bg-black/50 p-2 text-white hover:bg-black/70"
                                         onClick={() => {
                                             navigator.clipboard.writeText(
                                                 image.src || "",

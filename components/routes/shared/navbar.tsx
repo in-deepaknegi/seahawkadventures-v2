@@ -144,19 +144,19 @@ export default function Navbar() {
             children: [
                 {
                     title: "About Us",
-                    href: "#",
+                    href: "/about-us",
                 },
                 {
                     title: "Contact Us",
-                    href: "#",
+                    href: "/contact",
                 },
                 {
                     title: "Gallery",
-                    href: "#",
+                    href: "/gallery",
                 },
                 {
                     title: "Feedback",
-                    href: "#",
+                    href: "/feedback",
                 },
             ],
         },

@@ -9,6 +9,8 @@ import { BASE_URL } from "@/config/package";
 import Profile1 from "@/public/images/team/t00.jpg";
 import Profile2 from "@/public/images/team/t01.jpg";
 import Profile3 from "@/public/images/team/t02.jpg";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const teams = [
     {
@@ -36,369 +38,326 @@ export default function AboutUs() {
     return (
         <div className="min-h-screen bg-white">
             <Navbar />
-            <main className="-mt-[5rem]">
+            <main className="-mt-20 flex-1 pt-20">
                 {/* Hero Section */}
-                <section className="relative h-[400px] overflow-hidden">
-                    {/* <CldImage
-                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
+                <section className="relative flex h-[60vh] items-center">
+                    <Image
+                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1102.jpg"
                         alt="About Sea Hawk Adventure"
-                        width={1920}
-                        height={1080}
-                        className="object-cover size-full"
-                        priority
-                    /> */}
-                    <CldImageComponent
-                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
-                        alt="About Sea Hawk Adventure"
-                        width={1920}
-                        height={1080}
-                        className="size-full object-cover"
+                        fill
+                        className="object-cover object-center"
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/40" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white">
-                        <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-                            About Us
-                        </h1>
-                        <p className="max-w-3xl text-xl">
-                            Discover the story behind Sea Hawk Adventure and our
-                            passion for adventure
-                        </p>
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+                    <div className="relative z-10 mx-auto w-full max-w-full px-4 md:px-16 xl:px-10">
+                        <div className="max-w-2xl">
+                            <h5 className="mb-3 tracking-wide text-white/80">
+                                OUR STORY
+                            </h5>
+                            <h1 className="mb-6 text-5xl font-bold text-white md:text-6xl">
+                                About Us
+                            </h1>
+                            <p className="mb-8 max-w-md text-lg text-white/90">
+                                Learn about our journey, our team, and our
+                                commitment to providing safe and thrilling
+                                adventures
+                            </p>
+                        </div>
                     </div>
                 </section>
 
-                {/* Our Story */}
-                <section className="py-16">
-                    <div className="mx-auto max-w-7xl">
-                        <div className="grid items-center gap-12 md:grid-cols-2">
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="mb-4 text-3xl font-medium md:text-4xl">
-                                        Our Story
-                                    </h2>
-                                    <p className="mb-4 leading-relaxed text-gray-700">
-                                        Founded in 2010 by a group of adventure
-                                        enthusiasts with over 15 years of
-                                        experience, Sea Hawk Adventure was born
-                                        from a passion for the rivers and
-                                        mountains of Rishikesh. What started as
-                                        a small rafting operation with just two
-                                        rafts and three guides has grown into
-                                        the region&apos;s most trusted adventure
-                                        company.
-                                    </p>
-                                    <p className="mb-4 leading-relaxed text-gray-700">
-                                        Our founders, Rajesh Sharma and Vikram
-                                        Singh, both certified rafting
-                                        instructors and Himalayan trekking
-                                        experts, saw the potential to create
-                                        safe, thrilling experiences that would
-                                        connect people with the natural beauty
-                                        of the region while supporting local
-                                        communities.
-                                    </p>
-                                    <p className="leading-relaxed text-gray-700">
-                                        Today, Sea Hawk Adventure employs over
-                                        30 local guides and staff, all
-                                        extensively trained in safety procedures
-                                        and environmental conservation.
-                                        We&apos;ve expanded our offerings to
-                                        include a wide range of adventures while
-                                        maintaining our commitment to
-                                        responsible tourism and exceptional
-                                        customer experiences.
-                                    </p>
+                {/* Our Story Section */}
+                <section className="py-24">
+                    <div className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10">
+                        <div className="grid items-center gap-16 md:grid-cols-2">
+                            <div>
+                                <h5 className="text-primary mb-3">
+                                    OUR JOURNEY
+                                </h5>
+                                <h2 className="mb-6 text-4xl font-semibold md:text-5xl">
+                                    The Sea Hawk Story
+                                </h2>
+                                <p className="mb-6 text-gray-600">
+                                    Founded in 2008 by a group of passionate
+                                    adventure enthusiasts, Sea Hawk Adventure
+                                    began with a simple mission: to share the
+                                    thrill and beauty of Rishikesh&apos;s rivers with
+                                    the world while maintaining the highest
+                                    standards of safety and environmental
+                                    responsibility.
+                                </p>
+                                <p className="mb-8 text-gray-600">
+                                    What started as a small operation with just
+                                    two rafts and a handful of guides has grown
+                                    into one of the most respected adventure
+                                    companies in Rishikesh, serving thousands of
+                                    adventure seekers from around the globe each
+                                    year.
+                                </p>
+                                <div className="flex items-center gap-4">
+                                    <Image
+                                        src="/images/team/t00.jpg"
+                                        alt="Founder"
+                                        width={60}
+                                        height={60}
+                                        className="rounded-full"
+                                    />
+                                    <div>
+                                        <p className="font-bold">Rishi Rana</p>
+                                        <p className="text-sm text-gray-500">
+                                            Founder & Chief Adventure Officer
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-                                <CldImageComponent
-                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
-                                    alt="Sea Hawk Adventure founders"
-                                    width={1920}
-                                    height={1080}
-                                    className="size-full object-cover"
+                            <div>
+                                <Image
+                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1101.jpg"
+                                    alt="Our Story"
+                                    width={600}
+                                    height={600}
+                                    className="rounded-xl"
                                 />
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Our Mission */}
-                <section className="relative bg-blue-50">
-                    <Wave2 />
-                    <div className="relative z-10 mx-auto max-w-7xl py-16">
-                        <div className="mb-12 text-center">
-                            <h2 className="mb-4 text-3xl font-medium md:text-4xl">
-                                Our Mission & Values
+                {/* Mission & Values Section */}
+                <section className="bg-gray-900 py-20 text-white">
+                    <div className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10">
+                        <div className="mx-auto mb-10 max-w-3xl text-center">
+                            <div className="text-sm uppercase">
+                                OUR PRINCIPLES
+                            </div>
+
+                            <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
+                                Mission & Values
                             </h2>
-                            <p className="text-lg mx-auto max-w-3xl">
-                                Guiding principles that drive everything we do
-                                at Sea Hawk Adventure
-                            </p>
-                        </div>
 
-                        <div className="mb-12 grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-                            <div className="rounded-lg bg-white p-8 shadow-sm">
-                                <div className="mb-6 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
-                                    <Target className="h-8 w-8 text-blue-600" />
-                                </div>
-                                <h3 className="mb-4 text-2xl font-bold text-blue-700">
-                                    Our Mission
-                                </h3>
-                                <p className="leading-relaxed text-gray-700">
-                                    To provide safe, thrilling, and memorable
-                                    adventure experiences that connect people
-                                    with nature, while promoting sustainable
-                                    tourism and supporting local communities in
-                                    the Rishikesh region.
-                                </p>
-                            </div>
-                            <div className="rounded-lg bg-white p-8 shadow-sm">
-                                <div className="mb-6 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
-                                    <MapPin className="h-8 w-8 text-blue-600" />
-                                </div>
-                                <h3 className="mb-4 text-2xl font-bold text-blue-700">
-                                    Our Vision
-                                </h3>
-                                <p className="leading-relaxed text-gray-700">
-                                    To be the most trusted adventure company in
-                                    India, known for our unwavering commitment
-                                    to safety, exceptional customer experiences,
-                                    and positive impact on the environment and
-                                    local communities.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
-                            <div className="rounded-lg bg-white p-6 shadow-sm">
-                                <div className="mb-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
-                                    <Shield className="h-6 w-6 text-blue-600" />
-                                </div>
-                                <h4 className="mb-2 text-xl font-bold text-blue-700">
-                                    Safety First
-                                </h4>
-                                <p className="text-gray-700">
-                                    We never compromise on safety. All our
-                                    equipment meets international standards, and
-                                    our guides undergo rigorous training in
-                                    first aid and rescue techniques.
-                                </p>
-                            </div>
-                            <div className="rounded-lg bg-white p-6 shadow-sm">
-                                <div className="mb-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
-                                    <Users className="h-6 w-6 text-blue-600" />
-                                </div>
-                                <h4 className="mb-2 text-xl font-bold text-blue-700">
-                                    Customer Experience
-                                </h4>
-                                <p className="text-gray-700">
-                                    We&apos;re dedicated to creating memorable
-                                    experiences tailored to each guest&apos;s
-                                    abilities and interests, with personalized
-                                    attention and exceptional service.
-                                </p>
-                            </div>
-                            <div className="rounded-lg bg-white p-6 shadow-sm">
-                                <div className="mb-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
-                                    <Award className="h-6 w-6 text-blue-600" />
-                                </div>
-                                <h4 className="mb-2 text-xl font-bold text-blue-700">
-                                    Environmental Stewardship
-                                </h4>
-                                <p className="text-gray-700">
-                                    We&apos;re committed to minimizing our
-                                    environmental impact through sustainable
-                                    practices and educating our guests about the
-                                    importance of conservation.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {/* <Wave1 /> */}
-                </section>
-
-                {/* Our Team */}
-                <section className="relative overflow-hidden bg-white">
-                    <Wave3 />
-
-                    <div className="relative z-10 py-24 sm:py-24">
-                        <div className="mx-auto max-w-full px-6 md:max-w-[85%] lg:px-8">
-                            <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-between gap-6">
-                                <p className="text-3xl font-medium text-black sm:text-5xl">
-                                    Meet the team
-                                </p>
-
-                                <p className="mt-auto max-w-xl text-center text-lg leading-8 text-gray-600">
-                                    Our experienced guides and staff are the
-                                    heart of Sea Hawk Adventure
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="mx-auto mt-6 px-6 lg:px-8">
-                            <div className="relative mx-auto grid max-w-full gap-8 md:max-w-5xl md:grid-cols-3 md:gap-16 md:px-6">
-                                {teams.map((team, i) => (
-                                    <div
-                                        key={i}
-                                        className="group relative mt-8 flex cursor-pointer items-center gap-4 transition-all duration-300 ease-in hover:scale-[1.082] md:flex-col"
-                                    >
-                                        <div className="">
-                                            <Image
-                                                src={team.image}
-                                                alt="profile 1"
-                                                className="aspect-[1/1] h-40 w-40 rounded-full object-cover md:h-full md:w-full"
-                                            />
-                                        </div>
-                                        <div className="font-swim my-auto text-center">
-                                            <h3 className="text-2xl font-medium">
-                                                {team.author}
-                                            </h3>
-                                            <p className="text-base text-gray-500">
-                                                {team.description}
-                                            </p>
-                                            <a
-                                                href={team.href}
-                                                target="_black"
-                                                className="text-primary text-base tracking-wide"
-                                            >
-                                                <span className="absolute inset-0"></span>
-                                                {team.username}
-                                            </a>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Certifications */}
-                <section className="relative bg-blue-50">
-                    <Wave4 />
-                    <div className="relative z-10 mx-auto max-w-7xl py-16">
-                        <div className="mb-12 text-center">
-                            <h2 className="mb-4 text-3xl font-medium md:text-4xl">
-                                Our Certifications
-                            </h2>
-                            <p className="mx-auto max-w-3xl text-lg text-gray-700">
-                                We maintain the highest standards of safety and
-                                professionalism
+                            <p className="text-gray-200">
+                                Our core principles guide everything we do, from
+                                how we train our guides to how we interact with
+                                the environment
                             </p>
                         </div>
 
                         <div className="grid gap-8 md:grid-cols-3">
-                            <div className="rounded-lg bg-white p-6 text-center shadow-sm">
-                                <div className="relative mx-auto mb-4 h-24 w-24">
-                                    <Image
-                                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
-                                        alt="International Rafting Federation"
-                                        fill
-                                        className="object-contain"
-                                    />
+                            <div className="rounded-xl bg-yellow-50 p-6 text-black">
+                                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900">
+                                    <Shield className="h-6 w-6 text-white" />
                                 </div>
-                                <h3 className="mb-2 text-lg font-bold">
-                                    International Rafting Federation
+                                <h3 className="mb-3 text-xl font-semibold md:text-2xl">
+                                    Safety First
                                 </h3>
                                 <p className="text-gray-700">
-                                    Our guides are certified by the
-                                    International Rafting Federation, ensuring
-                                    they meet global standards for rafting
-                                    instruction and safety.
+                                    We never compromise on safety. Our equipment
+                                    is regularly inspected, our guides are
+                                    extensively trained, and our protocols
+                                    exceed industry standards to ensure every
+                                    adventure is as safe as it is thrilling.
                                 </p>
                             </div>
-                            <div className="rounded-lg bg-white p-6 text-center shadow-sm">
-                                <div className="relative mx-auto mb-4 h-24 w-24">
-                                    <Image
-                                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
-                                        alt="Wilderness First Responder"
-                                        fill
-                                        className="object-contain"
-                                    />
+
+                            <div className="rounded-xl bg-yellow-50 p-6 text-black">
+                                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900">
+                                    <Users className="h-6 w-6 text-white" />
                                 </div>
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Wilderness First Responder
+                                <h3 className="mb-4 text-xl font-semibold md:text-2xl">
+                                    Customer Experience
                                 </h3>
                                 <p className="text-gray-700">
-                                    All our lead guides are certified Wilderness
-                                    First Responders, trained to handle medical
-                                    emergencies in remote locations.
+                                    We&apos;re dedicated to creating memorable
+                                    experiences. From the moment you contact us
+                                    to the end of your adventure, we strive to
+                                    exceed expectations with personalized
+                                    service and attention to detail.
                                 </p>
                             </div>
-                            <div className="rounded-lg bg-white p-6 text-center shadow-sm">
-                                <div className="relative mx-auto mb-4 h-24 w-24">
-                                    <Image
-                                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
-                                        alt="Adventure Tour Operators Association"
-                                        fill
-                                        className="object-contain"
-                                    />
+
+                            <div className="rounded-xl bg-yellow-50 p-6 text-black">
+                                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900">
+                                    <Award className="h-6 w-6 text-white" />
                                 </div>
-                                <h3 className="mb-2 text-lg font-bold">
-                                    Adventure Tour Operators Association
+                                <h3 className="mb-4 text-xl font-semibold md:text-2xl">
+                                    Environmental Stewardship
                                 </h3>
                                 <p className="text-gray-700">
-                                    We&apos;re proud members of the Adventure
-                                    Tour Operators Association of India,
-                                    committed to maintaining high standards in
-                                    adventure tourism.
+                                    We&apos;re committed to preserving the natural
+                                    beauty of Rishikesh. We practice
+                                    leave-no-trace principles, participate in
+                                    river clean-ups, and educate our guests
+                                    about the importance of environmental
+                                    conservation.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* Community Impact */}
-                <section className="py-16">
-                    <div className="mx-auto max-w-7xl">
-                        <div className="grid items-center gap-12 md:grid-cols-2">
-                            <div className="relative h-[400px] overflow-hidden rounded-lg shadow-lg">
-                                <CldImageComponent
-                                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3101.jpg"
-                                    alt="Community initiatives"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                            <div className="space-y-6">
-                                <div>
-                                    <h2 className="mb-4 text-3xl font-medium md:text-4xl">
-                                        Our Community Impact
-                                    </h2>
-                                    <p className="mb-4 leading-relaxed text-gray-700">
-                                        At Sea Hawk Adventure, we believe in
-                                        giving back to the communities that make
-                                        our adventures possible. We&apos;re
-                                        committed to sustainable tourism
-                                        practices that benefit local residents
-                                        and preserve the natural environment for
-                                        future generations.
+                {/* Team Section */}
+                <section className="py-24">
+                    <div className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10">
+                        <div className="mx-auto mb-16 max-w-3xl text-center">
+                            <h5 className="mb-1 text-base uppercase">
+                                OUR EXPERTS
+                            </h5>
+                            <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
+                                Meet Our Team
+                            </h2>
+                            <p className="text-lg text-gray-600">
+                                Our experienced guides and staff are the heart
+                                of Sea Hawk Adventure
+                            </p>
+                        </div>
+
+                        <div className="grid gap-8 md:grid-cols-4">
+                            {[
+                                {
+                                    name: "Rishi Rana (Founder)",
+                                    position:
+                                        "Professional Kayaker & Raft Guide",
+                                    experience: "12+ years",
+                                    image: "/images/team/t00.jpg",
+                                },
+                                {
+                                    name: "Rakesh Rana",
+                                    position: "Professional Raft Guide",
+                                    experience: "8+ years",
+                                    image: "/images/team/t01.jpg",
+                                },
+                                {
+                                    name: "Nitesh Negi",
+                                    position: "Professional Kayak Guide",
+                                    experience: "10+ years",
+                                    image: "/images/team/t02.jpg",
+                                },
+                            ].map((member, index) => (
+                                <div key={index} className="group">
+                                    <div className="relative mb-4 aspect-square overflow-hidden rounded-xl">
+                                        <Image
+                                            src={
+                                                member.image ||
+                                                "/placeholder.svg"
+                                            }
+                                            alt={member.name}
+                                            width={300}
+                                            height={300}
+                                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                        />
+                                    </div>
+                                    <h3 className="text-xl font-medium md:text-2xl">
+                                        {member.name}
+                                    </h3>
+                                    <p className="text-gray-600">
+                                        {member.position}
                                     </p>
-                                    <p className="mb-4 leading-relaxed text-gray-700">
-                                        We prioritize hiring and training local
-                                        staff, providing fair wages and
-                                        opportunities for professional growth.
-                                        Over 90% of our team members come from
-                                        nearby villages, creating sustainable
-                                        livelihoods that support families and
-                                        strengthen the local economy.
-                                    </p>
-                                    <p className="leading-relaxed text-gray-700">
-                                        Through our &quot;Clean Rivers
-                                        Initiative,&quot; we organize regular
-                                        river clean-up drives and educate
-                                        visitors about responsible waste
-                                        management. We also contribute a portion
-                                        of our profits to local schools and
-                                        environmental conservation projects in
-                                        the Rishikesh region.
+                                    <p className="text-primary text-sm">
+                                        {member.experience} experience
                                     </p>
                                 </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Certifications Section */}
+                <section className="bg-white py-24">
+                    <div className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10">
+                        <div className="mx-auto mb-16 max-w-3xl text-center">
+                            <h5 className="mb-1 text-base uppercase">
+                                OUR CREDENTIALS
+                            </h5>
+                            <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
+                                Certifications & Awards
+                            </h2>
+                            <p className="text-lg text-gray-600">
+                                We&apos;re proud to be recognized for our commitment
+                                to excellence and safety
+                            </p>
+                        </div>
+
+                        <div className="grid gap-8 md:grid-cols-3">
+                            {[
+                                {
+                                    title: "Safety Excellence Award",
+                                    organization:
+                                        "Adventure Tourism Association",
+                                    year: "2022",
+                                    image: "/placeholder.svg?height=100&width=100&text=Award",
+                                },
+                                {
+                                    title: "Environmental Conservation",
+                                    organization: "Rishikesh Tourism Board",
+                                    year: "2021",
+                                    image: "/placeholder.svg?height=100&width=100&text=Award",
+                                },
+                                {
+                                    title: "Best Adventure Company",
+                                    organization: "Travel & Tourism Excellence",
+                                    year: "2020",
+                                    image: "/placeholder.svg?height=100&width=100&text=Award",
+                                },
+                            ].map((award, index) => (
+                                <div
+                                    key={index}
+                                    className="flex items-start rounded-xl bg-white p-8 shadow-sm"
+                                >
+                                    <Image
+                                        src={award.image || "/placeholder.svg"}
+                                        alt={award.title}
+                                        width={60}
+                                        height={60}
+                                        className="mr-4"
+                                    />
+                                    <div>
+                                        <h3 className="mb-2 text-xl font-bold">
+                                            {award.title}
+                                        </h3>
+                                        <p className="mb-1 text-gray-600">
+                                            {award.organization}
+                                        </p>
+                                        <p className="text-primary">
+                                            {award.year}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* CTA Section */}
+                <section className="bg-gray-900 py-20 text-white">
+                    <div className="container">
+                        <div className="mx-auto max-w-3xl text-center">
+                            <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
+                                Ready for an Adventure?
+                            </h2>
+                            <p className="mb-8 text-gray-300">
+                                Join us for an unforgettable experience on the
+                                rivers of Rishikesh
+                            </p>
+                            <div className="flex flex-col justify-center gap-4 sm:flex-row">
+                                <Link href="/packages">
+                                    <Button className="cursor-pointer rounded-full bg-blue-700 px-8 py-5 text-base hover:bg-blue-600">
+                                        Explore Packages
+                                    </Button>
+                                </Link>
+                                <Link href="/contact">
+                                    <Button
+                                        variant="outline"
+                                        className="rounded-full border-white bg-transparent px-8 py-5 text-base text-white hover:bg-white hover:text-black cursor-pointer"
+                                    >
+                                        Contact Us
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </section>
             </main>
+
             <Footer />
         </div>
     );
