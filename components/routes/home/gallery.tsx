@@ -1,7 +1,8 @@
 "use client";
 
 import { Block, Grid } from "@/components/motion/grid";
-import { CldImage } from "next-cloudinary";
+import { CldImage, CldVideoPlayer } from "next-cloudinary";
+import "next-cloudinary/dist/cld-video-player.css";
 
 export default function Gallery() {
     return (
@@ -77,6 +78,52 @@ export default function Gallery() {
                                 width={1920}
                                 height={1080}
                                 className="aspect-video size-full rounded-lg object-cover"
+                            />
+                        </Block>
+                    </Grid>
+
+                    <div className="mx-auto max-w-3xl text-center md:mb-6">
+                        <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
+                            Videos
+                        </h2>
+
+                        <p className="text-gray-600">
+                            Glimpses of the thrilling experiences that await you
+                        </p>
+                    </div>
+
+                    <Grid>
+                        <Block className="col-span-4">
+                            <video
+                                width="1920"
+                                height="1080"
+                                autoPlay
+                                loop
+                                muted
+                                src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745082720/vid_1150.mp4"
+                                className="h-full w-full"
+                            />
+                        </Block>
+                        <Block className="col-span-4">
+                            <video
+                                width="1920"
+                                height="1080"
+                                autoPlay
+                                loop
+                                muted
+                                src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745082740/vid_1151.mp4"
+                                className="h-full w-full"
+                            />
+                        </Block>
+                        <Block className="col-span-4">
+                            <video
+                                width="1920"
+                                height="1080"
+                                autoPlay
+                                loop
+                                muted
+                                src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745259837/vid_1350.mp4"
+                                className="h-full w-full"
                             />
                         </Block>
                     </Grid>
