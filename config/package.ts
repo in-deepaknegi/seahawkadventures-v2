@@ -8,6 +8,10 @@ export const __R1__ = {
         description:
             "Perfect for first-timers,     experience Grade I-II rapids with expert guides",
         duration: "1.5-2 hours",
+        featured_image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1102.jpg",
+            class: "object-center",
+        },
         startingPoint: "Marine Drive",
         endingPoint: "Shivpuri",
         rapids: {
@@ -26,77 +30,6 @@ export const __R1__ = {
 
     <p>We complete our rafting excursion at point Shivpuri and then drive back to the Sea Hawk Adventure office in 5 minutes.</p>`,
 
-    gallery: [
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
-            alt: "",
-        },
-    ],
-
-    faq: [
-        {
-            id: "1",
-            title: "Is rafting safe?",
-            icon: AtSignIcon,
-            content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
-        },
-        {
-            id: "2",
-            title: "Does rafting require any experience?",
-            icon: CommandIcon,
-            content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "3",
-            icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
-            content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "4",
-            icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
-            content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
-        },
-    ],
-
-    itinerary: [
-        {
-            label: "White Water Rafting",
-            description:
-                "Engage in enthralling white water rafting expedition on the mighty Ganges in Rishikesh. Navigate through the thrilling rapids amidst the mountains",
-        },
-        {
-            label: "Body Surfing",
-            description:
-                "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
-        },
-        {
-            label: "Water Activities",
-            description:
-                "Experience swimming, balancing on the rapid, and other water activities",
-        },
-    ],
     __i__: {
         included: [
             "Transportation from Office to Office/ to the starting and from finishing point back to office.",
@@ -116,6 +49,10 @@ export const __R2__ = {
         description:
             "Perfect for first-timers,     experience Grade I-II rapids with expert guides",
         duration: "2-3 hours",
+        featured_image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1102.jpg",
+            class: "object-center",
+        },
         startingPoint: "Shivpuri",
         endingPoint: "NIM Beach",
         rapids: {
@@ -134,77 +71,6 @@ export const __R2__ = {
 
     <p>We complete our rafting excursion at Nim Beach and then drive back to the Sea Hawk Adventure office in 5 minutes.</p>`,
 
-    gallery: [
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
-            alt: "",
-        },
-    ],
-
-    faq: [
-        {
-            id: "1",
-            title: "Is rafting safe?",
-            icon: AtSignIcon,
-            content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
-        },
-        {
-            id: "2",
-            title: "Does rafting require any experience?",
-            icon: CommandIcon,
-            content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "3",
-            icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
-            content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "4",
-            icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
-            content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
-        },
-    ],
-
-    itinerary: [
-        {
-            label: "White Water Rafting",
-            description:
-                "Engage in enthralling white water rafting expedition on the mighty Ganges in Rishikesh. Navigate through the thrilling rapids amidst the mountains",
-        },
-        {
-            label: "Body Surfing",
-            description:
-                "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
-        },
-        {
-            label: "Water Activities",
-            description:
-                "Experience swimming, balancing on the rapid, and other water activities",
-        },
-    ],
     __i__: {
         included: [
             "Transportation from Office to Office/ to the starting and from finishing point back to office.",
@@ -224,6 +90,10 @@ export const __R3__ = {
         description:
             "Perfect for first-timers, experience Grade I-II rapids with expert guides",
         duration: "3-4 hours",
+        featured_image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1102.jpg",
+            class: "object-center",
+        },
         startingPoint: "Marine Drive",
         endingPoint: "Nim Beach",
         rapids: {
@@ -242,77 +112,6 @@ export const __R3__ = {
 
     <p>We complete our rafting excursion at Nim Beach and then drive back to the Sea Hawk Adventure office in 5 minutes.</p>`,
 
-    gallery: [
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
-            alt: "",
-        },
-    ],
-
-    faq: [
-        {
-            id: "1",
-            title: "Is rafting safe?",
-            icon: AtSignIcon,
-            content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
-        },
-        {
-            id: "2",
-            title: "Does rafting require any experience?",
-            icon: CommandIcon,
-            content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "3",
-            icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
-            content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "4",
-            icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
-            content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
-        },
-    ],
-
-    itinerary: [
-        {
-            label: "White Water Rafting",
-            description:
-                "Engage in enthralling white water rafting expedition on the mighty Ganges in Rishikesh. Navigate through the thrilling rapids amidst the mountains",
-        },
-        {
-            label: "Body Surfing",
-            description:
-                "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
-        },
-        {
-            label: "Water Activities",
-            description:
-                "Experience swimming, balancing on the rapid, and other water activities",
-        },
-    ],
     __i__: {
         included: [
             "Transportation from Office to Office/ to the starting and from finishing point back to office.",
@@ -332,6 +131,10 @@ export const __R4__ = {
         description:
             "Perfect for first-timers, experience Grade I-II rapids with expert guides",
         duration: "4-5 hours",
+        featured_image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1102.jpg",
+            class: "object-center",
+        },
         startingPoint: "Kaudiyala",
         endingPoint: "Nim Beach",
         rapids: {
@@ -350,82 +153,6 @@ export const __R4__ = {
 
     <p>We complete our rafting excursion at Nim Beach and then drive back to the Sea Hawk Adventure office in 5 minutes.</p>`,
 
-    gallery: [
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
-            alt: "",
-        },
-    ],
-
-    faq: [
-        {
-            id: "1",
-            title: "Is rafting safe?",
-            icon: AtSignIcon,
-            content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
-        },
-        {
-            id: "2",
-            title: "Does rafting require any experience?",
-            icon: CommandIcon,
-            content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "3",
-            icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
-            content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "4",
-            icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
-            content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
-        },
-    ],
-
-    itinerary: [
-        {
-            label: "White Water Rafting",
-            description:
-                "Engage in enthralling white water rafting expedition on the mighty Ganges in Rishikesh. Navigate through the thrilling rapids amidst the mountains",
-        },
-        {
-            label: "Lunch Break",
-            description:
-                "we will have a lunch break after the first half of the rafting, where you can relax and refresh yourself.",
-        },
-        {
-            label: "Body Surfing",
-            description:
-                "Experience the body surfing and swimming in the holy river Ganga with Life Jacket",
-        },
-        {
-            label: "Water Activities",
-            description:
-                "Experience swimming, balancing on the rapid, and other water activities",
-        },
-    ],
     __i__: {
         included: [
             "Transportation from Office to Office/ to the starting and from finishing point back to office.",
@@ -445,6 +172,10 @@ export const __K1__ = {
         description:
             "Learn fundamental kayaking skills in calm waters with certified instructors",
         duration: "2-3 hours per day",
+        featured_image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1205.jpg",
+            class: "object-bottom",
+        },
         startingPoint: "Shivpuri",
         endingPoint: "Nim Beach",
         difficulty: "Beginner friendly",
@@ -461,83 +192,6 @@ export const __K1__ = {
     <br/>
     <p>
     This itinerary blends adventure, skill-building, and cultural immersion along the Ganges.</p>`,
-
-    gallery: [
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
-            alt: "",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
-            alt: "",
-        },
-    ],
-
-    faq: [
-        {
-            id: "1",
-            title: "Is rafting safe?",
-            icon: AtSignIcon,
-            content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
-        },
-        {
-            id: "2",
-            title: "Does rafting require any experience?",
-            icon: CommandIcon,
-            content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "3",
-            icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
-            content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
-        },
-        {
-            id: "4",
-            icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
-            content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
-        },
-    ],
-
-    itinerary: [
-        {
-            label: "Day 1",
-            description:
-                "Arrive in Rishikesh and settle in. Meet your instructor for a basic skills briefing, equipment orientation, and introduction to kayaking. Learn swimming techniques in river currents, fundamental paddling strokes, and basic river hydrology principles.",
-        },
-        {
-            label: "Day 2",
-            description:
-                "Practice whitewater swimming techniques and emergency exit procedures. Learn to enter/exit river eddies and execute river crossings. Begin foundational training for the Eskimo roll (self-rescue technique) under instructor guidance.",
-        },
-        {
-            label: "Day 3",
-            description:
-                "Apply learned skills on Class II rapids with professional kayakers. Conduct your first mini-expedition, focusing on river navigation and rapid negotiation techniques.",
-        },
-        {
-            label: "Day 4",
-            description:
-                "Consolidate skills with advanced practice of Eskimo rolls, river crossings, and rapid navigation. Execute a final Class II rapid run with confidence. Celebrate your newfound kayaking abilities and understanding of river terrain exploration.",
-        },
-    ],
 
     extras: [
         {
@@ -572,6 +226,10 @@ export const __K2__ = {
         description:
             "Learn fundamental kayaking skills in calm waters with certified instructors",
         duration: "2-3 hours per day",
+        featured_image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1217.jpg",
+            class: "object-center",
+        },
         startingPoint: "Marine Drive",
         endingPoint: "Shivpuri",
         difficulty: "Challenging",
@@ -589,30 +247,441 @@ export const __K2__ = {
     <p>
     This itinerary blends adventure, skill-building, and cultural immersion along the Ganges.</p>`,
 
-    gallery: [
+    extras: [
         {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
-            alt: "",
+            label: "Timing",
+            description:
+                "Your training will be held daily from 9am to approx 12pm 3-4 hours daily",
         },
         {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg",
-            alt: "",
+            label: "What to wear",
+            description:
+                "Any quick dry shorts, tshirt & slippers. You will get a wet suit and other gear at the school.",
         },
         {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3111.jpg",
-            alt: "",
+            label: "What to carry",
+            description:
+                "A bottle of water & some cash to buy tea/ snacks at the training site. You can keep your phone in the instructor's dry bag during kayak sessions. ",
+        },
+    ],
+    __i__: {
+        included: [
+            "Transportation from Office to Office/ to the starting and from finishing point back to office.",
+            "All Kayaking gear including imported life jackets, Helmet, paddle and wet suites in winter time ( Dec til March)",
+            "Safety Kayaker with all the trips",
+        ],
+        notIncluded: ["Accommodation", "Expenses of Personal Nature"],
+    },
+};
+
+export const __E1__ = {
+    __p__: {
+        title: "Rafting Expedition",
+        description:
+            "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
+        duration: "3 Nights 4 Days",
+        featured_image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1313.jpg",
+            class: "object-center",
+        },
+        startingPoint: "Bhagwan",
+        endingPoint: "Nim Beach",
+        difficulty: "Family Friendly",
+        price: "2999",
+        groupSize: "2-5",
+    },
+
+    overview: `<p>Embark on a thrilling 3 Nights and 4 Days journey down the Ganges, blending adrenaline-pumping rapids with serene Himalayan vistas. Navigate 100 km of iconic stretches, from roaring Grade I-IV rapids like Roller Coaster to tranquil stretches flanked by emerald forests. Days are packed with rafting, hikes to hidden waterfalls, and cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Mahadev Chatti), where bonfires, barbecues, and starlit skies foster camaraderie and reflection.</p>
+
+    <br/>
+
+    <p>By day three, conquer the thrilling finale at Neem Beach, leaving with sun-kissed memories and a deeper bond with the Ganges. Perfect for adventurers and nature lovers, this trip merges white-water thrills, cultural discovery, and Himalayan tranquility in one soul-stirring escape. 🌊⛺️</p>`,
+
+    extras: [
+        {
+            label: "Meals",
+            description:
+                "Packed breakfast and lunch will be provided each day.",
         },
         {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3112.jpg",
-            alt: "",
+            label: "Lunch Stops",
+            description:
+                "We'll make a stop each day during theKayaking journey for lunch, usually on a white sand beach, where you can relax and refuel.",
         },
         {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3113.jpg",
-            alt: "",
+            label: "Camping Experience",
+            description:
+                "Each night will feature camping on beautiful beaches or by the river, complete with a bonfire and barbecue to enhance your outdoor experience.",
         },
     ],
 
-    faq: [
+    __i__: {
+        included: [
+            "Comprehensive arrangements for lodging and camping during the trip.",
+            "Expert guidance from India's most experienced team of guides, camp staff, and cooks.",
+            "Twin-sharing accommodation in tents or resort.",
+            "Transportation in a non-air-conditioned vehicle according to the itinerary.",
+            "All specified meals and safe drinking water as outlined in the itinerary.",
+            "Inclusion of peak fees, sanctuary fees, royalties, and permits where required.",
+            "Porter service up to 15kg per person.",
+        ],
+        notIncluded: [],
+    },
+};
+
+export const __E2__ = {
+    __p__: {
+        title: "Rafting Expedition",
+        description:
+            "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
+        duration: "3 Nights 4 Days",
+        featured_image: {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1313.jpg",
+            class: "object-center",
+        },
+        startingPoint: "Bhagwan",
+        endingPoint: "Nim Beach",
+        difficulty: "Family Friendly",
+        price: "2999",
+        groupSize: "2-5",
+    },
+
+    overview: `<p>Paddle through the untamed beauty of the Ganges on a 3-day kayaking expedition, blending thrilling rapids (Grade II-III), riverside camping, and Himalayan exploration. Navigate 68-78 km from Devprayag—where the Bhagirathi and Alaknanda rivers merge—to Neem Beach's serene shores. Days are spent conquering dynamic stretches of whitewater, hiking to hidden waterfalls, and exploring cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Kodiyala/Bhaysi) with bonfires, barbecues, and starlit skies.</p>
+
+    <br/>
+
+    <p>The journey peaks on Day 3 with a 30-35 km finale, weaving through rapids and calm waters to Neem Beach. Ideal for intermediate adventurers, this trip balances adrenaline with solitude, offering Himalayan vistas, spiritual energy, and a deep connection to the Ganges' rhythm. 🛶✨</p>`,
+
+    extras: [
+        {
+            label: "Meals",
+            description:
+                "Packed breakfast and lunch will be provided each day.",
+        },
+        {
+            label: "Lunch Stops",
+            description:
+                "We'll make a stop each day during theKayaking journey for lunch, usually on a white sand beach, where you can relax and refuel.",
+        },
+        {
+            label: "Camping Experience",
+            description:
+                "Each night will feature camping on beautiful beaches or by the river, complete with a bonfire and barbecue to enhance your outdoor experience.",
+        },
+    ],
+
+    __i__: {
+        included: [
+            "Comprehensive arrangements for lodging and camping during the trip.",
+            "Expert guidance from India's most experienced team of guides, camp staff, and cooks.",
+            "Twin-sharing accommodation in tents or resort.",
+            "Transportation in a non-air-conditioned vehicle according to the itinerary.",
+            "All specified meals and safe drinking water as outlined in the itinerary.",
+            "Inclusion of peak fees, sanctuary fees, royalties, and permits where required.",
+            "Porter service up to 15kg per person.",
+        ],
+        notIncluded: [],
+    },
+};
+
+export const __gallery__ = {
+    rafting: [
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1101.jpg",
+            alt: "Rafting through rapids",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1102.jpg",
+            alt: "Kayaking in calm waters",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1103.jpg",
+            alt: "Expedition team at campsite",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1104.jpg",
+            alt: "Group rafting adventure",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1105.jpg",
+            alt: "Kayaking instruction session",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1106.jpg",
+            alt: "Trekking through mountain trails",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1107.jpg",
+            alt: "White water rafting excitement",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1108.jpg",
+            alt: "Kayaking through gentle rapids",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1109.jpg",
+            alt: "Camping under the stars",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1110.jpg",
+            alt: "River crossing adventure",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1111.jpg",
+            alt: "Professional rafting team",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1112.jpg",
+            alt: "Kayaking training session",
+            category: "rafting",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1113.jpg",
+            alt: "Mountain view from campsite",
+            category: "rafting",
+        },
+    ],
+    kayaking: [
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1201.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1202.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1203.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1204.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1205.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1206.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1207.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1208.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1209.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1210.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1211.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1212.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1213.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1214.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1215.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1216.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1217.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1218.jpg",
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+    ],
+    camping: [
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1401.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1402.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1403.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1404.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1405.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1406.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1407.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1408.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1409.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1410.jpg",
+            alt: "Rafting safety demonstration",
+            category: "camping",
+        },
+    ],
+    expedition: [
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1301.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1302.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1303.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1304.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1305.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1306.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1307.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1308.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1309.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1310.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1311.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1312.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1313.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1314.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1315.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1316.jpg",
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+    ],
+};
+
+export const __faq__ = {
+    rafting: [
         {
             id: "1",
             title: "Is rafting safe?",
@@ -642,67 +711,235 @@ export const __K2__ = {
                 "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
         },
     ],
+    kayaking: [
+        {
+            id: "1",
+            title: "Is rafting safe?",
+            icon: AtSignIcon,
+            content:
+                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
+        },
+        {
+            id: "2",
+            title: "Does rafting require any experience?",
+            icon: CommandIcon,
+            content:
+                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
+        },
+        {
+            id: "3",
+            icon: EclipseIcon,
+            title: "Is rafting suitable for beginners?",
+            content:
+                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
+        },
+        {
+            id: "4",
+            icon: EclipseIcon,
+            title: "What is the minimum age for rafting?",
+            content:
+                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
+        },
+    ],
+    camping: [
+        {
+            id: "1",
+            title: "Is rafting safe?",
+            icon: AtSignIcon,
+            content:
+                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
+        },
+        {
+            id: "2",
+            title: "Does rafting require any experience?",
+            icon: CommandIcon,
+            content:
+                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
+        },
+        {
+            id: "3",
+            icon: EclipseIcon,
+            title: "Is rafting suitable for beginners?",
+            content:
+                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
+        },
+        {
+            id: "4",
+            icon: EclipseIcon,
+            title: "What is the minimum age for rafting?",
+            content:
+                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
+        },
+    ],
+    expedition: [
+        {
+            id: "1",
+            title: "Is rafting safe?",
+            icon: AtSignIcon,
+            content:
+                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
+        },
+        {
+            id: "2",
+            title: "Does rafting require any experience?",
+            icon: CommandIcon,
+            content:
+                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
+        },
+        {
+            id: "3",
+            icon: EclipseIcon,
+            title: "Is rafting suitable for beginners?",
+            content:
+                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
+        },
+        {
+            id: "4",
+            icon: EclipseIcon,
+            title: "What is the minimum age for rafting?",
+            content:
+                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
+        },
+    ],
+};
 
-    itinerary: [
+export const __itinerary__ = {
+    rafting: [
+        {
+            label: "White Water Rafting",
+            description:
+                "<p>Engage in enthralling white water rafting expedition on the mighty Ganges in Rishikesh. Navigate through the thrilling rapids amidst the mountains</p>",
+        },
+        {
+            label: "Body Surfing",
+            description:
+                "<p>Experience the body surfing and swimming in the holy river Ganga with Life Jacket</p>",
+        },
+        {
+            label: "Water Activities",
+            description:
+                "<p>Experience swimming, balancing on the rapid, and other water activities</p>",
+        },
+    ],
+
+    kayaking_1: [
         {
             label: "Day 1",
             description:
-                "Basic skills briefing and equipment orientation. Introduction to kayaking fundamentals: proper swimming techniques in currents, essential paddling strokes, and river safety protocols. Gear familiarization session.",
+                "<p>Arrive in Rishikesh and settle in. Meet your instructor for a basic skills briefing, equipment orientation, and introduction to kayaking. Learn swimming techniques in river currents, fundamental paddling strokes, and basic river hydrology principles.</p>",
         },
         {
             label: "Day 2",
             description:
-                "Whitewater swimming techniques and river dynamics introduction. Practice emergency exits and wet exits. Begin foundational training for river crossings and initial Eskimo roll attempts (self-rescue technique) in controlled conditions.",
+                "<p>Practice whitewater swimming techniques and emergency exit procedures. Learn to enter/exit river eddies and execute river crossings. Begin foundational training for the Eskimo roll (self-rescue technique) under instructor guidance.</p>",
         },
         {
             label: "Day 3",
             description:
-                "Apply learned skills on Class II rapids with professional guides. First guided rapid run focusing on basic obstacle navigation and current reading. Debrief session for technique refinement.",
+                "<p>Apply learned skills on Class II rapids with professional kayakers. Conduct your first mini-expedition, focusing on river navigation and rapid negotiation techniques.</p>",
         },
         {
             label: "Day 4",
             description:
-                "Consolidation day: Advanced practice of river crossings, Eskimo roll mastery, and rapid navigation strategies. Guided Class II rapid runs with emphasis on self-rescue techniques and team coordination.",
+                "<p>Consolidate skills with advanced practice of Eskimo rolls, river crossings, and rapid navigation. Execute a final Class II rapid run with confidence. Celebrate your newfound kayaking abilities and understanding of river terrain exploration.</p>",
+        },
+    ],
+
+    kayaking_2: [
+        {
+            label: "Day 1",
+            description:
+                "<p>Basic skills briefing and equipment orientation. Introduction to kayaking fundamentals: proper swimming techniques in currents, essential paddling strokes, and river safety protocols. Gear familiarization session.</p>",
+        },
+        {
+            label: "Day 2",
+            description:
+                "<p>Whitewater swimming techniques and river dynamics introduction. Practice emergency exits and wet exits. Begin foundational training for river crossings and initial Eskimo roll attempts (self-rescue technique) in controlled conditions.</p>",
+        },
+        {
+            label: "Day 3",
+            description:
+                "<p>Apply learned skills on Class II rapids with professional guides. First guided rapid run focusing on basic obstacle navigation and current reading. Debrief session for technique refinement.</p>",
+        },
+        {
+            label: "Day 4",
+            description:
+                "<p>Consolidation day: Advanced practice of river crossings, Eskimo roll mastery, and rapid navigation strategies. Guided Class II rapid runs with emphasis on self-rescue techniques and team coordination.</p>",
         },
         {
             label: "Day 5",
             description:
-                "Progression to Class II+ rapids. Technical focus on eddy hopping, ferry gliding, and advanced current utilization. Scenario-based training for complex rapid sequences.",
+                "<p>Progression to Class II+ rapids. Technical focus on eddy hopping, ferry gliding, and advanced current utilization. Scenario-based training for complex rapid sequences.</p>",
         },
         {
             label: "Day 6",
             description:
-                "Challenge day on Class III rapids. Intensive practice of combat rolls (Eskimo rolls in moving current), precision river crossings, and rapid scouting techniques. Debrief and safety analysis.",
+                "<p>Challenge day on Class III rapids. Intensive practice of combat rolls (Eskimo rolls in moving current), precision river crossings, and rapid scouting techniques. Debrief and safety analysis.</p>",
         },
         {
             label: "Day 7",
             description:
-                "Advanced skills culmination: Execute technical river crossings and combat rolls in Class III whitewater. Final expedition run combining all learned techniques. Certification and graduation celebration.",
+                "<p>Advanced skills culmination: Execute technical river crossings and combat rolls in Class III whitewater. Final expedition run combining all learned techniques. Certification and graduation celebration.</p>",
         },
     ],
-    extras: [
+
+    expedition_1: [
         {
-            label: "Timing",
-            description:
-                "Your training will be held daily from 9am to approx 12pm 3-4 hours daily",
+            label: "Day 1: Long River Rafting",
+            description: `<ul>
+                    <li>5:00 to 6:00 AM: Departure from Tapovan.</li>
+                    <li>10:00 AM: Arrive at Bhagwan</li>
+                    <li>10:30 AM: Start your river rafting adventure, covering 30-35 km of exhilarating rapids.</li>
+                    <li>Evening: Reach Vyas Ghat, where you'll camp for the night.</li>
+                    <li>Activities: Unwind with a bonfire and barbecue under the stars.</li>
+                </ul>`,
         },
         {
-            label: "What to wear",
-            description:
-                "Any quick dry shorts, tshirt & slippers. You will get a wet suit and other gear at the school.",
+            label: "Day 2: Rafting & Exploration",
+            description: `<ul>
+                    <li>Morning: After breakfast, continue rafting for 25-30 km.</li>
+                    <li>Afternoon: Reach Kaudiyala</li>
+                    <li>Activities: In between rafting, enjoy a short hike, explore the waterfall, and visit Gartang Gali.</li>
+                    <li>Evening: Camp at Mahadev Chatti.</li>
+                    <li>Activities: Enjoy a bonfire and barbecue by the riverside.</li>
+                </ul>`,
         },
         {
-            label: "What to carry",
-            description:
-                "A bottle of water & some cash to buy tea/ snacks at the training site. You can keep your phone in the instructor's dry bag during kayak sessions. ",
+            label: "Day 3: Rafting to Neem Beach",
+            description: `<ul>
+                    <li>Morning: Set out on a thrilling 35-40 km rafting journey.</li>
+                    <li>Evening: Check out and conclude your rafting adventure.</li>
+                </ul>`,
         },
     ],
-    __i__: {
-        included: [
-            "Transportation from Office to Office/ to the starting and from finishing point back to office.",
-            "All Kayaking gear including imported life jackets, Helmet, paddle and wet suites in winter time ( Dec til March)",
-            "Safety Kayaker with all the trips",
-        ],
-        notIncluded: ["Accommodation", "Expenses of Personal Nature"],
-    },
+
+    expedition_2: [
+        {
+            label: "Day 1: Kayak & Exploration",
+            description: `<ul>
+                    <li>5:00 - 6;00 AM: Departure from Tapovan via traveller.</li>
+                    <li>10:00 AM: Arrive at Devparyag.</li>
+                    <li>10:30AM: Start your Kayak Expedition covering 18 km.</li>
+                    <li>Evening: Reach Vyas Ghat, where you'll camp for the night.</li>
+                    <li>Activities: Unwind with a bonfire and barbecue under the stars.</li>
+                </ul>`,
+        },
+        {
+            label: "Day 2: Kayak & Exploration",
+            description: `<ul>
+                    <li>Morning: After breakfast, continue Kayak for 20-25 km.</li>
+                    <li>Afternoon: Reach Mahadev Chatti</li>
+                    <li>Activities: In between Kayak, enjoy a short hike, explore the waterfall, and visit Gartang Gali.</li>
+                    <li>Evening: Camp at Kodiyala/Bhaysi</li>
+                    <li>Activities: Enjoy a bonfire and barbecue by the riverside.</li>
+                </ul>`,
+        },
+        {
+            label: "Day 3: Kayak to Neem Beach",
+            description: `<ul>
+                    <li>Morning: Set out on a thrilling 30-35km Kayak journey towards    Neem Beach.</li>
+                    <li>Evening: Arrive at Neem Beach</li>
+                </ul>`,
+        },
+    ],
 };

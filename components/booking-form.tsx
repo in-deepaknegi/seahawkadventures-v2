@@ -82,17 +82,19 @@ export default function BookingForm({
                 },
                 numberOfUsers: Number(formData.participants),
                 totalAmount: amount,
-                users: [{
-                    name: formData.name,
-                    email: formData.email,
-                    mobile: formData.phone,
-                }],
+                users: [
+                    {
+                        name: formData.name,
+                        email: formData.email,
+                        mobile: formData.phone,
+                    },
+                ],
             };
 
             // Create payment order
             const response = await createPayment(amount, bookingData);
 
-            if ('error' in response) {
+            if ("error" in response) {
                 setError(response.error || "An error occurred");
                 return;
             }
@@ -113,8 +115,13 @@ export default function BookingForm({
                         console.log("Booking ID:", response.bookingId);
                         console.log("Payment ID:", response.paymentId);
 
-                        if (!response.razorpay_payment_id || !response.razorpay_signature) {
-                            toast.error("Payment verification failed - Missing payment details");
+                        if (
+                            !response.razorpay_payment_id ||
+                            !response.razorpay_signature
+                        ) {
+                            toast.error(
+                                "Payment verification failed - Missing payment details",
+                            );
                             return;
                         }
 
@@ -160,7 +167,7 @@ export default function BookingForm({
                 },
             };
 
-            if (typeof window !== 'undefined' && window.Razorpay) {
+            if (typeof window !== "undefined" && window.Razorpay) {
                 const razorpay = new window.Razorpay(options);
                 razorpay.open();
             } else {
@@ -256,7 +263,9 @@ export default function BookingForm({
                                     )}
                                 >
                                     <CalendarIcon className="mr-2 h-4 w-4" />
-                                    {date ? format(date.toDate('UTC'), "PPP") : "Select date"}
+                                    {date
+                                        ? format(date.toDate("UTC"), "PPP")
+                                        : "Select date"}
                                 </Button>
                             </PopoverTrigger>
                             <PopoverContent className="w-auto p-0">
@@ -282,7 +291,9 @@ export default function BookingForm({
                             </SelectTrigger>
                             <SelectContent>
                                 <SelectItem value="9:00 AM">9:00 AM</SelectItem>
-                                <SelectItem value="12:00 PM">12:00 PM</SelectItem>
+                                <SelectItem value="12:00 PM">
+                                    12:00 PM
+                                </SelectItem>
                                 <SelectItem value="3:00 PM">3:00 PM</SelectItem>
                             </SelectContent>
                         </Select>
@@ -353,8 +364,7 @@ export default function BookingForm({
                 )}
 
                 <p className="text-center text-xs text-gray-500">
-                    By booking, you agree to our terms and conditions. A 20% deposit
-                    is required to confirm your booking.
+                    By booking, you agree to our terms and conditions.
                 </p>
             </form>
         </>

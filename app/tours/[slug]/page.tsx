@@ -7,6 +7,11 @@ import {
     __R4__,
     __K1__,
     __K2__,
+    __E1__,
+    __E2__,
+    __gallery__,
+    __faq__,
+    __itinerary__,
     BASE_URL,
 } from "@/config/package";
 import Image from "next/image";
@@ -64,51 +69,69 @@ const page = async ({ params }: { params: Params }) => {
             content_0 = __R1__.__p__;
             content_1 = __R1__.overview;
             content_2 = __R1__.__i__;
-            content_3 = __R1__.gallery;
-            content_4 = __R1__.faq;
-            content_5 = __R1__.itinerary;
+            content_3 = __gallery__.rafting;
+            content_4 = __faq__.rafting;
+            content_5 = __itinerary__.rafting;
             break;
         case "ganga-river-rafting-shivpuri-tapovan":
             content_0 = __R2__.__p__;
             content_1 = __R2__.overview;
             content_2 = __R2__.__i__;
-            content_3 = __R2__.gallery;
-            content_4 = __R2__.faq;
-            content_5 = __R2__.itinerary;
+            content_3 = __gallery__.rafting;
+            content_4 = __faq__.rafting;
+            content_5 = __itinerary__.rafting;
             break;
         case "ganga-river-rafting-marine-drive-tapovan":
             content_0 = __R3__.__p__;
             content_1 = __R3__.overview;
             content_2 = __R3__.__i__;
-            content_3 = __R3__.gallery;
-            content_4 = __R3__.faq;
-            content_5 = __R3__.itinerary;
-            break;
-        case "kayak-basic-lessons-in-rishikesh":
-            content_0 = __K1__.__p__;
-            content_1 = __K1__.overview;
-            content_2 = __K1__.__i__;
-            content_3 = __K1__.gallery;
-            content_4 = __K1__.faq;
-            content_5 = __K1__.itinerary;
-            content_6 = __K1__.extras;
+            content_3 = __gallery__.rafting;
+            content_4 = __faq__.rafting;
+            content_5 = __itinerary__.rafting;
             break;
         case "ganga-river-rafting-kaudiyala-tapovan":
             content_0 = __R4__.__p__;
             content_1 = __R4__.overview;
             content_2 = __R4__.__i__;
-            content_3 = __R4__.gallery;
-            content_4 = __R4__.faq;
-            content_5 = __R4__.itinerary;
+            content_3 = __gallery__.rafting;
+            content_4 = __faq__.rafting;
+            content_5 = __itinerary__.rafting;
+            break;
+        case "kayak-basic-lessons-in-rishikesh":
+            content_0 = __K1__.__p__;
+            content_1 = __K1__.overview;
+            content_2 = __K1__.__i__;
+            content_3 = __gallery__.rafting;
+            content_4 = __faq__.kayaking;
+            content_5 = __itinerary__.kayaking_1;
+            content_6 = __K1__.extras;
             break;
         case "kayak-complete-lessons-in-rishikesh":
             content_0 = __K2__.__p__;
             content_1 = __K2__.overview;
             content_2 = __K2__.__i__;
-            content_3 = __K2__.gallery;
-            content_4 = __K2__.faq;
-            content_5 = __K2__.itinerary;
+            content_3 = __gallery__.rafting;
+            content_4 = __faq__.kayaking;
+            content_5 = __itinerary__.kayaking_2;
             content_6 = __K2__.extras;
+            break;
+        case "rafting-expedition-in-rishikesh":
+            content_0 = __E1__.__p__;
+            content_1 = __E1__.overview;
+            content_2 = __E1__.__i__;
+            content_3 = __gallery__.expedition;
+            content_4 = __faq__.expedition;
+            content_5 = __itinerary__.expedition_1;
+            content_6 = __E1__.extras;
+            break;
+        case "kayak-expedition-in-rishikesh":
+            content_0 = __E2__.__p__;
+            content_1 = __E2__.overview;
+            content_2 = __E2__.__i__;
+            content_3 = __gallery__.expedition;
+            content_4 = __faq__.expedition;
+            content_5 = __itinerary__.expedition_2;
+            content_6 = __E2__.extras;
             break;
         default:
             break;
@@ -120,10 +143,10 @@ const page = async ({ params }: { params: Params }) => {
                 {/* Hero Section */}
                 <section className="relative h-[300px] overflow-hidden md:h-[400px] lg:h-[600px]">
                     <Image
-                        src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
+                        src={content_0?.featured_image.src ?? ""}
                         alt="Beginner's Rafting Adventure"
                         fill
-                        className="object-cover"
+                        className={`object-cover ${content_0?.featured_image.class}`}
                         priority
                     />
                     <div className="absolute inset-0 bg-black/40" />
@@ -239,7 +262,9 @@ const page = async ({ params }: { params: Params }) => {
                                     <h2 className="mb-4 border-b py-2 text-2xl font-medium text-blue-700 md:text-3xl">
                                         Inclusions/Exclusions
                                     </h2>
-                                    <div className="grid grid-cols-2 gap-4">
+                                    <div
+                                        className={`grid ${content_2?.notIncluded.length! > 0 ? "grid-cols-2" : "grid-cols-1"} gap-4`}
+                                    >
                                         <div>
                                             <h3 className="text-lg font-medium md:text-xl">
                                                 What is included in the tour
@@ -260,26 +285,31 @@ const page = async ({ params }: { params: Params }) => {
                                                 )}
                                             </ul>
                                         </div>
-                                        <div>
-                                            <h3 className="text-lg font-semibold">
-                                                What is excluded in the tour
-                                            </h3>
-                                            <ul className="mt-3 space-y-2 text-gray-700">
-                                                {content_2?.notIncluded.map(
-                                                    (item, index) => (
-                                                        <li
-                                                            key={index}
-                                                            className="flex items-start gap-2 text-[15px] text-gray-700"
-                                                        >
-                                                            <span>
-                                                                <XCircleIcon className="size-5 text-red-600" />
-                                                            </span>
-                                                            {item}
-                                                        </li>
-                                                    ),
-                                                )}
-                                            </ul>
-                                        </div>
+                                        {content_2?.notIncluded.length! > 0 && (
+                                            <>
+                                                <div>
+                                                    <h3 className="text-lg font-semibold">
+                                                        What is excluded in the
+                                                        tour
+                                                    </h3>
+                                                    <ul className="mt-3 space-y-2 text-gray-700">
+                                                        {content_2?.notIncluded.map(
+                                                            (item, index) => (
+                                                                <li
+                                                                    key={index}
+                                                                    className="flex items-start gap-2 text-[15px] text-gray-700"
+                                                                >
+                                                                    <span>
+                                                                        <XCircleIcon className="size-5 text-red-600" />
+                                                                    </span>
+                                                                    {item}
+                                                                </li>
+                                                            ),
+                                                        )}
+                                                    </ul>
+                                                </div>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
 
@@ -304,9 +334,15 @@ const page = async ({ params }: { params: Params }) => {
                                                         <h3 className="text-lg font-semibold">
                                                             {item.label}
                                                         </h3>
-                                                        <p className="text-gray-700">
+                                                        <div
+                                                            dangerouslySetInnerHTML={{
+                                                                __html: item.description,
+                                                            }}
+                                                            className="content mt-2 text-gray-700"
+                                                        />
+                                                        {/* <p className="text-gray-700">
                                                             {item.description}
-                                                        </p>
+                                                        </p> */}
                                                     </div>
                                                 </div>
                                             </div>
@@ -315,30 +351,34 @@ const page = async ({ params }: { params: Params }) => {
                                 </div>
 
                                 {/* Itinerary */}
-                                <div>
-                                    <h2 className="mb-4 border-b py-2 text-2xl font-medium text-blue-700 md:text-3xl">
-                                        Extras
-                                    </h2>
-                                    <div className="mt-3 space-y-4">
-                                        {content_6?.map((item, index) => (
-                                            <div
-                                                key={index}
-                                                className="flex gap-4"
-                                            >
-                                                <div className="flex items-start gap-2">
-                                                    <div>
-                                                        <h3 className="text-lg font-semibold">
-                                                            {item.label}
-                                                        </h3>
-                                                        <p className="text-gray-700">
-                                                            {item.description}
-                                                        </p>
+                                {content_6 && (
+                                    <div>
+                                        <h2 className="mb-4 border-b py-2 text-2xl font-medium text-blue-700 md:text-3xl">
+                                            Extras
+                                        </h2>
+                                        <div className="mt-3 space-y-4">
+                                            {content_6?.map((item, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="flex gap-4"
+                                                >
+                                                    <div className="flex items-start gap-2">
+                                                        <div>
+                                                            <h3 className="text-lg font-semibold">
+                                                                {item.label}
+                                                            </h3>
+                                                            <p className="text-gray-700">
+                                                                {
+                                                                    item.description
+                                                                }
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
+                                )}
 
                                 <div>
                                     <h2 className="mb-4 border-b py-2 text-2xl font-medium text-blue-700 md:text-3xl">
@@ -566,7 +606,7 @@ const page = async ({ params }: { params: Params }) => {
                                 <div className="grid gap-4 md:grid-cols-2 md:gap-6">
                                     <div className="relative h-48 overflow-hidden rounded-lg md:h-64">
                                         <Image
-                                            src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3111.jpg"
+                                            src={content_3?.[4].src ?? ""}
                                             alt="Rafting group photo"
                                             fill
                                             className="object-cover"
@@ -574,7 +614,7 @@ const page = async ({ params }: { params: Params }) => {
                                     </div>
                                     <div className="relative h-48 overflow-hidden rounded-lg md:h-64">
                                         <Image
-                                            src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/img-3112.jpg"
+                                            src={content_3?.[5].src ?? ""}
                                             alt="Rafting action shot"
                                             fill
                                             className="object-cover"

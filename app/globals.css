@@ -163,3 +163,7 @@
         transform: translateY(calc(-100% - var(--gap)));
     }
 }
+
+.content > ul {
+    @apply list-disc ml-4;
+}

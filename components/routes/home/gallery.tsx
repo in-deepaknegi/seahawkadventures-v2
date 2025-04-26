@@ -100,6 +100,7 @@ export default function Gallery() {
                                 autoPlay
                                 loop
                                 muted
+                                controls
                                 src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745082720/vid_1150.mp4"
                                 className="h-full w-full"
                             />
@@ -111,6 +112,7 @@ export default function Gallery() {
                                 autoPlay
                                 loop
                                 muted
+                                controls
                                 src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745082740/vid_1151.mp4"
                                 className="h-full w-full"
                             />
@@ -122,6 +124,7 @@ export default function Gallery() {
                                 autoPlay
                                 loop
                                 muted
+                                controls
                                 src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745259837/vid_1350.mp4"
                                 className="h-full w-full"
                             />

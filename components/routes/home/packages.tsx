@@ -93,8 +93,8 @@ const packages = {
             title: "Rafting Expedition",
             description:
                 "Explore the foothills of the Himalayas with a guided day trek",
-            duration: "8 hours",
-            link: "#",
+            duration: "3 Nights 4 Days",
+            link: "/tours/rafting-expedition-in-rishikesh",
             groupSize: "8-12 people",
             price: 2000,
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
@@ -103,8 +103,8 @@ const packages = {
             title: "Kayak Expedition",
             description:
                 "Experience the wilderness with an overnight camping expedition",
-            duration: "2 days",
-            link: "#",
+            duration: "3 Days",
+            link: "/tours/kayak-expedition-in-rishikesh",
             groupSize: "8-12 people",
             price: 4500,
             image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",

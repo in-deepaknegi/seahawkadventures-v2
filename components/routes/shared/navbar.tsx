@@ -116,11 +116,11 @@ export default function Navbar() {
             children: [
                 {
                     title: "Rafting Expedition",
-                    href: "#",
+                    href: "/tours/rafting-expedition-in-rishikesh",
                 },
                 {
                     title: "Kayak Expedition",
-                    href: "#",
+                    href: "/tours/kayak-expedition-in-rishikesh",
                 },
             ],
         },

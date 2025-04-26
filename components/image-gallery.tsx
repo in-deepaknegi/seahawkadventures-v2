@@ -29,8 +29,8 @@ const ImageGallery = ({ images }: { images: any }) => {
                         <CarouselItem key={index} className="pl-0">
                             <div className="relative w-full">
                                 <CldImage
-                                    src={item.src}
-                                    alt={item.alt}
+                                    src={item.src ?? null}
+                                    alt={item.alt ?? ""}
                                     // fill
                                     width={1920}
                                     height={1080}

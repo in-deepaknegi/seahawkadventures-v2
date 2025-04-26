@@ -10,6 +10,7 @@ export type PackageProps = {
         description: string;
         features: {
             distance: string;
+            // featured_image: string;
             duration: string;
             startingPoint: string;
             endingPoint: string;
