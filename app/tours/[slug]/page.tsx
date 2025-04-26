@@ -101,7 +101,7 @@ const page = async ({ params }: { params: Params }) => {
             content_0 = __K1__.__p__;
             content_1 = __K1__.overview;
             content_2 = __K1__.__i__;
-            content_3 = __gallery__.rafting;
+            content_3 = __gallery__.kayaking;
             content_4 = __faq__.kayaking;
             content_5 = __itinerary__.kayaking_1;
             content_6 = __K1__.extras;
@@ -110,7 +110,7 @@ const page = async ({ params }: { params: Params }) => {
             content_0 = __K2__.__p__;
             content_1 = __K2__.overview;
             content_2 = __K2__.__i__;
-            content_3 = __gallery__.rafting;
+            content_3 = __gallery__.kayaking;
             content_4 = __faq__.kayaking;
             content_5 = __itinerary__.kayaking_2;
             content_6 = __K2__.extras;
@@ -141,7 +141,7 @@ const page = async ({ params }: { params: Params }) => {
             <Navbar />
             <main className="-mt-[5rem]">
                 {/* Hero Section */}
-                <section className="relative h-[300px] overflow-hidden md:h-[400px] lg:h-[600px]">
+                <section className="relative h-[70vh] overflow-hidden md:h-[400px] lg:h-[600px]">
                     <Image
                         src={content_0?.featured_image.src ?? ""}
                         alt="Beginner's Rafting Adventure"
@@ -150,15 +150,15 @@ const page = async ({ params }: { params: Params }) => {
                         priority
                     />
                     <div className="absolute inset-0 bg-black/40" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white">
-                        <h1 className="mb-2 text-3xl font-bold md:mb-4 md:text-4xl lg:text-5xl">
+                    <div className="absolute inset-0 flex h-full flex-col md:items-center justify-end p-4 text-center text-white">
+                        <h1 className="mb-2 text-2xl font-bold md:mb-4 md:text-4xl lg:text-5xl">
                             {doc?.title}
                         </h1>
-                        <p className="max-w-3xl text-lg md:text-xl">
+                        <p className="max-w-3xl text-base md:text-xl">
                             {content_0?.description}
                         </p>
 
-                        <div className="mt-10 flex gap-4">
+                        <div className="mt-5 md:mt-10 flex flex-col items-center justify-center md:flow-row gap-2 md:gap-4">
                             <div className="flex items-center gap-2">
                                 <Clock />
                                 <p>{content_0?.duration}</p>
@@ -263,7 +263,7 @@ const page = async ({ params }: { params: Params }) => {
                                         Inclusions/Exclusions
                                     </h2>
                                     <div
-                                        className={`grid ${content_2?.notIncluded.length! > 0 ? "grid-cols-2" : "grid-cols-1"} gap-4`}
+                                        className={`grid ${content_2?.notIncluded.length! > 0 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"} gap-4`}
                                     >
                                         <div>
                                             <h3 className="text-lg font-medium md:text-xl">
@@ -288,7 +288,7 @@ const page = async ({ params }: { params: Params }) => {
                                         {content_2?.notIncluded.length! > 0 && (
                                             <>
                                                 <div>
-                                                    <h3 className="text-lg font-semibold">
+                                                    <h3 className="text-lg font-medium md:text-xl">
                                                         What is excluded in the
                                                         tour
                                                     </h3>
