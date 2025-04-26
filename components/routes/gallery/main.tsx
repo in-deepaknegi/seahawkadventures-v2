@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import { Link, X } from "lucide-react";
 import CldImageComponent from "@/components/cld-image";
+import { Block, Grid } from "@/components/motion/grid";
 
 const galleryImages = [
     {
@@ -349,7 +350,7 @@ export default function GalleryPage() {
                         <div className="flex flex-wrap gap-2 rounded-full bg-gray-100 p-1 shadow-sm">
                             <button
                                 onClick={() => setFilter(null)}
-                                className={`rounded-full px-4 py-2 cursor-pointer transition ${
+                                className={`cursor-pointer rounded-full px-4 py-2 transition ${
                                     filter === null
                                         ? "bg-blue-700 text-white"
                                         : ""
@@ -463,68 +464,56 @@ export default function GalleryPage() {
                 </div>
             </section>
             {/* Video Gallery */}
-            <section className="bg-blue-50 py-16">
-                <div className="mx-auto max-w-7xl">
-                    <div className="mb-12 text-center">
-                        <h2 className="mb-4 text-3xl font-bold text-blue-800">
-                            Adventure Videos
-                        </h2>
-                        <p className="mx-auto max-w-3xl text-lg text-blue-600">
-                            Watch our thrilling adventures in action
-                        </p>
-                    </div>
+            <section className="bg-gray-900 text-white py-16">
+                <div className="mx-auto max-w-3xl text-center md:mb-6">
+                    <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
+                        Videos
+                    </h2>
 
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {[1, 2, 3].map((index) => (
-                            <div
-                                key={index}
-                                className="overflow-hidden rounded-lg bg-white shadow-md"
-                            >
-                                <div className="relative aspect-video">
-                                    <CldImageComponent
-                                        src={`/placeholder.svg?height=400&width=600&text=Video ${index}`}
-                                        alt={`Adventure Video ${index}`}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/30">
-                                            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 24 24"
-                                                    fill="white"
-                                                    className="h-8 w-8"
-                                                >
-                                                    <path d="M8 5v14l11-7z" />
-                                                </svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="p-4">
-                                    <h3 className="text-lg font-bold">{`Thrilling ${
-                                        index === 1
-                                            ? "Rafting"
-                                            : index === 2
-                                              ? "Kayaking"
-                                              : "Expedition"
-                                    } Adventure`}</h3>
-                                    <p className="text-gray-700">
-                                        Experience the excitement of our{" "}
-                                        {index === 1
-                                            ? "rafting"
-                                            : index === 2
-                                              ? "kayaking"
-                                              : "expedition"}{" "}
-                                        adventures through this action-packed
-                                        video.
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <p className="text-gray-200">
+                        Glimpses of the thrilling experiences that await you
+                    </p>
                 </div>
+
+                <Grid className="mx-auto max-w-7xl">
+                    <Block className="col-span-4">
+                        <video
+                            width="1920"
+                            height="1080"
+                            autoPlay
+                            loop
+                            muted
+                            controls
+                            src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745082720/vid_1150.mp4"
+                            className="h-full w-full"
+                        />
+                    </Block>
+                    <Block className="col-span-4">
+                        <video
+                            width="1920"
+                            height="1080"
+                            autoPlay
+                            loop
+                            muted
+                            controls
+                            src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745082740/vid_1151.mp4"
+                            className="h-full w-full"
+                        />
+                    </Block>
+                    <Block className="col-span-4">
+                        <video
+                            width="1920"
+                            height="1080"
+                            autoPlay
+                            loop
+                            muted
+                            controls
+                            src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745259837/vid_1350.mp4"
+                            className="h-full w-full"
+                        />
+                    </Block>
+                </Grid>
+             
             </section>
         </main>
     );

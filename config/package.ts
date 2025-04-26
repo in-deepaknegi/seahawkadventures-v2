@@ -458,16 +458,16 @@ export const __gallery__ = {
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1202.jpg",
-            alt: "Rafting safety demonstration",
-            category: "kayaking",
-        },
-        {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1203.jpg",
-            alt: "Rafting safety demonstration",
-            category: "kayaking",
-        },
+        // {
+        //     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1202.jpg",
+        //     alt: "Rafting safety demonstration",
+        //     category: "kayaking",
+        // },
+        // {
+        //     src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1203.jpg",
+        //     alt: "Rafting safety demonstration",
+        //     category: "kayaking",
+        // },
         {
             src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1204.jpg",
             alt: "Rafting safety demonstration",
