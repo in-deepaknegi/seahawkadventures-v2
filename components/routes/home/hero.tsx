@@ -17,7 +17,7 @@ const images = [
     {
         title: "Kayak School",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1218.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1218.jpg",
             alt: "Kayak School",
         },
         stats: {
@@ -28,7 +28,7 @@ const images = [
     {
         title: "Rafting in Rishikesh",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1101.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg",
             alt: "Rafting in Rishikesh",
         },
         stats: {
@@ -39,7 +39,7 @@ const images = [
     {
         title: "Expedition Adventures",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081821/img_1313.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
             alt: "Expedition Adventures",
         },
         stats: {
@@ -50,7 +50,7 @@ const images = [
     {
         title: "Camping in Rishikesh",
         image: {
-            src: "https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1406.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1406.jpg",
             alt: "Camping in Rishikesh",
         },
         stats: {

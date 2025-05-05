@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/feedback`,
         images: [
             {
-                url: `https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg`,
+                url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1734974473/img-3105.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "Customer Feedback",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         description:
             "Hear from those who have experienced the thrill with Sea Hawk Adventure",
         images: [
-            `https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg`,
+            `https://res.cloudinary.com/dr8gbqqid/image/upload/v1734974473/img-3105.jpg`,
         ],
         site: "@SeaHawkAdventure",
         creator: "@SeaHawkAdventure",

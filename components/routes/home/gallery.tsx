@@ -23,7 +23,7 @@ export default function Gallery() {
                     <Grid className="">
                         <Block className="col-span-12 row-span-2 md:col-span-6">
                             <CldImage
-                                src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1101.jpg"
+                                src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg"
                                 alt=""
                                 width={1920}
                                 height={1080}
@@ -32,28 +32,28 @@ export default function Gallery() {
                         </Block>
                         <Block className="col-span-12 row-span-2 grid grid-cols-2 gap-2 md:col-span-6 md:gap-4">
                             <CldImage
-                                src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1113.jpg"
+                                src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1113.jpg"
                                 alt=""
                                 width={1920}
                                 height={1080}
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                             <CldImage
-                                src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1409.jpg"
+                                src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1409.jpg"
                                 alt=""
                                 width={1920}
                                 height={1080}
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                             <CldImage
-                                src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1211.jpg"
+                                src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1211.jpg"
                                 alt=""
                                 width={1920}
                                 height={1080}
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                             <CldImage
-                                src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745081448/img_1406.jpg"
+                                src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1406.jpg"
                                 alt=""
                                 width={1920}
                                 height={1080}
@@ -63,7 +63,7 @@ export default function Gallery() {
 
                         <Block className="col-span-12 h-80 md:col-span-8">
                             <CldImage
-                                src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745051443/img_1213.jpg"
+                                src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1213.jpg"
                                 alt=""
                                 width={1920}
                                 height={1080}
@@ -73,7 +73,7 @@ export default function Gallery() {
 
                         <Block className="col-span-12 flex flex-col items-center gap-4 md:col-span-4">
                             <CldImage
-                                src="https://res.cloudinary.com/dkuixrz40/image/upload/v1745082693/img_1102.jpg"
+                                src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg"
                                 alt=""
                                 width={1920}
                                 height={1080}
@@ -101,7 +101,7 @@ export default function Gallery() {
                                 loop
                                 muted
                                 controls
-                                src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745082720/vid_1150.mp4"
+                                src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745082720/vid_1150.mp4"
                                 className="h-full w-full"
                             />
                         </Block>
@@ -113,7 +113,7 @@ export default function Gallery() {
                                 loop
                                 muted
                                 controls
-                                src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745082740/vid_1151.mp4"
+                                src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745082740/vid_1151.mp4"
                                 className="h-full w-full"
                             />
                         </Block>
@@ -125,7 +125,7 @@ export default function Gallery() {
                                 loop
                                 muted
                                 controls
-                                src="https://res.cloudinary.com/dkuixrz40/video/upload/v1745259837/vid_1350.mp4"
+                                src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745259837/vid_1350.mp4"
                                 className="h-full w-full"
                             />
                         </Block>

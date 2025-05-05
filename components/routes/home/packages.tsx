@@ -33,7 +33,7 @@ const packages = {
             link: "/tours/ganga-river-rafting-marine-drive-shivpuri",
             groupSize: "6-8 people",
             price: 599,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3102.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
         },
         {
             title: "16 Km Rafting",
@@ -43,7 +43,7 @@ const packages = {
             link: "/tours/ganga-river-rafting-shivpuri-tapovan",
             groupSize: "6-8 people",
             price: 999,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3104.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1112.jpg",
         },
         {
             title: "26 Km Rafting",
@@ -53,7 +53,7 @@ const packages = {
             link: "/tours/ganga-river-rafting-marine-drive-tapovan",
             groupSize: "6-8 people",
             price: 1499,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg",
         },
         {
             title: "36 Km Rafting",
@@ -63,7 +63,7 @@ const packages = {
             link: "/tours/ganga-river-rafting-marine-drive-tapovan",
             groupSize: "6-8 people",
             price: 2499,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3105.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1103.jpg",
         },
     ],
     kayaking: [
@@ -75,7 +75,7 @@ const packages = {
             link: "/tours/kayak-basic-lessons-in-rishikesh",
             groupSize: "2-5 people",
             price: 3499,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744875212/img-3202.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745689766/img_1205.jpg",
         },
         {
             title: "Complete Kayak Lessons (7 days)",
@@ -85,7 +85,7 @@ const packages = {
             link: "/tours/kayak-complete-lessons-in-rishikesh",
             groupSize: "2-5 people",
             price: 2999,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1744794356/img_3200.heic",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745689766/img_1218.jpg",
         },
     ],
     expedition: [
@@ -97,7 +97,7 @@ const packages = {
             link: "/tours/rafting-expedition-in-rishikesh",
             groupSize: "8-12 people",
             price: 2000,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081813/img_1305.jpg",
         },
         {
             title: "Kayak Expedition",
@@ -107,7 +107,7 @@ const packages = {
             link: "/tours/kayak-expedition-in-rishikesh",
             groupSize: "8-12 people",
             price: 4500,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081813/img_1308.jpg",
         },
     ],
     camping: [
@@ -119,7 +119,7 @@ const packages = {
             link: "#",
             groupSize: "No limit",
             price: 2200,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3508.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081435/img_1409.jpg",
         },
         {
             title: "Camping without Rafting",
@@ -129,7 +129,7 @@ const packages = {
             link: "#",
             groupSize: "No limit",
             price: 1500,
-            image: "https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3504.jpg",
+            image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081435/img_1406.jpg",
         },
     ],
 };

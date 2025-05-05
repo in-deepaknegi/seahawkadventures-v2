@@ -741,7 +741,7 @@ export async function generateMetadata({ params }: { params: Params }) {
             url: `${BASE_URL}/tours/${doc?.slugAsParams}`,
             images: [
                 {
-                    url: `https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg`,
+                    url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1734974473/img-3101.jpg`,
                     width: 1200,
                     height: 630,
                     alt: doc?.title,
@@ -754,7 +754,7 @@ export async function generateMetadata({ params }: { params: Params }) {
             title: doc?.title,
             description: doc?.description,
             images: [
-                `https://res.cloudinary.com/dkuixrz40/image/upload/v1734974473/img-3101.jpg`,
+                `https://res.cloudinary.com/dr8gbqqid/image/upload/v1734974473/img-3101.jpg`,
             ],
             site: "@SeaHawkAdventure",
             creator: "@SeaHawkAdventure",

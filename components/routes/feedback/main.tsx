@@ -11,7 +11,7 @@ export default function TestimonialsPage() {
             {/* Hero Section */}
             <section className="relative h-[400px] overflow-hidden">
                 <CldImageComponent
-                    src="https://res.cloudinary.com/dkuixrz40/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
+                    src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1744621270/water-rafting-T0101_wbaw4q.jpg"
                     alt="Customer Testimonials"
                     fill
                     className="object-cover"
@@ -98,7 +98,7 @@ export default function TestimonialsPage() {
                                             className="object-cover"
                                         /> */}
                                     <video
-                                        src="https://res.cloudinary.com/dkuixrz40/video/upload/v1744878287/VN20250326_143840_1.mp4"
+                                        src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1744878287/VN20250326_143840_1.mp4"
                                         className="object-cover h-[40rem] w-full"
                                         height={1080}
                                         width={680}
