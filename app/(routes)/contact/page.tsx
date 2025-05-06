@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/contact`,
         images: [
             {
-                url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1734974473/img-3101.jpg`,
+                url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "Contact Us",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         title: "Contact Us",
         description: "Contact us for more information",
         images: [
-            `https://res.cloudinary.com/dr8gbqqid/image/upload/v1734974473/img-3101.jpg`,
+            `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
         ],
         site: "@SeaHawkAdventure",
         creator: "@SeaHawkAdventure",

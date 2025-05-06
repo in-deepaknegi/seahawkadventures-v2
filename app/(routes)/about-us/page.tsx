@@ -375,7 +375,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/about-us`,
         images: [
             {
-                url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1734974473/img-3101.jpg`,
+                url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "About Us",
@@ -389,7 +389,7 @@ export const metadata: Metadata = {
         description:
             "Discover the story behind Sea Hawk Adventure and our passion for adventure",
         images: [
-            `https://res.cloudinary.com/dr8gbqqid/image/upload/v1734974473/img-3101.jpg`,
+            `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
         ],
         site: "@SeaHawkAdventure",
         creator: "@SeaHawkAdventure",
