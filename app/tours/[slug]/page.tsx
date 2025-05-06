@@ -9,6 +9,8 @@ import {
     __K2__,
     __E1__,
     __E2__,
+    __C1__,
+    __C2__,
     __gallery__,
     __faq__,
     __itinerary__,
@@ -133,6 +135,24 @@ const page = async ({ params }: { params: Params }) => {
             content_5 = __itinerary__.expedition_2;
             content_6 = __E2__.extras;
             break;
+        case "camping-with-rafting":
+            content_0 = __C1__.__p__;
+            content_1 = __C1__.overview;
+            content_2 = __C1__.__i__;
+            content_3 = __gallery__.camping;
+            content_4 = __faq__.camping;
+            content_5 = __itinerary__.camping_1;
+            content_6 = __C1__.extras;
+            break;
+        case "camping-without-rafting":
+            content_0 = __C2__.__p__;
+            content_1 = __C2__.overview;
+            content_2 = __C2__.__i__;
+            content_3 = __gallery__.camping;
+            content_4 = __faq__.camping;
+            content_5 = __itinerary__.camping_2;
+            content_6 = __C1__.extras;
+            break;
         default:
             break;
     }
@@ -141,16 +161,17 @@ const page = async ({ params }: { params: Params }) => {
             <Navbar />
             <main className="-mt-[5rem]">
                 {/* Hero Section */}
-                <section className="relative h-[70vh] overflow-hidden md:h-[400px] lg:h-[600px]">
+                <section className="relative h-[70vh] overflow-hidden md:h-[400px] lg:h-[70vh]">
                     <Image
                         src={content_0?.featured_image.src ?? ""}
                         alt="Beginner's Rafting Adventure"
-                        fill
-                        className={`object-cover ${content_0?.featured_image.class}`}
+                        width={1920}
+                        height={1080}
+                        className={`size-full object-cover ${content_0?.featured_image.class}`}
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/40" />
-                    <div className="absolute inset-0 flex h-full flex-col md:items-center justify-end p-4 text-center text-white">
+                    <div className="absolute bottom-0 h-[60%] w-full bg-gradient-to-t from-black/90 to-transparent" />
+                    <div className="absolute inset-0 flex h-full flex-col justify-end p-4 text-center text-white md:items-center">
                         <h1 className="mb-2 text-2xl font-bold md:mb-4 md:text-4xl lg:text-5xl">
                             {doc?.title}
                         </h1>
@@ -158,7 +179,7 @@ const page = async ({ params }: { params: Params }) => {
                             {content_0?.description}
                         </p>
 
-                        <div className="mt-5 md:mt-10 flex flex-col items-center justify-center md:flow-row gap-2 md:gap-4">
+                        <div className="md:flow-row mt-5 flex flex-col items-center justify-center gap-2 md:mt-6 md:flex-row md:gap-10">
                             <div className="flex items-center gap-2">
                                 <Clock />
                                 <p>{content_0?.duration}</p>

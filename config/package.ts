@@ -173,8 +173,8 @@ export const __K1__ = {
             "Learn fundamental kayaking skills in calm waters with certified instructors",
         duration: "2-3 hours per day",
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1205.jpg",
-            class: "object-bottom",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746517562/img_1219.jpg",
+            class: "object-top",
         },
         startingPoint: "Shivpuri",
         endingPoint: "Nim Beach",
@@ -227,7 +227,7 @@ export const __K2__ = {
             "Learn fundamental kayaking skills in calm waters with certified instructors",
         duration: "2-3 hours per day",
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1217.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746474080/img_1217.jpg",
             class: "object-center",
         },
         startingPoint: "Marine Drive",
@@ -275,6 +275,170 @@ export const __K2__ = {
 };
 
 export const __E1__ = {
+    __p__: {
+        title: "Rafting Expedition",
+        description:
+            "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
+        duration: "3 Nights 4 Days",
+        featured_image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1220.jpg",
+            class: "object-center",
+        },
+        startingPoint: "Bhagwan",
+        endingPoint: "Nim Beach",
+        difficulty: "Family Friendly",
+        price: "2000",
+        groupSize: "2-5",
+    },
+
+    overview: `<p>Embark on a thrilling 3 Nights and 4 Days journey down the Ganges, blending adrenaline-pumping rapids with serene Himalayan vistas. Navigate 100 km of iconic stretches, from roaring Grade I-IV rapids like Roller Coaster to tranquil stretches flanked by emerald forests. Days are packed with rafting, hikes to hidden waterfalls, and cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Mahadev Chatti), where bonfires, barbecues, and starlit skies foster camaraderie and reflection.</p>
+
+    <br/>
+
+    <p>By day three, conquer the thrilling finale at Neem Beach, leaving with sun-kissed memories and a deeper bond with the Ganges. Perfect for adventurers and nature lovers, this trip merges white-water thrills, cultural discovery, and Himalayan tranquility in one soul-stirring escape. 🌊⛺️</p>`,
+
+    extras: [
+        {
+            label: "Meals",
+            description:
+                "Packed breakfast and lunch will be provided each day.",
+        },
+        {
+            label: "Lunch Stops",
+            description:
+                "We'll make a stop each day during theKayaking journey for lunch, usually on a white sand beach, where you can relax and refuel.",
+        },
+        {
+            label: "Camping Experience",
+            description:
+                "Each night will feature camping on beautiful beaches or by the river, complete with a bonfire and barbecue to enhance your outdoor experience.",
+        },
+    ],
+
+    __i__: {
+        included: [
+            "Comprehensive arrangements for lodging and camping during the trip.",
+            "Expert guidance from India's most experienced team of guides, camp staff, and cooks.",
+            "Twin-sharing accommodation in tents or resort.",
+            "Transportation in a non-air-conditioned vehicle according to the itinerary.",
+            "All specified meals and safe drinking water as outlined in the itinerary.",
+            "Inclusion of peak fees, sanctuary fees, royalties, and permits where required.",
+            "Porter service up to 15kg per person.",
+        ],
+        notIncluded: [],
+    },
+};
+
+export const __E2__ = {
+    __p__: {
+        title: "Kayak Expedition",
+        description:
+            "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
+        duration: "3 Nights 4 Days",
+        featured_image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746517245/img_1220.jpg",
+            class: "object-center",
+        },
+        startingPoint: "Bhagwan",
+        endingPoint: "Nim Beach",
+        difficulty: "Family Friendly",
+        price: "4500",
+        groupSize: "2-5",
+    },
+
+    overview: `<p>Paddle through the untamed beauty of the Ganges on a 3-day kayaking expedition, blending thrilling rapids (Grade II-III), riverside camping, and Himalayan exploration. Navigate 68-78 km from Devprayag—where the Bhagirathi and Alaknanda rivers merge—to Neem Beach's serene shores. Days are spent conquering dynamic stretches of whitewater, hiking to hidden waterfalls, and exploring cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Kodiyala/Bhaysi) with bonfires, barbecues, and starlit skies.</p>
+
+    <br/>
+
+    <p>The journey peaks on Day 3 with a 30-35 km finale, weaving through rapids and calm waters to Neem Beach. Ideal for intermediate adventurers, this trip balances adrenaline with solitude, offering Himalayan vistas, spiritual energy, and a deep connection to the Ganges' rhythm. 🛶✨</p>`,
+
+    extras: [
+        {
+            label: "Meals",
+            description:
+                "Packed breakfast and lunch will be provided each day.",
+        },
+        {
+            label: "Lunch Stops",
+            description:
+                "We'll make a stop each day during theKayaking journey for lunch, usually on a white sand beach, where you can relax and refuel.",
+        },
+        {
+            label: "Camping Experience",
+            description:
+                "Each night will feature camping on beautiful beaches or by the river, complete with a bonfire and barbecue to enhance your outdoor experience.",
+        },
+    ],
+
+    __i__: {
+        included: [
+            "Comprehensive arrangements for lodging and camping during the trip.",
+            "Expert guidance from India's most experienced team of guides, camp staff, and cooks.",
+            "Twin-sharing accommodation in tents or resort.",
+            "Transportation in a non-air-conditioned vehicle according to the itinerary.",
+            "All specified meals and safe drinking water as outlined in the itinerary.",
+            "Inclusion of peak fees, sanctuary fees, royalties, and permits where required.",
+            "Porter service up to 15kg per person.",
+        ],
+        notIncluded: [],
+    },
+};
+
+export const __C1__ = {
+    __p__: {
+        title: "Camping with Rafting (16 Km)",
+        description:
+            "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
+        duration: "3 Nights 4 Days",
+        featured_image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
+            class: "object-center",
+        },
+        startingPoint: "Bhagwan",
+        endingPoint: "Nim Beach",
+        difficulty: "Family Friendly",
+        price: "2200",
+        groupSize: "2-5",
+    },
+
+    overview: `<p>Embark on a thrilling 3 Nights and 4 Days journey down the Ganges, blending adrenaline-pumping rapids with serene Himalayan vistas. Navigate 100 km of iconic stretches, from roaring Grade I-IV rapids like Roller Coaster to tranquil stretches flanked by emerald forests. Days are packed with rafting, hikes to hidden waterfalls, and cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Mahadev Chatti), where bonfires, barbecues, and starlit skies foster camaraderie and reflection.</p>
+
+    <br/>
+
+    <p>By day three, conquer the thrilling finale at Neem Beach, leaving with sun-kissed memories and a deeper bond with the Ganges. Perfect for adventurers and nature lovers, this trip merges white-water thrills, cultural discovery, and Himalayan tranquility in one soul-stirring escape. 🌊⛺️</p>`,
+
+    extras: [
+        {
+            label: "Meals",
+            description:
+                "Packed breakfast and lunch will be provided each day.",
+        },
+        {
+            label: "Lunch Stops",
+            description:
+                "We'll make a stop each day during theKayaking journey for lunch, usually on a white sand beach, where you can relax and refuel.",
+        },
+        {
+            label: "Camping Experience",
+            description:
+                "Each night will feature camping on beautiful beaches or by the river, complete with a bonfire and barbecue to enhance your outdoor experience.",
+        },
+    ],
+
+    __i__: {
+        included: [
+            "Washroom : The Camp and cottages have attached wasrooms",
+            "Total Camps : 20-24 Units",
+            "Parking : We have parking across the river",
+            "Ganga River : 200m distance from camps",
+            "Electricity :- Light, Charger Point, Coller in tents, Power backup",
+            "Distance from Rafting office : 12-20 mins drive",
+        ],
+        notIncluded: [],
+    },
+};
+
+export const __C2__ = {
     __p__: {
         title: "Rafting Expedition",
         description:
@@ -329,60 +493,7 @@ export const __E1__ = {
     },
 };
 
-export const __E2__ = {
-    __p__: {
-        title: "Rafting Expedition",
-        description:
-            "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
-        duration: "3 Nights 4 Days",
-        featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
-            class: "object-center",
-        },
-        startingPoint: "Bhagwan",
-        endingPoint: "Nim Beach",
-        difficulty: "Family Friendly",
-        price: "2999",
-        groupSize: "2-5",
-    },
-
-    overview: `<p>Paddle through the untamed beauty of the Ganges on a 3-day kayaking expedition, blending thrilling rapids (Grade II-III), riverside camping, and Himalayan exploration. Navigate 68-78 km from Devprayag—where the Bhagirathi and Alaknanda rivers merge—to Neem Beach's serene shores. Days are spent conquering dynamic stretches of whitewater, hiking to hidden waterfalls, and exploring cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Kodiyala/Bhaysi) with bonfires, barbecues, and starlit skies.</p>
-
-    <br/>
-
-    <p>The journey peaks on Day 3 with a 30-35 km finale, weaving through rapids and calm waters to Neem Beach. Ideal for intermediate adventurers, this trip balances adrenaline with solitude, offering Himalayan vistas, spiritual energy, and a deep connection to the Ganges' rhythm. 🛶✨</p>`,
-
-    extras: [
-        {
-            label: "Meals",
-            description:
-                "Packed breakfast and lunch will be provided each day.",
-        },
-        {
-            label: "Lunch Stops",
-            description:
-                "We'll make a stop each day during theKayaking journey for lunch, usually on a white sand beach, where you can relax and refuel.",
-        },
-        {
-            label: "Camping Experience",
-            description:
-                "Each night will feature camping on beautiful beaches or by the river, complete with a bonfire and barbecue to enhance your outdoor experience.",
-        },
-    ],
-
-    __i__: {
-        included: [
-            "Comprehensive arrangements for lodging and camping during the trip.",
-            "Expert guidance from India's most experienced team of guides, camp staff, and cooks.",
-            "Twin-sharing accommodation in tents or resort.",
-            "Transportation in a non-air-conditioned vehicle according to the itinerary.",
-            "All specified meals and safe drinking water as outlined in the itinerary.",
-            "Inclusion of peak fees, sanctuary fees, royalties, and permits where required.",
-            "Porter service up to 15kg per person.",
-        ],
-        notIncluded: [],
-    },
-};
+// global components
 
 export const __gallery__ = {
     rafting: [
@@ -939,6 +1050,65 @@ export const __itinerary__ = {
             description: `<ul>
                     <li>Morning: Set out on a thrilling 30-35km Kayak journey towards    Neem Beach.</li>
                     <li>Evening: Arrive at Neem Beach</li>
+                </ul>`,
+        },
+    ],
+
+    camping_1: [
+        {
+            label: "Day 1: Long River Rafting",
+            description: `<ul>
+                    <li>5:00 to 6:00 AM: Departure from Tapovan.</li>
+                    <li>10:00 AM: Arrive at Bhagwan</li>
+                    <li>10:30 AM: Start your river rafting adventure, covering 30-35 km of exhilarating rapids.</li>
+                    <li>Evening: Reach Vyas Ghat, where you'll camp for the night.</li>
+                    <li>Activities: Unwind with a bonfire and barbecue under the stars.</li>
+                </ul>`,
+        },
+        {
+            label: "Day 2: Rafting & Exploration",
+            description: `<ul>
+                    <li>Morning: After breakfast, continue rafting for 25-30 km.</li>
+                    <li>Afternoon: Reach Kaudiyala</li>
+                    <li>Activities: In between rafting, enjoy a short hike, explore the waterfall, and visit Gartang Gali.</li>
+                    <li>Evening: Camp at Mahadev Chatti.</li>
+                    <li>Activities: Enjoy a bonfire and barbecue by the riverside.</li>
+                </ul>`,
+        },
+        {
+            label: "Day 3: Rafting to Neem Beach",
+            description: `<ul>
+                    <li>Morning: Set out on a thrilling 35-40 km rafting journey.</li>
+                    <li>Evening: Check out and conclude your rafting adventure.</li>
+                </ul>`,
+        },
+    ],
+    camping_2: [
+        {
+            label: "Day 1: Long River Rafting",
+            description: `<ul>
+                    <li>5:00 to 6:00 AM: Departure from Tapovan.</li>
+                    <li>10:00 AM: Arrive at Bhagwan</li>
+                    <li>10:30 AM: Start your river rafting adventure, covering 30-35 km of exhilarating rapids.</li>
+                    <li>Evening: Reach Vyas Ghat, where you'll camp for the night.</li>
+                    <li>Activities: Unwind with a bonfire and barbecue under the stars.</li>
+                </ul>`,
+        },
+        {
+            label: "Day 2: Rafting & Exploration",
+            description: `<ul>
+                    <li>Morning: After breakfast, continue rafting for 25-30 km.</li>
+                    <li>Afternoon: Reach Kaudiyala</li>
+                    <li>Activities: In between rafting, enjoy a short hike, explore the waterfall, and visit Gartang Gali.</li>
+                    <li>Evening: Camp at Mahadev Chatti.</li>
+                    <li>Activities: Enjoy a bonfire and barbecue by the riverside.</li>
+                </ul>`,
+        },
+        {
+            label: "Day 3: Rafting to Neem Beach",
+            description: `<ul>
+                    <li>Morning: Set out on a thrilling 35-40 km rafting journey.</li>
+                    <li>Evening: Check out and conclude your rafting adventure.</li>
                 </ul>`,
         },
     ],

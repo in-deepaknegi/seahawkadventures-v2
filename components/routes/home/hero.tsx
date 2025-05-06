@@ -24,6 +24,8 @@ const images = [
             tours: 8,
             startingPrice: "3,999",
         },
+
+        link: "/adventure-in-rishikesh/kayak-school",
     },
     {
         title: "Rafting in Rishikesh",
@@ -35,6 +37,8 @@ const images = [
             tours: 3,
             startingPrice: "599",
         },
+
+        link: "/adventure-in-rishikesh/river-rafting",
     },
     {
         title: "Expedition Adventures",
@@ -46,6 +50,7 @@ const images = [
             tours: 9,
             startingPrice: "12,000",
         },
+        link: "/adventure-in-rishikesh/expedition-adventures",
     },
     {
         title: "Camping in Rishikesh",
@@ -57,6 +62,7 @@ const images = [
             tours: 9,
             startingPrice: "1,500",
         },
+        link: "/adventure-in-rishikesh/camping",
     },
 ];
 
@@ -107,14 +113,14 @@ export default function Hero() {
                                     </p>
 
                                     <div className="flex flex-col items-start gap-4 sm:flex-row">
-                                        <Link href="/packages">
+                                        <Link href="/adventure-in-rishikesh">
                                             <Button className="rounded-full px-8 py-5 text-sm font-normal md:text-base">
-                                                Explore Packages
+                                                Adventure in Rishikesh
                                             </Button>
                                         </Link>
-                                        <Link href="/packages">
+                                        <Link href={item.link}>
                                             <Button className="flex items-center rounded-full bg-white/20 px-6 py-5 backdrop-blur-sm">
-                                                {item.title}
+                                                Explore {item.title}
                                                 <ChevronRight className="h-5 w-5 text-white" />
                                             </Button>
                                         </Link>

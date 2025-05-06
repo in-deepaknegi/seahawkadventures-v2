@@ -162,6 +162,26 @@ const galleryImages = [
         category: "kayaking",
     },
     {
+        src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1219.jpg",
+        alt: "Rafting safety demonstration",
+        category: "kayaking",
+    },
+    {
+        src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1220.jpg",
+        alt: "Rafting safety demonstration",
+        category: "kayaking",
+    },
+    {
+        src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1221.jpg",
+        alt: "Rafting safety demonstration",
+        category: "kayaking",
+    },
+    {
+        src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1222.jpg",
+        alt: "Rafting safety demonstration",
+        category: "kayaking",
+    },
+    {
         src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1401.jpg",
         alt: "Rafting safety demonstration",
         category: "camping",

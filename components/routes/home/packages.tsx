@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Clock, Users, Award } from "lucide-react";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
+import { RiArrowRightLine, RiWhatsappLine } from "@remixicon/react";
 
 const packages = {
     rafting: [
@@ -96,7 +97,7 @@ const packages = {
             duration: "3 Nights 4 Days",
             link: "/tours/rafting-expedition-in-rishikesh",
             groupSize: "8-12 people",
-            price: 2000,
+            price: 0,
             image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081813/img_1305.jpg",
         },
         {
@@ -106,7 +107,7 @@ const packages = {
             duration: "3 Days",
             link: "/tours/kayak-expedition-in-rishikesh",
             groupSize: "8-12 people",
-            price: 4500,
+            price: 0,
             image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081813/img_1308.jpg",
         },
     ],
@@ -116,7 +117,7 @@ const packages = {
             description:
                 "Explore the foothills of the Himalayas with a guided day trek",
             duration: "1 day 1 night",
-            link: "#",
+            link: "/tours/camping-with-rafting",
             groupSize: "No limit",
             price: 2200,
             image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081435/img_1409.jpg",
@@ -126,7 +127,7 @@ const packages = {
             description:
                 "Experience the wilderness with an overnight camping expedition",
             duration: "1 day 1 night",
-            link: "#",
+            link: "/tours/camping-without-rafting",
             groupSize: "No limit",
             price: 1500,
             image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081435/img_1406.jpg",
@@ -140,243 +141,174 @@ export default function Packages() {
     );
 
     return (
-        <>
-            {/* <section id="packages" className="relative -mt-1 bg-blue-50 py-16">
-                <div className="mx-auto max-w-7xl px-4 md:px-10">
-                    <div className="mb-12 text-center">
-                        <h2 className="mb-4 text-4xl font-medium md:text-6xl">
-                            Our Adventure Packages
-                        </h2>
-                        <p className="mx-auto max-w-3xl text-lg">
-                            Choose from our range of expertly crafted adventure
-                            packages designed for all skill levels
-                        </p>
-                    </div>
+        <section id="packages" className="font-open-sans bg-white py-20">
+            <div className="">
+                <div className="mx-auto mb-14 max-w-3xl text-center">
+                    <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
+                        Our Adventure Packages
+                    </h2>
 
-                    <Tabs
-                        defaultValue="rafting"
-                        className="relative z-20 w-full"
-                    >
-                        <TabsList className="mx-auto mb-8 grid h-full w-full max-w-3xl grid-cols-4 bg-blue-900 text-white">
-                            <TabsTrigger value="rafting" className="text-lg">
+                    <p className="text-gray-600">
+                        Choose from our range of exciting rafting, kayaking,
+                        expedition or adventure packages
+                    </p>
+                </div>
+
+                <Tabs
+                    defaultValue="rafting"
+                    className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10"
+                >
+                    <div className="mb-12 flex justify-center">
+                        <TabsList className="h-auto rounded-full bg-gray-100 p-1">
+                            <TabsTrigger
+                                value="rafting"
+                                className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
+                            >
                                 Rafting
                             </TabsTrigger>
-                            <TabsTrigger value="kayaking" className="text-lg">
+                            <TabsTrigger
+                                value="kayaking"
+                                className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
+                            >
                                 Kayaking
                             </TabsTrigger>
-                            <TabsTrigger value="expedition" className="text-lg">
+                            <TabsTrigger
+                                value="expedition"
+                                className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
+                            >
                                 Expedition
                             </TabsTrigger>
-                            <TabsTrigger value="camping" className="text-lg">
+                            <TabsTrigger
+                                value="camping"
+                                className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
+                            >
                                 Camping
                             </TabsTrigger>
                         </TabsList>
-
-                        {Object.entries(packages).map(([category, items]) => (
-                            <TabsContent
-                                key={category}
-                                value={category}
-                                className="mt-0"
-                            >
-                                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                                    {items.map((pkg, index) => (
-                                        <Card
-                                            key={index}
-                                            className="overflow-hidden shadow-none"
-                                        >
-                                            <div className="relative h-60 overflow-hidden">
-                                                <CldImage
-                                                    src={
-                                                        pkg.image ||
-                                                        "/placeholder.svg"
-                                                    }
-                                                    alt={pkg.title}
-                                                    width={1080}
-                                                    height={680}
-                                                    className="size-full object-cover"
-                                                />
-                                            </div>
-                                            <CardHeader className="bg-white text-black">
-                                                <CardTitle className="text-2xl font-medium">
-                                                    {pkg.title}
-                                                </CardTitle>
-                                                <CardDescription className="text-black">
-                                                    {pkg.description}
-                                                </CardDescription>
-                                            </CardHeader>
-                                            <CardContent className="bg-white text-black">
-                                                <div className="flex flex-col gap-3">
-                                                    <div className="flex items-center gap-2">
-                                                        <Clock className="h-4 w-4 text-blue-600" />
-                                                        <span>
-                                                            {pkg.duration}
-                                                        </span>
-                                                    </div>
-                                                    <div className="flex items-center gap-2">
-                                                        <Users className="h-4 w-4 text-blue-600" />
-                                                        <span>
-                                                            {pkg.groupSize}
-                                                        </span>
-                                                    </div>
-                                                    <div className="flex items-center gap-2">
-                                                        <Award className="h-4 w-4 text-blue-600" />
-                                                        <span>
-                                                            Professional guides
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </CardContent>
-                                            <CardFooter className="flex items-center justify-between bg-white text-black">
-                                                <div className="text-xl font-bold text-blue-700">
-                                                    {pkg.price}
-                                                </div>
-                                                <Button className="bg-blue-600 hover:bg-blue-700">
-                                                    <Link href={pkg.link}>
-                                                        Book Now
-                                                    </Link>
-                                                </Button>
-                                            </CardFooter>
-                                        </Card>
-                                    ))}
-                                </div>
-                            </TabsContent>
-                        ))}
-                    </Tabs>
-                </div>
-                <Wave1 />
-            </section> */}
-
-            <section id="packages" className="font-open-sans bg-white py-20">
-                <div className="">
-                    <div className="mx-auto mb-14 max-w-3xl text-center">
-                        <h2 className="mb-5 text-3xl font-medium md:text-4xl xl:text-5xl">
-                            Our Adventure Packages
-                        </h2>
-
-                        <p className="text-gray-600">
-                            Choose from our range of exciting rafting, kayaking,
-                            expedition or adventure packages
-                        </p>
                     </div>
 
-                    <Tabs
-                        defaultValue="rafting"
-                        className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10"
-                    >
-                        <div className="mb-12 flex justify-center">
-                            <TabsList className="h-auto rounded-full bg-gray-100 p-1">
-                                <TabsTrigger
-                                    value="rafting"
-                                    className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
-                                >
-                                    Rafting
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="kayaking"
-                                    className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
-                                >
-                                    Kayaking
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="expedition"
-                                    className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
-                                >
-                                    Expedition
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="camping"
-                                    className="cursor-pointer rounded-full px-2.5 py-2 font-normal tracking-wide data-[state=active]:bg-blue-700 data-[state=active]:text-white md:px-8"
-                                >
-                                    Camping
-                                </TabsTrigger>
-                            </TabsList>
-                        </div>
-
-                        {Object.entries(packages).map(([category, items]) => (
-                            <TabsContent
-                                key={category}
-                                value={category}
-                                className="mt-0 mb-1"
+                    {Object.entries(packages).map(([category, items]) => (
+                        <TabsContent
+                            key={category}
+                            value={category}
+                            className="mt-0 mb-1"
+                        >
+                            <Carousel
+                                opts={{
+                                    align: "start",
+                                    loop: true,
+                                }}
+                                className="w-full"
                             >
-                                <Carousel
-                                    opts={{
-                                        align: "start",
-                                        loop: true,
-                                    }}
-                                    className="w-full"
-                                >
-                                    <CarouselContent className="-ml-4">
-                                        {items.map((pkg, index) => (
-                                            <CarouselItem
-                                                key={index}
-                                                className="pl-4 md:basis-1/2 lg:basis-1/3"
-                                            >
-                                                <Card className="overflow-hidden shadow-none">
-                                                    <div className="relative h-60 overflow-hidden">
-                                                        <CldImage
-                                                            src={
-                                                                pkg.image ||
-                                                                "/placeholder.svg"
-                                                            }
-                                                            alt={pkg.title}
-                                                            width={1080}
-                                                            height={680}
-                                                            className="size-full object-cover"
-                                                        />
-                                                    </div>
-                                                    <CardHeader className="bg-white text-black">
-                                                        <CardTitle className="text-2xl font-medium">
-                                                            {pkg.title}
-                                                        </CardTitle>
-                                                        <CardDescription className="text-black">
-                                                            {pkg.description}
-                                                        </CardDescription>
-                                                    </CardHeader>
-                                                    <CardContent className="bg-white text-black">
-                                                        <div className="flex flex-col gap-3">
-                                                            <div className="flex items-center gap-2">
-                                                                <Clock className="h-4 w-4 text-blue-600" />
-                                                                <span>
-                                                                    {
-                                                                        pkg.duration
-                                                                    }
-                                                                </span>
-                                                            </div>
-                                                            <div className="flex items-center gap-2">
-                                                                <Users className="h-4 w-4 text-blue-600" />
-                                                                <span>
-                                                                    {
-                                                                        pkg.groupSize
-                                                                    }
-                                                                </span>
-                                                            </div>
-                                                            <div className="flex items-center gap-2">
-                                                                <Award className="h-4 w-4 text-blue-600" />
-                                                                <span>
-                                                                    Professional
-                                                                    guides
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </CardContent>
-                                                    <CardFooter className="flex justify-between gap-4 bg-white p-6 text-black">
-                                                        <div className="flex flex-col">
-                                                            <div className="flex items-baseline gap-2">
-                                                                <span className="text-3xl font-medium">
-                                                                    ₹{pkg.price}
-                                                                </span>
-                                                                <span className="text-sm text-gray-500 line-through">
-                                                                    ₹
-                                                                    {pkg.price +
-                                                                        (pkg.price *
-                                                                            15) /
-                                                                            100}
-                                                                </span>
-                                                            </div>
-                                                            <span className="text-xs text-gray-500">
-                                                                per person
+                                <CarouselContent className="-ml-4">
+                                    {items.map((pkg, index) => (
+                                        <CarouselItem
+                                            key={index}
+                                            className="pl-4 md:basis-1/2 lg:basis-1/3"
+                                        >
+                                            <Card className="overflow-hidden shadow-none">
+                                                <div className="relative h-60 overflow-hidden">
+                                                    <CldImage
+                                                        src={
+                                                            pkg.image ||
+                                                            "/placeholder.svg"
+                                                        }
+                                                        alt={pkg.title}
+                                                        width={1080}
+                                                        height={680}
+                                                        className="size-full object-cover"
+                                                    />
+                                                </div>
+                                                <CardHeader className="bg-white text-black">
+                                                    <CardTitle className="text-2xl font-medium">
+                                                        {pkg.title}
+                                                    </CardTitle>
+                                                    <CardDescription className="text-black">
+                                                        {pkg.description}
+                                                    </CardDescription>
+                                                </CardHeader>
+                                                <CardContent className="bg-white text-black">
+                                                    <div className="flex flex-col gap-3">
+                                                        <div className="flex items-center gap-2">
+                                                            <Clock className="h-4 w-4 text-blue-600" />
+                                                            <span>
+                                                                {pkg.duration}
                                                             </span>
                                                         </div>
+                                                        <div className="flex items-center gap-2">
+                                                            <Users className="h-4 w-4 text-blue-600" />
+                                                            <span>
+                                                                {pkg.groupSize}
+                                                            </span>
+                                                        </div>
+                                                        <div className="flex items-center gap-2">
+                                                            <Award className="h-4 w-4 text-blue-600" />
+                                                            <span>
+                                                                Professional
+                                                                guides
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </CardContent>
+                                                <CardFooter className="flex justify-between gap-4 bg-white p-6 text-black">
+                                                    <div className="flex flex-col">
+                                                        {pkg.price === 0 ? (
+                                                            <>
+                                                                <span className="text-sm text-gray-500">
+                                                                    Price
+                                                                    starting
+                                                                    from
+                                                                </span>
+                                                                <div className="flex items-baseline gap-2">
+                                                                    <span className="text-3xl font-medium">
+                                                                        ₹12,000
+                                                                    </span>
+                                                                </div>
+                                                            </>
+                                                        ) : (
+                                                            <>
+                                                                <div className="flex items-baseline gap-2">
+                                                                    <span className="text-3xl font-medium">
+                                                                        ₹
+                                                                        {
+                                                                            pkg.price
+                                                                        }
+                                                                    </span>
+                                                                    <span className="text-sm text-gray-500 line-through">
+                                                                        ₹
+                                                                        {pkg.price +
+                                                                            (pkg.price *
+                                                                                15) /
+                                                                                100}
+                                                                    </span>
+                                                                </div>
+                                                                <span className="text-xs text-gray-500">
+                                                                    per person
+                                                                </span>
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                    {pkg.price === 0 ? (
+                                                        <div className="flex flex-col gap-2">
+                                                            <Button className="rounded-full bg-green-500/90 font-normal text-black hover:bg-green-500">
+                                                                <Link
+                                                                    href={`https://wa.me/919756620538/?text=Hi there. I'm interested in ${pkg.title} package, can you please share the details?`}
+                                                                    target="_blank"
+                                                                    className="flex w-full items-center justify-center gap-1"
+                                                                >
+                                                                    Enquire Now
+                                                                </Link>
+                                                            </Button>
+
+                                                            <Link
+                                                                href={pkg.link}
+                                                                className="flex w-full items-center justify-center gap-1 text-sm hover:text-blue-600"
+                                                            >
+                                                                More details
+                                                                <RiArrowRightLine className="size-4" />
+                                                            </Link>
+                                                        </div>
+                                                    ) : (
                                                         <Button className="rounded-full bg-blue-700 font-medium hover:bg-blue-800">
                                                             <Link
                                                                 href={pkg.link}
@@ -385,25 +317,25 @@ export default function Packages() {
                                                                 Book Now
                                                             </Link>
                                                         </Button>
-                                                    </CardFooter>
-                                                </Card>
-                                            </CarouselItem>
-                                        ))}
-                                    </CarouselContent>
+                                                    )}
+                                                </CardFooter>
+                                            </Card>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
 
-                                    <div className="flex items-end justify-end gap-2">
-                                        <CarouselPrevious className="relative inset-0 mt-8 block size-9 bg-transparent bg-none shadow-none hover:bg-transparent md:hidden [&>svg]:size-7 [&>svg]:text-black" />
-                                        <CarouselNext className="relative inset-0 mt-8 block size-9 bg-transparent bg-none shadow-none hover:bg-transparent md:hidden [&>svg]:size-7 [&>svg]:text-black" />
-                                    </div>
+                                <div className="flex items-end justify-end gap-2">
+                                    <CarouselPrevious className="relative inset-0 mt-8 block size-9 bg-transparent bg-none shadow-none hover:bg-transparent md:hidden [&>svg]:size-7 [&>svg]:text-black" />
+                                    <CarouselNext className="relative inset-0 mt-8 block size-9 bg-transparent bg-none shadow-none hover:bg-transparent md:hidden [&>svg]:size-7 [&>svg]:text-black" />
+                                </div>
 
-                                    <CarouselPrevious className="absolute -left-10 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
-                                    <CarouselNext className="absolute -right-13 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
-                                </Carousel>
-                            </TabsContent>
-                        ))}
-                    </Tabs>
-                </div>
-            </section>
-        </>
+                                <CarouselPrevious className="absolute -left-10 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
+                                <CarouselNext className="absolute -right-13 z-50 hidden size-12 border-none bg-transparent bg-none shadow-none hover:bg-transparent md:block [&>svg]:size-8 [&>svg]:text-black" />
+                            </Carousel>
+                        </TabsContent>
+                    ))}
+                </Tabs>
+            </div>
+        </section>
     );
 }
