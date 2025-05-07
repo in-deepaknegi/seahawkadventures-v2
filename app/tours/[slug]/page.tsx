@@ -154,7 +154,7 @@ const page = async ({ params }: { params: Params }) => {
             content_3 = __gallery__.camping;
             content_4 = __faq__.camping;
             content_5 = __itinerary__.camping_2;
-            content_6 = __C1__.extras;
+            content_6 = __C2__.extras;
             break;
         default:
             break;

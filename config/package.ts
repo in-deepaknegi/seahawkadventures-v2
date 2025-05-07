@@ -442,7 +442,7 @@ export const __C1__ = {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1404.jpg",
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1406.jpg",
             class: "object-center",
         },
 
@@ -458,40 +458,46 @@ export const __C1__ = {
         rapids: {},
     },
 
-    overview: `<p>Embark on a thrilling 3 Nights and 4 Days journey down the Ganges, blending adrenaline-pumping rapids with serene Himalayan vistas. Navigate 100 km of iconic stretches, from roaring Grade I-IV rapids like Roller Coaster to tranquil stretches flanked by emerald forests. Days are packed with rafting, hikes to hidden waterfalls, and cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Mahadev Chatti), where bonfires, barbecues, and starlit skies foster camaraderie and reflection.</p>
+    overview: `<p>Nestled in Shivpuri just 200m from the Ganga River, our Camp offers 20-25 tents with attached washrooms. Enjoy a unique combination of modern comforts (charger points) with adventure activities amidst mountain views. The property features a natural swimming pool fed by Laddu Waterfall, located just 20-60 meters from local shops.</p>
 
     <br/>
-
-    <p>By day three, conquer the thrilling finale at Neem Beach, leaving with sun-kissed memories and a deeper bond with the Ganges. Perfect for adventurers and nature lovers, this trip merges white-water thrills, cultural discovery, and Himalayan tranquility in one soul-stirring escape. 🌊⛺️</p>`,
+    
+    <p>With parking across the river and the rafting office 15-20 minutes away, it's perfectly positioned for both relaxation and adventure. Evening bonfires (winter months), rope courses, and varied meal plans make it an ideal base for nature lovers seeking comfort in the wilderness.</p>`,
 
     extras: [
         {
-            label: "Meals",
+            label: "APAI Meal Plan",
             description:
-                "Packed breakfast and lunch will be provided each day.",
+                "Includes breakfast, lunch, evening snacks & dinner (Veg/Non-Veg) with daily changing menu.",
         },
         {
-            label: "Lunch Stops",
+            label: "Adventure Activities",
             description:
-                "We'll make a stop each day during theKayaking journey for lunch, usually on a white sand beach, where you can relax and refuel.",
+                "Rope courses, swimming pool, badminton, volleyball and Himalayan trekking access.",
         },
         {
-            label: "Camping Experience",
+            label: "Seasonal Bonfire",
             description:
-                "Each night will feature camping on beautiful beaches or by the river, complete with a bonfire and barbecue to enhance your outdoor experience.",
+                "Communal bonfire available nightly from November to February.",
         },
     ],
 
     __i__: {
         included: [
-            "Washroom : The Camp and cottages have attached wasrooms",
-            "Total Camps : 20-24 Units",
-            "Parking : We have parking across the river",
-            "Ganga River : 200m distance from camps",
-            "Electricity :- Light, Charger Point, Coller in tents, Power backup",
-            "Distance from Rafting office : 12-20 mins drive",
+            "16 km Rafting adventure",
+            "Attached washrooms in all accommodations",
+            "Light, charger point and cooler in tents",
+            "Common swimming pool with mountain views",
+            "Free parking (Across the river)",
+            "24hr electricity with charging points",
+            "light music facilities",
+            "First aid & safety equipment",
         ],
-        notIncluded: [],
+        notIncluded: [
+            "Alcohol/Tobacco products",
+            "Personal toiletries",
+            "Transportation to campsite",
+        ],
     },
 };
 
@@ -499,20 +505,20 @@ export const __C2__ = {
     __p__: {
         title: "Camping without Rafting",
         description:
-            "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
+            "Experience riverside camping near Rishikesh with modern amenities amidst Himalayan beauty. Perfect blend of adventure and comfort with attached facilities, adventure activities, and mountain views.",
         image: {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1407.jpg",
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1401.jpg",
             class: "object-center",
         },
 
-        difficulty: "Challenging",
-        season: "Mid Sept till end of June",
+        difficulty: "Easy",
+        season: "Year-round ",
         price: 1500,
         groupSize: "No limit",
-        link: "/tours/camping-with-rafting",
+        link: "/tours/camping-without-rafting",
         duration: "1 day 1 night",
 
         startingPoint: "",
@@ -520,40 +526,46 @@ export const __C2__ = {
         rapids: {},
     },
 
-    overview: `<p>Embark on a thrilling 3 Nights and 4 Days journey down the Ganges, blending adrenaline-pumping rapids with serene Himalayan vistas. Navigate 100 km of iconic stretches, from roaring Grade I-IV rapids like Roller Coaster to tranquil stretches flanked by emerald forests. Days are packed with rafting, hikes to hidden waterfalls, and cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Mahadev Chatti), where bonfires, barbecues, and starlit skies foster camaraderie and reflection.</p>
+    overview: `<p>Nestled in Shivpuri just 200m from the Ganga River, our Camp offers 20-25 tents with attached washrooms. Enjoy a unique combination of modern comforts (charger points) with adventure activities amidst mountain views. The property features a natural swimming pool fed by Laddu Waterfall, located just 20-60 meters from local shops.</p>
 
     <br/>
-
-    <p>By day three, conquer the thrilling finale at Neem Beach, leaving with sun-kissed memories and a deeper bond with the Ganges. Perfect for adventurers and nature lovers, this trip merges white-water thrills, cultural discovery, and Himalayan tranquility in one soul-stirring escape. 🌊⛺️</p>`,
+    
+    <p>With parking across the river and the rafting office 15-20 minutes away, it's perfectly positioned for both relaxation and adventure. Evening bonfires (winter months), rope courses, and varied meal plans make it an ideal base for nature lovers seeking comfort in the wilderness.</p>`,
 
     extras: [
         {
-            label: "Meals",
+            label: "APAI Meal Plan",
             description:
-                "Packed breakfast and lunch will be provided each day.",
+                "Includes breakfast, lunch, evening snacks & dinner (Veg/Non-Veg) with daily changing menu.",
         },
         {
-            label: "Lunch Stops",
+            label: "Adventure Activities",
             description:
-                "We'll make a stop each day during theKayaking journey for lunch, usually on a white sand beach, where you can relax and refuel.",
+                "Rope courses, swimming pool, badminton, volleyball and Himalayan trekking access.",
         },
         {
-            label: "Camping Experience",
+            label: "Seasonal Bonfire",
             description:
-                "Each night will feature camping on beautiful beaches or by the river, complete with a bonfire and barbecue to enhance your outdoor experience.",
+                "Communal bonfire available nightly from November to February.",
         },
     ],
 
     __i__: {
         included: [
-            "Washroom : The Camp and cottages have attached wasrooms",
-            "Total Camps : 20-24 Units",
-            "Parking : We have parking across the river",
-            "Ganga River : 200m distance from camps",
-            "Electricity :- Light, Charger Point, Coller in tents, Power backup",
-            "Distance from Rafting office : 12-20 mins drive",
+            "Attached washrooms in all accommodations",
+            "Light, charger point and cooler in tents",
+            "Common swimming pool with mountain views",
+            "Free parking (Across the river)",
+            "24hr electricity with charging points",
+            "light music facilities",
+            "First aid & safety equipment",
         ],
-        notIncluded: [],
+        notIncluded: [
+            "Rafting activities",
+            "Alcohol/Tobacco products",
+            "Personal toiletries",
+            "Transportation to campsite",
+        ],
     },
 };
 
@@ -859,121 +871,121 @@ export const __faq__ = {
     rafting: [
         {
             id: "1",
-            title: "Is rafting safe?",
+            title: "What are the different rafting packages available?",
             icon: AtSignIcon,
             content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
+                "We offer four exciting rafting packages: 12km (Marine Drive to Shivpuri), 16km (Shivpuri to NIM Beach), 26km (Marine Drive to NIM Beach), and 36km (Kaudiyala to NIM Beach). Each package offers different rapids and durations to suit various experience levels.",
         },
         {
             id: "2",
-            title: "Does rafting require any experience?",
+            title: "What is included in the rafting package?",
             icon: CommandIcon,
             content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
+                "Our rafting packages include transportation from office to starting point and back, all rafting gear (imported life jackets, helmets, paddles), wet suits during winter (Dec to March), and a safety kayaker for all trips.",
         },
         {
             id: "3",
             icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
+            title: "What is the best time for rafting in Rishikesh?",
             content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
+                "The best time for rafting in Rishikesh is from mid-September till the end of June. During this period, the water levels are ideal for rafting activities.",
         },
         {
             id: "4",
             icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
+            title: "How long does a typical rafting trip take?",
             content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
+                "The duration varies by package: 12km takes about 2 hours, 16km takes 2-3 hours, 26km takes 3-4 hours, and 36km takes 4-5 hours. This includes preparation time, safety briefing, and the actual rafting experience.",
         },
     ],
     kayaking: [
         {
             id: "1",
-            title: "Is rafting safe?",
+            title: "What kayaking courses do you offer?",
             icon: AtSignIcon,
             content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
+                "We offer two comprehensive courses: Basic Kayak Lessons (4 days) and Complete Kayak Lessons (7 days). Both courses are designed to take you from beginner to confident kayaker, with the 7-day course covering more advanced techniques.",
         },
         {
             id: "2",
-            title: "Does rafting require any experience?",
+            title: "What should I bring for kayaking lessons?",
             icon: CommandIcon,
             content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
+                "Bring quick-dry shorts, a t-shirt, slippers, a water bottle, and some cash for tea/snacks. We provide all kayaking gear including life jackets, helmets, paddles, and wet suits during winter months.",
         },
         {
             id: "3",
             icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
+            title: "What are the training timings?",
             content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
+                "Training sessions are held daily from 9 AM to approximately 12 PM (3-4 hours daily). In summer, sessions run from 8 AM to 11 AM, and in winter from 9 AM to 12 PM.",
         },
         {
             id: "4",
             icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
+            title: "Is accommodation included in the kayaking courses?",
             content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
+                "No, accommodation is not included in the kayaking courses. You'll need to arrange your own stay in Rishikesh during the training period.",
         },
     ],
     camping: [
         {
             id: "1",
-            title: "Is rafting safe?",
+            title: "What facilities are available at the campsite?",
             icon: AtSignIcon,
             content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
+                "Our campsite features 20-25 tents with attached washrooms, charging points, coolers, a common swimming pool with mountain views, 24-hour electricity, light music facilities, and free parking across the river.",
         },
         {
             id: "2",
-            title: "Does rafting require any experience?",
+            title: "What activities are included in the camping package?",
             icon: CommandIcon,
             content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
+                "The camping package includes rope courses, access to a swimming pool, badminton, volleyball, and Himalayan trekking. During winter months (November to February), we also provide evening bonfires.",
         },
         {
             id: "3",
             icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
+            title: "What meals are provided during camping?",
             content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
+                "We provide a complete APAI meal plan including breakfast, lunch, evening snacks, and dinner (Veg/Non-Veg) with a daily changing menu. The meals are prepared fresh and include a variety of local and continental dishes.",
         },
         {
             id: "4",
             icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
+            title: "What is the check-in and check-out process?",
             content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
+                "Check-in is at 3:00 PM, followed by evening snacks at 6:30 PM, bonfire (seasonal) and music at 7:30 PM, and dinner at 8:30 PM. Check-out is typically after breakfast the next morning.",
         },
     ],
     expedition: [
         {
             id: "1",
-            title: "Is rafting safe?",
+            title: "What is included in the expedition package?",
             icon: AtSignIcon,
             content:
-                "Yes, rafting is safe. We have a team of trained guides who are experienced in rafting and have a good understanding of the river. We also have a team of trained first responders who are trained to handle any emergency situation.",
+                "The expedition package includes comprehensive lodging and camping arrangements, expert guidance from experienced guides, twin-sharing accommodation, transportation, all specified meals, safe drinking water, necessary permits, and porter service up to 15kg per person.",
         },
         {
             id: "2",
-            title: "Does rafting require any experience?",
+            title: "What is the daily schedule during the expedition?",
             icon: CommandIcon,
             content:
-                "No, rafting does not require any experience. We have a team of trained guides who will guide you through the rafting experience.",
+                "The expedition typically starts early morning (5-6 AM) with departure from Tapovan. Days include rafting/kayaking sessions, exploration activities, and evening camping with bonfires and barbecues. The schedule varies between 3-4 days depending on the chosen expedition.",
         },
         {
             id: "3",
             icon: EclipseIcon,
-            title: "Is rafting suitable for beginners?",
+            title: "What should I pack for the expedition?",
             content:
-                "Yes, rafting is suitable for beginners. We have a team of trained guides who will guide you through the rafting experience.",
+                "Pack light, quick-drying clothes, sturdy footwear, personal toiletries, a water bottle, and any personal medications. We provide all necessary adventure gear, including life jackets, helmets, and wet suits during winter months.",
         },
         {
             id: "4",
             icon: EclipseIcon,
-            title: "What is the minimum age for rafting?",
+            title: "What is the difficulty level of the expeditions?",
             content:
-                "The minimum age for rafting is 12 years. However, children below 18 years must be accompanied by an adult.",
+                "Our expeditions are designed to be family-friendly while still offering adventure. The routes include a mix of rapids (Grade I-IV) and calm stretches, making them suitable for both beginners and experienced adventurers. Professional guides ensure safety throughout the journey.",
         },
     ],
 };
@@ -1120,60 +1132,54 @@ export const __itinerary__ = {
 
     camping_1: [
         {
-            label: "Day 1: Long River Rafting",
+            label: "Food Menu",
             description: `<ul>
-                    <li>5:00 to 6:00 AM: Departure from Tapovan.</li>
-                    <li>10:00 AM: Arrive at Bhagwan</li>
-                    <li>10:30 AM: Start your river rafting adventure, covering 30-35 km of exhilarating rapids.</li>
-                    <li>Evening: Reach Vyas Ghat, where you'll camp for the night.</li>
-                    <li>Activities: Unwind with a bonfire and barbecue under the stars.</li>
+                    <li><strong>Welcome drink</strong>: mineral water & taang juice.</li>
+                    <li><strong>Breakfast</strong>: Puri bhaji, poha, pickle and tea.</li>
+                    <li><strong>Lunch</strong>: Mix Veg Sabji, Rice, Daal, Raita, Salad and Roti.</li>
+                    <li><strong>Snacks</strong>:Chana masala, veg pakauda, papad and tea.</li>
+                    <li><strong>Dinner</strong>: Chicken Kari, Daal, Matar paneer, Rice Roti, Salad and sweet.</li>
                 </ul>`,
         },
         {
-            label: "Day 2: Rafting & Exploration",
+            label: "Camp Experience",
             description: `<ul>
-                    <li>Morning: After breakfast, continue rafting for 25-30 km.</li>
-                    <li>Afternoon: Reach Kaudiyala</li>
-                    <li>Activities: In between rafting, enjoy a short hike, explore the waterfall, and visit Gartang Gali.</li>
-                    <li>Evening: Camp at Mahadev Chatti.</li>
-                    <li>Activities: Enjoy a bonfire and barbecue by the riverside.</li>
-                </ul>`,
+                <li>3:00 PM: Check-in to cottages/camps</li>
+                <li>6:30 PM: Evening snacks with tea</li>
+                <li>7:30 PM: Bonfire (seasonal) & music</li>
+                <li>8:30 PM: Dinner (Veg/Non-Veg)</li>
+                <li>Overnight in cottage/tent</li>
+            </ul>`,
         },
         {
-            label: "Day 3: Rafting to Neem Beach",
+            label: "Rafting to Neem Beach",
             description: `<ul>
-                    <li>Morning: Set out on a thrilling 35-40 km rafting journey.</li>
+                    <li>Morning: Set out on a thrilling 16 km rafting journey.</li>
                     <li>Evening: Check out and conclude your rafting adventure.</li>
                 </ul>`,
         },
     ],
+
     camping_2: [
         {
-            label: "Day 1: Long River Rafting",
+            label: "Food Menu",
             description: `<ul>
-                    <li>5:00 to 6:00 AM: Departure from Tapovan.</li>
-                    <li>10:00 AM: Arrive at Bhagwan</li>
-                    <li>10:30 AM: Start your river rafting adventure, covering 30-35 km of exhilarating rapids.</li>
-                    <li>Evening: Reach Vyas Ghat, where you'll camp for the night.</li>
-                    <li>Activities: Unwind with a bonfire and barbecue under the stars.</li>
+                    <li><strong>Welcome drink</strong>: mineral water & taang juice.</li>
+                    <li><strong>Breakfast</strong>: Puri bhaji, poha, pickle and tea.</li>
+                    <li><strong>Lunch</strong>: Mix Veg Sabji, Rice, Daal, Raita, Salad and Roti.</li>
+                    <li><strong>Snacks</strong>:Chana masala, veg pakauda, papad and tea.</li>
+                    <li><strong>Dinner</strong>: Chicken Kari, Daal, Matar paneer, Rice Roti, Salad and sweet.</li>
                 </ul>`,
         },
         {
-            label: "Day 2: Rafting & Exploration",
+            label: "Camp Experience",
             description: `<ul>
-                    <li>Morning: After breakfast, continue rafting for 25-30 km.</li>
-                    <li>Afternoon: Reach Kaudiyala</li>
-                    <li>Activities: In between rafting, enjoy a short hike, explore the waterfall, and visit Gartang Gali.</li>
-                    <li>Evening: Camp at Mahadev Chatti.</li>
-                    <li>Activities: Enjoy a bonfire and barbecue by the riverside.</li>
-                </ul>`,
-        },
-        {
-            label: "Day 3: Rafting to Neem Beach",
-            description: `<ul>
-                    <li>Morning: Set out on a thrilling 35-40 km rafting journey.</li>
-                    <li>Evening: Check out and conclude your rafting adventure.</li>
-                </ul>`,
+                <li>3:00 PM: Check-in to cottages/camps</li>
+                <li>6:30 PM: Evening snacks with tea</li>
+                <li>7:30 PM: Bonfire (seasonal) & music</li>
+                <li>8:30 PM: Dinner (Veg/Non-Veg)</li>
+                <li>Overnight in cottage/tent</li>
+            </ul>`,
         },
     ],
 };

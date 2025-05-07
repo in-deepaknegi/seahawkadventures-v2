@@ -4,12 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-    Menu,
-    X,
-    ChevronDown,
-    ChevronRight,
-} from "lucide-react";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import {
     RiFacebookFill,
     RiInstagramLine,
@@ -130,11 +125,11 @@ export default function Navbar() {
             children: [
                 {
                     title: "Camping with Rafting",
-                    href: "#",
+                    href: "/tours/camping-with-rafting",
                 },
                 {
                     title: "Camping without Rafting",
-                    href: "#",
+                    href: "/tours/camping-without-rafting",
                 },
             ],
         },
