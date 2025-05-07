@@ -33,7 +33,7 @@ export default function Camping() {
                         Experience the magic of camping under the stars along
                         the Ganges. Choose from our range of camping packages
                         that combine adventure, comfort, and unforgettable
-                        memories in nature's lap.
+                        memories in nature&apos;s lap.
                     </p>
                 </div>
             </section>
