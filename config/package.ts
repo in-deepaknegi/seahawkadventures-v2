@@ -4,24 +4,28 @@ export const BASE_URL = process.env.NEXT_PUBLIC_URL ?? "http://localhost:3000";
 
 export const __R1__ = {
     __p__: {
-        distance: "12km",
+        title: "12km Rafting",
         description:
-            "Perfect for first-timers,     experience Grade I-II rapids with expert guides",
-        duration: "1.5-2 hours",
+            "Perfect for beginners and families, featuring gentle Grade I-II rapids with stunning Himalayan views.",
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
             class: "object-center",
         },
+        difficulty: "Family Friendly",
+        season: "Mid Sept till end of June",
+        price: 599,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-marine-drive-shivpuri",
+        duration: "2 hours",
         startingPoint: "Marine Drive",
         endingPoint: "Shivpuri",
         rapids: {
             total: "7",
             grades: "I, II and III",
         },
-        difficulty: "Family Friendly",
-        season: "Mid Sept till end of June",
-        price: "599",
-        groupSize: "6-8",
     },
 
     overview: `<p>Rafting from Marine Drive to Shivpuri- Rishikesh is called 12km rafting. It features roughly seven rapids, both minor and large. Black money(II), Three blind mice(III), Cross fire(III), and body surfing are some of the good rapids we run on this stretch. Although there are some large waves and hydraulics, these rapids are safe to raft. The travel to the starting place takes about 30 minutes to an hour, followed by another 30 minutes for preparation, raft inflation, and safety training. We board the rafts when the safety briefing is completed. It's a two-hour river adventure with plenty of splashes and powerful hits.</p>
@@ -45,24 +49,29 @@ export const __R1__ = {
 
 export const __R2__ = {
     __p__: {
-        distance: "16km",
+        title: "16km Rafting",
         description:
-            "Perfect for first-timers,     experience Grade I-II rapids with expert guides",
-        duration: "2-3 hours",
+            "Ideal for adventure seekers, featuring challenging Grade II-III+ rapids including Roller Coaster and Golf Course.",
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg",
             class: "object-center",
         },
+
+        difficulty: "Challenging",
+        season: "Mid Sept till end of June",
+        price: 999,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-shivpuri-tapovan",
+        duration: "2-3 hours",
         startingPoint: "Shivpuri",
         endingPoint: "NIM Beach",
         rapids: {
             total: "8",
             grades: "II and III+",
         },
-        difficulty: "Challenging",
-        season: "Mid Sept till end of June",
-        price: "999",
-        groupSize: "6-8",
     },
 
     overview: `<p>Rafting from Shivpuri to NIM beach- Rishikesh is called 16km rafting. It features roughly eight rapids, both minor and large. Roller Coaster (III+), Golf Course (III+), and Club House are some of the good rapids we run on this stretch. Although there are some large waves and hydraulics, these rapids are safe to raft. The travel to the starting place takes about 30 minutes to an hour, followed by another 30 minutes for preparation, raft inflation, and safety training. We board the rafts when the safety briefing is completed. It's a two-hour river adventure with plenty of splashes and powerful hits.</p>
@@ -86,24 +95,29 @@ export const __R2__ = {
 
 export const __R3__ = {
     __p__: {
-        distance: "26km",
+        title: "26km Rafting",
         description:
-            "Perfect for first-timers, experience Grade I-II rapids with expert guides",
-        duration: "3-4 hours",
+            "Our most popular package! Combines thrilling Grade II-III+ rapids with serene stretches perfect for swimming.",
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1112.jpg",
             class: "object-center",
         },
+
+        difficulty: "Challenging",
+        season: "Mid Sept till end of June",
+        price: 1499,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-marine-drive-tapovan",
+        duration: "3-4 hours",
         startingPoint: "Marine Drive",
         endingPoint: "Nim Beach",
         rapids: {
             total: "14-15",
             grades: "II and III+",
         },
-        difficulty: "Challenging",
-        season: "Mid Sept till end of June",
-        price: "1499",
-        groupSize: "6-8",
     },
 
     overview: `<p>Rafting from Marine Drive to Nim Beach- Rishikesh is called 26km rafting. It features roughly fifteen rapids, both minor and large.  Black money(II), Three blind mice(III), Cross fire(III), Roller Coaster (III+), Golf Course (III+), Club House and many rapids we run on this stretch. Although there are some large waves and hydraulics, these rapids are safe to raft. The travel to the starting place takes about 30 minutes to an hour, followed by another 30 minutes for preparation, raft inflation, and safety training. We board the rafts when the safety briefing is completed. It's a two-hour river adventure with plenty of splashes and powerful hits.</p>
@@ -127,24 +141,29 @@ export const __R3__ = {
 
 export const __R4__ = {
     __p__: {
-        distance: "36km",
+        title: "36km Rafting",
         description:
-            "Perfect for first-timers, experience Grade I-II rapids with expert guides",
-        duration: "4-5 hours",
+            "The ultimate challenge! Features the legendary Great Wall rapid (Grade IV+) and 21 other exciting rapids.",
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1103.jpg",
             class: "object-center",
         },
+
+        difficulty: "Challenging",
+        season: "Mid Sept till end of June",
+        price: 2999,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-kaudiyala-tapovan",
+        duration: "4-5 hours",
         startingPoint: "Kaudiyala",
         endingPoint: "Nim Beach",
         rapids: {
             total: "22",
             grades: "II, III and IV",
         },
-        difficulty: "Challenging",
-        season: "Mid Sept till end of June",
-        price: "2499",
-        groupSize: "6-8",
     },
 
     overview: `<p>Rafting from Kaudiyala to Nim Beach- Rishikesh is called 36km rafting. It features roughly twenty-two rapids, both minor and large. The great wall(IV+) popularly known as the biggest rapid in river Ganga, along with Black money(II), Three blind mice(III), Cross fire(III), Roller Coaster (III+), Golf Course (III+), Club House and many rapids we run on this stretch. Although there are some large waves and hydraulics, these rapids are safe to raft. The travel to the starting place takes about 30 minutes to an hour, followed by another 30 minutes for preparation, raft inflation, and safety training. We board the rafts when the safety briefing is completed. It's a two-hour river adventure with plenty of splashes and powerful hits.</p>
@@ -171,16 +190,26 @@ export const __K1__ = {
         title: "Basics Kayak Lessons (4 days)",
         description:
             "Learn fundamental kayaking skills in calm waters with certified instructors",
-        duration: "2-3 hours per day",
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746517562/img_1219.jpg",
             class: "object-top",
         },
-        startingPoint: "Shivpuri",
+
+        difficulty: "Moderate",
+        season: "Mid Sept till end of June",
+        price: 2999,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-kaudiyala-tapovan",
+        duration: "2-3 hours per day",
+        startingPoint: "Kaudiyala",
         endingPoint: "Nim Beach",
-        difficulty: "Beginner friendly",
-        price: "3499",
-        groupSize: "2-5",
+        rapids: {
+            total: "22",
+            grades: "II, III and IV",
+        },
     },
 
     overview: `<p>This 4-day kayaking itinerary in Rishikesh offers an exciting and structured introduction to the sport while allowing time to explore the local culture. On Day 1, you'll arrive, settle in, and meet your instructor for your first lesson, covering paddling basics, stopping techniques, and river hydrology. Day 2 focuses on emergency exit techniques, entering river eddies, and further paddling practice. Day 3 introduces river crossing and the essential Eskimo roll rescue technique, followed by a mini-expedition. The adventure peaks on Day 4 as you tackle Grade 2 rapids, gaining confidence in navigating the river independently. </p>
@@ -225,16 +254,26 @@ export const __K2__ = {
         title: "Complete Kayak Lessons (7 days)",
         description:
             "Learn fundamental kayaking skills in calm waters with certified instructors",
-        duration: "2-3 hours per day",
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746474080/img_1217.jpg",
             class: "object-center",
         },
-        startingPoint: "Marine Drive",
-        endingPoint: "Shivpuri",
+
         difficulty: "Challenging",
-        price: "2999",
-        groupSize: "2-5",
+        season: "Mid Sept till end of June",
+        price: 2999,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-kaudiyala-tapovan",
+        duration: "2-3 hours per day",
+        startingPoint: "Kaudiyala",
+        endingPoint: "Nim Beach",
+        rapids: {
+            total: "22",
+            grades: "II, III and IV",
+        },
     },
 
     overview: `<p>Embark on an immersive 7-day kayaking journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges. Your adventure begins with settling into your accommodation and meeting your instructor for an introduction to kayaking basics—paddling, stopping, and understanding river hydrology. Over the next few days, you'll progress from fundamental techniques like emergency exits and eddy turns to advanced maneuvers, including the Eskimo roll and river crossings. By Day 4, you'll confidently navigate Grade 2 rapids, and as the week unfolds, you'll take on more challenging sections of the river, including mini-expeditions and longer downstream paddles.</p>
@@ -279,16 +318,27 @@ export const __E1__ = {
         title: "Rafting Expedition",
         description:
             "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
-        duration: "3 Nights 4 Days",
+
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1220.jpg",
             class: "object-center",
         },
-        startingPoint: "Bhagwan",
+
+        difficulty: "Challenging",
+        season: "Mid Sept till end of June",
+        price: 0,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-kaudiyala-tapovan",
+        duration: "3 Nights 4 Days",
+        startingPoint: "Kaudiyala",
         endingPoint: "Nim Beach",
-        difficulty: "Family Friendly",
-        price: "2000",
-        groupSize: "2-5",
+        rapids: {
+            total: "22",
+            grades: "II, III and IV",
+        },
     },
 
     overview: `<p>Embark on a thrilling 3 Nights and 4 Days journey down the Ganges, blending adrenaline-pumping rapids with serene Himalayan vistas. Navigate 100 km of iconic stretches, from roaring Grade I-IV rapids like Roller Coaster to tranquil stretches flanked by emerald forests. Days are packed with rafting, hikes to hidden waterfalls, and cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Mahadev Chatti), where bonfires, barbecues, and starlit skies foster camaraderie and reflection.</p>
@@ -334,16 +384,27 @@ export const __E2__ = {
         title: "Kayak Expedition",
         description:
             "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
-        duration: "3 Nights 4 Days",
+        
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746517245/img_1220.jpg",
             class: "object-center",
         },
-        startingPoint: "Bhagwan",
+
+        difficulty: "Challenging",
+        season: "Mid Sept till end of June",
+        price: 0,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-kaudiyala-tapovan",
+        duration: "3 Nights 4 Days",
+        startingPoint: "Kaudiyala",
         endingPoint: "Nim Beach",
-        difficulty: "Family Friendly",
-        price: "4500",
-        groupSize: "2-5",
+        rapids: {
+            total: "22",
+            grades: "II, III and IV",
+        },
     },
 
     overview: `<p>Paddle through the untamed beauty of the Ganges on a 3-day kayaking expedition, blending thrilling rapids (Grade II-III), riverside camping, and Himalayan exploration. Navigate 68-78 km from Devprayag—where the Bhagirathi and Alaknanda rivers merge—to Neem Beach's serene shores. Days are spent conquering dynamic stretches of whitewater, hiking to hidden waterfalls, and exploring cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Kodiyala/Bhaysi) with bonfires, barbecues, and starlit skies.</p>
@@ -389,16 +450,27 @@ export const __C1__ = {
         title: "Camping with Rafting (16 Km)",
         description:
             "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
-        duration: "3 Nights 4 Days",
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
             class: "object-center",
         },
-        startingPoint: "Bhagwan",
+
+        difficulty: "Challenging",
+        season: "Mid Sept till end of June",
+        price: 2999,
+        groupSize: "6-8 people",
+        link: "/tours/ganga-river-rafting-kaudiyala-tapovan",
+        duration: "3 Nights 4 Days",
+
+        startingPoint: "Kaudiyala",
         endingPoint: "Nim Beach",
-        difficulty: "Family Friendly",
-        price: "2200",
-        groupSize: "2-5",
+        rapids: {
+            total: "22",
+            grades: "II, III and IV",
+        },
     },
 
     overview: `<p>Embark on a thrilling 3 Nights and 4 Days journey down the Ganges, blending adrenaline-pumping rapids with serene Himalayan vistas. Navigate 100 km of iconic stretches, from roaring Grade I-IV rapids like Roller Coaster to tranquil stretches flanked by emerald forests. Days are packed with rafting, hikes to hidden waterfalls, and cultural gems like Gartang Gali, an ancient cliffside trail. Evenings unwind at riverside campsites (Vyas Ghat and Mahadev Chatti), where bonfires, barbecues, and starlit skies foster camaraderie and reflection.</p>
@@ -444,6 +516,9 @@ export const __C2__ = {
         description:
             "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
         duration: "3 Nights 4 Days",
+        image: {
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1100.jpg",
+        },
         featured_image: {
             src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
             class: "object-center",

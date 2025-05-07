@@ -3,7 +3,7 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Award } from "lucide-react";
+import { Clock, Users, Award, Clock1, MapPin } from "lucide-react";
 import { CldImage } from "next-cloudinary";
 import { RiArrowRightLine } from "@remixicon/react";
 import {
@@ -14,10 +14,10 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { packages } from "@/config/adventure";
+import { __K1__, __K2__ } from "@/config/package";
 
 export default function KayakSchool() {
-    const raftingPackages = packages.kayaking;
+    const raftingPackages = [__K1__.__p__, __K2__.__p__];
 
     return (
         <main className="-mt-20 flex-1 pt-20">
@@ -49,7 +49,7 @@ export default function KayakSchool() {
                             >
                                 <div className="relative h-60 overflow-hidden">
                                     <CldImage
-                                        src={pkg.image || "/placeholder.svg"}
+                                        src={pkg.featured_image.src}
                                         alt={pkg.title}
                                         width={1080}
                                         height={680}
@@ -65,7 +65,7 @@ export default function KayakSchool() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="bg-white text-black">
-                                    <div className="flex flex-col gap-3">
+                                    <div className="flex flex-col gap-2">
                                         <div className="flex items-center gap-2">
                                             <Clock className="h-4 w-4 text-blue-600" />
                                             <span>{pkg.duration}</span>
@@ -77,6 +77,17 @@ export default function KayakSchool() {
                                         <div className="flex items-center gap-2">
                                             <Award className="h-4 w-4 text-blue-600" />
                                             <span>Professional guides</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <Clock1 className="h-4 w-4 text-blue-600" />
+                                            <span>{pkg.duration}</span>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <MapPin className="h-4 w-4 text-blue-600" />
+                                            <span>
+                                                {pkg.startingPoint} -{" "}
+                                                {pkg.endingPoint}
+                                            </span>
                                         </div>
                                     </div>
                                 </CardContent>

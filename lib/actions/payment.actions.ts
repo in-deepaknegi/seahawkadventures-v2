@@ -25,7 +25,7 @@ interface UserDetails {
 
 interface PackageDetails {
     title: string;
-    price: string;
+    price: number;
 }
 
 interface BookingData {

@@ -34,12 +34,12 @@ declare global {
 
 interface BookingFormProps {
     packageName?: string;
-    packagePrice?: string;
+    packagePrice?: number;
 }
 
 export default function BookingForm({
     packageName = "Adventure Package",
-    packagePrice = "0",
+    packagePrice = 0,
 }: BookingFormProps) {
     const [date, setDate] = useState<DateValue | null>(null);
     const [formData, setFormData] = useState({
@@ -187,7 +187,7 @@ export default function BookingForm({
     };
 
     const calculateTotal = () => {
-        const basePrice = Number.parseInt(packagePrice);
+        const basePrice = packagePrice;
         const participants = Number.parseInt(formData.participants);
         return `₹${basePrice * participants}`;
     };

@@ -63,7 +63,7 @@ const packages = {
             duration: "4 hours",
             link: "/tours/ganga-river-rafting-marine-drive-tapovan",
             groupSize: "6-8 people",
-            price: 2499,
+            price: 2999,
             image: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1103.jpg",
         },
     ],

@@ -40,6 +40,9 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion";
 import ImageGallery from "@/components/image-gallery";
+import { RiWhatsappLine } from "@remixicon/react";
+import { CldImage } from "next-cloudinary";
+import CldImageComponent from "@/components/cld-image";
 
 type Params = Promise<{ slug: string }>;
 
@@ -157,7 +160,7 @@ const page = async ({ params }: { params: Params }) => {
             break;
     }
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white font-sans">
             <Navbar />
             <main className="-mt-[5rem]">
                 {/* Hero Section */}
@@ -234,12 +237,16 @@ const page = async ({ params }: { params: Params }) => {
                                         <ChevronLeft className="mr-1 h-4 w-4" />
                                         Back to Packages
                                     </Link> */}
-                                    <div className="text-xl font-bold text-blue-700 md:text-2xl">
-                                        ₹{content_0?.price}
-                                        <span className="text-sm font-normal text-gray-500">
-                                            per person
-                                        </span>
-                                    </div>
+                                    {content_0?.price ? (
+                                        <div className="text-xl font-bold text-blue-700 md:text-2xl">
+                                            ₹{content_0?.price}
+                                            <span className="text-sm font-normal text-gray-500">
+                                                per person
+                                            </span>
+                                        </div>
+                                    ) : (
+                                        ""
+                                    )}
                                 </div>
 
                                 <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
@@ -647,18 +654,26 @@ const page = async ({ params }: { params: Params }) => {
                             {/* Sidebar */}
                             <div className="space-y-6 md:col-span-4">
                                 <div className="sticky top-24 space-y-10">
-                                    <div className="rounded-lg bg-blue-50 p-4 shadow-sm md:p-6">
-                                        <h2 className="mb-3 text-lg font-medium text-blue-800 md:mb-4 md:text-xl">
-                                            Book This Adventure
-                                        </h2>
-                                        <BookingForm
-                                            packageName={doc?.title}
-                                            packagePrice={content_0?.price}
-                                        />
-                                    </div>
+                                    {content_0?.price ? (
+                                        <div className="rounded-lg bg-blue-50 p-4 shadow-sm md:p-6">
+                                            <>
+                                                <h2 className="mb-3 text-lg font-medium text-blue-800 md:mb-4 md:text-xl">
+                                                    Book This Adventure
+                                                </h2>
+                                                <BookingForm
+                                                    packageName={doc?.title}
+                                                    packagePrice={
+                                                        content_0?.price as number
+                                                    }
+                                                />
+                                            </>
+                                        </div>
+                                    ) : (
+                                        ""
+                                    )}
 
                                     <div className="rounded-lg border bg-white p-4 shadow-sm md:p-6">
-                                        <h3 className="mb-3 text-lg font-bold text-blue-800">
+                                        <h3 className="mb-3 text-lg font-semibold text-blue-800 md:text-xl">
                                             Need Help?
                                         </h3>
                                         <p className="mb-4 text-sm text-gray-700 md:text-base">
@@ -667,26 +682,38 @@ const page = async ({ params }: { params: Params }) => {
                                         </p>
                                         <div className="space-y-3">
                                             <Button className="w-full bg-blue-600 text-sm hover:bg-blue-700 md:text-base">
-                                                Chat With Us
+                                                <Link
+                                                    href={`https://wa.me/919756620538/?text=Hi there. I'm interested in Expedition packages, can you please share the details?`}
+                                                    target="_blank"
+                                                    className="flex items-center gap-2"
+                                                >
+                                                    <RiWhatsappLine className="size-6 text-white xl:size-6" />
+                                                    Chat with us
+                                                </Link>
                                             </Button>
                                             <Button
                                                 variant="outline"
                                                 className="w-full text-sm md:text-base"
                                             >
-                                                Call: +91 98765 43210
+                                                <Link
+                                                    href="tel:+919756620538"
+                                                    className="text-gray-700"
+                                                >
+                                                    Call: +91 97566 20538
+                                                </Link>
                                             </Button>
                                         </div>
                                     </div>
 
                                     <div className="rounded-lg border bg-white p-4 shadow-sm md:p-6">
-                                        <h3 className="mb-3 text-lg font-bold text-blue-800">
+                                        <h3 className="mb-3 text-lg font-semibold text-blue-800 md:text-xl">
                                             You May Also Like
                                         </h3>
                                         <div className="space-y-4">
                                             <div className="flex gap-3">
-                                                <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded md:h-16 md:w-16">
-                                                    <Image
-                                                        src="/placeholder.svg?height=100&width=100"
+                                                <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded md:size-20">
+                                                    <CldImageComponent
+                                                        src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1106.jpg"
                                                         alt="Intermediate Rafting"
                                                         fill
                                                         className="object-cover"
@@ -694,14 +721,14 @@ const page = async ({ params }: { params: Params }) => {
                                                 </div>
                                                 <div>
                                                     <h4 className="font-medium">
-                                                        Intermediate Rafting
-                                                        Challenge
+                                                        36 Km Rafting
                                                     </h4>
                                                     <p className="text-sm text-gray-500">
-                                                        3 hours | ₹1,800
+                                                        4-5 hours | ₹2999
                                                     </p>
                                                     <Link
-                                                        href="#"
+                                                        href="/tours/ganga-river-rafting-kaudiyala-tapovan"
+                                                        target="_blank"
                                                         className="text-sm text-blue-600 hover:underline"
                                                     >
                                                         View Details
@@ -709,9 +736,9 @@ const page = async ({ params }: { params: Params }) => {
                                                 </div>
                                             </div>
                                             <div className="flex gap-3">
-                                                <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded md:h-16 md:w-16">
-                                                    <Image
-                                                        src="/placeholder.svg?height=100&width=100"
+                                                <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded md:size-20">
+                                                    <CldImageComponent
+                                                        src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1104.jpg"
                                                         alt="Kayaking Basics"
                                                         fill
                                                         className="object-cover"
@@ -719,13 +746,13 @@ const page = async ({ params }: { params: Params }) => {
                                                 </div>
                                                 <div>
                                                     <h4 className="font-medium">
-                                                        Kayaking Basics
+                                                        26 Km Rafting
                                                     </h4>
                                                     <p className="text-sm text-gray-500">
-                                                        2 hours | ₹1,500
+                                                        3-4 hours | ₹1499
                                                     </p>
                                                     <Link
-                                                        href="#"
+                                                        href="/tours/ganga-river-rafting-marine-drive-tapovan"
                                                         className="text-sm text-blue-600 hover:underline"
                                                     >
                                                         View Details
