@@ -43,7 +43,7 @@ const images = [
     {
         title: "Expedition Adventures",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
+            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1305.jpg",
             alt: "Expedition Adventures",
         },
         stats: {

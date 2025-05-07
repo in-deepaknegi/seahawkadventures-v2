@@ -15,11 +15,35 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import { packages } from "@/config/adventure";
+import {
+    __R1__,
+    __R2__,
+    __R3__,
+    __R4__,
+    __K1__,
+    __K2__,
+    __E1__,
+    __E2__,
+    __C1__,
+    __C2__,
+    __gallery__,
+    __faq__,
+    __itinerary__,
+} from "@/config/package";
+import { Package } from "@/types/package";
+
+
 
 export default function AdventurePackages() {
     const [selectedCategory, setSelectedCategory] = React.useState("all");
     const [sortBy, setSortBy] = React.useState("popular");
+
+    const packages: Record<string, Package[]> = {
+        rafting: [__R1__.__p__, __R2__.__p__, __R3__.__p__, __R4__.__p__],
+        kayaking: [__K1__.__p__, __K2__.__p__],
+        expedition: [__E1__.__p__, __E2__.__p__],
+        camping: [__C1__.__p__, __C2__.__p__],
+    };
 
     const allPackages = React.useMemo(() => {
         let filteredPackages = Object.values(packages).flat();
@@ -175,7 +199,9 @@ export default function AdventurePackages() {
                             >
                                 <div className="relative h-60 overflow-hidden">
                                     <CldImage
-                                        src={pkg.image || "/placeholder.svg"}
+                                        src={
+                                            pkg.image.src || "/placeholder.svg"
+                                        }
                                         alt={pkg.title}
                                         width={1080}
                                         height={680}
