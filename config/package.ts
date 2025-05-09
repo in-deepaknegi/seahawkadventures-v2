@@ -196,7 +196,7 @@ export const __K1__ = {
             src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1206.jpg`,
         },
         featured_image: {
-            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1746517562/img_1219.jpg`,
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1746517562/img_1218.jpg`,
             class: "object-top",
         },
 
@@ -382,8 +382,8 @@ export const __E2__ = {
             src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1215.jpg`,
         },
         featured_image: {
-            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1746517245/img_1220.jpg`,
-            class: "object-center",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1746517245/img_1306.jpg`,
+            class: "object-bottom",
         },
 
         duration: "2 Nights 3 Days",

@@ -43,14 +43,14 @@ const images = [
     {
         title: "Expedition Adventures",
         image: {
-            src: "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081821/img_1306.jpg",
+            src: "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081821/img_1307.jpg",
             alt: "Expedition Adventures",
         },
         stats: {
             tours: 9,
             startingPrice: "12,000",
         },
-        classname: "size-full object-cover object-bottom",
+        classname: "size-full object-cover object-center",
         link: "/adventure-in-rishikesh/expedition-adventures",
     },
     {
