@@ -166,7 +166,7 @@ export default function Navbar() {
                         alt="Seahawk Adventure"
                         width={1000}
                         height={1000}
-                        className="aspect-video h-full w-28 object-contain md:w-32"
+                        className="aspect-video h-full w-28 object-contain md:w-28 xl:w-32"
                     />
                 </Link>
 

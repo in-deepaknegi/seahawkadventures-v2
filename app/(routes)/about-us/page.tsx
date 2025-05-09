@@ -42,7 +42,7 @@ export default function AboutUs() {
                 {/* Hero Section */}
                 <section className="relative flex h-[60vh] items-center">
                     <Image
-                        src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg"
+                        src="https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1102.jpg"
                         alt="About Sea Hawk Adventure"
                         fill
                         className="object-cover object-center"
@@ -112,7 +112,7 @@ export default function AboutUs() {
                             </div>
                             <div>
                                 <Image
-                                    src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg"
+                                    src="https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1101.jpg"
                                     alt="Our Story"
                                     width={600}
                                     height={600}
@@ -375,7 +375,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/about-us`,
         images: [
             {
-                url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+                url: `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "About Us",
@@ -389,7 +389,7 @@ export const metadata: Metadata = {
         description:
             "Discover the story behind Sea Hawk Adventure and our passion for adventure",
         images: [
-            `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+            `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
         ],
         site: "@SeaHawkAdventure",
         creator: "@SeaHawkAdventure",

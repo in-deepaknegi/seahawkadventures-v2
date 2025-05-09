@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/adventure-in-rishikesh`,
         images: [
             {
-                url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+                url: `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "About Us",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         description:
             "Explore the best adventure activities in Rishikesh, starting from rafting to trekking and camping we have it all.",
         images: [
-            `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+            `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
         ],
         site: "@SeaHawkAdventure",
         creator: "@SeaHawkAdventure",

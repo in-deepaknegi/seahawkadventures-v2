@@ -74,7 +74,7 @@ export default function AdventurePackages() {
             {/* Hero Section */}
             <section className="relative flex h-[50vh] items-center md:h-[70vh]">
                 <Image
-                    src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg"
+                    src="https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg"
                     alt="About Sea Hawk Adventure"
                     fill
                     className="object-cover object-center"

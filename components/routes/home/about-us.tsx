@@ -2,16 +2,16 @@
 import { CldImage } from "next-cloudinary";
 import { InfiniteSlider } from "@/components/motion/infinite-slider";
 const images = [
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1201.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1213.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1205.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1210.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1401.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1402.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1403.jpg",
-    "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1404.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1101.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1102.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745051443/img_1201.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745051443/img_1213.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745051443/img_1205.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745051443/img_1210.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081448/img_1401.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081448/img_1402.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081448/img_1403.jpg",
+    "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081448/img_1404.jpg",
 ];
 
 export default function AboutUs() {

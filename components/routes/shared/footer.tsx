@@ -69,7 +69,9 @@ export default function Footer() {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="mb-4 text-xl font-medium">Quick Links</h3>
+                        <h3 className="mb-4 text-xl font-medium">
+                            Quick Links
+                        </h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link
@@ -156,10 +158,10 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Newsletter */}
+                    {/* Newsletter and QR Code */}
                     <div>
-                        <h3 className="mb-4 text-xl font-medium">Newsletter</h3>
-                        <p className="text -blue-200 mb-4">
+                        {/* <h3 className="mb-4 text-xl font-medium">Newsletter</h3>
+                        <p className="mb-4 text-blue-200">
                             Subscribe to our newsletter for the latest updates
                             and offers.
                         </p>
@@ -172,15 +174,41 @@ export default function Footer() {
                             <Button className="w-full bg-blue-600">
                                 Subscribe
                             </Button>
-                        </form>
+                        </form> */}
+
+                        {/* QR Code Section */}
+                        <div className="mt-0 flex flex-col items-start md:items-center md:justify-center">
+                            <h3 className="text-xl font-medium md:mb-4">
+                                Share your experience
+                            </h3>
+                            <div className="flex items-start justify-center md:items-center">
+                                <Image
+                                    src="/api/reviews"
+                                    alt="QR Code"
+                                    width={120}
+                                    height={120}
+                                    className="rounded-lg"
+                                />
+                            </div>
+                            <p className="text-center text-sm text-gray-600 md:mt-2">
+                                Scan to share your experience
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div className="mt-12 border-t border-gray-300 pt-6 text-center text-sm text-gray-700">
-                    <p>
-                        © {new Date().getFullYear()} Sea Hawk Adventure. All
-                        rights reserved.
-                    </p>
+                <div className="mt-12 border-t border-gray-300 pt-6 text-sm text-gray-500 md:text-center">
+                    <p>© 2025 Sea Hawk Adventures. All rights reserved.</p>
+                    <div className="text-sm">
+                        Created and maintained by{" "}
+                        <Link
+                            href="https://ui.cnippet.site/"
+                            target="_blank"
+                            className="font-medium text-blue-500 hover:text-blue-600"
+                        >
+                            Cnippet, Inc.
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>

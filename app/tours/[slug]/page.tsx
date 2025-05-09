@@ -164,7 +164,7 @@ const page = async ({ params }: { params: Params }) => {
             <Navbar />
             <main className="-mt-[5rem]">
                 {/* Hero Section */}
-                <section className="relative h-[70vh] overflow-hidden md:h-[400px] lg:h-[70vh]">
+                <section className="relative h-[70vh] overflow-hidden md:h-[400px] lg:h-[90vh]">
                     <Image
                         src={content_0?.featured_image.src ?? ""}
                         alt="Beginner's Rafting Adventure"
@@ -175,7 +175,7 @@ const page = async ({ params }: { params: Params }) => {
                     />
                     <div className="absolute bottom-0 h-[60%] w-full bg-gradient-to-t from-black/90 to-transparent" />
                     <div className="absolute inset-0 flex h-full flex-col justify-end p-4 text-center text-white md:items-center">
-                        <h1 className="mb-2 text-2xl font-bold md:mb-4 md:text-4xl lg:text-5xl">
+                        <h1 className="mb-2 text-2xl font-semibold md:mb-4 md:text-4xl lg:text-5xl">
                             {doc?.title}
                         </h1>
                         <p className="max-w-3xl text-base md:text-xl">
@@ -713,7 +713,7 @@ const page = async ({ params }: { params: Params }) => {
                                             <div className="flex gap-3">
                                                 <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded md:size-20">
                                                     <CldImageComponent
-                                                        src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1106.jpg"
+                                                        src="https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1106.jpg"
                                                         alt="Intermediate Rafting"
                                                         fill
                                                         className="object-cover"
@@ -738,7 +738,7 @@ const page = async ({ params }: { params: Params }) => {
                                             <div className="flex gap-3">
                                                 <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded md:size-20">
                                                     <CldImageComponent
-                                                        src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1104.jpg"
+                                                        src="https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1104.jpg"
                                                         alt="Kayaking Basics"
                                                         fill
                                                         className="object-cover"
@@ -789,7 +789,7 @@ export async function generateMetadata({ params }: { params: Params }) {
             url: `${BASE_URL}/tours/${doc?.slugAsParams}`,
             images: [
                 {
-                    url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+                    url: `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
                     width: 1200,
                     height: 630,
                     alt: doc?.title,
@@ -802,7 +802,7 @@ export async function generateMetadata({ params }: { params: Params }) {
             title: doc?.title,
             description: doc?.description,
             images: [
-                `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+                `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
             ],
             site: "@SeaHawkAdventure",
             creator: "@SeaHawkAdventure",

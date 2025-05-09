@@ -50,7 +50,7 @@ export default function ContactPage() {
             {/* Hero Section */}
             <section className="relative flex h-[60vh] items-center">
                 <CldImageComponent
-                    src="https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1218.jpg"
+                    src="https://res.cloudinary.com/dw5tor8v7/image/upload/v1745051443/img_1218.jpg"
                     alt="About Sea Hawk Adventure"
                     fill
                     className="size-full object-cover object-top"

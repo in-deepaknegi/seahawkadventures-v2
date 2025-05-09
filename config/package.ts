@@ -2,16 +2,18 @@ import { AtSignIcon, CommandIcon, EclipseIcon } from "lucide-react";
 
 export const BASE_URL = process.env.NEXT_PUBLIC_URL ?? "http://localhost:3000";
 
+export const IMAGE_KEY = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
+
 export const __R1__ = {
     __p__: {
         title: "12 Km Rafting",
         description:
             "Perfect for beginners and families, featuring gentle Grade I, II and III rapids with stunning Himalayan views.",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1102.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1102.jpg`,
             class: "object-center",
         },
         difficulty: "Family Friendly",
@@ -53,10 +55,10 @@ export const __R2__ = {
         description:
             "Ideal for adventure seekers, featuring challenging Grade II-III+ rapids including Roller Coaster and Golf Course.",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1103.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1103.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1101.jpg`,
             class: "object-center",
         },
 
@@ -99,10 +101,10 @@ export const __R3__ = {
         description:
             "Our most popular package! Combines thrilling Grade II-III+ rapids with serene stretches perfect for swimming.",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1106.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1106.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1105.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1105.jpg`,
             class: "object-center",
         },
 
@@ -145,10 +147,10 @@ export const __R4__ = {
         description:
             "The ultimate challenge! Features the legendary Great Wall rapid (Grade IV+) and 21 other exciting rapids.",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1107.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1107.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1113.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1113.jpg`,
             class: "object-center",
         },
 
@@ -191,10 +193,10 @@ export const __K1__ = {
         description:
             "Master essential kayaking skills with our comprehensive 4-day course. Perfect for beginners looking to start their kayaking journey.",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1206.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1206.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746517562/img_1219.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1746517562/img_1219.jpg`,
             class: "object-top",
         },
 
@@ -252,10 +254,10 @@ export const __K2__ = {
         description:
             "Transform into a confident kayaker with our intensive 7-day program. Learn advanced techniques and tackle challenging rapids.",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1201.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1201.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746474080/img_1217.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1746474080/img_1217.jpg`,
             class: "object-center",
         },
 
@@ -314,14 +316,14 @@ export const __E1__ = {
             "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
 
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1309.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1309.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1309.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1309.jpg`,
             class: "object-bottom",
         },
 
-        duration: "3 Nights 4 Days",
+        duration: "2 Nights 3 Days",
         difficulty: "Family Friendly",
         season: "Mid Sept till end of June",
         price: 0,
@@ -377,14 +379,14 @@ export const __E2__ = {
             "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
 
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1215.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1215.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1746517245/img_1220.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1746517245/img_1220.jpg`,
             class: "object-center",
         },
 
-        duration: "3 Nights 4 Days",
+        duration: "2 Nights 3 Days",
         difficulty: "Family Friendly",
         season: "Mid Sept till end of June",
         price: 0,
@@ -439,10 +441,10 @@ export const __C1__ = {
         description:
             "Embark on an immersive rafting journey in Rishikesh, where you'll master river skills, tackle thrilling rapids, and soak in the serene beauty of the Ganges.",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1404.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1404.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1406.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1406.jpg`,
             class: "object-center",
         },
 
@@ -507,10 +509,10 @@ export const __C2__ = {
         description:
             "Experience riverside camping near Rishikesh with modern amenities amidst Himalayan beauty. Perfect blend of adventure and comfort with attached facilities, adventure activities, and mountain views.",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1407.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1407.jpg`,
         },
         featured_image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1401.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1401.jpg`,
             class: "object-center",
         },
 
@@ -574,293 +576,293 @@ export const __C2__ = {
 export const __gallery__ = {
     rafting: [
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1101.jpg`,
             alt: "Rafting through rapids",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1102.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1102.jpg`,
             alt: "Kayaking in calm waters",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1103.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1103.jpg`,
             alt: "Expedition team at campsite",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1104.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1104.jpg`,
             alt: "Group rafting adventure",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1105.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1105.jpg`,
             alt: "Kayaking instruction session",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1106.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1106.jpg`,
             alt: "Trekking through mountain trails",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1107.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1107.jpg`,
             alt: "White water rafting excitement",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1108.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1108.jpg`,
             alt: "Kayaking through gentle rapids",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1109.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1109.jpg`,
             alt: "Camping under the stars",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1110.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1110.jpg`,
             alt: "River crossing adventure",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1111.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1111.jpg`,
             alt: "Professional rafting team",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1112.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1112.jpg`,
             alt: "Kayaking training session",
             category: "rafting",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1113.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1113.jpg`,
             alt: "Mountain view from campsite",
             category: "rafting",
         },
     ],
     kayaking: [
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1201.jpg",
-            alt: "Rafting safety demonstration",
-            category: "kayaking",
-        },
-        // {
-        //     src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1202.jpg",
-        //     alt: "Rafting safety demonstration",
-        //     category: "kayaking",
-        // },
-        // {
-        //     src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1203.jpg",
-        //     alt: "Rafting safety demonstration",
-        //     category: "kayaking",
-        // },
-        {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1204.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1201.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1205.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1202.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1206.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1203.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1207.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1204.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1208.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1205.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1209.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1206.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1210.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1207.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1211.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1208.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1212.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1209.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1213.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1210.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1214.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1211.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1215.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1212.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1216.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1213.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1217.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1214.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1218.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1215.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1216.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1217.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "kayaking",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745051443/img_1218.jpg`,
             alt: "Rafting safety demonstration",
             category: "kayaking",
         },
     ],
     camping: [
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1401.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1401.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1402.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1402.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1403.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1403.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1404.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1404.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1405.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1405.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1406.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1406.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1407.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1407.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1408.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1408.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1409.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1409.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1410.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081448/img_1410.jpg`,
             alt: "Rafting safety demonstration",
             category: "camping",
         },
     ],
     expedition: [
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1301.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1301.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1302.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1302.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1303.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1303.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1304.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1304.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1305.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1305.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1306.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1306.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1307.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1307.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1308.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1308.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1309.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1309.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1310.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1310.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1311.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1311.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1312.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1312.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1313.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1313.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1314.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1314.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1315.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1315.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },
         {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1316.jpg",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1316.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },

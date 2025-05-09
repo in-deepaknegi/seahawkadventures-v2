@@ -123,7 +123,6 @@
     --animate-accordion-up: accordion-up 0.2s ease-out;
     --animate-marquee: marquee var(--duration) infinite linear;
     --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-    
 }
 
 @layer base {
@@ -133,9 +132,6 @@
     ::backdrop,
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
-    }
-    ::-webkit-scrollbar {
-        display: none;
     }
 }
 
@@ -158,5 +154,5 @@
 }
 
 .content > ul {
-    @apply list-disc ml-4;
+    @apply ml-4 list-disc;
 }

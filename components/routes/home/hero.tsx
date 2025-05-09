@@ -17,51 +17,53 @@ const images = [
     {
         title: "Kayak School",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745051443/img_1218.jpg",
+            src: "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745051443/img_1218.jpg",
             alt: "Kayak School",
         },
         stats: {
             tours: 8,
             startingPrice: "3,999",
         },
-
+        classname: "size-full object-cover object-center",
         link: "/adventure-in-rishikesh/kayak-school",
     },
     {
         title: "Rafting in Rishikesh",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1101.jpg",
+            src: "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1101.jpg",
             alt: "Rafting in Rishikesh",
         },
         stats: {
             tours: 3,
             startingPrice: "599",
         },
-
+        classname: "size-full object-cover object-center",
         link: "/adventure-in-rishikesh/river-rafting",
     },
     {
         title: "Expedition Adventures",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081821/img_1305.jpg",
+            src: "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081821/img_1306.jpg",
             alt: "Expedition Adventures",
         },
         stats: {
             tours: 9,
             startingPrice: "12,000",
         },
+        classname: "size-full object-cover object-bottom",
         link: "/adventure-in-rishikesh/expedition-adventures",
     },
     {
         title: "Camping in Rishikesh",
         image: {
-            src: "https://res.cloudinary.com/dr8gbqqid/image/upload/v1745081448/img_1406.jpg",
+            src: "https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081448/img_1406.jpg",
             alt: "Camping in Rishikesh",
         },
         stats: {
             tours: 9,
             startingPrice: "1,500",
         },
+        classname: "size-full object-cover object-center",
         link: "/adventure-in-rishikesh/camping",
     },
 ];
@@ -88,11 +90,11 @@ export default function Hero() {
                                 <CldImage
                                     src={item.image.src}
                                     alt={item.image.alt}
-                                    fill
-                                    // width={1920}
-                                    // height={1080}
+                                    // fill
+                                    width={1920}
+                                    height={1080}
                                     priority={index === 0}
-                                    className="size-full object-cover object-center"
+                                    className={item.classname}
                                     // sizes="100vw"
                                     quality={100}
                                 />

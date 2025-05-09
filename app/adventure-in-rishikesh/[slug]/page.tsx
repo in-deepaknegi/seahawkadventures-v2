@@ -322,7 +322,7 @@ export async function generateMetadata({ params }: { params: Params }) {
             url: `${BASE_URL}/adventure-in-rishikes/${doc}`,
             images: [
                 {
-                    url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+                    url: `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
                     width: 1200,
                     height: 630,
                     alt: content_1?.title,
@@ -336,7 +336,7 @@ export async function generateMetadata({ params }: { params: Params }) {
             description: content_1?.description,
             openGraph: {
                 images: [
-                    `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+                    `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
                 ],
                 site: "@SeaHawkAdventure",
                 creator: "@SeaHawkAdventure",

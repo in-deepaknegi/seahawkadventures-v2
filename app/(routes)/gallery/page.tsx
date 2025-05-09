@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/gallery`,
         images: [
             {
-                url: `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+                url: `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "Gallery",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
         description:
             "Browse our captivating photo gallery featuring stunning visuals and memorable moments. Discover breathtaking images that inspire. Explore now!",
         images: [
-            `https://res.cloudinary.com/dr8gbqqid/image/upload/v1745082693/img_1213.jpg`,
+            `https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1213.jpg`,
         ],
         site: "@SeaHawkAdventure",
         creator: "@SeaHawkAdventure",

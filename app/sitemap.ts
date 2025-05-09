@@ -11,7 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         `/contact`,
         `/gallery`,
         `/feedback`,
-        `/adventure-in-rishikesh/`,
+        `/adventure-in-rishikesh`,
         `/adventure-in-rishikesh/camping`,
         `/adventure-in-rishikesh/expedition-adventures`,
         `/adventure-in-rishikesh/kayak-school`,
