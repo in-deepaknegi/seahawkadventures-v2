@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Bell, Search, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +19,7 @@ interface AdminHeaderProps {
 }
 
 export default function AdminHeader({ title }: AdminHeaderProps) {
+    const router = useRouter();
     const [notifications] = useState([
         {
             id: 1,
@@ -103,7 +105,13 @@ export default function AdminHeader({ title }: AdminHeaderProps) {
                             <DropdownMenuItem>Profile</DropdownMenuItem>
                             <DropdownMenuItem>Settings</DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem className="text-red-600">
+                            <DropdownMenuItem 
+                                className="text-red-600"
+                                onClick={() => {
+                                    localStorage.removeItem("adminAuthenticated");
+                                    router.push("/admin/login");
+                                }}
+                            >
                                 Log out
                             </DropdownMenuItem>
                         </DropdownMenuContent>

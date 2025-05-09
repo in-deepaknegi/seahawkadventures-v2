@@ -319,8 +319,8 @@ export const __E1__ = {
             src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745082693/img_1309.jpg`,
         },
         featured_image: {
-            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1309.jpg`,
-            class: "object-bottom",
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1318.jpg`,
+            class: "object-center",
         },
 
         duration: "2 Nights 3 Days",
@@ -863,6 +863,41 @@ export const __gallery__ = {
         },
         {
             src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1316.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1317.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1318.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1319.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1320.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1321.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1322.jpg`,
+            alt: "Rafting safety demonstration",
+            category: "expedition",
+        },
+        {
+            src: `https://res.cloudinary.com/${IMAGE_KEY}/image/upload/v1745081821/img_1323.jpg`,
             alt: "Rafting safety demonstration",
             category: "expedition",
         },

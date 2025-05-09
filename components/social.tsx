@@ -7,6 +7,7 @@ import {
     RiPhoneFill,
     RiPhoneLine,
     RiWhatsappLine,
+    RiYoutubeFill,
 } from "@remixicon/react";
 import Image from "next/image";
 
@@ -45,6 +46,14 @@ const SocialIcons = () => {
                 >
                     <span className="sr-only">Call</span>
                     <RiPhoneFill className="size-5 text-white xl:size-6" />
+                </Link>
+                <Link
+                    href={`https://www.youtube.com/@kayakinginrishikesh`}
+                    target="_blank"
+                    className="flex items-center justify-center bg-red-600 p-1.5"
+                >
+                    <span className="sr-only">Youtube</span>
+                    <RiYoutubeFill className="size-5 text-white xl:size-6" />
                 </Link>
                 <Link
                     href="https://www.tripadvisor.in/Attraction_Review-g580106-d21358541-Reviews-Sea_Hawk_Adventure-Rishikesh_Dehradun_District_Uttarakhand.html"

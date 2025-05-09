@@ -9,6 +9,7 @@ import {
     RiFacebookFill,
     RiInstagramLine,
     RiWhatsappLine,
+    RiYoutubeLine,
 } from "@remixicon/react";
 
 type NavItem = {
@@ -271,11 +272,19 @@ export default function Navbar() {
                     <Link
                         href={`https://wa.me/919756620538/?text=Hi there!`}
                         target="_blank"
-                        rel="noopener noreferrer"
                         className="rounded-full p-1 text-white transition-colors hover:opacity-90"
                         style={{ backgroundColor: "#25D366" }}
                     >
                         <RiWhatsappLine className="h-5 w-5" />
+                    </Link>
+                    <Link
+                        href={`https://www.youtube.com/@kayakinginrishikesh`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-full p-1 text-white transition-colors hover:opacity-90"
+                        style={{ backgroundColor: "#FF0000" }}
+                    >
+                        <RiYoutubeLine className="h-5 w-5" />
                     </Link>
                     <Link
                         href="https://www.tripadvisor.in/Attraction_Review-g580106-d21358541-Reviews-Sea_Hawk_Adventure-Rishikesh_Dehradun_District_Uttarakhand.html"
