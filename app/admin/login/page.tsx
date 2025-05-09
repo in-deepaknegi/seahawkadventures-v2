@@ -16,8 +16,8 @@ export default function AdminLogin() {
         e.preventDefault();
         
         // Hardcoded credentials
-        const ADMIN_EMAIL = "rishi@seahawkadventures.com";
-        const ADMIN_PASSWORD = "Rishi_@_123-!";
+        const ADMIN_EMAIL = process.env.ADMIN_MAIL;
+        const ADMIN_PASSWORD = process.env.ADMIN_PASS;
 
         if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
             // Store authentication status in localStorage
