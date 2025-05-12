@@ -23,7 +23,7 @@ export default function GalleryPage() {
         <main className="-mt-5">
             {/* Hero Section */}
 
-            <section className="relative flex h-[60vh] items-center">
+            <section className="relative flex h-[80vh] items-center">
                 <CldImageComponent
                     src="https://res.cloudinary.com/dw5tor8v7/image/upload/v1745081448/img_1407.jpg"
                     alt="About Sea Hawk Adventure"
@@ -32,7 +32,7 @@ export default function GalleryPage() {
                     priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
-                <div className="relative z-10 mx-auto w-full max-w-full px-4 md:px-16 xl:px-10">
+                <div className="relative flex items-end mt-auto z-10 mx-auto w-full max-w-full px-4 md:px-16 xl:px-10">
                     <div className="max-w-2xl">
                         <h5 className="mb-3 tracking-wide text-white/80">
                             VISUAL JOURNEY
@@ -63,7 +63,7 @@ export default function GalleryPage() {
 
             {/* Gallery Section */}
             <section className="py-16">
-                <div className="mx-auto max-w-7xl">
+                <div className="mx-auto max-w-7xl px-4">
                     <div className="mb-8 flex justify-center">
                         <div className="flex flex-wrap gap-2 rounded-full bg-gray-100 p-1 shadow-sm">
                             <button
@@ -193,7 +193,7 @@ export default function GalleryPage() {
                     </p>
                 </div>
 
-                <Grid className="mx-auto max-w-7xl">
+                <Grid className=" max-w-7xl mx-auto px-6">
                     <Block className="col-span-4">
                         <video
                             width="1920"
@@ -202,7 +202,7 @@ export default function GalleryPage() {
                             loop
                             muted
                             controls
-                            src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745082720/vid_1150.mp4"
+                            src="https://res.cloudinary.com/dtxom0y0a/video/upload/v1747024323/vid_1150.mp4"
                             className="h-full w-full"
                         />
                     </Block>
@@ -214,7 +214,7 @@ export default function GalleryPage() {
                             loop
                             muted
                             controls
-                            src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745082740/vid_1151.mp4"
+                            src="https://res.cloudinary.com/dtxom0y0a/video/upload/v1747024323/vid_1251.mov"
                             className="h-full w-full"
                         />
                     </Block>
@@ -226,7 +226,7 @@ export default function GalleryPage() {
                             loop
                             muted
                             controls
-                            src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745259837/vid_1350.mp4"
+                            src="https://res.cloudinary.com/dtxom0y0a/video/upload/v1747024323/vid_1350.mp4"
                             className="h-full w-full"
                         />
                     </Block>

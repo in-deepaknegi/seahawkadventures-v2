@@ -9,6 +9,7 @@ import { BASE_URL } from "@/config/package";
 import Profile1 from "@/public/images/team/t00.jpg";
 import Profile2 from "@/public/images/team/t01.jpg";
 import Profile3 from "@/public/images/team/t02.jpg";
+import Profile4 from "@/public/images/team/t03.jpg";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -23,14 +24,21 @@ const teams = [
     {
         image: Profile2,
         author: "Rakesh Rana",
-        description: "Professional Raft Guide",
+        description: "Professional Raft guide & kayaker 12+ years experience",
         username: "@rakesh_rana",
     },
     {
         image: Profile3,
         author: "Nitesh Negi",
-        description: "Professional Raft Guide",
+        description: "Professional Kayaker & Raft guide 8+ years experience",
         username: "@nitesh_negi",
+        herf: "https://www.instagram.com/nitesh.negi.kayak/",
+    },
+    {
+        image: Profile4,
+        author: "Manish Bhandari",
+        description: "Professional Raft guide & kayaker 10+ years experience",
+        username: "@manish_bhandari",
     },
 ];
 
@@ -40,7 +48,7 @@ export default function AboutUs() {
             <Navbar />
             <main className="-mt-20 flex-1 pt-20">
                 {/* Hero Section */}
-                <section className="relative flex h-[60vh] items-center">
+                <section className="relative flex h-[80vh] items-center">
                     <Image
                         src="https://res.cloudinary.com/dw5tor8v7/image/upload/v1745082693/img_1102.jpg"
                         alt="About Sea Hawk Adventure"
@@ -49,7 +57,7 @@ export default function AboutUs() {
                         priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
-                    <div className="relative z-10 mx-auto w-full max-w-full px-4 md:px-16 xl:px-10">
+                    <div className="relative z-10 mx-auto w-full max-w-full flex items-end mt-auto px-4 md:px-16 xl:px-10">
                         <div className="max-w-2xl">
                             <h5 className="mb-3 tracking-wide text-white/80">
                                 OUR STORY
@@ -81,8 +89,8 @@ export default function AboutUs() {
                                     Founded in 2008 by a group of passionate
                                     adventure enthusiasts, Sea Hawk Adventure
                                     began with a simple mission: to share the
-                                    thrill and beauty of Rishikesh&apos;s rivers with
-                                    the world while maintaining the highest
+                                    thrill and beauty of Rishikesh&apos;s rivers
+                                    with the world while maintaining the highest
                                     standards of safety and environmental
                                     responsibility.
                                 </p>
@@ -183,8 +191,8 @@ export default function AboutUs() {
                                     Environmental Stewardship
                                 </h3>
                                 <p className="text-gray-700">
-                                    We&apos;re committed to preserving the natural
-                                    beauty of Rishikesh. We practice
+                                    We&apos;re committed to preserving the
+                                    natural beauty of Rishikesh. We practice
                                     leave-no-trace principles, participate in
                                     river clean-ups, and educate our guests
                                     about the importance of environmental
@@ -197,7 +205,7 @@ export default function AboutUs() {
 
                 {/* Team Section */}
                 <section className="py-24">
-                    <div className="mx-auto w-full max-w-7xl px-4 md:px-16 xl:px-10">
+                    <div className="mx-auto w-full max-w-6xl px-4 md:px-16 xl:px-10">
                         <div className="mx-auto mb-16 max-w-3xl text-center">
                             <h5 className="mb-1 text-base uppercase">
                                 OUR EXPERTS
@@ -212,27 +220,7 @@ export default function AboutUs() {
                         </div>
 
                         <div className="grid gap-8 md:grid-cols-4">
-                            {[
-                                {
-                                    name: "Rishi Rana (Founder)",
-                                    position:
-                                        "Professional Kayaker & Raft Guide",
-                                    experience: "12+ years",
-                                    image: "/images/team/t00.jpg",
-                                },
-                                {
-                                    name: "Rakesh Rana",
-                                    position: "Professional Raft Guide",
-                                    experience: "8+ years",
-                                    image: "/images/team/t01.jpg",
-                                },
-                                {
-                                    name: "Nitesh Negi",
-                                    position: "Professional Kayak Guide",
-                                    experience: "10+ years",
-                                    image: "/images/team/t02.jpg",
-                                },
-                            ].map((member, index) => (
+                            {teams.map((member, index) => (
                                 <div key={index} className="group">
                                     <div className="relative mb-4 aspect-square overflow-hidden rounded-xl">
                                         <Image
@@ -240,20 +228,17 @@ export default function AboutUs() {
                                                 member.image ||
                                                 "/placeholder.svg"
                                             }
-                                            alt={member.name}
+                                            alt={member.author}
                                             width={300}
                                             height={300}
-                                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                            className="h-full w-full rounded-full object-cover transition-transform duration-300 group-hover:scale-102"
                                         />
                                     </div>
                                     <h3 className="text-xl font-medium md:text-2xl">
-                                        {member.name}
+                                        {member.author}
                                     </h3>
-                                    <p className="text-gray-600">
-                                        {member.position}
-                                    </p>
-                                    <p className="text-primary text-sm">
-                                        {member.experience} experience
+                                    <p className="text-gray-600 text-sm">
+                                        {member.description}
                                     </p>
                                 </div>
                             ))}
@@ -272,8 +257,8 @@ export default function AboutUs() {
                                 Certifications & Awards
                             </h2>
                             <p className="text-lg text-gray-600">
-                                We&apos;re proud to be recognized for our commitment
-                                to excellence and safety
+                                We&apos;re proud to be recognized for our
+                                commitment to excellence and safety
                             </p>
                         </div>
 
@@ -347,7 +332,7 @@ export default function AboutUs() {
                                 <Link href="/contact">
                                     <Button
                                         variant="outline"
-                                        className="rounded-full border-white bg-transparent px-8 py-5 text-base text-white hover:bg-white hover:text-black cursor-pointer"
+                                        className="cursor-pointer rounded-full border-white bg-transparent px-8 py-5 text-base text-white hover:bg-white hover:text-black"
                                     >
                                         Contact Us
                                     </Button>

@@ -12,6 +12,7 @@ import {
     Column,
     Tailwind,
 } from "@react-email/components";
+import Image from "next/image";
 import * as React from "react";
 
 interface ContactEmailProps {
@@ -40,10 +41,10 @@ export const ContactEmail = ({
                     <Container className="mx-auto max-w-full w-[500px] rounded-2xl bg-white p-6">
                         {/* Header Section */}
                         <Section className="mb-4 text-center">
-                            <Img
+                            <Image
                                 src={`${baseUrl}/images/logo-light.png`}
                                 width="80"
-                                height="auto"
+                                height="80"
                                 alt="Cnippet Logo"
                                 className="mx-auto rounded-full"
                             />

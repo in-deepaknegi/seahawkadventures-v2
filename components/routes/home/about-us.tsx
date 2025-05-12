@@ -74,10 +74,12 @@ export default function AboutUs() {
                                     <CldImage
                                         key={i}
                                         src={image}
-                                        alt="Apple Music logo"
-                                        width={1920}
-                                        height={1080}
-                                        className="aspect-video w-96 overflow-hidden object-cover object-center"
+                                        alt="Adventure activity image"
+                                        width={384}
+                                        height={216}
+                                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 80vw, 384px"
+                                        loading="lazy"
+                                        className="aspect-video w-full md:w-96 overflow-hidden object-cover object-center"
                                     />
                                 ))}
                             </InfiniteSlider>

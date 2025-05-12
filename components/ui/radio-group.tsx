@@ -39,7 +39,7 @@ function RadioGroupItem({
                     fill="currentcolor"
                     xmlns="http://www.w3.org/2000/svg"
                 >
-                    <circle cx="3" cy="3" r="3" />
+                    <circle/>
                 </svg>
             </RadioGroupPrimitive.Indicator>
         </RadioGroupPrimitive.Item>

@@ -91,7 +91,7 @@ export default function Feedback() {
                         </p>
                     </div>
 
-                    <Marquee pauseOnHover className="[--duration:120s]">
+                    <Marquee pauseOnHover className="[--duration:120s]" repeat={2}>
                         {firstRow.map((review, i) => (
                             <ReviewCard
                                 key={`${review.username}-${i}`}

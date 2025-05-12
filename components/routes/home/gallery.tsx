@@ -27,6 +27,8 @@ export default function Gallery() {
                                 alt=""
                                 width={1920}
                                 height={1080}
+                                format="auto"
+                                quality="auto"
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                         </Block>
@@ -36,6 +38,8 @@ export default function Gallery() {
                                 alt=""
                                 width={1920}
                                 height={1080}
+                                format="auto"
+                                quality="auto"
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                             <CldImage
@@ -43,6 +47,8 @@ export default function Gallery() {
                                 alt=""
                                 width={1920}
                                 height={1080}
+                                format="auto"
+                                quality="auto"
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                             <CldImage
@@ -50,6 +56,8 @@ export default function Gallery() {
                                 alt=""
                                 width={1920}
                                 height={1080}
+                                format="auto"
+                                quality="auto"
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                             <CldImage
@@ -57,6 +65,8 @@ export default function Gallery() {
                                 alt=""
                                 width={1920}
                                 height={1080}
+                                format="auto"
+                                quality="auto"
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                         </Block>
@@ -67,6 +77,8 @@ export default function Gallery() {
                                 alt=""
                                 width={1920}
                                 height={1080}
+                                format="auto"
+                                quality="auto"
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                         </Block>
@@ -77,6 +89,8 @@ export default function Gallery() {
                                 alt=""
                                 width={1920}
                                 height={1080}
+                                format="auto"
+                                quality="auto"
                                 className="aspect-video size-full rounded-lg object-cover"
                             />
                         </Block>
@@ -101,7 +115,7 @@ export default function Gallery() {
                                 loop
                                 muted
                                 controls
-                                src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745082720/vid_1150.mp4"
+                                src="https://res.cloudinary.com/dtxom0y0a/video/upload/v1747024323/vid_1150.mp4"
                                 className="h-full w-full"
                             />
                         </Block>
@@ -113,7 +127,7 @@ export default function Gallery() {
                                 loop
                                 muted
                                 controls
-                                src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745082740/vid_1151.mp4"
+                                src="https://res.cloudinary.com/dtxom0y0a/video/upload/v1747024323/vid_1251.mov"
                                 className="h-full w-full"
                             />
                         </Block>
@@ -125,7 +139,7 @@ export default function Gallery() {
                                 loop
                                 muted
                                 controls
-                                src="https://res.cloudinary.com/dr8gbqqid/video/upload/v1745259837/vid_1350.mp4"
+                                src="https://res.cloudinary.com/dtxom0y0a/video/upload/v1747024323/vid_1350.mp4"
                                 className="h-full w-full"
                             />
                         </Block>

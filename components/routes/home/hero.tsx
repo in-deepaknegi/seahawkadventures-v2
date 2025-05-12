@@ -90,13 +90,15 @@ export default function Hero() {
                                 <CldImage
                                     src={item.image.src}
                                     alt={item.image.alt}
-                                    // fill
                                     width={1920}
                                     height={1080}
                                     priority={index === 0}
+                                    crop="fill"
                                     className={item.classname}
-                                    // sizes="100vw"
-                                    quality={100}
+                                    sizes="(max-width: 640px) 640px, (max-width: 1280px) 1280px, 1920px"
+                                    quality={80}
+                                    loading={index === 0 ? "eager" : "lazy"}
+                                    format="auto"
                                 />
                                 <div className="absolute bottom-0 hidden h-full w-1/3 bg-gradient-to-r from-black/55 to-transparent md:block" />
                                 <div className="absolute bottom-0 h-1/2 w-full bg-gradient-to-t from-black/55 to-transparent" />
