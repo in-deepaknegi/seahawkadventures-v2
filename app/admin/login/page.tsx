@@ -5,19 +5,24 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Loader, Loader2 } from "lucide-react";
+const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_MAIL;
+const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASS;
 
 export default function AdminLogin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const router = useRouter();
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleLogin = (e: React.FormEvent) => {
+        setIsLoading(true);
         e.preventDefault();
-        
+
         // Hardcoded credentials
-        const ADMIN_EMAIL = process.env.ADMIN_MAIL;
-        const ADMIN_PASSWORD = process.env.ADMIN_PASS;
+
+        console.log(ADMIN_EMAIL, ADMIN_PASSWORD);
 
         if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
             // Store authentication status in localStorage
@@ -26,13 +31,16 @@ export default function AdminLogin() {
         } else {
             setError("Invalid credentials");
         }
+        setIsLoading(false);
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="flex min-h-screen items-center justify-center bg-gray-50">
             <Card className="w-[400px]">
                 <CardHeader>
-                    <CardTitle className="text-2xl text-center">Admin Login</CardTitle>
+                    <CardTitle className="text-center text-2xl">
+                        Admin Login
+                    </CardTitle>
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleLogin} className="space-y-4">
@@ -55,9 +63,14 @@ export default function AdminLogin() {
                             />
                         </div>
                         {error && (
-                            <p className="text-sm text-red-500 text-center">{error}</p>
+                            <p className="text-center text-sm text-red-500">
+                                {error}
+                            </p>
                         )}
                         <Button type="submit" className="w-full">
+                            {isLoading && (
+                                <Loader2 className="mr-2 h-4 w-4 animate-spin duration-[1000ms]" />
+                            )}
                             Login
                         </Button>
                     </form>
@@ -65,4 +78,4 @@ export default function AdminLogin() {
             </Card>
         </div>
     );
-} 
+}
